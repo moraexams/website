@@ -1,3 +1,5 @@
+import EXAM_CENTRES from "../EXAM_CENTRES.json";
+
 export const languages = Object.freeze({
 	en: "English",
 	ta: "Tamil",
@@ -23,6 +25,12 @@ export const LANGUAGES_DISPLAY_TEXT = Object.freeze(
 export const LIST_OF_LANGUAGES = Object.keys(languages);
 
 export const defaultLang = "en";
+
+let totalExamCentres = 0;
+
+for (const d of EXAM_CENTRES.districts) {
+	totalExamCentres += d.centers.length;
+}
 
 /**
  * @typedef UiStrings
@@ -157,8 +165,7 @@ export const ui = Object.freeze({
 		hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
 
 		find_your_examination_centres__tile: "Find your examination centres",
-		find_your_examination_centres__description:
-			"We have 69 examination centre networks covering almost the whole island. Choose your district from the map, to view the available exam centres.",
+		find_your_examination_centres__description: `We have ${totalExamCentres} examination centre networks covering almost the whole island. Choose your district from the map, to view the available exam centres.`,
 		looking_for_past_papers__title: "Looking for Mora Exam Past Papers?",
 		looking_for_past_papers__description:
 			"Find all the questions from the previous years and prepare yourself for the ultimate test. You'll be redirected to a Google Drive folder.",
@@ -310,8 +317,7 @@ export const ui = Object.freeze({
 		hero__title: "இலங்கையின் மாபெரும் உயர்தர முன்னோடிப்பரீட்சை",
 		find_your_examination_centres__tile:
 			"உங்களது பரீட்சை நிலையத்தை கண்டறியுங்கள்",
-		find_your_examination_centres__description:
-			"எங்களிடம் 67 பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.",
+		find_your_examination_centres__description: `எங்களிடம் ${totalExamCentres} பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.`,
 		looking_for_past_papers__title: "கடந்த கால வினாத்தாள்களை தேடுகின்றீர்களா?",
 		timetable__title: "நேர அட்டவணை",
 		committee__title: "Mora Exam - 2023 | செயற்குழு",
