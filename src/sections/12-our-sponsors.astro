@@ -13,6 +13,7 @@ const sponsors: Sponsor[] = [
 	},
 	{ name: "Achievers", link: "https://example.com", type: "Gold" },
 	{ name: "Pirakanth", link: "https://example.com", type: "Gold" },
+	{ name: "Uthayan", link: "https://example.com", type: "Gold" },
 ];
 
 function getLogoUrl(name: string) {
@@ -37,7 +38,7 @@ function getLogoUrl(name: string) {
 		{
 			sponsors.map((sponsor) => {
 				return (
-					<li>
+					<li class={sponsor.type.toLowerCase()}>
 						<a href={sponsor.link} target="_blank">
 							<img src={getLogoUrl(sponsor.name)} alt={sponsor.name} />
 						</a>
@@ -45,16 +46,6 @@ function getLogoUrl(name: string) {
 				);
 			})
 		}
-		<li>
-			<a href="https://sltc.ac.lk/">
-				<img src="/sponsors/sltc.png" alt="" />
-			</a>
-		</li>
-		<li>
-			<a href="">
-				<img src="/sponsors/pirakanth.png" alt="" />
-			</a>
-		</li>
 	</ul>
 </section>
 
@@ -63,7 +54,6 @@ function getLogoUrl(name: string) {
 		padding: 0;
 		margin: 0;
 	}
-
 	section {
 		display: grid;
 		place-items: center;
@@ -71,12 +61,6 @@ function getLogoUrl(name: string) {
 		padding: 32px 0;
 		text-align: center;
 	}
-
-	/* h1 {
-		font-size: 30px;
-      margin-bottom: 20px;
-	} */
-
 	.sponsors-grid {
 		width: 90%;
 		height: auto;
@@ -84,22 +68,27 @@ function getLogoUrl(name: string) {
 		align-items: center;
 		grid-template-columns: repeat(3, 1fr);
 	}
-	.sponsors-grid li {
+	li {
+		--scale: 0.8;
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
+		transform: scale(var(--scale));
+		transform-origin: center;
+		transition: transform 0.2s ease-in-out;
+	}
+	li img {
+		transition: filter 0.2s ease-in-out;
 		filter: grayscale(100%);
-		transform: scale(0.8);
-		transition:
-			filter 0.2s ease-in-out,
-			transform 0.2s ease-in-out;
 	}
-	.sponsors-grid li:hover {
+	li:hover {
+		transform: scale(calc(var(--scale) + 0.2));
+	}
+	li:hover img {
 		filter: grayscale(0);
-		transform: scale(1);
 	}
-	.sponsors-grid img {
+	img {
 		width: 100%;
 		height: auto;
 	}
