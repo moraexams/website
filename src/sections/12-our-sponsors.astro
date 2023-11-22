@@ -1,18 +1,59 @@
+---
+interface Sponsor {
+	name: string;
+	link: string;
+	type: "Platinum" | "Gold" | "Silver" | "Bronze";
+}
+
+const sponsors: Sponsor[] = [
+	{
+		name: "Northway Family Mart",
+		link: "https://web.facebook.com/northwayfamilymart?_rdc=1&_rdr",
+		type: "Platinum",
+	},
+	{ name: "Achievers", link: "https://example.com", type: "Gold" },
+	{ name: "Pirakanth", link: "https://example.com", type: "Gold" },
+];
+
+function getLogoUrl(name: string) {
+	let o = "/sponsors/";
+
+	for (let char of name) {
+		if (char == " ") {
+			o = o.concat("-");
+		} else {
+			o = o.concat(char.toLowerCase());
+		}
+	}
+
+	o = o.concat(".png");
+	return o;
+}
+---
+
 <section>
-	<h2>OUR SPONSORS</h2>
+	<h2 class="mb-10">OUR SPONSORS</h2>
 	<ul class="sponsors-grid">
+		{
+			sponsors.map((sponsor) => {
+				return (
+					<li>
+						<a href={sponsor.link} target="_blank">
+							<img src={getLogoUrl(sponsor.name)} alt={sponsor.name} />
+						</a>
+					</li>
+				);
+			})
+		}
 		<li>
 			<a href="https://sltc.ac.lk/">
-				<img src="/Sponsors/sltc.png" alt="" />
+				<img src="/sponsors/sltc.png" alt="" />
 			</a>
 		</li>
 		<li>
-			<a href="https://web.facebook.com/northwayfamilymart?_rdc=1&_rdr">
-				<img src="/Sponsors/northway-family-mart.png" alt="" />
+			<a href="">
+				<img src="/sponsors/pirakanth.png" alt="" />
 			</a>
-		</li>
-		<li>
-			<img src="/Sponsors/pirakanth.png" alt="" />
 		</li>
 	</ul>
 </section>
