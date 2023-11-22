@@ -28,26 +28,26 @@ for (let i = 0; i < LIST_OF_LANGUAGES.length; i++) {
 }
 ---
 
-<div class={`rounded-lg px-3 w-fit mx-auto ${className}`}>
+<div class={`w-fit mx-auto h-fit ${className}`}>
 	{
 		otherLanguages.map((t, i) => {
 			return (
-				<>
-					<a href={t.redirectUrl} class="no-underline">
-						<button class="bg-transparent border-8 rounded-lg py-1 px-3 text-white cursor-pointer hover:bg-white hover:text-primary-900 sm:px-6 ">
-							{t.langName}
-							<!--todo: fix weird padding after English LanguageSelector when in tamil site-->
-							<!--todo: make the button more standard -->
-						</button>
-					</a>
-				</>
+				<a href={t.redirectUrl} class="no-underline">
+					<button class="bg-transparent border-8 rounded-full px-3 text-white cursor-pointer hover:bg-white hover:text-primary-900 sm:px-6 h-fit">
+						{t.langName}
+					</button>
+				</a>
 			);
 		})
 	}
 </div>
+<!-- todo: make the button more standard -->
 
 <style>
 	button {
 		border: 1px solid white;
+	}
+	html[lang="en"] button {
+		@apply pb-1;
 	}
 </style>
