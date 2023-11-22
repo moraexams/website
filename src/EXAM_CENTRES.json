@@ -63,16 +63,22 @@
 		{
 			"name_en": "Anurathapura",
 			"name_ta": "அனுராதபுரம்",
-			"coordinators": [
-				{
-					"name_en": "Miskeen Sir",
-					"contact_number": "714478366"
-				}
-			],
 			"centers": [
 				{
+					"coordinator": {
+						"name_en": "Miskeen Sir",
+						"contact_number": "714478366"
+					},
 					"name_en": "A/An-Noor Mahavidyalaya, Ikkirigollawa",
 					"name_ta": "அன்-நூர் மகாவித்தியாலயா, இக்கிரிகொல்லாவா"
+				},
+				{
+					"coordinator": {
+						"name_en": "A.H.Mohamed Raleef",
+						"contact_number": "0767748800"
+					},
+					"name_en": "Kahatagasdhigiliya Muslim M.V.",
+					"name_ta": "கஹடகஸ்திகிலிய முஸ்லிம் ம.வி."
 				}
 			]
 		},
@@ -195,6 +201,22 @@
 				{
 					"name_en": "G/Malharus Sulhiya Central College",
 					"name_ta": "மல்ஹாருஸ் சுல்ஹியா மத்திய கல்லூரி"
+				}
+			]
+		},
+		{
+			"name_en": "Hambantota",
+			"name_ta": "ஹம்பாந்தோட்டை",
+			"coordinators": [
+				{
+					"name_en": "Jawsar",
+					"contact_number": "0772273884"
+				}
+			],
+			"centers": [
+				{
+					"name_en": "Zahira National School, Hambantota",
+					"name_ta": "சாஹிரா தேசிய பாடசாலை, அம்பாந்தோட்டை"
 				}
 			]
 		},
