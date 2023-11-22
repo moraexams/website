@@ -53,7 +53,12 @@ export default function InViewNumberAnimator({ targetValue, duration = 2000 }) {
 	}, [isVisible, targetValue]);
 
 	return (
-		<span ref={containerRef} style={{ fontVariant: "tabular-nums" }}>
+		<span
+			ref={containerRef}
+			style={{
+				fontFamily: "Noto Sans, monospace",
+			}}
+		>
 			{(isVisible ? currentValue.toString() : "0").padStart(
 				targetValue.toString().length,
 				"0",
