@@ -16,18 +16,42 @@ export function ExamCentreDetailsTable(props) {
 	const areCoordinatorsExamCentreSpecific =
 		typeof districtInfo.coordinators == "undefined";
 
+	let examCentreSpecificCoordinatorsMessage =
+		"Exam coordinators are specific to the exam centres.";
+	if (languagePreference == "ta") {
+		examCentreSpecificCoordinatorsMessage =
+			"தேர்வு மையங்களுக்கு குறிப்பிட்ட தேர்வு ஒருங்கிணைப்பாளர்கள் உள்ளனர்.";
+	}
+
+	let districtCoordinatorMessage = undefined;
+
+	if (
+		Array.isArray(districtInfo.coordinators) &&
+		districtInfo.coordinators.length > 0
+	) {
+		if (languagePreference == "ta") {
+			districtCoordinatorMessage = "மாவட்ட ஒருங்கிணைப்பாளர்கள்";
+			if (districtInfo.coordinators.length > 1) {
+				districtCoordinatorMessage = districtCoordinatorMessage.concat("கள்");
+			}
+		} else if (languagePreference == "en") {
+			districtCoordinatorMessage = "District Coordinator";
+			if (districtInfo.coordinators.length > 1) {
+				districtCoordinatorMessage = districtCoordinatorMessage.concat("s");
+			}
+		}
+	}
+
 	return (
 		<div>
 			<div>
 				<h3 className="text-4xl mb-4">{districtInfo[langKey]}</h3>
 				<p>
 					{areCoordinatorsExamCentreSpecific ? (
-						"Exam coordinators are specific to the exam centres."
+						examCentreSpecificCoordinatorsMessage
 					) : (
 						<>
-							{districtInfo.coordinators.length == 1
-								? "District Coordinator"
-								: "District Coordinators"}
+							{districtCoordinatorMessage}
 							<br />
 							{districtInfo.coordinators.map((coordinator, i) => {
 								return (
