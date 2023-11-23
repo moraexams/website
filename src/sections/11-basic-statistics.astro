@@ -10,7 +10,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		<hr />
 		<StatisticCard value={14} text={t("statistics__years")} /><hr />
 		<StatisticCard value={22} text={t("statistics__districts")} /><hr />
-		<StatisticCard value={69} text={t("statistics__centers")} /><hr />
+		<StatisticCard value={71} text={t("statistics__centers")} /><hr />
 		<StatisticCard value={6821} text={t("statistics__candidates")} /><hr />
 	</div>
 </section>
@@ -41,3 +41,5 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		}
 	}
 </style>
+
+<!-- todo: programmatically generate counts -->
