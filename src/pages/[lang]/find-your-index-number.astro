@@ -40,7 +40,6 @@ if (nicNumber) {
 					continue;
 				}
 				const obj = Object.fromEntries(headers.map((_, i) => [_, record[i]]));
-				console.log("check", obj["nic_no"]);
 				if (obj["nic_no"] == nicNumber) {
 					console.log("found", obj["nic_no"]);
 
