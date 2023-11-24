@@ -4,7 +4,7 @@ import { ui, defaultLang, LIST_OF_LANGUAGES } from "./ui";
  * @param {string} lang
  * @returns {lang is import("./ui").Language}
  */
-function isSupportedLanguage(lang) {
+export function isSupportedLanguage(lang) {
 	// @ts-expect-error
 	return LIST_OF_LANGUAGES.includes(lang);
 }

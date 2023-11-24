@@ -1,36 +1,42 @@
 ---
-import type { GetStaticPaths } from "astro";
+export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../sections/16-footer.astro";
 import { parse } from "csv-parse";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { langStaticRoutes } from "../../i18n/ui";
+import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
+const { lang } = Astro.params;
+
+if (!isSupportedLanguage(lang)) {
+	return;
+}
 const t = useTranslations(lang);
-
-export const getStaticPaths = (() => {
-	return langStaticRoutes;
-}) satisfies GetStaticPaths;
 
 const nicNumber = Astro.url.searchParams.get("nic") || undefined;
 
 let selectedNic = undefined;
 
-function capitalize(key: string) {
+function formatKey(key: string) {
+	if (key == "nic_number") {
+		return "NIC Number";
+	}
+	if (key.includes("_")) {
+		return key
+			.split("_")
+			.map((word) => formatKey(word))
+			.join(" ");
+	}
 	return key.charAt(0).toUpperCase().concat(key.slice(1));
 }
 
 if (nicNumber) {
-	try {
-		const response = await fetch(
-			"https://wizmo.sahithyan.dev/student-info.csv",
-		);
-		const body = await response.text();
-		const parser = parse();
-	} catch {}
+	const u = new URL(Astro.url);
+	u.pathname = "/student-info.csv";
+	const response = await fetch(u);
+	const body = await response.text();
+	const parser = parse();
 
 	let headers: Array<string>;
 	selectedNic = await new Promise((resolve, reject) => {
@@ -49,19 +55,11 @@ if (nicNumber) {
 
 					resolve({
 						index_no: obj["index_no"],
-						email: obj["email"],
 						name: obj["first_name"]
 							.trim()
 							.concat(" ", obj["last_name"].trim())
 							.toUpperCase(),
-						gender: obj["gender"].split(" - ")[0],
-						ranking_district: obj["ranking_district"],
-						contact_no: obj["contact_no"].padStart(10, "0"),
-						school: obj["school"].trim().toUpperCase(),
-						stream: obj["stream"],
-						medium: obj["medium"].split(" - ")[0],
-						exam_sitting: obj["exam_sitting"],
-						exam_centre: obj["exam_centre"],
+						nic_number: obj["nic_no"],
 					});
 					return;
 				}
@@ -174,7 +172,7 @@ console.log(selectedNic);
 								{Object.entries(selectedNic).map(([key, value]) => {
 									return (
 										<tr>
-											<td>{key.split("_").map(capitalize).join(" ")}</td>
+											<td>{formatKey(key)}</td>
 											<td>{value}</td>
 										</tr>
 									);
@@ -202,5 +200,8 @@ console.log(selectedNic);
 		input {
 			font-size: 16px;
 		}
+	}
+	table {
+		width: 100%;
 	}
 </style>
