@@ -40,7 +40,7 @@ const { hideLogo } = Astro.props;
 			class={"text-3xl font-bold text-inherit inline-block no-underline relative z-30 order-1 transition-colors".concat(
 				hideLogo ? " logo-title" : "",
 			)}
-			href="/"
+			href=`/${lang}/`
 		>
 			{t("index__title")}
 		</a>
