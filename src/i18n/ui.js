@@ -146,6 +146,10 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} name__tla
  * @prop {string} hero_button
  * @prop {string} looking_for_past_papers__button
+ * @prop {string} find_your_index_no
+ * @prop {string} find_your_index_no_p
+ * @prop {string} nic_no
+ * @prop {string} find_button
  */
 
 /**
@@ -305,6 +309,11 @@ export const ui = Object.freeze({
 
 		name__tla: "Tamil Literary Association",
 		hero_button: "Apply Now",
+
+		find_your_index_no: "Find Your Index Number",
+		find_your_index_no_p: "Enter your NIC Number to find your Index Number.",
+		nic_no:"N.I.C No",
+		find_button:"Find"
 	},
 	ta: {
 		index__title: "Mora Exams",
@@ -445,6 +454,11 @@ export const ui = Object.freeze({
 		feedback_snekan_name: "சினேகன்",
 		hero_button: "விண்ணப்பிக்க",
 		looking_for_past_papers__button: "வினாத்தாள்கள்",
+		
+		find_your_index_no: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள் ",
+		find_your_index_no_p:" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
+		nic_no:"அடையாள அட்டை இல.",
+		find_button :"தேடு"
 	},
 });
 
