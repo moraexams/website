@@ -443,7 +443,7 @@ export const ui = Object.freeze({
 		achivers_ranking_8: "யாழ் மாவட்டத்தில் முதலிடம்",
 		name__tla: "தமிழ் இலக்கியக் கழகம்",
 		feedback_snekan_name: "சினேகன்",
-		hero_button: "விண்ணப்பிக்க",
+		hero_button: "பரீட்சை சுட்டெண்",
 		looking_for_past_papers__button: "வினாத்தாள்கள்",
 	},
 });
