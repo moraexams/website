@@ -137,7 +137,11 @@ console.log(selectedNic);
 					<p class="text-xl xl:text-2xl text-center text-black max-w-prose">
 						{t("find_your_index_no_p")}
 					</p>
-					<form method="get" style="display: contents;">
+					<form
+						method="get"
+						action={`/${lang}/find-your-index-number`}
+						style="display: contents;"
+					>
 						<input
 							class="w-full max-w-2xl px-8 py-4 rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
 							type="text"
