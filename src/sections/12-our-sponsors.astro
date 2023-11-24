@@ -100,6 +100,7 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 		transition: transform 0.2s ease-in-out;
 	}
 	li img {
+		@apply mb-4;
 		transition: filter 0.2s ease-in-out;
 		filter: grayscale(100%);
 	}
@@ -131,7 +132,7 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 		grid-row: 3;
 	}
 	a {
-		@apply no-underline text-primary-600;
+		@apply no-underline text-primary-600 text-lg;
 	}
 </style>
 
