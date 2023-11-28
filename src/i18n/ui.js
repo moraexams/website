@@ -150,6 +150,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} find_your_index_no_p
  * @prop {string} nic_no
  * @prop {string} find_button
+ * @prop {string} schemes_button
  */
 
 /**
@@ -314,6 +315,7 @@ export const ui = Object.freeze({
 		find_your_index_no_p: "Enter your NIC Number to find your Index Number.",
 		nic_no: "N.I.C No",
 		find_button: "Find",
+		schemes_button: "2023's Schemes",
 	},
 	ta: {
 		index__title: "Mora Exams",
@@ -460,6 +462,7 @@ export const ui = Object.freeze({
 			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
 		nic_no: "அடையாள அட்டை இல.",
 		find_button: "தேடு",
+		schemes_button: undefined,
 	},
 });
 
