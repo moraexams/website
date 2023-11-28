@@ -48,6 +48,22 @@ ogImageUrl.pathname = "/og-image.jpg";
 
 		<meta property="og:url" content={Astro.url.toString()} />
 		<meta property="og:image" content={ogImageUrl.toString()} />
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GD74616M9F"
+		></script>
+		<script>
+			// @ts-expect-error
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				// @ts-expect-error
+				window.dataLayer.push(arguments);
+			}
+			// @ts-expect-error
+			gtag("js", new Date());
+			// @ts-expect-error
+			gtag("config", "G-GD74616M9F");
+		</script>
 	</head>
 	<body>
 		<slot />
