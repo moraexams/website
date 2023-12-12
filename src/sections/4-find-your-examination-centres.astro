@@ -19,7 +19,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 	</div>
 </section>
 <script>
-	import EXAM_CENTRES_DATA from "../EXAM_CENTRES.json";
+	import EXAM_CENTRES from "../data/EXAM_CENTRES.json";
 	import { ExamCentreDetailsTable } from "../components/react/ExamCentreDetailsTable";
 	import { createRoot } from "react-dom/client";
 	import { getLangFromUrl } from "../i18n/utils";
@@ -38,8 +38,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		console.log("select", district);
 		selectedDistrict = null;
 
-		for (let i = 0; i < EXAM_CENTRES_DATA.districts.length; i++) {
-			const _district = EXAM_CENTRES_DATA.districts[i];
+		for (let i = 0; i < EXAM_CENTRES.districts.length; i++) {
+			const _district = EXAM_CENTRES.districts[i];
 			if (_district.name_en != district) {
 				continue;
 			}

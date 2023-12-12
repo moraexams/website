@@ -1,4 +1,4 @@
-import EXAM_CENTRES from "../EXAM_CENTRES.json";
+import EXAM_CENTRES from "../data/EXAM_CENTRES.json";
 
 export const languages = Object.freeze({
 	en: "English",
