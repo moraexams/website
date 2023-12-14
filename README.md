@@ -1,10 +1,8 @@
 # Mora Exams: Landing Page
 
-![Landing Page](https://media.cleanshot.cloud/media/71684/StuAxlkQmHvxnzUoORLXzcVOxXUXKQetBlQWp6sW.jpeg?Expires=1700764070&Signature=TTbUSxrea7zUHIHloGecU~EgrPHAXpBRkKsfigpWRwv83EvCCkG5Uvl3gepqNZwXpW2uDwRNpYXaumP4R~oAVAsc8Vc~MPxJqU-LozW8a~vDgdkzZsJge7Aq~YPmakHtmaDU0NR~4YAKdrc2mRVDrLgOzmiWLR1GaEstqojFbLfWTqywUr1JIWVAyAzRjINyhYKykP67FDuusXlZLGHOq1lt8M~5oyP7BamTpvt0QFHQn3s0cbUMQ--8bbpe981TiuP0WFU8DAq1H1gS5Vyaa1LYcltaBufbMZMaL4LY7O8KbwxlMZhVbetp2jcXHwRTniO1iH-7CBuA7Fukh4p1tg__&Key-Pair-Id=K269JMAT9ZF4GZ)
+<!-- ## 🚀 Project Structure -->
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+<!-- Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
@@ -20,7 +18,7 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Any static assets, like images, are placed inside the `public/` directory.
+Any static assets, like images, are placed inside the `public/` directory. -->
 
 <!-- ## 🧞 Commands
 
@@ -34,6 +32,18 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     | -->
+
+### Todo
+
+- Project Sturcuture in readme needs a rewrite
+- better integration of i18n
+- optimal use of hydration and ssr
+- reduce unnecessay complexity in components and pages
+- move exam centers and relevant data to database (makes it possible to change landing page contents from dashboard)
+- make it deployable on docker
+- about page
+- text content rewrite
+- results page
 
 ## 👀 Looking for us?
 

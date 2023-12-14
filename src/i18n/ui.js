@@ -1,4 +1,4 @@
-import EXAM_CENTRES from "../data/EXAM_CENTRES.json";
+import EXAM_CENTRES from "../EXAM_CENTRES.json";
 
 export const languages = Object.freeze({
 	en: "English",
@@ -148,8 +148,11 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} looking_for_past_papers__button
  * @prop {string} find_your_index_no
  * @prop {string} find_your_index_no_p
+ * @prop {string} find_your_results
+ * @prop {string} find_your_results_p
  * @prop {string} nic_no
  * @prop {string} find_button
+ * @prop {string} schemes_button
  */
 
 /**
@@ -310,10 +313,14 @@ export const ui = Object.freeze({
 		name__tla: "Tamil Literary Association",
 		hero_button: "Find Index Number",
 
+		find_your_results: "Find Your Results",
+		find_your_results_p: "Enter your NIC Number to find your Results",
+
 		find_your_index_no: "Find Your Index Number",
 		find_your_index_no_p: "Enter your NIC Number to find your Index Number.",
 		nic_no: "N.I.C No",
 		find_button: "Find",
+		schemes_button: "2023 Schemes",
 	},
 	ta: {
 		index__title: "Mora Exams",
@@ -455,11 +462,16 @@ export const ui = Object.freeze({
 		hero_button: "பரீட்சை சுட்டெண்",
 		looking_for_past_papers__button: "வினாத்தாள்கள்",
 
+		find_your_results: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள் ",
+		find_your_results_p:
+			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
+
 		find_your_index_no: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள் ",
 		find_your_index_no_p:
 			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
 		nic_no: "அடையாள அட்டை இல.",
 		find_button: "தேடு",
+		schemes_button: "undefined",
 	},
 });
 

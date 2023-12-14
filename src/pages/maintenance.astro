@@ -1,6 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderContactIcon from "../components/HeaderContactIcon.astro";
+import type { GetStaticPaths } from "astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { langStaticRoutes } from "../i18n/ui";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+
+// export const getStaticPaths = (() => {
+// 	return langStaticRoutes;
+// }) satisfies GetStaticPaths;
 ---
 
 <Layout pageTitle="Under Maintenance">
@@ -15,15 +24,25 @@ import HeaderContactIcon from "../components/HeaderContactIcon.astro";
 			href="https://drive.google.com/drive/folders/1aTr8w_YHB0_UyFewyjs49_YB-KfPji77"
 		>
 			here</a
-		>.
+		>
+		<br />
+		<br />
+		<br />
+		<a
+			target="_blank"
+			href="https://drive.google.com/drive/folders/1ZivLO18_dEHd53VGWkstlHR3PCsw1hOR?usp=drive_link"
+			class="text-white no-underline hover:underline w-full inline-block"
+		>
+			<button class="btn !w-full">{t("schemes_button")}</button>
+		</a>
 	</p>
-	<p>Stay connected with us through social media</p>
-	<div class="icon-container">
+	<!-- <p>Stay connected with us through social media</p> -->
+	<!-- <div class="icon-container">
 		<HeaderContactIcon name="twitter" dark />
 		<HeaderContactIcon name="facebook" dark />
 		<HeaderContactIcon name="linkedin" dark />
 		<HeaderContactIcon name="youtube" dark />
-	</div>
+	</div> -->
 </Layout>
 
 <style>
@@ -74,5 +93,79 @@ import HeaderContactIcon from "../components/HeaderContactIcon.astro";
 
 	.icon-container {
 		margin-top: 20px;
+	}
+</style>
+
+<style>
+	button:hover i {
+		@apply translate-x-[16px];
+	}
+	.btn {
+		@apply text-white w-fit px-5 py-3 text-[1em];
+		background: linear-gradient(135deg, #852d91, #312a6c);
+		transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+		font-weight: bold;
+		border: 0;
+		outline-color: hsl(243, 31%, 60%);
+		outline-width: 2px;
+		border-radius: 0.5rem;
+		cursor: pointer;
+	}
+	.btn:hover {
+		color: #cfcece;
+		border: none;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		animation: rotate 0.7s ease-in-out both;
+	}
+
+	.btn:hover:before,
+	.btn:hover:after {
+		opacity: 0.15;
+	}
+	.btn:hover:before {
+		transform: translate3d(50%, 0, 0) scale(0.9);
+	}
+	.btn:hover:after {
+		transform: translate(50%, 0) scale(1.1);
+	}
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(3deg);
+		}
+		50% {
+			transform: rotate(-3deg);
+		}
+		75% {
+			transform: rotate(1deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+	.lineUp {
+		animation: 3s anim-lineUp ease-out;
+	}
+	@keyframes anim-lineUp {
+		0% {
+			opacity: 0;
+			transform: translateY(80%);
+		}
+		20% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+	}
+	.btn > * {
+		@apply inline-block align-middle h-fit;
 	}
 </style>

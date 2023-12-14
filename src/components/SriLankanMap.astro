@@ -1,5 +1,5 @@
 ---
-import EXAM_CENTERS from "../data/EXAM_CENTRES.json";
+import EXAM_DETAILS from "../EXAM_CENTRES.json";
 
 interface District {
 	name: string;
@@ -7,7 +7,7 @@ interface District {
 }
 
 function isDistrictAvailable(district) {
-	for (const _d of EXAM_CENTERS.districts) {
+	for (const _d of EXAM_DETAILS.districts) {
 		if (_d.name_en == district) return true;
 	}
 	return false;
