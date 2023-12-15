@@ -6,6 +6,9 @@ import Footer from "../../sections/16-footer.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 
+import { db, applicants } from "../../db";
+import { eq } from "drizzle-orm";
+
 const { lang } = Astro.params;
 
 if (!isSupportedLanguage(lang)) {
@@ -28,6 +31,44 @@ function formatKey(key: string) {
 	}
 	return key.charAt(0).toUpperCase().concat(key.slice(1));
 }
+
+// const get_result = async (
+// 	nic_number: string,
+// ): Promise<{ id: string; name: string; medium: string; nic: string }[]> => {
+// 	const result = await db.query.applicants.findMany({
+// 		where: eq(applicants.nic, nic_number),
+// 	});
+// 	return result;
+// };
+
+// const showResultButton = document.getElementById("showresultbtn");
+// showResultButton.addEventListener("click", async function () {
+// const showResultInput = document.getElementById(
+// 	"showresultin",
+// ) as HTMLInputElement;
+
+// if (!(showResultInput instanceof HTMLInputElement)) {
+// 	console.error("showResultInput is not found or not an input");
+// 	return;
+// }
+
+// var nic_number = showResultInput.value;
+
+// const result = await get_result(nic_number);
+
+if (nicNumber) {
+	const result = await db.query.applicants
+		.findFirst({
+			where: eq(applicants.nic, nicNumber),
+		})
+		.catch(console.error);
+	selectedNic = result;
+	console.log(result);
+}
+// selectedNic = result;
+
+// alert("Button was clicked! " + result.name);
+// });
 ---
 
 <Layout pageTitle={t("index__title")}>
@@ -48,30 +89,30 @@ function formatKey(key: string) {
 					<p class="text-xl xl:text-2xl text-center text-black max-w-prose">
 						{t("find_your_results_p")}
 					</p>
-					<!-- <form
+					<form
 						method="get"
-						action={`/${lang}/find-your-index-number`}
+						action={`/${lang}/find-your-results`}
 						style="display: contents;"
-					> -->
-					<div>
-						<input
-							class="w-full max-w-2xl px-8 py-4 rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
-							type="text"
-							name="nic"
-							id="showresultin"
-							value={nicNumber}
-							placeholder={t("nic_no")}
-						/>
-						<button
-							id="showresultbtn"
-							class="my-6 py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
-						>
-							<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
-								>{t("find_button")}</span
+					>
+						<div>
+							<input
+								class="w-full max-w-2xl px-8 py-4 rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
+								type="text"
+								name="nic"
+								id="showresultin"
+								value={nicNumber}
+								placeholder={t("nic_no")}
+							/>
+							<button
+								id="showresultbtn"
+								class="my-6 py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
 							>
-						</button>
-					</div>
-					<!-- </form> -->
+								<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
+									>{t("find_button")}</span
+								>
+							</button>
+						</div>
+					</form>
 					{
 						typeof selectedNic == "undefined" ? null : selectedNic == null ? (
 							<div
@@ -105,48 +146,6 @@ function formatKey(key: string) {
 		</div>
 	</section>
 </Layout>
-<!-- <div class="p-2 sm:mx-[30px]">
-	<Footer />
-</div> -->
-
-<script>
-	import { db, applicants } from "../../db";
-	import { eq } from "drizzle-orm";
-
-	// const get_result = async (
-	// 	nic_number: string,
-	// ): Promise<{ id: string; name: string; medium: string; nic: string }[]> => {
-	// 	const result = await db.query.applicants.findMany({
-	// 		where: eq(applicants.nic, nic_number),
-	// 	});
-	// 	return result;
-	// };
-
-	const showResultButton = document.getElementById("showresultbtn");
-	console.log(showResultButton);
-	showResultButton.addEventListener("click", async function () {
-		console.log("click");
-		const showResultInput = document.getElementById(
-			"showresultin",
-		) as HTMLInputElement;
-
-		if (!(showResultInput instanceof HTMLInputElement)) {
-			console.error("showResultInput is not found or not an input");
-			return;
-		}
-
-		var nic_number = showResultInput.value;
-
-		// const result = await get_result(nic_number);
-
-		const result = await db.query.applicants.findFirst({
-			where: eq(applicants.nic, nic_number),
-		});
-
-		console.log(result);
-		alert("Button was clicked! " + result.name);
-	});
-</script>
 
 <style>
 	@media screen and (max-width: 400px) {
@@ -156,5 +155,8 @@ function formatKey(key: string) {
 	}
 	table {
 		width: 100%;
+	}
+	td {
+		max-width: 10ch;
 	}
 </style>
