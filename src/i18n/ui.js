@@ -471,7 +471,7 @@ export const ui = Object.freeze({
 			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
 		nic_no: "அடையாள அட்டை இல.",
 		find_button: "தேடு",
-		schemes_button: "undefined",
+		schemes_button: "Schemes",
 	},
 });
 

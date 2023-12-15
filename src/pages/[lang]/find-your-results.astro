@@ -1,11 +1,10 @@
 ---
+export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../sections/16-footer.astro";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
-
-export const prerender = false;
 
 const { lang } = Astro.params;
 
@@ -50,11 +49,12 @@ function formatKey(key: string) {
 		).value;
 
 		// const result = await get_result(nic_number);
+
 		const result = await db.query.applicants.findFirst({
 			where: eq(applicants.nic, nic_number),
 		});
-		// console.log(result);
-		alert("Button was clicked!" + result.name);
+
+		alert("Button was clicked! " + result.name);
 	};
 </script>
 
