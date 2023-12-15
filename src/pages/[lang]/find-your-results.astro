@@ -122,7 +122,10 @@ function formatKey(key: string) {
 	// 	return result;
 	// };
 
-	document.getElementById("showresultbtn").onclick = async function () {
+	const showResultButton = document.getElementById("showresultbtn");
+	console.log(showResultButton);
+	showResultButton.addEventListener("click", async function () {
+		console.log("click");
 		const showResultInput = document.getElementById(
 			"showresultin",
 		) as HTMLInputElement;
@@ -142,7 +145,7 @@ function formatKey(key: string) {
 
 		console.log(result);
 		alert("Button was clicked! " + result.name);
-	};
+	});
 </script>
 
 <style>
