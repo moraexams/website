@@ -81,8 +81,7 @@ const { hideLogo } = Astro.props;
 		throw new Error("cloned element is not HTMLElement");
 	}
 	cloned.id = "cloned";
-	console.log(document.body);
-	document.body.firstChild.appendChild(cloned);
+	document.body.children[0].appendChild(cloned);
 
 	/**
 	 * @param {HTMLElementEventMap["click"]} event
