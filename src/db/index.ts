@@ -2,8 +2,6 @@ import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const prerender = false;
-
 export const applicants = sqliteTable("tbl_students", {
 	id: text("index_no", { length: 50, mode: "text" }).notNull(),
 	name: text("name", { length: 255, mode: "text" }),

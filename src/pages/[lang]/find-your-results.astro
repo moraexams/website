@@ -30,34 +30,6 @@ function formatKey(key: string) {
 }
 ---
 
-<script>
-	import { db, applicants } from "../../db";
-	import { eq } from "drizzle-orm";
-
-	// const get_result = async (
-	// 	nic_number: string,
-	// ): Promise<{ id: string; name: string; medium: string; nic: string }[]> => {
-	// 	const result = await db.query.applicants.findMany({
-	// 		where: eq(applicants.nic, nic_number),
-	// 	});
-	// 	return result;
-	// };
-
-	document.getElementById("showresultbtn").onclick = async function () {
-		var nic_number = (
-			document.getElementById("showresultin") as HTMLInputElement
-		).value;
-
-		// const result = await get_result(nic_number);
-
-		const result = await db.query.applicants.findFirst({
-			where: eq(applicants.nic, nic_number),
-		});
-
-		alert("Button was clicked! " + result.name);
-	};
-</script>
-
 <Layout pageTitle={t("index__title")}>
 	<div class="bg-purple-800">
 		<NavigationBar />
@@ -136,6 +108,43 @@ function formatKey(key: string) {
 <!-- <div class="p-2 sm:mx-[30px]">
 	<Footer />
 </div> -->
+
+<script>
+	import { db, applicants } from "../../db";
+	import { eq } from "drizzle-orm";
+
+	// const get_result = async (
+	// 	nic_number: string,
+	// ): Promise<{ id: string; name: string; medium: string; nic: string }[]> => {
+	// 	const result = await db.query.applicants.findMany({
+	// 		where: eq(applicants.nic, nic_number),
+	// 	});
+	// 	return result;
+	// };
+
+	document.getElementById("showresultbtn").onclick = async function () {
+		const showResultInput = document.getElementById(
+			"showresultin",
+		) as HTMLInputElement;
+
+		if (!(showResultInput instanceof HTMLInputElement)) {
+			console.error("showResultInput is not found or not an input");
+			return;
+		}
+
+		var nic_number = showResultInput.value;
+
+		// const result = await get_result(nic_number);
+
+		const result = await db.query.applicants.findFirst({
+			where: eq(applicants.nic, nic_number),
+		});
+
+		console.log(result);
+		alert("Button was clicked! " + result.name);
+	};
+</script>
+
 <style>
 	@media screen and (max-width: 400px) {
 		input {
