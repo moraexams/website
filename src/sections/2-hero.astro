@@ -17,7 +17,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		<!-- Welcome To<br /><span class="inline-block w-max">Mora&nbsp;Exams</span> -->
 	</h1>
 	<div class="text-[16px] sm:text-[24px] flex flex-col gap-y-6 mt-8 w-fit">
-		<!-- <a href="./find-your-index-number" class="no-underline">
+		<a href="./find-your-index-number" hidden class="no-underline">
 			<button class="btn">
 				<span>
 					{t("hero_button")}
@@ -26,16 +26,19 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 					class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2"
 				></i>
 			</button>
-		</a> -->
-		<a
-			target="_blank"
-			href="https://drive.google.com/drive/folders/1ZivLO18_dEHd53VGWkstlHR3PCsw1hOR?usp=drive_link"
-			class="text-white no-underline hover:underline w-full inline-block"
-		>
-			<button class="btn !w-full">{t("schemes_button")}</button>
-		</a>
+			 <<<<<<< HEAD
+		</a> --> =======
 	</div>
-	<!-- <p class="text-xl sm:text-2xl">Please Select Your language</p>
+	 >>>>>>> bun
+	<a
+		target="_blank"
+		href="https://drive.google.com/drive/folders/1ZivLO18_dEHd53VGWkstlHR3PCsw1hOR?usp=drive_link"
+		class="text-white no-underline hover:underline w-full inline-block"
+	>
+		<button class="btn !w-full">{t("schemes_button")}</button>
+	</a>
+</section>
+<!-- <p class="text-xl sm:text-2xl">Please Select Your language</p>
 	<div>
 		<button
 			class="mr-6 mb-28 text-xl bg-purple-800 cursor-pointer px-8 py-3 rounded-2xl hover:bg-purple-950"
@@ -46,12 +49,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			><a class="no-underline text-blue-100" href="">English</a></button
 		>
 	</div> -->
-</section>
 
 <script>
 	(() => {
 		const logoTitles = document.querySelectorAll(".logo-title");
-		console.log(logoTitles);
+		// console.log(logoTitles);
 		if (logoTitles.length == 0) {
 			return;
 		}
@@ -59,7 +61,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			(entries) => {
 				const entry = entries[0];
 
-				for (const item of logoTitles) {
+				for (const item of [logoTitles]) {
 					if (!(item instanceof HTMLAnchorElement)) {
 						continue;
 					}

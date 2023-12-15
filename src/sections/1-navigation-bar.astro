@@ -81,7 +81,7 @@ const { hideLogo } = Astro.props;
 		throw new Error("cloned element is not HTMLElement");
 	}
 	cloned.id = "cloned";
-	document.body.firstChild.appendChild(cloned);
+	document.body.children[0].appendChild(cloned);
 
 	/**
 	 * @param {HTMLElementEventMap["click"]} event
@@ -93,7 +93,7 @@ const { hideLogo } = Astro.props;
 			return;
 		}
 		const items = document.querySelectorAll("#nav-bar-toggle");
-		for (const item of items) {
+		for (const item of [items]) {
 			if (!(item instanceof HTMLInputElement)) {
 				continue;
 			}
@@ -123,7 +123,7 @@ const { hideLogo } = Astro.props;
 		const navToggles = document.querySelectorAll("#nav-bar-toggle");
 		let isNavOpened = false;
 
-		for (let item of navToggles) {
+		for (let item of [navToggles]) {
 			if (!(item instanceof HTMLInputElement)) {
 				continue;
 			}

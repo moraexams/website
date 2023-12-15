@@ -2,10 +2,11 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../sections/16-footer.astro";
-import { parse } from "csv-parse";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
+import { db, applicants } from "../../db";
+import { eq } from "drizzle-orm";
 
 const { lang } = Astro.params;
 
@@ -32,44 +33,52 @@ function formatKey(key: string) {
 }
 
 if (nicNumber) {
-	const u = new URL(Astro.url);
-	u.pathname = "/student-info.csv";
-	const response = await fetch(u);
-	const body = await response.text();
-	const parser = parse();
+	const result = await db.query.applicants
+		.findFirst({
+			where: eq(applicants.nic, nicNumber),
+		})
+		.catch(console.error);
+	selectedNic = result;
+	console.log(result);
 
-	let headers: Array<string>;
-	selectedNic = await new Promise((resolve, reject) => {
-		// @ts-ignore
-		parser.on("readable", function () {
-			let record;
-			// @ts-ignore
-			while ((record = parser.read()) !== null) {
-				if (!headers) {
-					headers = record;
-					continue;
-				}
-				const obj = Object.fromEntries(headers.map((_, i) => [_, record[i]]));
-				if (obj["nic_no"] == nicNumber) {
-					console.log("found", obj["nic_no"]);
+	// const u = new URL(Astro.url);
+	// u.pathname = "/student-info.csv";
+	// const response = await fetch(u);
+	// const body = await response.text();
+	// const parser = parse();
 
-					resolve({
-						index_no: obj["index_no"],
-						name: obj["first_name"]
-							.trim()
-							.concat(" ", obj["last_name"].trim())
-							.toUpperCase(),
-						nic_number: obj["nic_no"],
-						exam_centre: obj["exam_centre"],
-					});
-					return;
-				}
-			}
-			resolve(null);
-		});
-		// @ts-ignore
-		parser.write(body);
-	});
+	// let headers: Array<string>;
+	// selectedNic = await new Promise((resolve, reject) => {
+	// 	// @ts-ignore
+	// 	parser.on("readable", function () {
+	// 		let record;
+	// 		// @ts-ignore
+	// 		while ((record = parser.read()) !== null) {
+	// 			if (!headers) {
+	// 				headers = record;
+	// 				continue;
+	// 			}
+	// 			const obj = Object.fromEntries(headers.map((_, i) => [_, record[i]]));
+	// 			if (obj["nic_no"] == nicNumber) {
+	// 				console.log("found", obj["nic_no"]);
+
+	// 				resolve({
+	// 					index_no: obj["index_no"],
+	// 					name: obj["first_name"]
+	// 						.trim()
+	// 						.concat(" ", obj["last_name"].trim())
+	// 						.toUpperCase(),
+	// 					nic_number: obj["nic_no"],
+	// 					exam_centre: obj["exam_centre"],
+	// 				});
+	// 				return;
+	// 			}
+	// 		}
+	// 		resolve(null);
+	// 	});
+	// 	// @ts-ignore
+	// 	parser.write(body);
+	// });
 
 	// const body = (await response.text()).split("\n");
 	// console.log(headers);
