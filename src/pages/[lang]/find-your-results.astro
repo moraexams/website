@@ -8,7 +8,7 @@ import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 
 import { db, applicants } from "../../db";
 import { eq } from "drizzle-orm";
-import { StudentResultCard } from "../../components/react/StudentResultCard";
+import StudentResultCard from "../../components/StudentResultCard.astro";
 
 const { lang } = Astro.params;
 
@@ -19,7 +19,31 @@ const t = useTranslations(lang);
 
 const nicNumber = Astro.url.searchParams.get("nic") || undefined;
 
-let selectedStudentDetails = undefined;
+let selectedStudentDetails = {
+	name: "SAHITHYAN KANDATHASAN",
+	nic: "20040404004",
+	index_no: "182999",
+	z_score: 1.4212,
+	district_rank: 459,
+	island_rank: 1109,
+	subject_stream: "Physical Science",
+	ranking_district: "Jaffna",
+	exam_centre: "J/Methodist Girls’ High School",
+	subjects: [
+		{
+			subject_name: "Combined Maths",
+			subject_result: "A",
+		},
+		{
+			subject_name: "Physics",
+			subject_result: "B",
+		},
+		{
+			subject_name: "Chemistry",
+			subject_result: "C",
+		},
+	],
+};
 function formatKey(key: string) {
 	if (key == "nic_number") {
 		return "NIC Number";
@@ -57,15 +81,15 @@ function formatKey(key: string) {
 
 // const result = await get_result(nic_number);
 
-if (nicNumber) {
-	const result = await db.query.applicants
-		.findFirst({
-			where: eq(applicants.nic, nicNumber),
-		})
-		.catch(console.error);
-	selectedStudentDetails = { ...result, district_rank: 459, island_rank: 1109 };
-	console.log(result);
-}
+// if (nicNumber) {
+// 	const result = await db.query.applicants
+// 		.findFirst({
+// 			where: eq(applicants.nic, nicNumber),
+// 		})
+// 		.catch(console.error);
+// 	selectedStudentDetails = { ...result, district_rank: 459, island_rank: 1109 };
+// 	console.log(result);
+// }
 // selectedNic = result;
 
 // alert("Button was clicked! " + result.name);
@@ -83,7 +107,7 @@ if (nicNumber) {
 			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1"
 		>
 			<div class="lg:w1/2 xl:w-5/12 p-6 sm:p-12 flex-1">
-				<div class="mt-6 ml-12 flex flex-col items-center justify-center">
+				<div class="mt-6 flex flex-col items-center justify-center">
 					<h1 class="text-3xl xl:text-4xl text-center">
 						{t("find_your_results")}
 					</h1>
@@ -95,9 +119,9 @@ if (nicNumber) {
 						action={`/${lang}/find-your-results`}
 						style="display: contents;"
 					>
-						<div>
+						<div class="flex flex-col">
 							<input
-								class="w-full max-w-2xl px-8 py-4 rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
+								class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
 								type="text"
 								name="nic"
 								id="showresultin"
@@ -106,7 +130,7 @@ if (nicNumber) {
 							/>
 							<button
 								id="showresultbtn"
-								class="my-6 py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+								class="my-6 mx-auto py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
 							>
 								<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
 									>{t("find_button")}</span
@@ -124,33 +148,7 @@ if (nicNumber) {
 								Not found
 							</div>
 						) : (
-							<table>
-								<StudentResultCard
-									details={{
-										name: selectedStudentDetails.name,
-										district_rank: selectedStudentDetails.district_rank,
-										index_no: selectedStudentDetails.id,
-										island_rank: selectedStudentDetails.island_rank,
-										subject_stream: "Physical Science",
-										nic: selectedStudentDetails.nic,
-										z_score: 1.4531,
-										subjects: [
-											{
-												subject_name: "Combined Mathematics",
-												subject_result: "A",
-											},
-											{
-												subject_name: "Physics",
-												subject_result: "B",
-											},
-											{
-												subject_name: "Chemistry",
-												subject_result: "C",
-											},
-										],
-									}}
-								/>
-							</table>
+							<StudentResultCard details={selectedStudentDetails} />
 						)
 					}
 				</div>
@@ -166,7 +164,7 @@ if (nicNumber) {
 	</section>
 </Layout>
 
-<style>
+<style is:global>
 	@media screen and (max-width: 400px) {
 		input {
 			font-size: 16px;
@@ -175,7 +173,7 @@ if (nicNumber) {
 	table {
 		width: 100%;
 	}
-	td {
-		max-width: 10ch;
+	td:nth-child(2) {
+		text-align: center;
 	}
 </style>

@@ -1,0 +1,95 @@
+---
+import StaticInformationField from "./StaticInformationField.astro";
+import StudentRankCard from "./StudentRankCard.astro";
+
+interface SubjectResult {
+	subject_name: string;
+	subject_result: string;
+}
+
+interface Details {
+	name: string;
+	index_no: string;
+	nic: string;
+	ranking_district: string;
+	district_rank: number;
+	island_rank: number;
+	z_score: number;
+	subject_stream: string;
+	subjects: Array<SubjectResult>;
+	exam_centre: string;
+}
+interface Props {
+	details: Details;
+}
+
+const { details } = Astro.props;
+---
+
+<div class="result-container">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
+		rel="stylesheet"
+	/>
+	<StaticInformationField
+		title="Name"
+		value={details.name}
+		class="col-span-full"
+	/>
+	<StaticInformationField
+		title="Index No"
+		value={details.index_no}
+		class="col-span-2"
+	/>
+	<StaticInformationField
+		title="NIC No"
+		value={details.nic}
+		class="col-span-3"
+	/>
+	<StaticInformationField
+		title="Stream"
+		value={details.subject_stream}
+		class="col-span-2"
+	/>
+	<StaticInformationField
+		title="District"
+		value={details.ranking_district}
+		class="col-span-3"
+	/>
+	<StaticInformationField
+		title="Exam Centre"
+		value={details.exam_centre}
+		class="col-span-full"
+	/>
+
+	<table class="my-6 col-span-3 text-2xl pr-10">
+		{
+			details.subjects.map((subject) => {
+				return (
+					<tr>
+						<td>{subject.subject_name}</td>
+						<td>{subject.subject_result}</td>
+					</tr>
+				);
+			})
+		}
+	</table>
+
+	<div class="flex col-span-2 col-start-4 items-center">
+		<StudentRankCard title="District Rank" rank="11" />
+		<StudentRankCard title="Island Rank" rank="42" />
+	</div>
+	<!-- <div class="grid grid-cols-3 gap-4 mt-4 w-full">
+		{
+			details.subjects.map((subject) => {
+				return <SubjectResultItem result={subject} />;
+			})
+		}
+	</div> -->
+</div>
+
+<style>
+	.result-container {
+		@apply text-lg w-full max-w-[45rem] text-black grid grid-cols-5 gap-x-3 gap-y-3;
+	}
+</style>
