@@ -59,7 +59,7 @@ if (details.sub_grp_id == "MATHS") {
 	/>
 	<StaticInformationField
 		title="Name"
-		value={details.name}
+		value={details.name.toUpperCase()}
 		class="col-span-full"
 	/>
 	<StaticInformationField
@@ -81,11 +81,6 @@ if (details.sub_grp_id == "MATHS") {
 		title="District"
 		value={details.ranking_district}
 		class="col-span-3"
-	/>
-	<StaticInformationField
-		title="Exam Centre"
-		value={details.centre_name}
-		class="col-span-full"
 	/>
 
 	<table class="my-6 col-span-full md:col-span-3 text-2xl pr-1d">

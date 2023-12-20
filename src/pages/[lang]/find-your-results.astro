@@ -67,7 +67,6 @@ if (indexNumber) {
 			nic: applicants.nic,
 			sub_grp_id: applicants.sub_grp_id,
 			ranking_district: applicants.district_ranking,
-			centre_name: examCentres.centre_name,
 			sub1: results.sub1,
 			sub1_result: results.sub1_result,
 			sub2: results.sub2,
@@ -80,7 +79,6 @@ if (indexNumber) {
 		})
 		.from(results)
 		.innerJoin(applicants, eq(results.id, applicants.id))
-		.innerJoin(examCentres, eq(examCentres.centre_id, applicants.centre_id))
 		.where(eq(applicants.id, indexNumber))
 		.then((d) => d[0])
 		.catch((e) => (console.error(e), null));
@@ -107,14 +105,14 @@ if (indexNumber) {
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>
 		<div
-			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1"
+			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-1 justify-center"
 		>
-			<div class="lg:w1/2 xl:w-5/12 p-6 sm:p-12 flex-1">
-				<div class="mt-6 flex flex-col items-center justify-center">
-					<h1 class="text-3xl xl:text-4xl text-center">
+			<div class="p-6 sm:p-12">
+				<div class="mt-6 flex flex-col justify-center max-w-[50ch]">
+					<h1 class="text-3xl xl:text-4xl mb-2">
 						{t("find_your_results")}
 					</h1>
-					<p class="text-xl xl:text-2xl text-center text-black max-w-prose">
+					<p class="text-xl xl:text-2xl text-black mt-0">
 						{t("find_your_results_p")}
 					</p>
 					<form
@@ -129,11 +127,11 @@ if (indexNumber) {
 								name="i"
 								id="showresultin"
 								value={indexNumber}
-								placeholder={t("nic_no")}
+								placeholder={t("index_no")}
 							/>
 							<button
 								id="showresultbtn"
-								class="my-6 mx-auto py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+								class="my-6 w-fit py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
 							>
 								<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
 									>{t("find_button")}</span
@@ -156,12 +154,14 @@ if (indexNumber) {
 					}
 				</div>
 			</div>
-			<div class="lg:flex hidden max-w-[700px]">
-				<div
-					class="mr-14 min-w-[240px] w-full bg-contain bg-center bg-no-repeat max-h-screen"
-					style="background-image: url('/assets/Illustrations/bg23.svg');"
-				>
+			<div class="max-w-[500px] flex-1 p-6">
+				<div class="text-center text-black mb-1 text-lg">
+					OUR PLATINUM SPONSORS
 				</div>
+				<img
+					src="/assets/northway-ad.jpeg"
+					class="min-w-[240px] max-w-full h-auto rounded-lg aspect-auto"
+				/>
 			</div>
 		</div>
 	</section>
