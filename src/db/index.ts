@@ -14,7 +14,7 @@ export const applicants = sqliteTable("tbl_students", {
 
 export const results = sqliteTable("tbl_final_results", {
 	id: text("index_no", { length: 50, mode: "text" }).notNull(),
-	zscore: numeric("zscore"),
+	// zscore: numeric("zscore"),
 	sub1: text("subject1", { mode: "text" }),
 	sub1_result: text("subject2_result", { mode: "text" }),
 	sub2: text("subject2", { mode: "text" }),
@@ -45,8 +45,8 @@ export const examCentres = sqliteTable("tbl_exam_centres", {
 
 // insecure implementation. find a way to initiate the client on server side and use in in client side.
 export const client = createClient({
-	url: import.meta.env.PUBLIC_TURSO_DATABASE_URL,
-	authToken: import.meta.env.PUBLIC_TURSO_DATABASE_AUTH_TOKEN,
+	url: import.meta.env.TURSO_DATABASE_URL,
+	authToken: import.meta.env.TURSO_DATABASE_AUTH_TOKEN,
 });
 
 export const db = drizzle(client, {
