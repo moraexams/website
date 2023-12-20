@@ -16,11 +16,11 @@ export const results = sqliteTable("tbl_final_results", {
 	id: text("index_no", { length: 50, mode: "text" }).notNull(),
 	// zscore: numeric("zscore"),
 	sub1: text("subject1", { mode: "text" }),
-	sub1_result: text("subject2_result", { mode: "text" }),
+	sub1_result: text("subject1_result", { mode: "text" }),
 	sub2: text("subject2", { mode: "text" }),
 	sub2_result: text("subject2_result", { mode: "text" }),
 	sub3: text("subject3", { mode: "text" }),
-	sub3_result: text("subject2_result", { mode: "text" }),
+	sub3_result: text("subject3_result", { mode: "text" }),
 	island_rank: integer("island_rank"),
 	district_rank: integer("district_rank"),
 });
