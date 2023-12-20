@@ -17,10 +17,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		<!-- Welcome To<br /><span class="inline-block w-max">Mora&nbsp;Exams</span> -->
 	</h1>
 	<div class="text-[16px] sm:text-[24px] flex flex-col gap-y-6 mt-8 w-fit">
-		<a href="./find-your-index-number" hidden class="no-underline">
+		<a href="./find-your-results" class="no-underline">
 			<button class="btn">
 				<span>
-					{t("hero_button")}
+					{t("hero_results_button")}
 				</span>
 				<i
 					class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2"
@@ -29,11 +29,18 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		</a>
 		<a
 			target="_blank"
+			href="./find-your-index-number"
+			class="text-white no-underline hover:underline w-full inline-block"
+		>
+			<button class="btn !w-full">{t("hero_index_button")}</button>
+		</a>
+		<!-- <a
+			target="_blank"
 			href="https://drive.google.com/drive/folders/1ZivLO18_dEHd53VGWkstlHR3PCsw1hOR?usp=drive_link"
 			class="text-white no-underline hover:underline w-full inline-block"
 		>
 			<button class="btn !w-full">{t("schemes_button")}</button>
-		</a>
+		</a> -->
 	</div>
 	<!-- <p class="text-xl sm:text-2xl">Please Select Your language</p>
 	<div>
