@@ -33,13 +33,27 @@ function formatKey(key: string) {
 }
 
 if (nicNumber) {
-	const result = await db.query.applicants
-		.findFirst({
-			where: eq(applicants.nic, nicNumber),
+	const _response = await db
+		.select({
+			index_no: applicants.id,
+			name: applicants.name,
+			nic_number: applicants.nic,
 		})
-		.catch(console.error);
-	selectedNic = result;
-	console.log(result);
+		.from(applicants)
+		.where(eq(applicants.nic, nicNumber))
+		.catch((e) => (console.error(e), null));
+	if (_response === null || _response.length == 0) {
+		selectedNic = null;
+	} else {
+		selectedNic = _response[0];
+	}
+	// db.query.applicants
+	// 	.findFirst({
+	// 		where: eq(applicants.nic, nicNumber),
+	// 	})
+	// 	.catch(console.error);
+	// selectedNic = result;
+	// console.log(result);
 
 	// const u = new URL(Astro.url);
 	// u.pathname = "/student-info.csv";
