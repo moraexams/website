@@ -6,7 +6,7 @@ import Footer from "../../sections/16-footer.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 
-import { db, applicants, results, examCentres } from "../../db";
+import { db, applicants, results } from "../../db";
 import { eq } from "drizzle-orm";
 import StudentResultCard from "../../components/StudentResultCard.astro";
 
@@ -21,19 +21,6 @@ const indexNumber = Astro.url.searchParams.get("i") || undefined;
 console.log(Astro.url.searchParams.get("i"));
 
 let studentResults = undefined;
-
-function formatKey(key: string) {
-	if (key == "nic_number") {
-		return "NIC Number";
-	}
-	if (key.includes("_")) {
-		return key
-			.split("_")
-			.map((word) => formatKey(word))
-			.join(" ");
-	}
-	return key.charAt(0).toUpperCase().concat(key.slice(1));
-}
 
 // const get_result = async (
 // 	nic_number: string,
@@ -105,64 +92,64 @@ if (indexNumber) {
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>
 		<div
-			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-1 justify-center"
+			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-1 justify-center px-6 py-2 sm:p-12 md:flex-row flex-col"
 		>
-			<div class="p-6 sm:p-12">
-				<div class="mt-6 flex flex-col justify-center max-w-[50ch]">
-					<h1 class="text-3xl xl:text-4xl mb-2">
-						{t("find_your_results")}
-					</h1>
-					<p class="text-xl xl:text-2xl text-black mt-0">
-						{t("find_your_results_p")}
-					</p>
-					<form
-						method="get"
-						action={`/${lang}/find-your-results`}
-						style="display: contents;"
-					>
-						<div class="flex flex-col">
-							<input
-								class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
-								type="text"
-								name="i"
-								id="showresultin"
-								value={indexNumber}
-								placeholder={t("index_no")}
-							/>
-							<button
-								id="showresultbtn"
-								class="my-6 w-fit py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
-							>
-								<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
-									>{t("find_button")}</span
+			{
+				typeof studentResults == "undefined" ? (
+					<>
+						<div>
+							<div class="flex flex-col justify-center max-w-[50ch]">
+								<h1 class="text-3xl xl:text-4xl my-2">
+									{t("find_your_results")}
+								</h1>
+								<p class="text-xl xl:text-2xl text-black mt-0">
+									{t("find_your_results_p")}
+								</p>
+								<form
+									method="get"
+									action={`/${lang}/find-your-results`}
+									style="display: contents;"
 								>
-							</button>
-						</div>
-					</form>
-					{
-						typeof studentResults == "undefined" ? null : studentResults ===
-						  null ? (
-							<div
-								style="color: red; text-align: center;"
-								class="text-center mt-5"
-							>
-								Not found
+									<div class="flex flex-col">
+										<input
+											class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
+											type="text"
+											name="i"
+											id="showresultin"
+											value={indexNumber}
+											placeholder={t("index_no")}
+										/>
+										<button
+											id="showresultbtn"
+											class="my-6 w-fit py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+										>
+											<>
+												<i class="fa-solid fa-magnifying-glass" />
+												<span class="ml-3">{t("find_button")}</span>
+											</>
+										</button>
+									</div>
+								</form>
 							</div>
-						) : (
-							<StudentResultCard details={studentResults} />
-						)
-					}
-				</div>
-			</div>
-			<div class="max-w-[500px] flex-1 p-6">
-				<div class="text-center text-black mb-1 text-lg">
-					OUR PLATINUM SPONSORS
-				</div>
-				<img
-					src="/assets/northway-ad.jpeg"
-					class="min-w-[240px] max-w-full h-auto rounded-lg aspect-auto"
-				/>
-			</div>
+						</div>
+						<div class="max-w-[500px] flex-1 p-6">
+							<div class="text-center text-black mb-1 text-lg">
+								OUR PLATINUM SPONSORS
+							</div>
+							<img
+								src="/assets/northway-ad.jpeg"
+								class="min-w-[240px] max-w-full h-auto rounded-lg aspect-auto"
+							/>
+						</div>
+					</>
+				) : studentResults === null ? (
+					<div style="color: red; text-align: center;" class="text-center mt-5">
+						Not found
+					</div>
+				) : (
+					<StudentResultCard details={studentResults} />
+				)
+			}
 		</div>
 	</section>
 </Layout>

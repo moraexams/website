@@ -1,6 +1,14 @@
 ---
+import { isSupportedLanguage, useTranslations } from "../i18n/utils";
 import StaticInformationField from "./StaticInformationField.astro";
 import StudentRankCard from "./StudentRankCard.astro";
+
+const { lang } = Astro.params;
+
+if (!isSupportedLanguage(lang)) {
+	return;
+}
+const t = useTranslations(lang);
 
 interface Details {
 	name: string;
@@ -114,6 +122,14 @@ if (details.sub_grp_id == "MATHS") {
 		<StudentRankCard title="District Rank" rank={details.district_rank} />
 		<StudentRankCard title="Island Rank" rank={details.island_rank} />
 	</div>
+
+	<a href="./find-your-results">
+		<button
+			class="w-full py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+		>
+			<i class="fa-solid fa-arrow-left"></i><span class="ml-3">Back</span>
+		</button>
+	</a>
 	<!-- <div class="grid grid-cols-3 gap-4 mt-4 w-full">
 		{
 			details.subjects.map((subject) => {
