@@ -2,11 +2,6 @@
 import StaticInformationField from "./StaticInformationField.astro";
 import StudentRankCard from "./StudentRankCard.astro";
 
-interface SubjectResult {
-	subject_name: string;
-	subject_result: string;
-}
-
 interface Details {
 	name: string;
 	index_no: string;
@@ -14,16 +9,45 @@ interface Details {
 	ranking_district: string;
 	district_rank: number;
 	island_rank: number;
-	z_score: number;
-	subject_stream: string;
-	subjects: Array<SubjectResult>;
-	exam_centre: string;
+	zscore: number;
+	sub_grp_id: string;
+	centre_name: string;
+	sub1: string;
+	sub1_result: string;
+	sub2: string;
+	sub2_result: string;
+	sub3: string;
+	sub3_result: string;
 }
 interface Props {
 	details: Details;
 }
 
 const { details } = Astro.props;
+
+let subjectStream: string = "Other";
+
+if (details.sub_grp_id == "Agri (BIO)") {
+	subjectStream = "Biology-Agriculture-Chemistry";
+}
+if (details.sub_grp_id == "BIO") {
+	subjectStream = "Biological Science";
+}
+if (details.sub_grp_id == "BIO_CHEMISTRY_ICT") {
+	subjectStream = "Biology-Chemistry-ICT";
+}
+if (details.sub_grp_id == "BIO_PHYSICS_ICT") {
+	subjectStream = "Biology-Physics-ICT";
+}
+if (details.sub_grp_id == "ICT (MATHS)") {
+	subjectStream = "Physical Science + ICT";
+}
+if (details.sub_grp_id == "ICT ONLY") {
+	subjectStream = "ICT Only";
+}
+if (details.sub_grp_id == "MATHS") {
+	subjectStream = "Physical Science";
+}
 ---
 
 <div
@@ -50,7 +74,7 @@ const { details } = Astro.props;
 	/>
 	<StaticInformationField
 		title="Stream"
-		value={details.subject_stream}
+		value={subjectStream}
 		class="col-span-2"
 	/>
 	<StaticInformationField
@@ -60,26 +84,40 @@ const { details } = Astro.props;
 	/>
 	<StaticInformationField
 		title="Exam Centre"
-		value={details.exam_centre}
+		value={details.centre_name}
 		class="col-span-full"
 	/>
 
 	<table class="my-6 col-span-full md:col-span-3 text-2xl pr-1d">
 		{
-			details.subjects.map((subject) => {
-				return (
-					<tr>
-						<td>{subject.subject_name}</td>
-						<td>{subject.subject_result}</td>
-					</tr>
-				);
-			})
+			details.sub1 === null ? null : (
+				<tr>
+					<td>{details.sub1}</td>
+					<td>{details.sub1_result}</td>
+				</tr>
+			)
+		}
+		{
+			details.sub2 === null ? null : (
+				<tr>
+					<td>{details.sub2}</td>
+					<td>{details.sub2_result}</td>
+				</tr>
+			)
+		}
+		{
+			details.sub3 === null ? null : (
+				<tr>
+					<td>{details.sub3}</td>
+					<td>{details.sub3_result}</td>
+				</tr>
+			)
 		}
 	</table>
 
 	<div class="flex col-span-full md:col-span-2 items-center justify-center">
-		<StudentRankCard title="District Rank" rank="11" />
-		<StudentRankCard title="Island Rank" rank="42" />
+		<StudentRankCard title="District Rank" rank={details.district_rank} />
+		<StudentRankCard title="Island Rank" rank={details.island_rank} />
 	</div>
 	<!-- <div class="grid grid-cols-3 gap-4 mt-4 w-full">
 		{
