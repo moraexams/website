@@ -47,6 +47,22 @@ let studentResults = undefined;
 // const result = await get_result(nic_number);
 
 if (indexNumber) {
+	// studentResults = {
+	// 	index_no: "40404",
+	// 	name: "Virusan Thavanathan",
+	// 	nic: "200350050005",
+	// 	sub_grp_id: "MATHS",
+	// 	ranking_district: "Jaffna",
+	// 	sub1: "Combined Mathematics",
+	// 	sub1_result: "A",
+	// 	sub2: "Physics",
+	// 	sub2_result: "C",
+	// 	sub3: "Chemistry",
+	// 	sub3_result: "A",
+	// 	zscore: "2.2002",
+	// 	district_rank: "11",
+	// 	island_rank: "24",
+	// };
 	studentResults = await db
 		.select({
 			index_no: applicants.id,
@@ -67,7 +83,7 @@ if (indexNumber) {
 		.from(results)
 		.innerJoin(applicants, eq(results.id, applicants.id))
 		.where(eq(applicants.id, indexNumber))
-		.then((d) => d[0])
+		.then((d) => d[0] || null)
 		.catch((e) => (console.error(e), null));
 	console.log(studentResults);
 
@@ -110,9 +126,9 @@ if (indexNumber) {
 									action={`/${lang}/find-your-results`}
 									style="display: contents;"
 								>
-									<div class="flex flex-col">
+									<div class="grid grid-cols-2 gap-2">
 										<input
-											class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
+											class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4 col-span-2"
 											type="text"
 											name="i"
 											id="showresultin"
@@ -121,13 +137,17 @@ if (indexNumber) {
 										/>
 										<button
 											id="showresultbtn"
-											class="my-6 w-fit py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+											class="w-fit h-fit py-2 px-5 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
 										>
-											<>
-												<i class="fa-solid fa-magnifying-glass" />
-												<span class="ml-3">{t("find_button")}</span>
-											</>
+											<i class="fa-solid fa-magnifying-glass" />
+											<span class="ml-3">{t("find_button")}</span>
 										</button>
+										<a
+											href={`/${lang}/find-your-index-number`}
+											class="justify-self-center"
+										>
+											Forgot index number?
+										</a>
 									</div>
 								</form>
 							</div>
