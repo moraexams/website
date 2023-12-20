@@ -10,6 +10,8 @@ import { db, applicants, results } from "../../db";
 import { eq } from "drizzle-orm";
 import StudentResultCard from "../../components/StudentResultCard.astro";
 
+const CONTACT_NUMBER = "+94 77 122 1221";
+
 const { lang } = Astro.params;
 
 if (!isSupportedLanguage(lang)) {
@@ -83,7 +85,13 @@ if (indexNumber) {
 		.from(results)
 		.innerJoin(applicants, eq(results.id, applicants.id))
 		.where(eq(applicants.id, indexNumber))
-		.then((d) => d[0] || null)
+		.then((d) => {
+			console.log("d", d);
+			if (d.length == 0) {
+				return null;
+			}
+			return d[0];
+		})
 		.catch((e) => (console.error(e), null));
 	console.log(studentResults);
 
@@ -108,7 +116,7 @@ if (indexNumber) {
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>
 		<div
-			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-1 justify-center px-6 py-2 sm:p-12 lg:flex-row flex-col items-center"
+			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center px-6 py-2 sm:p-12 lg:flex-row flex-col items-center h-fit"
 		>
 			{
 				typeof studentResults == "undefined" ? (
@@ -126,7 +134,7 @@ if (indexNumber) {
 									action={`/${lang}/find-your-results`}
 									style="display: contents;"
 								>
-									<div class="grid grid-cols-2 gap-2">
+									<div class="grid grid-cols-2 gap-y-6 gap-x-2">
 										<input
 											class="w-full max-w-2xl px-8 py-4 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4 col-span-2"
 											type="text"
@@ -144,7 +152,7 @@ if (indexNumber) {
 										</button>
 										<a
 											href={`/${lang}/find-your-index-number`}
-											class="justify-self-center"
+											class="self-center place-self-end"
 										>
 											Forgot index number?
 										</a>
@@ -163,8 +171,28 @@ if (indexNumber) {
 						</div>
 					</>
 				) : studentResults === null ? (
-					<div style="color: red; text-align: center;" class="text-center mt-5">
-						Not found
+					<div class="h-fit grid grid-cols-[1fr_auto]">
+						<h1 class="text-7xl text-red-500 mt-0 col-span-2">Not found</h1>
+
+						<p class="max-w-prose text-black col-span-2 mt-0">
+							Note: Unacceptable behavior during exams and/or failing to submit
+							essential details correctly may prohibit grades for the condidate.
+							Contact {CONTACT_NUMBER} for further issues.
+						</p>
+						<a href="./find-your-results">
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+								<>
+									<i class="fa-solid fa-arrow-left" />
+									<span class="ml-3">Back</span>
+								</>
+							</button>
+						</a>
+						<a
+							href={`/${lang}/find-your-index-number`}
+							class="justify-self-center h-fit inline"
+						>
+							Forgot index number?
+						</a>
 					</div>
 				) : (
 					<StudentResultCard details={studentResults} />
