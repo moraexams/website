@@ -11,6 +11,7 @@ export default defineConfig({
 	output: "hybrid",
 	redirects: {
 		"/": `/${defaultLang}/`,
+		"/results": `/${defaultLang}/results`,
 		"/manage": "https://moraetamils.com/manage",
 	},
 	adapter: netlify({
