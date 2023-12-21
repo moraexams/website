@@ -116,7 +116,7 @@ if (indexNumber) {
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>
 		<div
-			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center px-6 py-2 sm:p-12 lg:flex-row flex-col items-center h-fit flex-1"
+			class="max-w-screen-xl mx-4 my-10 sm:m-24 bg-white shadow sm:rounded-lg flex justify-center px-6 py-2 pb-8 sm:p-12 lg:flex-row flex-col items-center h-fit flex-1"
 		>
 			{
 				typeof studentResults == "undefined" ? (
@@ -171,7 +171,7 @@ if (indexNumber) {
 						</div>
 					</>
 				) : studentResults === null ? (
-					<div class="h-fit grid grid-cols-[1fr_auto]">
+					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
 						<h1 class="text-7xl text-red-500 mt-0 col-span-2">Not found</h1>
 
 						<p class="max-w-prose col-span-2 mt-0 text-red-800 font-semibold">
