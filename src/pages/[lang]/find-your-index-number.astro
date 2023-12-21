@@ -47,62 +47,6 @@ if (nicNumber) {
 	} else {
 		selectedNic = _response[0];
 	}
-	// db.query.applicants
-	// 	.findFirst({
-	// 		where: eq(applicants.nic, nicNumber),
-	// 	})
-	// 	.catch(console.error);
-	// selectedNic = result;
-	// console.log(result);
-
-	// const u = new URL(Astro.url);
-	// u.pathname = "/student-info.csv";
-	// const response = await fetch(u);
-	// const body = await response.text();
-	// const parser = parse();
-
-	// let headers: Array<string>;
-	// selectedNic = await new Promise((resolve, reject) => {
-	// 	// @ts-ignore
-	// 	parser.on("readable", function () {
-	// 		let record;
-	// 		// @ts-ignore
-	// 		while ((record = parser.read()) !== null) {
-	// 			if (!headers) {
-	// 				headers = record;
-	// 				continue;
-	// 			}
-	// 			const obj = Object.fromEntries(headers.map((_, i) => [_, record[i]]));
-	// 			if (obj["nic_no"] == nicNumber) {
-	// 				console.log("found", obj["nic_no"]);
-
-	// 				resolve({
-	// 					index_no: obj["index_no"],
-	// 					name: obj["first_name"]
-	// 						.trim()
-	// 						.concat(" ", obj["last_name"].trim())
-	// 						.toUpperCase(),
-	// 					nic_number: obj["nic_no"],
-	// 					exam_centre: obj["exam_centre"],
-	// 				});
-	// 				return;
-	// 			}
-	// 		}
-	// 		resolve(null);
-	// 	});
-	// 	// @ts-ignore
-	// 	parser.write(body);
-	// });
-
-	// const body = (await response.text()).split("\n");
-	// console.log(headers);
-
-	// for (let i = 1; i < body.length; i++) {
-	// 	const line = body[i];
-	// 	const d = line.split(",");
-	// 	console.log(d);
-	// 	csvParser({});
-	// }
 }
 console.log(selectedNic);
 ---
@@ -111,44 +55,6 @@ console.log(selectedNic);
 	<div class="bg-purple-800">
 		<NavigationBar />
 	</div>
-	<!-- <h3 class="text-base sm:text-2xl md:text-3xl flex flex-col text-center pt-5">
-		Find your Index Number
-	</h3>
-	<div
-		class="bg-[#9e57b5] pb-60 md:mx-[20%] rounded-xl flex flex-col items-center md:pt-20"
-	>
-		<p class="md:text-2xl text-center">
-			Enter your NIC Number to find your Index Number.
-		</p>
-
-		<input
-			type="number"
-			class="h-8 sm:h-6 md:h-12 rounded-lg sm:text-sm md:text-lg w-[150px] sm:w-[500px] md:w-[60%]"
-			placeholder=" Enter the NIC Number"
-		/>
-		<button class="h-8 sm:h-12 rounded-lg text-xl mt-4 md:w-[100px]"
-			>Find</button
-		>
-	</div> -->
-	<!--	<div
-		class="flex flex-col items-center bg-white shadow rounded-xl mt-[30px] pb-5 sm:my-10 md:p-10 md:pb-20 md:mt-28 md:mb-20 gap-y-2 w-fit mx-auto"
-	>
-		<h1 class="text-xl text-center px-3 my-5 sm:text-2xl md:text-4xl">
-			Find your Index Number
-		</h1>
-		<p class="text-lg text-center px-3 m-0 sm:text-sm">
-			Enter your NIC Number to find your Index Number.
-		</p>
-		<input
-			type="text"
-			placeholder="NIC Number"
-			class="px-8 p-2 rounded-lg text-sm sm:text-sm border-none bg-delft-blue-50 focus:outline-none focus:border-delft-blue-500 focus:bg-white  shadow mt-2"
-		/>
-		<button class="px-8 pt-1 h-fit text-lg rounded-full border-none sm:text-xl mt-4"
-			>Find</button
-		>
-	</div> -->
-
 	<section
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>

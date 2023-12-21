@@ -174,11 +174,21 @@ if (indexNumber) {
 					<div class="h-fit grid grid-cols-[1fr_auto]">
 						<h1 class="text-7xl text-red-500 mt-0 col-span-2">Not found</h1>
 
-						<p class="max-w-prose text-black col-span-2 mt-0">
+						<p class="max-w-prose col-span-2 mt-0 text-red-800 font-semibold">
 							Note: Unacceptable behavior during exams and/or failing to submit
 							essential details correctly may prohibit grades for the condidate.
-							Contact {CONTACT_NUMBER} for further issues.
 						</p>
+						<div class="col-span-2 text-black mb-4">
+							<span class="max-w-prose">
+								For inquiries (only on appropriate hours)
+							</span>
+							<ul style="list-style: '- '" class="px-6">
+								<li class="contact-no">Sansayan (0758757205)</li>
+								<li class="contact-no">Kathurshan (0770498196)</li>
+								<li class="contact-no">Thaarushan (0760270341)</li>
+								<li class="contact-no">Mathumilan (0763514599)</li>
+							</ul>
+						</div>
 						<a href="./find-your-results">
 							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
 								<>
@@ -189,7 +199,7 @@ if (indexNumber) {
 						</a>
 						<a
 							href={`/${lang}/find-your-index-number`}
-							class="justify-self-center h-fit inline"
+							class="place-self-center h-fit inline"
 						>
 							Forgot index number?
 						</a>
@@ -213,5 +223,8 @@ if (indexNumber) {
 	}
 	td:nth-child(2) {
 		text-align: center;
+	}
+	.contact-no {
+		@apply font-[500] w-fit;
 	}
 </style>
