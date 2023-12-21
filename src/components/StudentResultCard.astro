@@ -92,7 +92,7 @@ if (details.sub_grp_id == "MATHS") {
 			class="col-span-3"
 		/>
 
-		<table class="my-6 col-span-full md:col-span-3 text-2xl pr-1d">
+		<table class="my-6 col-span-full md:col-span-2 text-2xl pr-1d">
 			{
 				details.sub1 === null ? null : (
 					<tr>
@@ -119,7 +119,7 @@ if (details.sub_grp_id == "MATHS") {
 			}
 		</table>
 
-		<div class="flex col-span-full md:col-span-2 items-center justify-center">
+		<div class="flex col-span-full md:col-span-3 items-center justify-center">
 			<StudentRankCard title="District Rank" rank={details.district_rank} />
 			<StudentRankCard title="Island Rank" rank={details.island_rank} />
 		</div>
