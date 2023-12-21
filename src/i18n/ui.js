@@ -145,12 +145,15 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} achivers_ranking_8
  * @prop {string} name__tla
  * @prop {string} hero_button
+ * @prop {string} hero_index_button
+ * @prop {string} hero_results_button
  * @prop {string} looking_for_past_papers__button
  * @prop {string} find_your_index_no
  * @prop {string} find_your_index_no_p
  * @prop {string} find_your_results
  * @prop {string} find_your_results_p
  * @prop {string} nic_no
+ * @prop {string} index_no
  * @prop {string} find_button
  * @prop {string} schemes_button
  */
@@ -311,16 +314,20 @@ export const ui = Object.freeze({
 			"All these programmes are designed and developed with the motive of strengthening the longevity and enrichment of the culture and tradition of the society. The organization Mora E-Tamils was established and fostered by the Tamil students of the Engineering Faculty of the University of Moratuwa with the sole aim of uplifting and forward-moving the academic standards of the Tamil-speaking students in our country.",
 
 		name__tla: "Tamil Literary Association",
-		hero_button: "Find Index Number",
 
 		find_your_results: "Find Your Results",
-		find_your_results_p: "Enter your NIC Number to find your Results",
+		find_your_results_p: "Enter your Index Number to find your results",
 
 		find_your_index_no: "Find Your Index Number",
 		find_your_index_no_p: "Enter your NIC Number to find your Index Number.",
 		nic_no: "N.I.C No",
+		index_no: "Index No",
 		find_button: "Find",
-		schemes_button: "2023 Schemes",
+
+		hero_button: "Find Index Number",
+		hero_index_button: "Index Number",
+		hero_results_button: "Results",
+		schemes_button: "Schemes",
 	},
 	ta: {
 		index__title: "Mora Exams",
@@ -459,19 +466,24 @@ export const ui = Object.freeze({
 		achivers_ranking_8: "யாழ் மாவட்டத்தில் முதலிடம்",
 		name__tla: "தமிழ் இலக்கியக் கழகம்",
 		feedback_snekan_name: "சினேகன்",
-		hero_button: "பரீட்சை சுட்டெண்",
+
 		looking_for_past_papers__button: "வினாத்தாள்கள்",
 
-		find_your_results: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள் ",
+		find_your_results: "பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
 		find_your_results_p:
-			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
+			"உங்களுடைய சுட்டிலக்கத்தை உள்ளிட்டு பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
 
-		find_your_index_no: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள் ",
+		find_your_index_no: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள்",
 		find_your_index_no_p:
-			" உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம் ",
+			"உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம்",
 		nic_no: "அடையாள அட்டை இல.",
+		index_no: "சுட்டிலக்கம்",
 		find_button: "தேடு",
-		schemes_button: undefined,
+
+		hero_button: "பரீட்சை சுட்டெண்",
+		hero_index_button: "Index Number",
+		hero_results_button: "Results",
+		schemes_button: "Schemes",
 	},
 });
 

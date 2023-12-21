@@ -19,9 +19,9 @@ const { hideLogo } = Astro.props;
 	<HeaderContactLink icon="envelope" href="mailto:examsmora@gmail.com">
 		examsmora@gmail.com
 	</HeaderContactLink>
-	<HeaderContactLink icon="phone" href="tel:+94704616400">
+	<!-- <HeaderContactLink icon="phone" href="tel:+94704616400">
 		+94 70 461 6400
-	</HeaderContactLink>
+	</HeaderContactLink> -->
 	<div class="ml-auto">
 		<HeaderContactIcon name="twitter" />
 		<HeaderContactIcon name="youtube" />
@@ -63,9 +63,9 @@ const { hideLogo } = Astro.props;
 		].join(" ")}
 	>
 		<!-- <NavLink text="Home" href="/" /> -->
-		<NavLink text={t("nav__timetable")} href="#timetable" />
-		<NavLink text={t("nav__exam_centres")} href="#exam-centres" />
-		<NavLink text={t("nav__resources")} href="#past-papers" />
+		<NavLink text={t("nav__timetable")} href={`/${lang}#timetable`} />
+		<NavLink text={t("nav__exam_centres")} href={`/${lang}#exam-centres`} />
+		<NavLink text={t("nav__resources")} href={`/${lang}#past-papers`} />
 		<!-- <NavLink text="Contact Us" /> -->
 	</ul>
 
