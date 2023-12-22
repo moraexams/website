@@ -10,8 +10,6 @@ import { db, applicants, results } from "../../db";
 import { eq } from "drizzle-orm";
 import StudentResultCard from "../../components/StudentResultCard.astro";
 
-const CONTACT_NUMBER = "+94 77 122 1221";
-
 const { lang } = Astro.params;
 
 if (!isSupportedLanguage(lang)) {
@@ -19,8 +17,14 @@ if (!isSupportedLanguage(lang)) {
 }
 const t = useTranslations(lang);
 
-const indexNumber = Astro.url.searchParams.get("i") || undefined;
-console.log(Astro.url.searchParams.get("i"));
+let indexNumber = undefined;
+
+if (Astro.request.method == "POST") {
+	const formData = await Astro.request.formData();
+	indexNumber = formData.get("i").toString() || undefined;
+}
+
+console.log("result for", indexNumber);
 
 let studentResults = undefined;
 
@@ -130,7 +134,7 @@ if (indexNumber) {
 									{t("find_your_results_p")}
 								</p>
 								<form
-									method="get"
+									method="POST"
 									action={`/${lang}/results`}
 									style="display: contents;"
 								>
