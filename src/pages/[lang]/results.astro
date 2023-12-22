@@ -19,9 +19,8 @@ if (!isSupportedLanguage(lang)) {
 }
 const t = useTranslations(lang);
 
-const formData = await Astro.request.formData();
-const indexNumber = formData.get("i").toString() || undefined;
-console.log("results", indexNumber);
+const indexNumber = Astro.url.searchParams.get("i") || undefined;
+console.log(Astro.url.searchParams.get("i"));
 
 let studentResults = undefined;
 
@@ -117,7 +116,7 @@ if (indexNumber) {
 		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
 	>
 		<div
-			class="max-w-screen-xl mx-4 my-10 sm:m-24 bg-white shadow sm:rounded-lg flex justify-center p-2 pb-8 sm:p-12 lg:flex-row flex-col items-center h-fit flex-1"
+			class="max-w-screen-xl mx-4 my-10 sm:m-24 bg-white shadow sm:rounded-lg flex justify-center px-6 py-2 pb-8 sm:p-12 lg:flex-row flex-col items-center h-fit flex-1"
 		>
 			{
 				typeof studentResults == "undefined" ? (
@@ -131,9 +130,7 @@ if (indexNumber) {
 									{t("find_your_results_p")}
 								</p>
 								<form
-									method="post"
-									data-netlify-recaptcha="true"
-									data-netlify="true"
+									method="get"
 									action={`/${lang}/results`}
 									style="display: contents;"
 								>
