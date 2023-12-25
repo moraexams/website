@@ -156,6 +156,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index_no
  * @prop {string} find_button
  * @prop {string} schemes_button
+ * @prop {string} results__title
+ * @prop {string} find_your_index_no__title
  */
 
 /**
@@ -328,6 +330,8 @@ export const ui = Object.freeze({
 		hero_index_button: "Index Number",
 		hero_results_button: "Results",
 		schemes_button: "Schemes",
+		results__title: "Results | Mora Exams",
+		find_your_index_no__title: "Find Your Index No. | Mora Exams",
 	},
 	ta: {
 		index__title: "Mora Exams",
