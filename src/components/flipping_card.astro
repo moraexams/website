@@ -5,68 +5,28 @@ interface Props {
 	subject: string;
 	download_link_t: string;
 	download_link_e: string;
-
 }
 
-const {download_link_t, download_link_e, subject } = Astro.props;
+const { download_link_t, download_link_e, subject } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-
 ---
+
 <div class="card">
-  <div class="card-content">
-    <p class="card-title">{subject}</p>
-	
-			<a  href = {download_link_t}>
-		<button>
-			தமிழ் மொழிமூலம் 
-	</button>
-</a>
-<a  href = {download_link_e}>
-	<button>
-    English Medium
-</button> 
-</a>
+	<div class="card-content">
+		<p class="card-title">{subject}</p>
 
-		
-  
-			
-
-  </div>
-	
+		<a href={download_link_t}>
+			<button> தமிழ் மொழிமூலம்</button>
+		</a>
+		<a href={download_link_e}>
+			<button> English Medium</button>
+		</a>
+	</div>
 </div>
- 
+
+
 <style>
-.card {
-  width: 300px;
-  height: auto;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #54088a 0%, #ba49b3 46%, #f3b6f7 100%);
-  border-radius: 8px;
-  color: white;
-  overflow: hidden;
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  cursor: pointer;
-}
-
-.card-content {
-  padding: 18px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-}
-
 .card-content .card-title {
   font-size: 20px;
   font-weight: 700;
