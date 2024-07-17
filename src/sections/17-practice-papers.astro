@@ -12,7 +12,7 @@ const practice_papers_data = practice_papers;
 
 <section class="my-10">
 	<h2 class="text-center">{t("practice_papers_title")}</h2>
-	<p class="text-center text-xl my-8 px-14">
+	<p class="text-center text-xl my-8">
 		{t("practice_papers_p")}
 	</p>
 	<div
@@ -22,22 +22,16 @@ const practice_papers_data = practice_papers;
 		{
 			practice_papers_data.map((entry) => {
 				return (
-					<Flip
-						subject={lang === "en" ? entry.subject_en : entry.subject_ta}
-						download_link_e={entry.download_link_e}
-						download_link_t={entry.download_link_t}
-					/>
-				);
+  <Flip
+    subject={lang === "en" ? entry.subject_en : entry.subject_ta}
+    download_link_e={entry.download_link_e}
+    download_link_t={entry.download_link_t}
+  />
+);
+
 			})
 		}
+		
 	</div>
 </section>
-<style>
-	@media only screen and (max-width: 600px) {
-		.para {
-			padding: 0;
-			margin: 10px;
-			font-size: 1.1em;
-		}
-	}
-</style>
+
