@@ -14,8 +14,8 @@
 		"download_link_t": "https://drive.google.com/uc?export=download&id=16_wDqIh6ePPDXT6N2GgzH3mwvrPUyFJZ"
 	},
 	{
-		"subject_en": "Physics - 1",
-		"subject_ta": "பௌதீகவியல் - 1",
+		"subject_en": "Physics I - 1",
+		"subject_ta": "பௌதீகவியல் I - 1",
 		"description": "Pratice papers for Physics",
 		"download_link_e": "https://drive.google.com/uc?export=download&id=1bJNsqIEc3UbH2loweuTurfVNmVifCSAg",
 		"download_link_t": "https://drive.google.com/uc?export=download&id=1dy0DtU4iPaY1mUeb1xwhcMKmF5lqfHzh"
@@ -28,10 +28,17 @@
 		"download_link_t": "https://drive.google.com/uc?export=download&id=14WoXilkk8nDPL0CW2ZxQd-RRnvKZDj7f"
 	},
 	{
-		"subject_en": "Chemistry - 1",
-		"subject_ta": "இரசாயனவியல்  - 1",
+		"subject_en": "Chemistry I - 1",
+		"subject_ta": "இரசாயனவியல் I - 1",
 		"description": "Pratice papers for Chemistry",
 		"download_link_e": "https://drive.google.com/uc?export=download&id=1ByAxUho8x1SZyPqknLCGBzEShuriRFhD",
 		"download_link_t": "https://drive.google.com/uc?export=download&id=1Gb4cX621bpz7s5jOllfRKf7mQfp9H-2d"
+	},
+	{
+		"subject_en": "Chemistry II - 1",
+		"subject_ta": "இரசாயனவியல் II - 1",
+		"description": "Pratice papers for Chemistry",
+		"download_link_e": "#",
+		"download_link_t": "#"
 	}
 ]
