@@ -221,7 +221,7 @@ export const ui = Object.freeze({
 		footer_title_4_s5: "Doubts Forms",
 		practice_papers_title: "Practice Papers",
 		practice_papers_p:
-			"We have a collection of practice papers for each subject, prepared under the guidance of our engineering students of University of Morwatuwa. Click on any of the subjects listed below and download the respective papers.",
+			"We have a collection of practice papers for each subject, prepared under the guidance of our engineering students of University of Moratuwa. Click on any of the subjects listed below and download the respective papers.",
 		elearning_videos_title: "E-Learning videos",
 		elearning_videos_p:
 			"We have done video explanations regarding important topics in each subject on our YouTube channel. Click on any of the subjects listed below and view the respective videos.",
