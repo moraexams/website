@@ -2,24 +2,40 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
-	subject: string;
-	download_link_t: string;
-	download_link_e: string;
+	subject01: string;
+	subject02: string;
+	download_link_t_01: string;
+	download_link_e_01: string;
+	download_link_t_02: string;
+	download_link_e_02: string;
 }
 
-const { download_link_t, download_link_e, subject } = Astro.props;
+const {
+	download_link_t_01,
+	download_link_e_01,
+	download_link_t_02,
+	download_link_e_02,
+	subject01,
+	subject02,
+} = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <div class="card">
 	<div class="card-content">
-		<p class="card-title">{subject}</p>
-
-		<a href={download_link_t}>
+		<p class="card-title">{subject01}</p>
+		<a href={download_link_t_01}>
 			<button> தமிழ் மொழிமூலம்</button>
 		</a>
-		<a href={download_link_e}>
+		<a href={download_link_e_01}>
+			<button> English Medium</button>
+		</a>
+		<p class="card-title">{subject02}</p>
+		<a href={download_link_t_02}>
+			<button> தமிழ் மொழிமூலம்</button>
+		</a>
+		<a href={download_link_e_02}>
 			<button> English Medium</button>
 		</a>
 	</div>
