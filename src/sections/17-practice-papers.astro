@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 const lang = getLangFromUrl(Astro.url);
-import practice_papers from "../practice_papers.json";
+import practice_papers from "../practice_papers_draft.json";
 const practice_papers_data = practice_papers;
 
 // JS required for this section goes here (don't bother for now)
@@ -23,9 +23,16 @@ const practice_papers_data = practice_papers;
 			practice_papers_data.map((entry) => {
 				return (
 					<Flip
-						subject={lang === "en" ? entry.subject_en : entry.subject_ta}
-						download_link_e={entry.download_link_e}
-						download_link_t={entry.download_link_t}
+						subject01={
+							lang === "en" ? entry.subject_en_01 : entry.subject_ta_01
+						}
+						download_link_e_01={entry.download_link_e_01}
+						download_link_t_01={entry.download_link_t_01}
+						subject02={
+							lang === "en" ? entry.subject_en_02 : entry.subject_ta_02
+						}
+						download_link_e_02={entry.download_link_e_02}
+						download_link_t_02={entry.download_link_t_02}
 					/>
 				);
 			})
