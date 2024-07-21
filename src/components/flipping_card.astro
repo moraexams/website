@@ -8,6 +8,9 @@ interface Props {
 	download_link_e_01: string;
 	download_link_t_02: string;
 	download_link_e_02: string;
+	scheme_title: string;
+	scheme_link_en: string;
+	scheme_link_ta: string;
 }
 
 const {
@@ -17,6 +20,9 @@ const {
 	download_link_e_02,
 	subject01,
 	subject02,
+	scheme_title,
+	scheme_link_en,
+	scheme_link_ta,
 } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -36,6 +42,13 @@ const t = useTranslations(lang);
 			<button> தமிழ் மொழிமூலம்</button>
 		</a>
 		<a href={download_link_e_02}>
+			<button> English Medium</button>
+		</a>
+		<p class="card-title">{scheme_title}</p>
+		<a href={scheme_link_ta}>
+			<button> தமிழ் மொழிமூலம்</button>
+		</a>
+		<a href={scheme_link_en}>
 			<button> English Medium</button>
 		</a>
 	</div>
