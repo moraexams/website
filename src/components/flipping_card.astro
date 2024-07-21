@@ -58,12 +58,12 @@ const t = useTranslations(lang);
 	.card {
 		width: 300px;
 		height: auto;
-		background-color: #4158d0;
+		background-color: #5063c0;
 		background-image: linear-gradient(
-			43deg,
+			65deg,
 			#54088a 0%,
 			#ba49b3 46%,
-			#f3b6f7 100%
+			#9f80a0 100%
 		);
 		border-radius: 8px;
 		color: white;
@@ -71,7 +71,7 @@ const t = useTranslations(lang);
 		position: relative;
 		transform-style: preserve-3d;
 		perspective: 1000px;
-		transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+		transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 		cursor: pointer;
 	}
 
@@ -103,8 +103,8 @@ const t = useTranslations(lang);
 	}
 
 	.card:hover {
-		transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		transform: rotateY(10deg) scale(1.05);
+		box-shadow: 30px 20px 20px rgba(29, 28, 28, 0.493);
 	}
 
 	.card:before {
@@ -155,7 +155,7 @@ const t = useTranslations(lang);
 
 	button:focus,
 	button:hover {
-		color: #4b016d;
+		color: #bcbcbc;
 	}
 
 	button:focus:after,
