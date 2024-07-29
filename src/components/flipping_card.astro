@@ -37,20 +37,32 @@ const t = useTranslations(lang);
 		<a href={download_link_e_01}>
 			<button> English Medium</button>
 		</a>
-		<p class="card-title">{subject02}</p>
-		<a href={download_link_t_02}>
-			<button> தமிழ் மொழிமூலம்</button>
-		</a>
-		<a href={download_link_e_02}>
-			<button> English Medium</button>
-		</a>
-		<p class="card-title">{scheme_title}</p>
-		<a href={scheme_link_ta}>
-			<button> தமிழ் மொழிமூலம்</button>
-		</a>
-		<a href={scheme_link_en}>
-			<button> English Medium</button>
-		</a>
+		{
+			subject02 ? (
+				<>
+					<p class="card-title">{subject02}</p>
+					<a href={download_link_t_02}>
+						<button> தமிழ் மொழிமூலம்</button>
+					</a>
+					<a href={download_link_e_02}>
+						<button> English Medium</button>
+					</a>
+				</>
+			) : null
+		}
+		{
+			scheme_link_en && scheme_link_ta ? (
+				<>
+					<p class="card-title">{scheme_title}</p>
+					<a href={scheme_link_ta}>
+						<button> தமிழ் மொழிமூலம்</button>
+					</a>
+					<a href={scheme_link_en}>
+						<button> English Medium</button>
+					</a>
+				</>
+			) : null
+		}
 	</div>
 </div>
 
