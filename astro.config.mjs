@@ -7,6 +7,9 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
+	prefetch: {
+    prefetchAll: true
+  },
 	integrations: [tailwind(), react(), svelte()],
 	output: "hybrid",
 	redirects: {
