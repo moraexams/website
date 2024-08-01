@@ -2,6 +2,7 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../sections/16-footer.astro";
+import { Image } from "astro:assets";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
@@ -9,6 +10,8 @@ import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 import { db, applicants, results } from "../../db";
 import { eq } from "drizzle-orm";
 import StudentResultCard from "../../components/StudentResultCard.astro";
+
+import platinum_sponsor from "../../../public/assets/northway-ad.jpeg";
 
 const { lang } = Astro.params;
 
@@ -173,9 +176,10 @@ if (indexNumber) {
 							<div class="text-center text-black mb-1 text-lg">
 								OUR PLATINUM SPONSOR
 							</div>
-							<img
-								src="/assets/northway-ad.jpeg"
+							<Image
+								src={platinum_sponsor}
 								class="min-w-[240px] max-w-full h-auto rounded-lg aspect-auto"
+								alt="Platinum Sponsor for Mora Exams"
 							/>
 						</div>
 					</>

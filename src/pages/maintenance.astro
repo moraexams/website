@@ -4,6 +4,9 @@ import HeaderContactIcon from "../components/HeaderContactIcon.astro";
 import type { GetStaticPaths } from "astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { langStaticRoutes } from "../i18n/ui";
+import { Image } from "astro:assets";
+
+import system_maintenance_svg from "../../public/system-maintenance-3.svg";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 
@@ -13,7 +16,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <Layout pageTitle="Under Maintenance">
-	<img src="../system-maintenance-3.svg" />
+	<Image
+		src={system_maintenance_svg}
+		alt="System Maintenance"
+		loading="eager"
+	/>
 	<h1>
 		Sorry We're down for maintenance. <br />
 		We will be back soon
