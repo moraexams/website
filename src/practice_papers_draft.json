@@ -46,5 +46,36 @@
 		"title_ta": "விடைத்தாள்",
 		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1jbGHzn1GDNd3zxtqRDihsehxvPlyDYlP",
 		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=1ZBCth-TEuSCe2EeQNkuxv1okQeaSjntJ"
+	},
+	{
+		"subject_en_01": "Pure Mathematics - 2",
+		"subject_ta_01": "தூய கணிதம் - 2",
+		"description_01": "Pratice papers for Pure Mathematics",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=10mY0aeb6egevCepkZxI8kfa4rbyiz_Zw",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1FTiWXkt7-QnwjOxLsHbdnOqe8E-HbaYL",
+		"subject_en_02": "Applied Mathematics - 2",
+		"subject_ta_02": "பிரயோக கணிதம் - 2",
+		"description_02": "Practice papers for Mathematics",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1xIdKmmxUgkXv5Z6_jXyPjDbEmetH5i1K",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hK0Gn9CaicDJ7tV_3s5gON1Kw2Hg_p0W"
+	},
+	{
+		"subject_en_01": "Physics I - 2",
+		"subject_ta_01": "பௌதீகவியல் I - 2",
+		"description_01": "Pratice papers for Physics",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=1NquDcSW0deiT8fY_68xgLKqPh3cu1bVz",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1PLGqdj7SpiOcTk31mATaNPZjRxNeZS_5",
+		"subject_en_02": "Physics II - 2",
+		"subject_ta_02": "பௌதீகவியல் II - 2",
+		"description_02": "Pratice papers for Physics",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1LX4eVQQOZKqv1o09VbZjJlI8fqXFgnQC",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Sf_TuV8SkTq_gxj6_3uePOhFNTNa3Xwd"
+	},
+	{
+		"subject_en_01": "Chemistry I - 2",
+		"subject_ta_01": "இரசாயனவியல் I - 2",
+		"description_01": "Pratice papers for Chemistry",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=1uhNgrsA_IqZJXTQrhArWLLyv5BMSTBFQ",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1I_c6j3lyb7GemzmtQPE3riofnHvAcpYH"
 	}
 ]
