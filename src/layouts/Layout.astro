@@ -18,6 +18,7 @@ ogImageUrl.pathname = "/og-image.jpg";
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={t("meta__description")} />
+		<meta name="theme-color" content="#490665" />
 		<meta property="og:description" content={t("meta__description")} />
 		<title>{pageTitle}</title>
 		<meta property="og:title" content={pageTitle} />
@@ -43,11 +44,12 @@ ogImageUrl.pathname = "/og-image.jpg";
 
 		<meta
 			name="keywords"
-			content="Pilot Exam, mora exam, A/L exam, exam mora, mora exam 2021, moratuwa university exam, moratuwa exam, moraetamils, moraetamils exam, moraexam, moraetamils, mora etamils "
+			content="Pilot Exam, mora exam, A/L exam, exam mora, mora exam 2024, moratuwa university exam, moratuwa exam, moraetamils, moraetamils exam, moraexam, moraetamils, mora etamils "
 		/>
 
 		<meta property="og:url" content={Astro.url.toString()} />
-		<meta property="og:image" content={ogImageUrl.toString()} />
+		<!-- <meta property="og:image" content={ogImageUrl.toString()} /> -->
+		<meta property="og:image" content="https://moraexams.org/mora-exam-opengrpah.png" />
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GD74616M9F"
