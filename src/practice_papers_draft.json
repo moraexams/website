@@ -57,7 +57,11 @@
 		"subject_ta_02": "பிரயோக கணிதம் - 2",
 		"description_02": "Practice papers for Mathematics",
 		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1xIdKmmxUgkXv5Z6_jXyPjDbEmetH5i1K",
-		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hK0Gn9CaicDJ7tV_3s5gON1Kw2Hg_p0W"
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hK0Gn9CaicDJ7tV_3s5gON1Kw2Hg_p0W",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1r-B_vMXkeBztaDr6e62MRC4Q5eKxEGVv",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=1opMrBQyVGaEBhd_0A7fwEO-_c_UY4QSN"
 	},
 	{
 		"subject_en_01": "Physics I - 2",
@@ -69,7 +73,11 @@
 		"subject_ta_02": "பௌதீகவியல் II - 2",
 		"description_02": "Pratice papers for Physics",
 		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1LX4eVQQOZKqv1o09VbZjJlI8fqXFgnQC",
-		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Sf_TuV8SkTq_gxj6_3uePOhFNTNa3Xwd"
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Sf_TuV8SkTq_gxj6_3uePOhFNTNa3Xwd",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1sUGdtwFCi9tSdN8gbOBL5vkGHpa_pzvX",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=1qMo1GVaBg1gXrPXjX1rcshFilXZLz3eF"
 	},
 	{
 		"subject_en_01": "Chemistry I - 2",
@@ -81,6 +89,10 @@
 		"subject_ta_02": "இரசாயனவியல் II - 2",
 		"description_02": "Pratice papers for Chemistry",
 		"download_link_e_02": "https://drive.google.com/uc?export=download&id=19CcbsNnj0YfMUrF6jYxIwdlXDakKW_Qk",
-		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1g64vRxnUTuOacONGN4App5OvaIh9sDtS"
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1g64vRxnUTuOacONGN4App5OvaIh9sDtS",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1NdBUqYneZ5guAQ0CCnPGQgIVmKl0OIz_",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=11Wskklfgi-Rq3xzjmvxE21peVY7ekKiI"
 	}
 ]
