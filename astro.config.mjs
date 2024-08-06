@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import { defaultLang } from "./src/i18n/ui";
 import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({

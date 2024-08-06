@@ -12,13 +12,17 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 const { name, state, body, batch } = Astro.props;
 // @ts-expect-error
 const displayName = t(`feedback_${name}_name`);
+
+const imagesPaths = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/images/achievers/*",
+);
+const achieversImg = `/src/assets/images/achievers/${name}.jpg`;
 ---
 
 <div class="card" style="margin: 30px;">
 	<Image
-		width="100"
-		height="100"
-		src={`/achievers/${name}.jpg`}
+		class="object-contain rounded-full"
+		src={imagesPaths[achieversImg]()}
 		alt={displayName}
 	/>
 	<div class="info">

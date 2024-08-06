@@ -54,6 +54,10 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 	if ("Printing Partner") return 3;
 	if ("Media Partner") return 3;
 }
+
+const imagesPaths = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/images/sponsors/*",
+);
 ---
 
 <section>
@@ -65,11 +69,12 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 					<li class={sponsor.type.replaceAll(" ", "-").toLowerCase()}>
 						<a href={sponsor.link} target="_blank">
 							<Image
-								height={100}
-								width={100}
-								src={getLogoUrl(sponsor.name)}
+								src={imagesPaths[
+									`/src/assets/images${getLogoUrl(sponsor.name)}`
+								]()}
 								alt={sponsor.name}
 							/>
+
 							<span>{sponsor.type}</span>
 						</a>
 					</li>
