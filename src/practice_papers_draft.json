@@ -57,7 +57,11 @@
 		"subject_ta_02": "பிரயோக கணிதம் - 2",
 		"description_02": "Practice papers for Mathematics",
 		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1xIdKmmxUgkXv5Z6_jXyPjDbEmetH5i1K",
-		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hK0Gn9CaicDJ7tV_3s5gON1Kw2Hg_p0W"
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hK0Gn9CaicDJ7tV_3s5gON1Kw2Hg_p0W",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1r-B_vMXkeBztaDr6e62MRC4Q5eKxEGVv",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=1opMrBQyVGaEBhd_0A7fwEO-_c_UY4QSN"
 	},
 	{
 		"subject_en_01": "Physics I - 2",
@@ -69,13 +73,62 @@
 		"subject_ta_02": "பௌதீகவியல் II - 2",
 		"description_02": "Pratice papers for Physics",
 		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1LX4eVQQOZKqv1o09VbZjJlI8fqXFgnQC",
-		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Sf_TuV8SkTq_gxj6_3uePOhFNTNa3Xwd"
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Sf_TuV8SkTq_gxj6_3uePOhFNTNa3Xwd",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1sUGdtwFCi9tSdN8gbOBL5vkGHpa_pzvX",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=1qMo1GVaBg1gXrPXjX1rcshFilXZLz3eF"
 	},
 	{
 		"subject_en_01": "Chemistry I - 2",
 		"subject_ta_01": "இரசாயனவியல் I - 2",
 		"description_01": "Pratice papers for Chemistry",
 		"download_link_e_01": "https://drive.google.com/uc?export=download&id=1uhNgrsA_IqZJXTQrhArWLLyv5BMSTBFQ",
-		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1I_c6j3lyb7GemzmtQPE3riofnHvAcpYH"
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1I_c6j3lyb7GemzmtQPE3riofnHvAcpYH",
+		"subject_en_02": "Chemistry II - 2",
+		"subject_ta_02": "இரசாயனவியல் II - 2",
+		"description_02": "Pratice papers for Chemistry",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=19CcbsNnj0YfMUrF6jYxIwdlXDakKW_Qk",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1g64vRxnUTuOacONGN4App5OvaIh9sDtS",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/uc?export=download&id=1NdBUqYneZ5guAQ0CCnPGQgIVmKl0OIz_",
+		"scheme_link_ta": "https://drive.google.com/uc?export=download&id=11Wskklfgi-Rq3xzjmvxE21peVY7ekKiI"
+	},
+	{
+		"subject_en_01": "Pure Mathematics - 3",
+		"subject_ta_01": "தூய கணிதம் - 3",
+		"description_01": "Pratice papers for Pure Mathematics",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=1hkkpzJSBBHQzwYW7-aPFM-NO0aKabRFa",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1_fsbPwScT54k6UvQlDIG-2cVjI_Qy1HK",
+		"subject_en_02": "Applied Mathematics - 3",
+		"subject_ta_02": "பிரயோக கணிதம் - 3",
+		"description_02": "Practice papers for Mathematics",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1-507e78G7pXKad5GwxVRoU_NtXf92atu",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1hVYEwPsJl1TWyw0VhwttR_TY6eEsSuoZ"
+	},
+	{
+		"subject_en_01": "Physics I - 3",
+		"subject_ta_01": "பௌதீகவியல் I - 3",
+		"description_01": "Pratice papers for Physics",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=15qVxS_9yIkf8Bx0PwMfuCEjlxoOG1ppa",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1FhWr0H8XmybjTnw546RrtY0yjFB0-Aps",
+		"subject_en_02": "Physics II - 3",
+		"subject_ta_02": "பௌதீகவியல் II - 3",
+		"description_02": "Pratice papers for Physics",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1zSGSgDzq5rEG_3aUeLGrWcdqs-bilIuT",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=1xoP8Xs8jFj0XqkL8pehFt4umclfqToX0"
+	},
+	{
+		"subject_en_01": "Chemistry I - 3",
+		"subject_ta_01": "இரசாயனவியல் I - 3",
+		"description_01": "Pratice papers for Chemistry",
+		"download_link_e_01": "https://drive.google.com/uc?export=download&id=1DclRAf3H21B5BmLpuJG7HFC8vFtP2PVL",
+		"download_link_t_01": "https://drive.google.com/uc?export=download&id=1vh-uOa-Uj9-q1pYIFzAyTu5W-qC76ucs",
+		"subject_en_02": "Chemistry II - 3",
+		"subject_ta_02": "இரசாயனவியல் II - 3",
+		"description_02": "Pratice papers for Chemistry",
+		"download_link_e_02": "https://drive.google.com/uc?export=download&id=1QXtffH7T4qEe_ekq1eHYATykEbXGWgKv",
+		"download_link_t_02": "https://drive.google.com/uc?export=download&id=16luhgHgatCPK2JQOnz3mt-5D8ZdzYGBV"
 	}
 ]
