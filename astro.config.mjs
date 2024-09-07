@@ -16,6 +16,7 @@ export default defineConfig({
 		"/results": `/${defaultLang}/results`,
 		"/practicepapers": `/${defaultLang}/practicepapers`,
 		"/manage": "https://moraetamils.com/manage",
+		"/tshirt":"https://forms.gle/SJTHD5c5kqkegARk9" 
 	},
 	adapter: netlify({
 		edgeMiddleware: true,
