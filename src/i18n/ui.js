@@ -43,6 +43,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} nav__practice_papers
  * @prop {string} nav__home
  * @prop {string} hero__title
+ * @prop {string} hero_form_sub_button
  * @prop {string} find_your_examination_centres__tile
  * @prop {string} find_your_examination_centres__description
  * @prop {string} looking_for_past_papers__title
@@ -181,6 +182,7 @@ export const ui = Object.freeze({
 		nav__practice_papers: "Practice Papers",
 
 		hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
+		hero_form_sub_button: "Exam Form", 
 
 		find_your_examination_centres__tile: "Find your examination centres",
 		find_your_examination_centres__description: `We have ${totalExamCentres} examination centre networks covering almost the whole island. Choose your district from the map, to view the available exam centres.`,
@@ -352,6 +354,7 @@ export const ui = Object.freeze({
 		nav__about: "எம்மைப் பற்றி",
 		nav__practice_papers: "பயிற்சி வினாத்தாள்கள்",
 		hero__title: "இலங்கையின் மாபெரும் உயர்தர முன்னோடிப்பரீட்சை",
+		hero_form_sub_button: "Exam Form",
 		find_your_examination_centres__tile:
 			"உங்களது பரீட்சை நிலையத்தை கண்டறியுங்கள்",
 		find_your_examination_centres__description: `எங்களிடம் ${totalExamCentres} பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.`,
