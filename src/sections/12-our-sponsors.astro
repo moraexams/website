@@ -4,6 +4,7 @@ interface Sponsor {
 	link: string;
 	type:
 		| "Platinum"
+		| "Gold"
 		| "Co-Sponsor"
 		| "Email Partner"
 		| "Printing Partner"
@@ -14,21 +15,26 @@ const sponsors: Sponsor[] = [
 	{
 		name: "Northway Family Mart",
 		link: "https://web.facebook.com/northwayfamilymart?_rdc=1&_rdr",
+		type: "Gold",
+	},
+	{
+		name: "Nothern Uni",
+		link: "#",
 		type: "Platinum",
 	},
 	// { name: "Achievers", link: "https://achieverslive.com/", type: "Co-Sponsor" },
-	{
-		name: "Pirakanth",
-		link: "https://www.facebook.com/pirakanth.photocopy.3/",
-		type: "Co-Sponsor",
-	},
-	{ name: "Uthayan", link: "https://newuthayan.com/", type: "Media Partner" },
-	{
-		name: "Evergreen",
-		link: "https://www.facebook.com/Prathap239/",
-		type: "Printing Partner",
-	},
-	{ name: "Resend", link: "https://resend.com", type: "Email Partner" },
+	// {
+	// 	name: "Pirakanth",
+	// 	link: "https://www.facebook.com/pirakanth.photocopy.3/",
+	// 	type: "Co-Sponsor",
+	// },
+	// { name: "Uthayan", link: "https://newuthayan.com/", type: "Media Partner" },
+	// {
+	// 	name: "Evergreen",
+	// 	link: "https://www.facebook.com/Prathap239/",
+	// 	type: "Printing Partner",
+	// },
+	// { name: "Resend", link: "https://resend.com", type: "Email Partner" },
 ];
 
 function getLogoUrl(name: string) {
@@ -47,6 +53,7 @@ function getLogoUrl(name: string) {
 }
 
 function getRowCount(sponsorType: Sponsor["type"]) {
+	if("Gold") return 1;
 	if ("Platinum") return 1;
 	if ("Co-Sponsor") return 2;
 	if ("Email Partner") return 3;
@@ -56,7 +63,7 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 ---
 
 <section>
-	<h2 class="mb-3">OUR LAST YEAR SPONSORS</h2>
+	<h2 class="mb-3 underline">OUR SPONSORS</h2>
 	<ul class="sponsors-grid">
 		{
 			sponsors.map((sponsor) => {
@@ -82,7 +89,7 @@ function getRowCount(sponsorType: Sponsor["type"]) {
 		text-align: center;
 	}
 	.sponsors-grid {
-		@apply gap-y-2 grid-cols-6 px-0;
+		@apply gap-y-2 grid-cols-1 px-0;
 		width: 90%;
 		height: auto;
 		display: grid;
