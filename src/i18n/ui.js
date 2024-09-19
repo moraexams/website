@@ -182,7 +182,7 @@ export const ui = Object.freeze({
 		nav__practice_papers: "Practice Papers",
 
 		hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
-		hero_form_sub_button: "Exam Form", 
+		hero_form_sub_button: "Exam Form",
 
 		find_your_examination_centres__tile: "Find your examination centres",
 		find_your_examination_centres__description: `We have ${totalExamCentres} examination centre networks covering almost the whole island. Choose your district from the map, to view the available exam centres.`,
