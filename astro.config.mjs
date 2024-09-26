@@ -16,9 +16,14 @@ export default defineConfig({
 		"/results": `/${defaultLang}/results`,
 		"/test": "https://google.com",
 		"/practicepapers": `/${defaultLang}/practicepapers`,
+		"/instructions": `/${defaultLang}/instructions_ta`,
+		"/instructions_ta": `/${defaultLang}/instructions_ta`,
+		"/instructions_en": `/${defaultLang}/instructions_en`,
+
 		"/manage": "https://moraetamils.com/manage",
 		"/tshirt": "https://forms.gle/SJTHD5c5kqkegARk9",
 		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
+
 	},
 	adapter: netlify({
 		edgeMiddleware: true,
