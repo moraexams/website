@@ -1,0 +1,165 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+import Footer from "../../sections/16.1-footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<Layout pageTitle={t("index__title")}>
+    <div class="bg-purple-800">
+        <NavigationBar />
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <img src="/assets/logo.png" alt="Logo" class="logo" />
+            <h1>Mora Exams 2024</h1>
+        </header>
+
+        <!-- Main Content -->
+        <div class="tabs">
+            <button class="tablinks active" on:click={() => openLanguage('Tamil')}>தமிழ்</button>
+            <button class="tablinks" on:click={() => openLanguage('English')}>English</button>
+        </div>
+
+        <div id="Tamil" class="tabcontent active">
+            <h1>பரீட்சை எழுதவிருக்கும் மாணவர்களுக்கான அறிவுறுத்தல்கள்</h1>
+            <h2>சமூகமளிக்கும் நேரம்:</h2>
+            <p>மாணவர்கள் பரீட்சை ஆரம்பிக்கும் நேரத்திற்கு 15 நிமிடத்திற்கு முன்னதாகவே பரீட்சை நிலையத்திற்கு சமூகமளிக்க வேண்டும்.<br> பரீட்சை மண்டபத்திற்குள் பரீட்சை ஆரம்பிப்பதற்கு 10 நிமிடத்திற்கு முன்னதாக அனுமதிக்கப்படுவார்கள்.</p>
+
+            <h2>பரீட்சை மண்டப ஒழுங்குகள்:</h2>
+            <p style="color: red;">மாணவர்கள் தங்களது சேர்க்கை வடிவத்தில் பதிவு செய்த தேர்வு மையத்திற்கு மட்டுமே வர வேண்டும். மற்ற தேர்வு மையங்களில் பங்கேற்க அனுமதிக்கப்படமாட்டார்கள்.</p>
+            <p>மாணவர் சுட்டெண்ணை உறுதிப்படுத்தியதற்கான மின்னஞ்சலில் மாணவர்கள் தேர்வு மையத்தை உறுதி செய்து கொள்ள முடியும்.</p>
+            <p>மேற்பார்வையாளர்களினால் அறிவுறுத்தப்படும் சந்தர்ப்பம் தவிர்ந்த ஏனைய சந்தர்ப்பங்களில் மாணவர்கள் கட்டாயமாக ஒரே பரீட்சை மண்டபத்தையே அனைத்து பரீட்சைகளுக்கும் பயன்படுத்த வேண்டும்.</p>
+
+            <h2>அடையாளம்:</h2>
+            <p>மாணவர்கள் அனைவரும் கட்டாயமாக உறுதிப்படுத்துவதற்காக பரீட்சை நிலையத்திற்கு தேசிய அடையாள அட்டையினை கொண்டுவர வேண்டும்.</p>
+
+            <!-- Additional sections omitted for brevity -->
+        </div>
+
+        <div id="English" class="tabcontent">
+            <h1>Exam Instructions for Students</h1>
+            <h2>Arrival Time:</h2>
+            <p>Students must arrive at the exam center at least 15 minutes before the exam begins.<br> Entry to the exam hall will be allowed 10 minutes before the start of the exam.</p>
+
+            <h2>Exam Center & Hall Assignment:</h2>
+            <p style="color: red;">Students must attend the exam center they registered for on their admission form. Entry to any other exam center will not be permitted.</p>
+            <p>You can find your assigned exam center in the email sent to you for index number confirmation. Please refer to this email to ensure you arrive at the correct center.</p>
+
+            <h2>Identification:</h2>
+            <p>All students must bring their National Identity Card (NIC) to the exam hall for verification.</p>
+
+            <!-- Additional sections omitted for brevity -->
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>&copy; Copyright reserved to <strong>Mora Exams</strong>. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function openLanguage(language) {
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(language).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        document.getElementById("Tamil").style.display = "block";
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .header {
+            background-color: #4a0072;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 20px;
+        }
+
+        .tablinks {
+            background-color: #e9e3f2;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 20px;
+            margin-right: 5px;
+            font-size: 16px;
+            color: #4a0072;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tablinks.active {
+            background-color: #4a0072;
+            color: white;
+        }
+
+        .tabcontent {
+            display: none;
+            background-color: #e9e3f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background-color: #4a0072;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</Layout>
