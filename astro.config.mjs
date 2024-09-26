@@ -15,6 +15,7 @@ export default defineConfig({
 		"/feedback": "https://forms.gle/Ca6k2rH6FNCn6NTB8",
 		"/results": `/${defaultLang}/results`,
 		"/instructions": `/${defaultLang}/instructions`,
+		"/test": "https://google.com",
 		"/practicepapers": `/${defaultLang}/practicepapers`,
 		"/manage": "https://moraetamils.com/manage",
 		"/tshirt": "https://forms.gle/SJTHD5c5kqkegARk9",
