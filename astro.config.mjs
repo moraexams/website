@@ -22,7 +22,7 @@ export default defineConfig({
 		"/instructions": `/${defaultLang}/instructions_ta`,
 		"/instructions_ta": `/${defaultLang}/instructions_ta`,
 		"/instructions_en": `/${defaultLang}/instructions_en`,
-		"/exams": `/${defaultLang}/exampapers`,
+		"/exampapers": `/${defaultLang}/exampapers`,
 		"/manage": "https://moraetamils.com/manage",
 		"/tshirt": "https://forms.gle/SJTHD5c5kqkegARk9",
 		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
