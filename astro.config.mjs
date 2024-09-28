@@ -16,6 +16,7 @@ export default defineConfig({
 		"/feedback": "https://forms.gle/Ca6k2rH6FNCn6NTB8",
 		"/results": `/${defaultLang}/results`,
 		"/indexnumber": `/${defaultLang}/indexnumber`,
+		"/checkstudent": `/${defaultLang}/checkstudent`,
 		"/test": "https://google.com",
 		"/practicepapers": `/${defaultLang}/practicepapers`,
 		"/instructions": `/${defaultLang}/instructions_ta`,
