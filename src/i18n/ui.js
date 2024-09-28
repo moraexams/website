@@ -163,6 +163,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} find_your_index_no__title
  * @prop {string} practice_papers_title
  * @prop {string} practice_papers_p
+ * @prop {string} exam_papers_title
+ * @prop {string} exam_papers_p
 
  */
 
@@ -221,7 +223,10 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "E-learning Videos",
 		footer_title_4_s4: "E-learning Site",
 		footer_title_4_s5: "Doubts Forms",
+		exam_papers_title: "Exam Papers",
+		exam_papers_p:"Mora Examinations - 2024 Papers",
 		practice_papers_title: "Practice Papers",
+		
 		practice_papers_p:
 			"We have a collection of practice papers for each subject, prepared under the guidance of our engineering students of University of Moratuwa. Click on any of the subjects listed below and download the respective papers.",
 		elearning_videos_title: "E-Learning videos",
@@ -389,6 +394,9 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "மின் கற்றல் வீடியோக்கள்",
 		footer_title_4_s4: "மின் கற்றல் தளம்",
 		footer_title_4_s5: "சந்தேக படிவங்கள்",
+		exam_papers_title: "Exam Papers",
+		exam_papers_p:"Mora Examinations - 2024 Papers",
+		
 		practice_papers_title: "பயிற்சி வினாத்தாள்கள்",
 		practice_papers_p:
 			"மொறட்டுவைப்  பல்கலைக்கழக பொறியியல் மாணவர்களின் வழிகாட்டலின் கீழ் தயாரிக்கப்பட்ட பயிற்சி வினாத்தாள் தொகுப்பு. கீழுள்ள இணைப்பின் ஊடாக தரையிறக்கம் செய்துகொள்ள முடியும்.",
