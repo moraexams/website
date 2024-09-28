@@ -25,16 +25,9 @@ const t = useTranslations(lang);
 <div class="card">
 	<div class="card-content">
 		<p class="card-title">{subject01}</p>
-		<a href={download_link_t_01}>
-			<button> தமிழ் மொழிமூலம்</button>
-		</a>
-		<a href={download_link_e_01}>
-			<button> English Medium</button>
-		</a>
 		{
 			scheme_link_en && scheme_link_ta ? (
 				<>
-					<p class="card-title">{scheme_title}</p>
 					<a href={scheme_link_ta}>
 						<button> தமிழ் மொழிமூலம்</button>
 					</a>
@@ -51,7 +44,7 @@ const t = useTranslations(lang);
 	.card {
 		/* width: 300px; */
 		width: 100%;
-		min-height: 300px;
+		min-height: 200px;
 		height: auto;
 		background-color: #5063c0;
 		background-image: linear-gradient(

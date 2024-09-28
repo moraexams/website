@@ -223,8 +223,8 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "E-learning Videos",
 		footer_title_4_s4: "E-learning Site",
 		footer_title_4_s5: "Doubts Forms",
-		exam_papers_title: "Exam Papers",
-		exam_papers_p:"Mora Examinations - 2024 Papers",
+		exam_papers_title: "Mora Exams 2024 Schemes",
+		exam_papers_p:"Access the Tamil and English medium schemes for Mora Exams 2024 through the links provided below for easy download and reference.",
 		practice_papers_title: "Practice Papers",
 		
 		practice_papers_p:
@@ -394,8 +394,8 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "மின் கற்றல் வீடியோக்கள்",
 		footer_title_4_s4: "மின் கற்றல் தளம்",
 		footer_title_4_s5: "சந்தேக படிவங்கள்",
-		exam_papers_title: "Exam Papers",
-		exam_papers_p:"Mora Examinations - 2024 Papers",
+		exam_papers_title: "Mora Exams 2024 புள்ளித்திட்டங்கள்",
+		exam_papers_p:"தமிழ் மற்றும் ஆங்கில புள்ளித்திட்டங்களை கீழே கொடுக்கப்பட்டுள்ள இணைப்புகளில் இருந்து எளிதாக பதிவிறக்கம் செய்து காணலாம்.",
 		
 		practice_papers_title: "பயிற்சி வினாத்தாள்கள்",
 		practice_papers_p:
