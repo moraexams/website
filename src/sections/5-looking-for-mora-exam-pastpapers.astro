@@ -10,14 +10,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 	<p class="text-xl">
 		{t("looking_for_past_papers__description")}
 	</p>
-
-	<Button onClick={() => alert("Past papers will be uploaded soon!")}>
-		{t("looking_for_past_papers__button")}
-	</Button>
-	
-	<a
-		href="/exampapers"
-	>
+	<a href="https://bit.ly/moraexamspp">
+		<Button>{t("looking_for_past_papers__button")}</Button>
+	</a>
+	<a href="/exampapers">
 		<Button>{t("schemes_button")}</Button>
 	</a>
 </section>
