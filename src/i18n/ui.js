@@ -41,6 +41,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} nav__resources
  * @prop {string} nav__about
  * @prop {string} nav__practice_papers
+ * @prop {string} nav__exam_papers
  * @prop {string} nav__home
  * @prop {string} hero__title
  * @prop {string} hero_form_sub_button
@@ -182,6 +183,7 @@ export const ui = Object.freeze({
 		nav__resources: "Resources",
 		nav__about: "About Us",
 		nav__practice_papers: "Practice Papers",
+		nav__exam_papers: "Exam Papers",
 
 		hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
 		hero_form_sub_button: "Exam Form",
@@ -358,6 +360,7 @@ export const ui = Object.freeze({
 		nav__resources: "வளங்கள்",
 		nav__about: "எம்மைப் பற்றி",
 		nav__practice_papers: "பயிற்சி வினாத்தாள்கள்",
+		nav__exam_papers: "பரீட்சை வினாத்தாள்கள்",
 		hero__title: "இலங்கையின் மாபெரும் உயர்தர முன்னோடிப்பரீட்சை",
 		hero_form_sub_button: "Exam Form",
 		find_your_examination_centres__tile:
