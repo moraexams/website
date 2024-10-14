@@ -17,7 +17,6 @@ export default defineConfig({
 		"/results": `/${defaultLang}/results`,
 		"/indexnumber": `/${defaultLang}/indexnumber`,
 		"/checkstudent": `/${defaultLang}/checkstudent`,
-		"/test": "https://google.com",
 		"/practicepapers": `/${defaultLang}/practicepapers`,
 		"/instructions": `/${defaultLang}/instructions_ta`,
 		"/instructions_ta": `/${defaultLang}/instructions_ta`,
