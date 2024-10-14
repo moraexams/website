@@ -31,7 +31,7 @@
 		"scheme_link_ta": "https://drive.google.com/file/d/1dMDBa1FjGWeNlGdG7MjYJOHTSpIlDgim/view?usp=sharing"
 	},
 	{
-		"subject_en_01": "Physis",
+		"subject_en_01": "Physics",
 		"subject_ta_01": "பௌதீகவியல்",
 		"download_link_t_01": "",
 		"download_link_e_01": "",
@@ -39,5 +39,15 @@
 		"title_ta": "விடைத்தாள்",
 		"scheme_link_en": "#",
 		"scheme_link_ta": "https://drive.google.com/file/d/1CdCT5X8tZ-dsmpylpH1mkKLadjyyZReL/view?usp=sharing"
+	},
+	{
+		"subject_en_01": "Chemistry",
+		"subject_ta_01": "இரசாயனவியயல்",
+		"download_link_t_01": "",
+		"download_link_e_01": "",
+		"title_en": "Scheme",
+		"title_ta": "விடைத்தாள்",
+		"scheme_link_en": "https://drive.google.com/file/d/1s9i83JJn-HLLSr0XFqr0YQ8S9DP-QNMW/view?usp=sharing",
+		"scheme_link_ta": "https://drive.google.com/file/d/1s9i83JJn-HLLSr0XFqr0YQ8S9DP-QNMW/view?usp=sharing"
 	}
 ]
