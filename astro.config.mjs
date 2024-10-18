@@ -25,6 +25,7 @@ export default defineConfig({
 		"/manage": "https://moraetamils.com/manage",
 		"/tshirt": "https://forms.gle/SJTHD5c5kqkegARk9",
 		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
+		
 	},
 	adapter: netlify({
 		edgeMiddleware: true,
