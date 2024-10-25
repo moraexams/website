@@ -55,8 +55,8 @@ let studentResults = undefined;
 if (indexNumber) {
 	try {
 		const response = await fetch(
-			// `https://api.moraexams.org/result/${indexNumber}`,
-			`http://localhost:8080/result/${indexNumber}`,
+			`https://api.moraexams.org/result/${indexNumber}`,
+			// `http://localhost:8080/result/${indexNumber}`,
 		);
 		const data = await response.json();
 		if (data.error) {
