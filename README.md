@@ -4,9 +4,8 @@
 
 ### Prerequisites
 
-Bun is the recommended package manager (instead of npm) and runtime (instead of node). However, **You can use node and npm if you want**.
-
-The reason for recommending bun: it's faster. To install bun: [visit bun.sh](https://bun.sh).
+- Node v20
+- npm v10
 
 ### Commands
 
