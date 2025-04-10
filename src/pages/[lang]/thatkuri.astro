@@ -19,7 +19,7 @@ const t = useTranslations(lang);
 
 let indexNumber = undefined;
 
-if (Astro.request.method == "POST") {
+if (Astro.request.method === "POST") {
 	const formData = await Astro.request.formData();
 	indexNumber = formData.get("i").toString() || undefined;
 }
@@ -145,12 +145,11 @@ if (indexNumber) {
 						<div>
 							<div class="flex flex-col justify-center max-w-[50ch]">
 								<div class="flex items-center justify-center">
-									
-							<img
-								src="/assets/logo.png"
-								class="max-w-[250px] h-auto rounded-lg aspect-auto py-10"
-							/>
-									</div>
+									<img
+										src="/assets/logo.png"
+										class="max-w-[250px] h-auto rounded-lg aspect-auto py-10"
+									/>
+								</div>
 								<h1 class="text-3xl xl:text-4xl my-2 text-center lg:text-left">
 									{t("find_your_results")}
 								</h1>
@@ -170,7 +169,7 @@ if (indexNumber) {
 											type="text"
 											name="i"
 											id="showresultin"
-                      inputmode="numeric"
+											inputmode="numeric"
 											value={indexNumber}
 											placeholder={t("index_no")}
 											required
@@ -271,24 +270,30 @@ if (indexNumber) {
 									</td>
 								</tr>
 								{studentResults.stream != "ICT ONLY" && (
-									<tr>
-										<td class="py-2 px-4 border-b font-semibold">Z-Score</td>
-										<td class="py-2 px-4 border-b">{studentResults.z_score}</td>
-									</tr>
-								<tr>
-									<td class="py-2 px-4 border-b font-semibold">
-										District Rank
-									</td>
-									<td class="py-2 px-4 border-b">
-										{studentResults.district_rank}
-									</td>
-								</tr>
-								<tr>
-									<td class="py-2 px-4 border-b font-semibold">Island Rank</td>
-									<td class="py-2 px-4 border-b">
-										{studentResults.island_rank}
-									</td>
-								</tr>
+									<>
+										<tr>
+											<td class="py-2 px-4 border-b font-semibold">Z-Score</td>
+											<td class="py-2 px-4 border-b">
+												{studentResults.z_score}
+											</td>
+										</tr>
+										<tr>
+											<td class="py-2 px-4 border-b font-semibold">
+												District Rank
+											</td>
+											<td class="py-2 px-4 border-b">
+												{studentResults.district_rank}
+											</td>
+										</tr>
+										<tr>
+											<td class="py-2 px-4 border-b font-semibold">
+												Island Rank
+											</td>
+											<td class="py-2 px-4 border-b">
+												{studentResults.island_rank}
+											</td>
+										</tr>
+									</>
 								)}
 								<tr>
 									<td class="py-2 px-4 border-b font-semibold">Stream</td>

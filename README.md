@@ -1,6 +1,6 @@
 # Mora Exams: Landing Website
 
-This repository contains the source code for the Mora Exams landing website.
+This repository contains the source code for the Mora Exams landing website. It's based on [Astro](https://astro.build).
 
 ## Development Guide
 
@@ -17,6 +17,8 @@ This repository contains the source code for the Mora Exams landing website.
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build the site for production (to `./dist/`)     |
 | `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run lint`            | Lints the code                                   |
+| `npm run lint-fix`        | Fixes linting issues                             |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
