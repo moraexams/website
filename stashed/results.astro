@@ -14,7 +14,7 @@ const t = useTranslations(lang);
 
 let indexNumber = undefined;
 
-if (Astro.request.method == "POST") {
+if (Astro.request.method === "POST") {
 	const formData = await Astro.request.formData();
 	indexNumber = formData.get("i").toString() || undefined;
 }
