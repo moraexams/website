@@ -1,0 +1,121 @@
+---
+import type { GetStaticPaths } from "astro";
+import { langStaticRoutes } from "../../i18n/ui";
+import Layout from "../../layouts/Layout.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+
+const pageTitle = "Instructions";
+
+export const getStaticPaths = (() => {
+	return langStaticRoutes;
+}) satisfies GetStaticPaths;
+---
+
+<Layout pageTitle={pageTitle}>
+	<div class="bg-purple-800">
+		<NavigationBar />
+	</div>
+	<section
+		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
+	>
+		<div
+			class="max-w-screen-xl my-10 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center px-6 py-5 sm:p-12 flex-col items-center h-fit flex-1"
+		>
+			<h1 class="text-4xl font-bold mb-4">{pageTitle}</h1>
+
+			<ol class="list-decimal ml-6 mb-6 space-y-2">
+				<li>
+					It is mandatory to pay the examination fee before filling up the
+					online application form.
+				</li>
+				<li>
+					Exam Fees:<br />
+					If you select <strong>ICT only</strong>: you must pay <strong
+						>Rs. 200.00</strong
+					><br />
+					If you select any other option: you must pay <strong
+						>Rs. 600.00</strong
+					>
+				</li>
+				<li>
+					You must deposit your exam fees to the following bank account.<br />
+					<strong
+						>A ARRATHIKASARMA<br />
+						Account No - 91616090<br />
+						Branch - Nallur<br />
+						BOC<br /></strong
+					>
+				</li>
+
+				<li>
+					While depositing, you must provide a description in the following
+					format.<br />
+					<strong>[NIC Number] - [Your Full Name]</strong>
+				</li>
+
+				<li>English BLOCK LETTERS must be used to fill this form.</li>
+			</ol>
+
+			<form id="instructionForm">
+				<label class="flex items-start gap-2 mb-6">
+					<input type="checkbox" id="agreeCheckbox" class="mt-1" />
+					<span
+						>I have read and understood the above mentioned details before
+						proceeding.</span
+					>
+				</label>
+
+				<button
+					type="button"
+					class="btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer"
+					id="nextButton"
+				>
+					Next
+				</button>
+			</form>
+		</div>
+	</section>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const checkbox = document.getElementById(
+				"agreeCheckbox",
+			) as HTMLInputElement;
+			const nextButton = document.getElementById("nextButton");
+
+			nextButton.addEventListener("click", () => {
+				if (checkbox.checked) {
+					const lang = window.location.pathname.split("/")[1];
+					window.location.href = `/${lang}/registration-2`;
+				} else {
+					alert(
+						"Please confirm you've read the instructions before proceeding.",
+					);
+				}
+			});
+		});
+	</script>
+
+	<style>
+		.btn {
+			color: #fff;
+			background: linear-gradient(135deg, #852d91, #312a6c);
+			padding: 12px 20px;
+			transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+		}
+
+		.btn:hover {
+			color: #cfcece;
+			border: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			animation: rotate 0.7s ease-in-out both;
+		}
+
+		.btn:hover:before {
+			transform: translate3d(50%, 0, 0) scale(0.9);
+		}
+
+		.btn:hover:after {
+			transform: translate(50%, 0) scale(1.1);
+		}
+	</style>
+</Layout>
