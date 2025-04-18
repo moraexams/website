@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { langStaticRoutes } from "../../i18n/ui";
 import Layout from "../../layouts/Layout.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
+import Button from "../../components/Button.astro";
 
 const pageTitle = "Exam Registration";
 
@@ -272,19 +273,9 @@ export const getStaticPaths = (() => {
 				</div>
 
 				<div class="md:col-span-2 justify-between flex items-center">
-					<button
-						type="button"
-						class="btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer"
-					>
-						Previous
-					</button>
+					<Button type="button">Previous</Button>
 
-					<button
-						type="submit"
-						class="btn text-xl text-center font-bold justify-end border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer"
-					>
-						Submit
-					</button>
+					<Button type="submit">Submit</Button>
 				</div>
 			</form>
 		</div>
@@ -466,28 +457,4 @@ export const getStaticPaths = (() => {
 		});
 		
 	</script>
-
-	<style>
-		.btn {
-			color: #fff;
-			background: linear-gradient(135deg, #852d91, #312a6c);
-			padding: 12px 20px;
-			transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
-		}
-
-		.btn:hover {
-			color: #cfcece;
-			border: none;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-			animation: rotate 0.7s ease-in-out both;
-		}
-
-		.btn:hover:before {
-			transform: translate3d(50%, 0, 0) scale(0.9);
-		}
-
-		.btn:hover:after {
-			transform: translate(50%, 0) scale(1.1);
-		}
-	</style>
 </Layout>

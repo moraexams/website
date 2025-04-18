@@ -24,49 +24,45 @@ export const getStaticPaths = (() => {
 		>
 			<h1 class="text-4xl font-bold mb-4">{pageTitle}</h1>
 
-			<ol class="list-decimal ml-6 mb-6 space-y-2">
-				<li>
-					It is mandatory to pay the examination fee before filling up the
-					online application form.
-				</li>
-				<li>
-					Exam Fees:<br />
-					If you select <strong>ICT only</strong>: you must pay <strong
-						>Rs. 200.00</strong
-					><br />
-					If you select any other option: you must pay <strong
-						>Rs. 600.00</strong
-					>
-				</li>
-				<li>
-					You must deposit your exam fees to the following bank account.<br />
-					<strong
-						>A ARRATHIKASARMA<br />
-						Account No - 91616090<br />
-						Branch - Nallur<br />
-						BOC<br /></strong
-					>
-				</li>
+			<div style="font-family: Arial; max-width: 600px; font-size: 17px;">
+				<div style="background: #efe6f5; padding: 15px; border-left: 4px solid #6b21a8; margin-bottom: 10px;">
+					It is mandatory to pay the examination fee before filling up the online application form.
+				</div>
 
-				<li>
-					While depositing, you must provide a description in the following
-					format.<br />
-					<strong>[NIC Number] - [Your Full Name]</strong>
-				</li>
-
-				<li>English BLOCK LETTERS must be used to fill this form.</li>
-			</ol>
+				<div style="background: #efe6f5; padding: 15px; border-left: 4px solid #6b21a8; margin-bottom: 10px;">
+					English <strong>BLOCK LETTERS</strong> must be used to fill the application form.
+				</div>
+				
+				<div style="background: #efe6f5; padding: 15px; border-left: 4px solid #6b21a8; margin-bottom: 10px;">
+				  <h3 style="color: #490665; margin-top: 0;">Registration Fee : </h3>
+				  <ul style="margin-bottom: 0;">
+					<li>ICT only: <strong>Rs. 200.00</strong></li>
+					<li>Other options: <strong>Rs. 600.00</strong></li>
+				  </ul>
+				</div>
+			  
+				<div style="background: #efe6f5; padding: 15px; border-left: 4px solid #6b21a8; margin-bottom: 10px;">
+				  <h3 style="color: #490665; margin-top: 0;">Bank Account Details : </h3>
+				  <p><strong>Account Name:</strong> A ARRATHIKASARMA<br>
+					 <strong>Account No:</strong> 91616090<br>
+					 <strong>Bank:</strong> BOC<br>
+					 <strong>Branch:</strong> Nallur</p>
+				  <p><strong>Description Format:</strong><br>
+					 <code>[NIC] - [FULL NAME]</code> (e.g., <code>123456789 - ABCD EFGH</code>)</p>
+				</div>
+			  </div>
 
 			<form id="instructionForm">
-				<label class="flex items-start gap-2 mb-6">
-					<input type="checkbox" id="agreeCheckbox" class="mt-1" />
+				<label class="flex items-start gap-2 my-6 text-lg">
+					<input type="checkbox" id="agreeCheckbox" class="mt-2" />
 					<span
 						>I have read and understood the above mentioned details before
 						proceeding.</span
 					>
 				</label>
-
-				<Button type="button" id="nextButton">Next</Button>
+				<div class="flex justify-end mt-4">
+					<Button type="button" id="nextButton">Next</Button>
+				</div>
 			</form>
 		</div>
 	</section>
@@ -89,28 +85,4 @@ export const getStaticPaths = (() => {
 			});
 		});
 	</script>
-
-	<style>
-		.btn {
-			color: #fff;
-			background: linear-gradient(135deg, #852d91, #312a6c);
-			padding: 12px 20px;
-			transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
-		}
-
-		.btn:hover {
-			color: #cfcece;
-			border: none;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-			animation: rotate 0.7s ease-in-out both;
-		}
-
-		.btn:hover:before {
-			transform: translate3d(50%, 0, 0) scale(0.9);
-		}
-
-		.btn:hover:after {
-			transform: translate(50%, 0) scale(1.1);
-		}
-	</style>
 </Layout>
