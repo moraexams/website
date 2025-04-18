@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { langStaticRoutes } from "../../i18n/ui";
 import Layout from "../../layouts/Layout.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
+import Button from "../../components/Button.astro";
 
 const pageTitle = "Instructions";
 
@@ -65,13 +66,7 @@ export const getStaticPaths = (() => {
 					>
 				</label>
 
-				<button
-					type="button"
-					class="btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer"
-					id="nextButton"
-				>
-					Next
-				</button>
+				<Button type="button" id="nextButton">Next</Button>
 			</form>
 		</div>
 	</section>
