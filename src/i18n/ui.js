@@ -41,8 +41,10 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} nav__resources
  * @prop {string} nav__about
  * @prop {string} nav__practice_papers
+ * @prop {string} nav__exam_papers
  * @prop {string} nav__home
  * @prop {string} hero__title
+ * @prop {string} hero_form_sub_button
  * @prop {string} find_your_examination_centres__tile
  * @prop {string} find_your_examination_centres__description
  * @prop {string} looking_for_past_papers__title
@@ -162,6 +164,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} find_your_index_no__title
  * @prop {string} practice_papers_title
  * @prop {string} practice_papers_p
+ * @prop {string} exam_papers_title
+ * @prop {string} exam_papers_p
 
  */
 
@@ -179,8 +183,10 @@ export const ui = Object.freeze({
 		nav__resources: "Resources",
 		nav__about: "About Us",
 		nav__practice_papers: "Practice Papers",
+		nav__exam_papers: "Exam Papers",
 
 		hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
+		hero_form_sub_button: "Exam Form",
 
 		find_your_examination_centres__tile: "Find your examination centres",
 		find_your_examination_centres__description: `We have ${totalExamCentres} examination centre networks covering almost the whole island. Choose your district from the map, to view the available exam centres.`,
@@ -196,7 +202,7 @@ export const ui = Object.freeze({
 		committee__president_post: "President",
 		committee__secretary_name: "S. Kajaluxan",
 		committee__secretary_post: "Secretary",
-		committee__treasurer_name: "N. Luxan",
+		committee__treasurer_name: "N. Luxsan",
 		committee__treasurer_post: "Treasurer",
 		committee__vice_president_name: "S. Rahavi",
 		committee__vice_president_post: "Vice President",
@@ -219,7 +225,10 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "E-learning Videos",
 		footer_title_4_s4: "E-learning Site",
 		footer_title_4_s5: "Doubts Forms",
+		exam_papers_title: "Mora Exams 2024 Schemes",
+		exam_papers_p:"Access the Tamil and English medium schemes for Mora Exams 2024 through the links provided below for easy download and reference.",
 		practice_papers_title: "Practice Papers",
+		
 		practice_papers_p:
 			"We have a collection of practice papers for each subject, prepared under the guidance of our engineering students of University of Moratuwa. Click on any of the subjects listed below and download the respective papers.",
 		elearning_videos_title: "E-Learning videos",
@@ -241,7 +250,7 @@ export const ui = Object.freeze({
 		pathway__card3_para:
 			"Tech stream added in 2016 due to student requests and Provincial Director of Education. Our management now delegated to  tech faculty, University of Jaffna for student welfare.",
 		pathway__card4_para:
-			"In the 15th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 22 districts, conducted the examinations in more than 71 examination centres, and accommodated more than 6,500 candidates.",
+			"In the 15th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 25 districts, conducted the examinations in more than 75 examination centres, and accommodated more than 6,500 candidates.",
 
 		feedback_heading: "Thoughts from the Champions",
 		achivers_ranking_1: "Ex-President",
@@ -351,7 +360,9 @@ export const ui = Object.freeze({
 		nav__resources: "வளங்கள்",
 		nav__about: "எம்மைப் பற்றி",
 		nav__practice_papers: "பயிற்சி வினாத்தாள்கள்",
+		nav__exam_papers: "பரீட்சை வினாத்தாள்கள்",
 		hero__title: "இலங்கையின் மாபெரும் உயர்தர முன்னோடிப்பரீட்சை",
+		hero_form_sub_button: "Exam Form",
 		find_your_examination_centres__tile:
 			"உங்களது பரீட்சை நிலையத்தை கண்டறியுங்கள்",
 		find_your_examination_centres__description: `எங்களிடம் ${totalExamCentres} பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.`,
@@ -386,6 +397,9 @@ export const ui = Object.freeze({
 		footer_title_4_s3: "மின் கற்றல் வீடியோக்கள்",
 		footer_title_4_s4: "மின் கற்றல் தளம்",
 		footer_title_4_s5: "சந்தேக படிவங்கள்",
+		exam_papers_title: "Mora Exams 2024 புள்ளித்திட்டங்கள்",
+		exam_papers_p:"தமிழ் மற்றும் ஆங்கில புள்ளித்திட்டங்களை கீழே கொடுக்கப்பட்டுள்ள இணைப்புகளில் இருந்து எளிதாக பதிவிறக்கம் செய்து காணலாம்.",
+		
 		practice_papers_title: "பயிற்சி வினாத்தாள்கள்",
 		practice_papers_p:
 			"மொறட்டுவைப்  பல்கலைக்கழக பொறியியல் மாணவர்களின் வழிகாட்டலின் கீழ் தயாரிக்கப்பட்ட பயிற்சி வினாத்தாள் தொகுப்பு. கீழுள்ள இணைப்பின் ஊடாக தரையிறக்கம் செய்துகொள்ள முடியும்.",
@@ -407,7 +421,7 @@ export const ui = Object.freeze({
 		pathway__card3_para:
 			"மாணவர்களின் கோரிக்கைகள் மற்றும் மாகாணக் கல்விப் பணிப்பாளர் காரணமாக 2016 இல் தொழில்நுட்ப பிரிவும் சேர்க்கப்பட்டது. எங்கள் நிர்வாகம் இப்போது மாணவர் நலனுக்காக யாழ்ப்பாணப் பல்கலைக்கழகத்தின் தொழில்நுட்ப பீடத்திடம் ஒப்படைக்கப்பட்டுள்ளது.",
 		pathway__card4_para:
-			"	15 ஆவது மொறா பரீட்சையை வெற்றிகரமாக நடாத்துவதை எண்ணி பெருமையடைகின்றோம். கடந்த வருடம் 22 மாவட்டங்களில் 71 பரீட்சை நிலையங்களில் 6500 இற்கு மேற்பட்ட மாணவர்களை உள்ளடக்கி எமது பரீட்சையை நடாத்தி இருந்தோம்.",
+			"	15 ஆவது மொறா பரீட்சையை வெற்றிகரமாக நடாத்துவதை எண்ணி பெருமையடைகின்றோம். கடந்த வருடம் 25 மாவட்டங்களில் 75 பரீட்சை நிலையங்களில் 6500 இற்கு மேற்பட்ட மாணவர்களை உள்ளடக்கி எமது பரீட்சையை நடாத்தி இருந்தோம்.",
 		feedback_iroshan:
 			"இத்தேர்வு பல்வேறு படிநிலைகளை தாண்டி தேசிய அங்கீகாரம் பெற்று காணப்படுகின்றது. சுருக்கமாக சொல்லப்போனால் இது பரீட்சையின் அடுத்த நிலை ஆகும்.",
 		feedback_darukeesan:

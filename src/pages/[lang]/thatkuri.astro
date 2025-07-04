@@ -2,7 +2,6 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../sections/16-footer.astro";
-import { Image } from "astro:assets";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
@@ -10,8 +9,6 @@ import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 import { db, applicants, results } from "../../db";
 import { eq } from "drizzle-orm";
 import StudentResultCard from "../../components/StudentResultCard.astro";
-
-import platinum_sponsor from "../../../public/assets/northway-ad.jpeg";
 
 const { lang } = Astro.params;
 
@@ -162,7 +159,7 @@ if (indexNumber) {
 								</p>
 								<form
 									method="POST"
-									action={`/${lang}/results`}
+									action={`/${lang}/thatkuri`}
 									style="display: contents;"
 									data-netlify-recaptcha="true"
 									data-netlify="true"
@@ -225,7 +222,7 @@ if (indexNumber) {
 								<li class="contact-no">Koshika (0740104723)</li>
 							</ul>
 						</div>
-						<a href="./results">
+						<a href="./thatkuri">
 							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
 								<>
 									<i class="fa-solid fa-arrow-left" />
