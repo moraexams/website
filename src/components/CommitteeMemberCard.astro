@@ -1,6 +1,7 @@
 ---
 import type { Language } from "../i18n/ui";
 import { useTranslations } from "../i18n/utils";
+import { Image } from "astro:assets";
 
 interface Props {
 	post: string;
@@ -8,20 +9,25 @@ interface Props {
 }
 const { post, lang } = Astro.props;
 const t = useTranslations(lang);
-
 // @ts-expect-error
 const name = t(`committee__${post}_name`);
 // @ts-expect-error
 const displayPost = t(`committee__${post}_post`);
 // @ts-expect-error
 const faculty = t(`committee__${post}_faculty`);
+
+const imagesPaths = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/images/committee/*",
+);
+const committeeMemberImg = `/src/assets/images/committee/${post.toLowerCase()}.jpg`;
 ---
 
 <div class="p-3 rounded-xl bg-[#fff]">
 	<div class="w-full h-auto rounded-full p-4">
-		<img
+		<Image
 			class="w-full h-auto rounded-full aspect-square"
-			src={`/committee/${post.toLowerCase()}.jpg`}
+			src={imagesPaths[committeeMemberImg]()}
+			alt={name.toString()}
 		/>
 	</div>
 	<div class="text-center p-0">

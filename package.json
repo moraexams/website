@@ -12,21 +12,21 @@
     "format": "prettier --write . ./**/*.astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "3.1.1",
-    "@astrojs/react": "3.0.7",
-    "@astrojs/svelte": "^5.0.1",
-    "@astrojs/tailwind": "5.0.3",
+    "@astrojs/netlify": "^5.5.0",
+    "@astrojs/react": "^3.6.1",
+    "@astrojs/svelte": "^5.7.0",
+    "@astrojs/tailwind": "^5.1.0",
     "@libsql/client": "^0.4.0-pre.5",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "astro": "4.0.4",
+    "astro": "^4.13.1",
     "csv-parse": "^5.5.2",
     "drizzle-orm": "^0.29.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "run": "^1.4.0",
-    "svelte": "^4.2.8",
-    "tailwindcss": "^3.3.5"
+    "svelte": "^4.2.18",
+    "tailwindcss": "^3.4.7"
   },
   "devDependencies": {
     "drizzle-kit": "^0.20.6",

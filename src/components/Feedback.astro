@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 interface Props {
 	name: string;
@@ -11,10 +12,19 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 const { name, state, body, batch } = Astro.props;
 // @ts-expect-error
 const displayName = t(`feedback_${name}_name`);
+
+const imagesPaths = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/images/achievers/*",
+);
+const achieversImg = `/src/assets/images/achievers/${name}.jpg`;
 ---
 
 <div class="card" style="margin: 30px;">
-	<img src={`/achievers/${name}.jpg`} alt={displayName} />
+	<Image
+		class="object-contain rounded-full"
+		src={imagesPaths[achieversImg]()}
+		alt={displayName}
+	/>
 	<div class="info">
 		<h3>
 			{displayName}
