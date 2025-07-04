@@ -26,6 +26,10 @@ export default defineConfig({
 		"/manage": "https://moraetamils.com/manage",
 		"/tshirt": "https://forms.gle/SJTHD5c5kqkegARk9",
 		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
+		"/s/whatsapp": "https://www.whatsapp.com/channel/0029VajWYZGFMqrakb87YL32",
+		"/s/linkedin": "https://www.linkedin.com/company/mora-exams/",
+		"/s/viber": "https://invite.viber.com/?g2=AQAR%2BCd%2BUxI2pk1rzlhZCSvq32KykhqAcN%2Fbri8vhfCWBNeaVB7BWo8lgafuBSng&lang=en",
+		"/s/telegram": "https://t.me/moraexam"
 	},
 	adapter: netlify({
 		edgeMiddleware: true,

@@ -1,34 +1,13 @@
 ---
-interface brand {
-	name: "twitter" | "facebook" | "linkedin" | "youtube" | "telegram";
-	dark: boolean;
+interface Props {
+	name: "whatsapp" | "viber" | "linkedin" | "telegram";
 }
-const { name, dark } = Astro.props;
+const { name } = Astro.props;
 
-let hrefLink = null;
-switch (name) {
-	case "twitter":
-		hrefLink = "https://x.com/moraetamils?t=N-7OEAXI7Ssi3axfYDjwXw&s=08";
-		break;
-	case "facebook":
-		hrefLink = "https://www.facebook.com/moraexams";
-		break;
-	case "linkedin":
-		// TODO
-		hrefLink = "https://www.linkedin.com/company/mora-exams/";
-		break;
-	case "youtube":
-		hrefLink = "https://www.youtube.com/@MoraETamils";
-		break;
-	case "telegram":
-		hrefLink = "https://t.me/moraexam ";
-		break;
-	default:
-		throw new Error("");
-}
+let hrefLink = `/s/${name}`
 ---
 
-<a href={hrefLink} class={dark ? "dark" : undefined}>
+<a href={hrefLink}>
 	<i class={`fa-brands fa-${name}`}></i>
 </a>
 
