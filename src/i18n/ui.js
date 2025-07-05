@@ -164,6 +164,19 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} practice_papers_p
  * @prop {string} exam_papers_title
  * @prop {string} exam_papers_p
+ * @prop {string} instructions__title
+ * @prop {string} instructions__item_01
+ * @prop {string} instructions__item_02
+ * @prop {string} instructions__item_03
+ * @prop {string} instructions__item_04
+ * @prop {string} instructions__item_05
+ * @prop {string} instructions__item_06
+ * @prop {string} instructions__item_07
+ * @prop {string} instructions__item_08
+ * @prop {string} instructions__item_09
+ * @prop {string} instructions__item_10
+ * @prop {string} instructions__item_11
+ * @prop {string} instructions__item_12
  */
 
 /**
@@ -345,6 +358,32 @@ const UI_STRINGS_EN = {
 	schemes_button: "Schemes",
 	results__title: "Results | Mora Exams",
 	find_your_index_no__title: "Find Your Index No. | Mora Exams",
+
+	instructions__title: "Exam Instructions for Students",
+	instructions__item_01:
+		"Students must arrive at the exam center at least 15 minutes before the exam begins. Entry to the exam hall will be allowed 10 minutes before the start of the exam.",
+	instructions__item_02:
+		"Students must attend the exam center they registered for on their admission form. Entry to any other exam center will not be permitted.",
+	instructions__item_03:
+		"You can find your assigned exam center in the email sent to you for index number confirmation. Please refer to this email to ensure you arrive at the correct center.",
+	instructions__item_04:
+		"Students must use the same exam hall throughout all their exams unless otherwise instructed by the invigilators.",
+	instructions__item_05:
+		"Students must use the exam center with respect and responsibility, ensuring no damage is caused to the exam hall or its property.",
+	instructions__item_06:
+		"All students must bring their National Identity Card (NIC) to the exam hall for verification.",
+	instructions__item_07:
+		"Casual dress is allowed in most exam centers. However, in some centers, school uniforms are mandatory. Check with your center for specific requirements.",
+	instructions__item_08:
+		"If a student registers for all exams but fails to attend one exam, they will not be permitted to attend the remaining exams.",
+	instructions__item_09:
+		"Students arriving after the start of an exam will not be allowed to enter and participate.",
+	instructions__item_10:
+		"Logarithmic tables are allowed if needed by students. Smartphones, digital devices, and calculators are strictly not allowed in the exam hall.",
+	instructions__item_11:
+		"Any form of cheating or misconduct (e.g., copying from others) will result in immediate termination from the exam.",
+	instructions__item_12:
+		"The Organizing Committee reserves the right to make all final decisions in case of any disputes or issues related to the exams.",
 };
 
 /**
@@ -497,9 +536,7 @@ const UI_STRINGS_TA = {
 	achivers_ranking_8: "யாழ் மாவட்டத்தில் முதலிடம்",
 	name__tla: "தமிழ் இலக்கியக் கழகம்",
 	feedback_snekan_name: "சினேகன்",
-
 	looking_for_past_papers__button: "வினாத்தாள்கள்",
-
 	find_your_results: "பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
 	find_your_results_p:
 		"உங்களுடைய சுட்டிலக்கத்தை உள்ளிட்டு பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
@@ -517,6 +554,31 @@ const UI_STRINGS_TA = {
 	schemes_button: "Schemes",
 	results__title: "Results | Mora Exams",
 	find_your_index_no__title: "Find Your Index No. | Mora Exams",
+	instructions__title: "மாணவர்களுக்கான பரீட்சை அறிவுறுத்தல்கள்",
+	instructions__item_01:
+		"மாணவர்கள் பரீட்சை ஆரம்பிக்கும் நேரத்திற்கு 15 நிமிடத்திற்கு முன்னராகவே பரீட்சை நிலையத்திற்கு சமூகமளிக்க வேண்டும். பரீட்சை மண்டபத்திற்குள் பரீட்சை ஆரம்பிப்பதற்கு 10 நிமிடத்திற்கு முன்னராக அனுமதிக்கப்படுவார்கள்.",
+	instructions__item_02:
+		"மாணவர்கள் தங்களது சேர்க்கை வடிவத்தில் பதிவு செய்த தேர்வு மையத்திற்கு மட்டுமே வர வேண்டும். மற்ற தேர்வு மையங்களில் பங்கேற்க அனுமதிக்கப்படமாட்டார்கள்.",
+	instructions__item_03:
+		"மாணவர் சுட்டெண்ணை உறுதிப்படுத்தியதற்கான மின்னஞ்சலில் மாணவர்கள் தேர்வு மையத்தை உறுதி செய்து கொள்ள முடியும்.",
+	instructions__item_04:
+		"மேற்பார்வையாளர்களினால் அறிவுறுத்தப்படும் சந்தர்ப்பம் தவிர்ந்த ஏனைய சந்தர்ப்பங்களில் மாணவர்கள் கட்டாயமாக ஒரே பரீட்சை மண்டபத்தையே அனைத்து பரீட்சைகளுக்கும் பயன்படுத்த வேண்டும்.",
+	instructions__item_05:
+		"மாணவர்கள் அனைவரும் பரீட்சை மண்டபம் மற்றும் அங்குள்ள சொத்துக்களுக்கு எந்தவொரு சேதங்களும் ஏற்படாத வண்ணம் மதிப்புடனும் பொறுப்புணர்வுடனும் பயன்படுத்த வேண்டும்.",
+	instructions__item_06:
+		"மாணவர்கள் அனைவரும் கட்டாயமாக உறுதிப்படுத்துவதற்காக பரீட்சை நிலையத்திற்கு தேசிய அடையாள அட்டையினை கொண்டுவர வேண்டும்.",
+	instructions__item_07:
+		"அதிகளவான பரீட்சை நிலையங்களில் வழக்கமான ஆடை அணிவதற்கு அனுமதிக்கப்படும். இருப்பினும் சில பரீட்சை நிலையங்களில் பாடசாலைச் சீருடை கட்டாயமானது. மேலதிக தகவல்களுக்காக உங்கள் பரீட்சை நிலையங்களை தொடர்பு கொள்ளவும்.",
+	instructions__item_08:
+		"ஒரு பரீட்சையை தவறவிட்டால், மற்ற பரீட்சைகளை எழுத அனுமதி இல்லை.",
+	instructions__item_09:
+		"பரீட்சை ஆரம்பித்த பின்னர் வருகை தரும் மாணவர்கள் பரீட்சை எழுத அனுமதிக்கப்பட மாட்டார்கள்.",
+	instructions__item_10:
+		"மாணவர்களுக்கு தேவையேற்படின் மடக்கை அட்டவணை எடுத்து வருதல் அனுமதிக்கப்பட்டுள்ளது.  கையடக்கத்தொலைபேசி, கணிப்பான் மற்றும் ஏனைய இலத்திரனியல் சாதனங்களை பரீட்சை மண்டபத்தினுள் எடுத்துச்செல்லல் கண்டிப்பாகத் தடை செய்யப்பட்டுள்ளது.",
+	instructions__item_11:
+		"ஒழுக்கமற்ற செயற்பாடுகளில் ஈடுபடுவாராயின் உடனடியாகப் பரீட்சை மண்டபத்திலிருந்து வெளியேற்றப்படுவர்.",
+	instructions__item_12:
+		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2024 | Examination Committee மேற்கொள்ளும்.",
 };
 
 /**

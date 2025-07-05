@@ -1,0 +1,175 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const instructionItems = new Array(12).fill(null).map((_, i) => {
+	// @ts-expect-error
+	return t(`instructions__item_${(i + 1).toString().padStart(2, "0")}`);
+});
+---
+
+<Layout pageTitle={t("index__title")}>
+	<div class="container">
+		<header>
+			<img src="/assets/logo.png" alt="Logo" style="width:10%; height:auto;" />
+			<h1>Mora Exams 2025</h1>
+		</header>
+
+		<div class="tabs">
+			<a
+				href="/ta/instructions"
+				class:list={["tablinks", { active: lang === "ta" }]}>தமிழ்</a
+			>
+			<a
+				href="/en/instructions"
+				class:list={[
+					"tablinks",
+					{
+						active: lang === "en",
+					},
+				]}>English</a
+			>
+		</div>
+
+		<main class="tabcontent">
+			<h2>{t("instructions__title")}</h2>
+			<ul>
+				{instructionItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f3f3f3;
+		color: #333;
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+		padding: 20px;
+		max-width: 800px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		background-color: #fff;
+	}
+
+	header {
+		background-color: #4a0072;
+
+		color: #4a0072;
+		padding: 10px 0;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	header img {
+		width: 50px;
+		height: 50px;
+		margin-right: 15px;
+	}
+
+	header h1 {
+		color: #ffffff;
+		margin: 0;
+		font-size: 40px;
+	}
+
+	footer {
+		background-color: #4a0072;
+		color: white;
+		text-align: center;
+		padding: 10px 0;
+		margin-top: 20px;
+		width: 100%;
+	}
+	.footer2 {
+		color: rgb(0, 0, 0);
+		text-align: left;
+		margin-left: 20px;
+		padding: 10px 0;
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.tabs {
+		display: flex;
+		justify-content: left;
+		margin-bottom: 20px;
+	}
+
+	.tablinks {
+		@apply no-underline;
+		background-color: #e9e3f2;
+		cursor: pointer;
+		padding: 14px 20px;
+		margin-right: 5px;
+		font-size: 16px;
+		color: #4a0072;
+		border-radius: 20px;
+		transition: background-color 0.3s ease;
+	}
+
+	.tablinks:hover {
+		background-color: #d6cdea;
+	}
+
+	.tablinks.active {
+		background-color: #4a0072;
+		color: white;
+	}
+
+	.tabcontent {
+		@apply bg-[#e9e3f2] text-lg p-5;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.tabcontent ul {
+		@apply list-outside list-disc pl-8;
+	}
+	li {
+		@apply max-w-prose my-5;
+	}
+
+	h1 {
+		@apply py-3 mb-5 text-5xl;
+		text-align: center;
+		color: #5c0095;
+	}
+
+	h2 {
+		@apply my-5 text-center text-3xl text-[#5c0095];
+	}
+
+	@media (max-width: 600px) {
+		.tablinks {
+			font-size: 14px;
+			padding: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+		}
+
+		h2 {
+			font-size: 20px;
+		}
+	}
+</style>
