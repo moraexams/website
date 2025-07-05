@@ -1,12 +1,10 @@
 ---
 export const prerender = false;
+
 import Layout from "../../layouts/Layout.astro";
-
 import NavigationBar from "../../sections/1-navigation-bar.astro";
-
 import PracticePapers from "../../sections/17-practice-papers.astro";
-
-import Footer from "../../sections/16.1-footer.astro";
+import MadeBy from "../../components/made-by.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
@@ -17,7 +15,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		<NavigationBar />
 	</div>
 	<PracticePapers />
-	<Footer />
+	<MadeBy />
 </Layout>
 
 <style is:global>
