@@ -1,5 +1,6 @@
 ---
 import Icons from "../components/Icons.astro";
+import { COMMON_CONFIG } from "../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
@@ -62,14 +63,14 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				<li>
 					<span><i class="fa-solid fa-phone"></i></span>
 					<a
-						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block"
-						href="Tel:+94 74 064 0452">+94 74 064 0452</a
+						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block hover:underline"
+						href={`tel:${COMMON_CONFIG.CONTACT_PHONE_NUMBER}`}>{COMMON_CONFIG.CONTACT_PHONE_NUMBER}</a
 					>
 				</li>
 				<li>
 					<span><i class="fa-solid fa-envelope"></i></span>
 					<a
-						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block"
+						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block hover:underline"
 						href="Mailto:examsmora@gmail.com">examsmora@gmail.com</a
 					>
 				</li>
