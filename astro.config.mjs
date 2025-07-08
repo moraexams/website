@@ -26,6 +26,7 @@ export default defineConfig({
 		"/s/viber":
 			"https://invite.viber.com/?g2=AQAR%2BCd%2BUxI2pk1rzlhZCSvq32KykhqAcN%2Fbri8vhfCWBNeaVB7BWo8lgafuBSng&lang=en",
 		"/s/telegram": "https://t.me/moraexam",
+		"/s/facebook": "https://www.facebook.com/moraexams"
 	},
 	adapter: netlify({
 		edgeMiddleware: true,
