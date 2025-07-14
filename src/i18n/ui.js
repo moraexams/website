@@ -40,7 +40,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} nav__resources
  * @prop {string} nav__about
  * @prop {string} nav__practice_papers
- * @prop {string} nav__exam_papers
+ * @prop {string} nav__past_papers
  * @prop {string} nav__home
  * @prop {string} hero__title
  * @prop {string} hero_form_sub_button
@@ -177,6 +177,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} instructions__item_10
  * @prop {string} instructions__item_11
  * @prop {string} instructions__item_12
+ * @prop {string} past_papers__title
  */
 
 /**
@@ -192,7 +193,7 @@ const UI_STRINGS_EN = {
 	nav__resources: "Resources",
 	nav__about: "About Us",
 	nav__practice_papers: "Practice Papers",
-	nav__exam_papers: "Exam Papers",
+	nav__past_papers: "Past Papers",
 
 	hero__title: "Sri Lanka's biggest pilot exams for G.C.E. Advanced Level",
 	hero_form_sub_button: "Exam Form",
@@ -384,6 +385,7 @@ const UI_STRINGS_EN = {
 		"Any form of cheating or misconduct (e.g., copying from others) will result in immediate termination from the exam.",
 	instructions__item_12:
 		"The Organizing Committee reserves the right to make all final decisions in case of any disputes or issues related to the exams.",
+	past_papers__title: "Past Papers",
 };
 
 /**
@@ -398,7 +400,7 @@ const UI_STRINGS_TA = {
 	nav__resources: "வளங்கள்",
 	nav__about: "எம்மைப் பற்றி",
 	nav__practice_papers: "பயிற்சி வினாத்தாள்கள்",
-	nav__exam_papers: "பரீட்சை வினாத்தாள்கள்",
+	nav__past_papers: "கடந்த கால வினாத்தாள்கள்",
 	hero__title: "இலங்கையின் மாபெரும் உயர்தர முன்னோடிப்பரீட்சை",
 	hero_form_sub_button: "Exam Form",
 	find_your_examination_centres__tile:
@@ -579,6 +581,7 @@ const UI_STRINGS_TA = {
 		"ஒழுக்கமற்ற செயற்பாடுகளில் ஈடுபடுவாராயின் உடனடியாகப் பரீட்சை மண்டபத்திலிருந்து வெளியேற்றப்படுவர்.",
 	instructions__item_12:
 		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2024 | Examination Committee மேற்கொள்ளும்.",
+	past_papers__title: "கடந்த கால வினாத்தாள்கள்",
 };
 
 /**

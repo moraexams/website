@@ -1,0 +1,118 @@
+---
+import type { GetStaticPaths } from "astro";
+import past_papers from "../../data/past_papers.json";
+import Layout from "../../layouts/Layout.astro";
+import { formatSubjectName, formatMediumName } from "../../utils/utils";
+import { langStaticRoutes } from "../../i18n/ui";
+import Footer from "../../sections/16-footer.astro";
+import Navigation from "../../sections/1-navigation-bar.astro";
+import { groupPastPaperItems } from "../../utils/utils";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+export const getStaticPaths = (() => {
+	return langStaticRoutes;
+}) satisfies GetStaticPaths;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+
+// @ts-expect-error
+const grouped = groupPastPaperItems(past_papers);
+---
+
+<Layout pageTitle="Past Papers">
+	<div>
+		<Navigation />
+	</div>
+	<main>
+		<h1 class="text-4xl mt-10 mb-12">{t("past_papers__title")}</h1>
+		{
+			Object.entries(grouped).map(([medium, mediumInfo]) => (
+				<>
+					<h2 class="text-3xl">{formatMediumName(medium, lang)}</h2>
+					{Object.entries(mediumInfo).map(([subject, groupedSubjects]) => (
+						<>
+							<h3 class="text-2xl">{formatSubjectName(subject, lang)}</h3>
+							<div class="grid grid-cols-4 gap-y-2 gap-x-3">
+								{Object.entries(groupedSubjects).map(([year, paperDetails]) => (
+									<div class="outline outline-gray-200 rounded-lg px-4 py-1 my-1 flex flex-col">
+										<span class="text-xl mb-1">{year}</span>
+										<div class="space-x-2">
+											{"paper" in paperDetails ? (
+												<a
+													href={paperDetails.paper}
+													class="no-underline hover:underline text-black inline-flex"
+												>
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														width="20"
+														height="20"
+														viewBox="0 0 24 24"
+														fill="none"
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														class="icon icon-tabler icons-tabler-outline icon-tabler-download mr-1"
+													>
+														<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+														<path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+														<path d="M7 11l5 5l5 -5" />
+														<path d="M12 4l0 12" />
+													</svg>
+													{
+														lang === "en" ? "Paper" : "வினாத்தாள்"
+													}
+												</a>
+											) : null}
+											{"scheme" in paperDetails ? (
+												<a
+													href={paperDetails.scheme}
+													class="no-underline hover:underline text-black inline-flex"
+												>
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														width="20"
+														height="20"
+														viewBox="0 0 24 24"
+														fill="none"
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														class="icon icon-tabler icons-tabler-outline icon-tabler-download mr-1"
+													>
+														<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+														<path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+														<path d="M7 11l5 5l5 -5" />
+														<path d="M12 4l0 12" />
+													</svg>
+													{
+														lang === "en" ? "Scheme" : "விடைத்தாள்"
+													}
+												</a>
+											) : null}
+										</div>
+									</div>
+								))}
+							</div>
+						</>
+					))}
+				</>
+			))
+		}
+	</main>
+	<Footer />
+</Layout>
+
+<style is:global>
+	header, nav {
+		@apply !bg-purple-800;
+	}
+	main,
+	footer {
+		@apply px-[var(--body-margin-x)];
+	}
+
+</style>
