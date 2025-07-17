@@ -319,13 +319,13 @@ const UI_STRINGS_EN = {
 
 	what_is_mora_pilot_exam__h2: "What is Mora Exams?",
 	what_is_mora_pilot_exam__p1:
-		"When sweeping over the ideas of how to choose the ways to advance the academic standards of Tamil-speaking students, our buddies thought of pilot examinations, which could boost the last-time preparations and be a way to appraise the students themselves at the very edge.",
+		"When sweeping over the ideas to advance the academic standards of Tamil-speaking students, our buddies thought of pilot examinations, which could boost the last-time preparations and be a way to appraise the students themselves at the very edge.",
 	what_is_mora_pilot_exam__p2:
 		"But providing a common exam paper and marking wouldn't help them , as they are very familiar to them. So, to add more and more spice,",
 	what_is_mora_pilot_exam__li1:
 		"The exam papers are set by popular and experienced teachers.",
 	what_is_mora_pilot_exam__li2:
-		"The exam papers are set in a way that portrays the final examination environment. This helps students ensure time management.",
+		"The exam papers are conducted in a way that portrays the final examination environment. This helps students ensure time management.",
 	what_is_mora_pilot_exam__li3:
 		"We too release island ranks based on their z-scores.",
 	what_is_mora_pilot_exam__p3:
