@@ -13,14 +13,11 @@ export function formatMediumName(medium: string, lang: Language): string {
 			: medium;
 }
 
-
 export function formatSubjectName(subject: string, lang: Language): string {
-
 	if (!subject) {
 		return "";
 	}
 	if (lang === "en") {
-
 		switch (subject) {
 			case "ict":
 				return "ICT";
@@ -50,66 +47,63 @@ export function formatSubjectName(subject: string, lang: Language): string {
 }
 
 export function capitalize(word: string) {
-  return word.charAt(0).toUpperCase().concat(word.slice(1).toLowerCase());
+	return word.charAt(0).toUpperCase().concat(word.slice(1).toLowerCase());
 }
 
 interface GroupedSubject {
 	[key: number]: {
 		scheme?: string;
 		paper?: string;
-	}
+	};
 }
 
 interface GroupedPastPapers {
 	tamil: {
-		ict: GroupedSubject
-		biology: GroupedSubject
-		chemistry: GroupedSubject
-		"combined-maths": GroupedSubject
-		"physics": GroupedSubject
+		ict: GroupedSubject;
+		biology: GroupedSubject;
+		chemistry: GroupedSubject;
+		"combined-maths": GroupedSubject;
+		physics: GroupedSubject;
 	};
 	english: {
-		ict: GroupedSubject
-		biology: GroupedSubject
-		chemistry: GroupedSubject
-		"combined-maths": GroupedSubject
-		"physics": GroupedSubject
-	}
+		ict: GroupedSubject;
+		biology: GroupedSubject;
+		chemistry: GroupedSubject;
+		"combined-maths": GroupedSubject;
+		physics: GroupedSubject;
+	};
 }
-			
-
 
 export function groupPastPaperItems(items: Array<PastPaperItem>) {
 	const grouped: GroupedPastPapers = {
-		"tamil": {
-			"ict": {},
-			"biology": {},
+		tamil: {
+			ict: {},
+			biology: {},
 			"combined-maths": {},
-			"physics": {},
-			"chemistry": {},
+			physics: {},
+			chemistry: {},
 		},
-		"english": {
-			"ict": {},
-			"biology": {},
+		english: {
+			ict: {},
+			biology: {},
 			"combined-maths": {},
-			"physics": {},
-			"chemistry": {},
-		}
+			physics: {},
+			chemistry: {},
+		},
 	};
-	
+
 	for (const item of items) {
 		if (!item || !item.subject || !item.medium || !grouped[item.medium]) {
 			continue; // Skip invalid items
 		}
-		if (!grouped[item.medium][item.subject]) 
-			continue;
+		if (!grouped[item.medium][item.subject]) continue;
 		if (!grouped[item.medium][item.subject][item.year]) {
 			grouped[item.medium][item.subject][item.year] = {};
 		}
-		
-		grouped[item.medium][item.subject][item.year][item.type] = `https://drive.google.com/uc?export=download&id=${item.id}`;
-	}
-	
-	return grouped;
 
+		grouped[item.medium][item.subject][item.year][item.type] =
+			`https://drive.google.com/uc?export=download&id=${item.id}`;
+	}
+
+	return grouped;
 }

@@ -16,7 +16,6 @@ export const getStaticPaths = (() => {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-
 // @ts-expect-error
 const grouped = groupPastPaperItems(past_papers);
 ---
@@ -61,9 +60,7 @@ const grouped = groupPastPaperItems(past_papers);
 														<path d="M7 11l5 5l5 -5" />
 														<path d="M12 4l0 12" />
 													</svg>
-													{
-														lang === "en" ? "Paper" : "வினாத்தாள்"
-													}
+													{lang === "en" ? "Paper" : "வினாத்தாள்"}
 												</a>
 											) : null}
 											{"scheme" in paperDetails ? (
@@ -88,9 +85,7 @@ const grouped = groupPastPaperItems(past_papers);
 														<path d="M7 11l5 5l5 -5" />
 														<path d="M12 4l0 12" />
 													</svg>
-													{
-														lang === "en" ? "Scheme" : "விடைத்தாள்"
-													}
+													{lang === "en" ? "Scheme" : "விடைத்தாள்"}
 												</a>
 											) : null}
 										</div>
@@ -107,12 +102,12 @@ const grouped = groupPastPaperItems(past_papers);
 </Layout>
 
 <style is:global>
-	header, nav {
+	header,
+	nav {
 		@apply !bg-purple-800;
 	}
 	main,
 	footer {
 		@apply px-[var(--body-margin-x)];
 	}
-
 </style>
