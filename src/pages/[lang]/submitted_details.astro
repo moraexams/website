@@ -1,0 +1,54 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+import { langStaticRoutes } from "../../i18n/ui";
+import { getLangFromUrl } from "../../i18n/utils";
+import type { GetStaticPaths } from "astro";
+
+const pageTitle = "Thank you for submitting your details";
+
+export const getStaticPaths = (() => {
+	return langStaticRoutes;
+}) satisfies GetStaticPaths;
+---
+
+<Layout pageTitle={pageTitle}>
+  <section class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-white to-purple-100">
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl w-full text-center">
+      <div class="flex justify-center mb-6">
+        <div class="bg-purple-500 p-2 rounded-full shadow-lg size-12">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">Submission Successful!</h1>
+      <p class="text-gray-600 mb-6">
+        Thank you for your submission. We have received your information and will process it shortly.
+        If you have any questions, please contact us at <a href="mailto:support@example.com">support@example.com</a> or <a href="tel:+1234567890">+1 (234) 567-890</a>  .
+      </p>
+
+      <div class="text-left text-sm bg-gray-50 rounded-md p-4 mb-6 space-y-2">
+        <p></p>
+        <p><strong>First Name:</strong> John</p>
+        <p><strong>Last Name:</strong> Doe</p>
+        <p><strong>NIC:</strong> 200304200371</p>
+        <p><strong>School:</strong> J/NCC</p>
+        <p><strong>Permanent Address:</strong> sdfer</p>
+        <p><strong>Phone Number:</strong> 0123456789</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>Gender:</strong> Male</p>
+        <p><strong>Medium:</strong> English</p>
+        <p><strong>Stream:</strong> Physical Science (Maths , Physics, Chemistry)</p>
+        <p><strong>District Considered for Ranking:</strong> Jaffna</p>
+        <p><strong>District for Exam Sitting:</strong> Badulla</p>
+        <p><strong>Exam Center:</strong>J/Hartley College </p>
+      </div>
+
+      <a href="/" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium px-5 py-2 rounded-lg transition">
+        Back to Home
+      </a>
+    </div>
+  </section>
+</Layout>
