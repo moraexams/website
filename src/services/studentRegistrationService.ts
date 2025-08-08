@@ -1,7 +1,10 @@
-import { AxiosError } from "axios";
-import axiosInstance from "../axiosConfig";
+const API_URL = import.meta.env.PUBLIC_API_URL;
 
-export const addStudent = async (
+if (!API_URL) {
+	throw new Error("PUBLIC_API_URL is not defined in the environment variables.");
+}
+
+interface StudentRegistrationDetails {
 	name: string,
 	stream_id: number,
 	medium: string,
@@ -14,41 +17,34 @@ export const addStudent = async (
 	telephone_no: string,
 	school: string,
 	address: string,
-	/* reg_by:string,
-    reg_date:string,
-    checked_by:number,
-    checked_at:string,
-    created_at: string, */ //can get this data in backend??
+}
+
+export const registerStudent = async (
+	details: StudentRegistrationDetails
 ) => {
 	try {
-		name = name.trim().toUpperCase();
-		school = school.trim().toUpperCase();
-		address = address.trim().toUpperCase();
-		const response = await axiosInstance.post("/temp-student/add", {
-			nic,
-			name,
-			school,
-			address,
-			email,
-			telephone_no,
-			gender,
-			medium,
-			stream_id,
-			rank_district_id,
-			exam_district_id,
-			exam_centre_id,
-			/*  reg_by,
-        reg_date,
-        checked_by,
-        checked_at,
-        created_at, */
-		});
-		console.log("response", response);
-		return true;
+		details.name = details.name.trim().toUpperCase();
+		details.school = details.school.trim().toUpperCase();
+		details.address = details.address.trim().toUpperCase();
+
+		const response = await fetch(API_URL.concat("/temp-student/add"), {
+			method: "POST",
+			body: JSON.stringify(details),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		
+		if (!response.ok) {
+			return "Failed to register. Please try again.";
+		}
 	} catch (error) {
 		console.error("Error Adding Student:", error);
-		if (error instanceof AxiosError && error.response) {
-			throw error.response.data.error;
+		
+		if (error instanceof Error) {
+			return error.message;
 		}
+		
+		return "An unexpected error occurred. Please try again.";
 	}
 };

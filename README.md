@@ -4,6 +4,8 @@ This repository contains the source code for the Mora Exams landing website. It'
 
 ## Development Guide
 
+After cloning the repository, make sure to create the `.env` file from the given `.env.example` file.
+
 ### Prerequisites
 
 - Node v20
