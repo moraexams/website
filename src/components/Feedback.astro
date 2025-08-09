@@ -18,9 +18,6 @@ const displayName = t(`feedback_${name}_name`);
 	<div class="info">
 		<h3>
 			{displayName}
-			<!-- <br />
-			{state}<br />
-			{batch} -->
 		</h3>
 
 		<span class="block">{state}</span>
@@ -33,14 +30,11 @@ const displayName = t(`feedback_${name}_name`);
 <style>
 	.card {
 		--width: min(29rem, 90vw);
-		--height: 25rem;
+		--height: 22rem;
 
-		@apply flex bg-secondary-900 transition-all flex-col px-3 py-6 opacity-90 rounded-lg cursor-pointer snap-center relative text-white items-center overflow-hidden;
+		@apply flex bg-secondary-800 transition-all flex-col px-3 py-6 opacity-90 rounded-lg cursor-pointer snap-center relative text-white items-center overflow-hidden hover:bg-secondary-900 hover:opacity-100;
 		min-width: var(--width);
 		height: var(--height);
-	}
-	.card:hover {
-		@apply bg-secondary-950 opacity-100;
 	}
 	img,
 	.info,
@@ -76,5 +70,3 @@ const displayName = t(`feedback_${name}_name`);
 		@apply h-full;
 	}
 </style>
-
-<!-- Make the cards more space efficient and horizontal scrolling accessible via buttons -->

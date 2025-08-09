@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import type { Language } from "../i18n/ui";
 import { useTranslations } from "../i18n/utils";
 
 interface Props {
 	post: string;
 	lang: Language;
+	img: ImageMetadata;
 }
 const { post, lang } = Astro.props;
 const t = useTranslations(lang);
@@ -19,9 +21,10 @@ const faculty = t(`committee__${post}_faculty`);
 
 <div class="p-3 rounded-xl bg-[#fff]">
 	<div class="w-full h-auto rounded-full p-4">
-		<img
+		<Image
 			class="w-full h-auto rounded-full aspect-square"
-			src={`/committee/${post.toLowerCase()}.jpg`}
+			src={Astro.props.img}
+			alt={`${displayPost} - ${name} (${faculty})`}
 		/>
 	</div>
 	<div class="text-center p-0">

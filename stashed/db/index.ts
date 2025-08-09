@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
-import { integer, sqliteTable, text, numeric } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const applicants = sqliteTable("tbl_students", {
 	id: text("index_no", { length: 50, mode: "text" }).notNull(),

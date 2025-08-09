@@ -6,7 +6,7 @@ import NavigationBar from "../../sections/1-navigation-bar.astro";
 
 import ExamPapers from "../../sections/18-exam-papers.astro";
 
-import Footer from "../../sections/16.1-footer.astro";
+import MadeBy from "../../components/made-by.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
@@ -17,7 +17,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		<NavigationBar />
 	</div>
 	<ExamPapers />
-	<Footer />
+	<MadeBy />
 </Layout>
 
 <style is:global>

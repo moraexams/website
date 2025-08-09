@@ -1,5 +1,7 @@
 ---
 import Icons from "../components/Icons.astro";
+import MadeBy from "../components/made-by.astro";
+import { COMMON_CONFIG } from "../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
@@ -62,22 +64,23 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				<li>
 					<span><i class="fa-solid fa-phone"></i></span>
 					<a
-						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block"
-						href="Tel:+94 74 064 0452">+94 74 064 0452</a
+						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block hover:underline"
+						href={`tel:${COMMON_CONFIG.CONTACT_PHONE_NUMBER}`}
+						>{COMMON_CONFIG.CONTACT_PHONE_NUMBER}</a
 					>
 				</li>
 				<li>
 					<span><i class="fa-solid fa-envelope"></i></span>
 					<a
-						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block"
+						class="mb-0.5 pl-5 text-[#800080] no-underline inline-block hover:underline"
 						href="Mailto:examsmora@gmail.com">examsmora@gmail.com</a
 					>
 				</li>
 			</ul>
 			<div class="grid">
-				<p class="relative text-justify text-[#3c005a] font-semibold m-0">
+				<h4 class="relative text-justify text-[#3c005a] font-semibold m-0">
 					{t("footer_title_3")}
-				</p>
+				</h4>
 				<Icons />
 			</div>
 		</div>
@@ -94,17 +97,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			</form>
 		</div> -->
 </footer>
-<div class="pt-1 text-center border-t-2">
-	<hr />
-	<p>
-		<!-- Rights reserved to <span class="font-semibold">Mora Exams</span>. -->
-		<!-- <br /> -->
-		Made with 💟 by <a
-			class="no-underline font-semibold text-primary-800"
-			href="https://github.com/moraexams">Mora Exams</a
-		>
-	</p>
-</div>
+<MadeBy />
 
 <style>
 	ul {

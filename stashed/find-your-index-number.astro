@@ -5,7 +5,7 @@ import Footer from "../../sections/16-footer.astro";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
-import { db, applicants } from "../../db";
+import { db, applicants } from "../../../stashed/db";
 import { eq } from "drizzle-orm";
 
 const { lang } = Astro.params;
