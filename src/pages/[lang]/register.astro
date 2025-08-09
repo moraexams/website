@@ -6,28 +6,59 @@ import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { useTranslations, getLangFromUrl } from "../../i18n/utils";
 import StudentRegistrationForm from "../../components/student-registration-form.astro";
 import StudentRegistrationInstructions from "../../components/student-registration-instructions.astro";
+import type { StudentRegistrationDetails } from "../../types";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 
 export const getStaticPaths = (() => {
 	return langStaticRoutes;
 }) satisfies GetStaticPaths;
+
+let IS_FORM_AVAILABLE = false;
+
+const studentRegistrationDetails: StudentRegistrationDetails = {
+	districts: [],
+};
+
+try {
+	const response = await fetch(
+		import.meta.env.PUBLIC_API_URL + "/student-registration/details",
+	);
+	const data = await response.json();
+
+	if (!data || !data.districts) {
+		throw new Error("Invalid data format");
+	}
+
+	studentRegistrationDetails.districts = data.districts;
+	IS_FORM_AVAILABLE = import.meta.env.REGISTRATION_FORM_OPEN === "true";
+} catch (error) {
+	console.error("Error fetching student registration details:", error);
+}
 ---
 
 <Layout pageTitle={t("student_register__title")}>
 	<div class="bg-purple-800">
 		<NavigationBar />
 	</div>
-	<section
-		class="min-h-screen px-[var(--body-margin-x)] pb-10 grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_1fr] gap-6"
+	<main
+		class="px-[var(--body-margin-x)] pb-10 grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_1fr] gap-6"
 	>
 		<h1 class="text-4xl col-span-full font-bold mb-0">
 			{t("student_register__title")}
 		</h1>
 
-		<StudentRegistrationInstructions />
-		<StudentRegistrationForm />
-	</section>
+		{
+			IS_FORM_AVAILABLE ? (
+				<>
+					<StudentRegistrationInstructions />
+					<StudentRegistrationForm />
+				</>
+			) : (
+				<p class="col-span-full">{t("student_register__form_unavailable")}</p>
+			)
+		}
+	</main>
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
 			const checkbox = document.getElementById(
