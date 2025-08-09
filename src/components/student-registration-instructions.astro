@@ -8,7 +8,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		{t("student_register__instructions_title")}
 	</h2>
 
-	<ul class="list-none pl-0 max-w-[650px]">
+	<ul class="list-none pl-0">
 		<li style="padding: 15px; margin-bottom: 10px;">
 			{t("student_register__instruction_1")}
 		</li>
@@ -77,6 +77,79 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			</ul>
 		</li>
 	</ul>
+
+	<div
+		class="confirmation-banner transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+	>
+		<span>
+			<input type="checkbox" id="agree-checkbox" class="mr-2" />
+			<label for="agree-checkbox">
+				{t("student_register__understood_text")}
+			</label>
+		</span>
+
+		<p class="text-red-600 my-2">
+			{t("student_register__cant_proceed_text")}
+		</p>
+	</div>
+
+	<script>
+		function disableRegistrationForm() {
+			const form = document.getElementById("registration-form");
+			if (!form) {
+				return;
+			}
+			form.classList.add("pointer-events-none", "opacity-80");
+			form.querySelectorAll("input, textarea, select").forEach((el) => {
+				if (
+					el instanceof HTMLInputElement ||
+					el instanceof HTMLTextAreaElement ||
+					el instanceof HTMLSelectElement
+				) {
+					el.disabled = true;
+				}
+			});
+		}
+
+		function enableRegistrationForm() {
+			const form = document.getElementById("registration-form");
+			if (!form) {
+				return;
+			}
+
+			form.classList.remove("pointer-events-none", "opacity-50");
+			form.querySelectorAll("input, textarea, select").forEach((el) => {
+				if (
+					el instanceof HTMLInputElement ||
+					el instanceof HTMLTextAreaElement ||
+					el instanceof HTMLSelectElement
+				) {
+					el.disabled = false;
+				}
+			});
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const checkbox = document.getElementById(
+				"agree-checkbox",
+			) as HTMLInputElement;
+
+			if (!checkbox) {
+				console.error("Checkbox with ID 'agree-checkbox' not found.");
+				return;
+			}
+			checkbox.checked = false;
+			disableRegistrationForm();
+
+			checkbox.addEventListener("change", () => {
+				if (!checkbox.checked) {
+					disableRegistrationForm();
+				} else {
+					enableRegistrationForm();
+				}
+			});
+		});
+	</script>
 </div>
 
 <style>
@@ -84,5 +157,15 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		li {
 			@apply bg-[#efe6f5] border-l-4 border-0 border-[#6b21a8] border-solid;
 		}
+	}
+	.confirmation-banner:has(#agree-checkbox) {
+		@apply bg-red-50 border-red-500;
+	}
+	.confirmation-banner:has(#agree-checkbox:checked) {
+		@apply bg-green-50 border-green-500;
+	}
+	input,
+	label {
+		@apply cursor-pointer;
 	}
 </style>
