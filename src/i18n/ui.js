@@ -195,6 +195,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__registration_fee_bank_branch
  * @prop {string} student_register__registration_fee_description_format
  * @prop {string} student_register__understood_text
+ * @prop {string} student_register__cant_proceed_text
  */
 
 /**
@@ -423,6 +424,8 @@ const UI_STRINGS_EN = {
 	student_register__registration_fee_description_format: "Description Format",
 	student_register__understood_text:
 		"I have read and understood the above mentioned details before proceeding.",
+	student_register__cant_proceed_text:
+		"You cannot proceed with the registration without confirming that you have read and understood the instructions.",
 };
 
 /**
@@ -638,6 +641,8 @@ const UI_STRINGS_TA = {
 	student_register__registration_fee_description_format: "Description Format",
 	student_register__understood_text:
 		"நான் மேலே குறிப்பிடப்பட்டுள்ள விவரங்களைப் படித்துப் புரிந்துகொண்டேன்.",
+	student_register__cant_proceed_text:
+		"நீங்கள் வழிமுறைகளைப் படித்துப் புரிந்து கொண்டீர்கள் என்பதை உறுதிப்படுத்தாமல் பதிவைத் தொடர முடியாது.",
 };
 
 /**
