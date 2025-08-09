@@ -178,6 +178,22 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} instructions__item_11
  * @prop {string} instructions__item_12
  * @prop {string} past_papers__title
+ *
+ * @prop {string} student_register__title
+ * @prop {string} student_register__instruction_1
+ * @prop {string} student_register__instruction_2
+ * @prop {string} student_register__registration_fee_title
+ * @prop {string} student_register__registration_fee_ict_only_label
+ * @prop {string} student_register__registration_fee_ict_only_amount
+ * @prop {string} student_register__registration_fee_other_streams_label
+ * @prop {string} student_register__registration_fee_other_streams_amount
+ * @prop {string} student_register__registration_fee_bank_details_title
+ * @prop {string} student_register__registration_fee_account_name
+ * @prop {string} student_register__registration_fee_account_no
+ * @prop {string} student_register__registration_fee_bank_name
+ * @prop {string} student_register__registration_fee_bank_branch
+ * @prop {string} student_register__registration_fee_description_format
+ * @prop {string} student_register__understood_text
  */
 
 /**
@@ -386,6 +402,25 @@ const UI_STRINGS_EN = {
 	instructions__item_12:
 		"The Organizing Committee reserves the right to make all final decisions in case of any disputes or issues related to the exams.",
 	past_papers__title: "Past Papers",
+
+	student_register__title: "Instructions",
+	student_register__instruction_1:
+		"It is mandatory to pay the examination fee before filling up the online application form.",
+	student_register__instruction_2:
+		"English <b>BLOCK LETTERS</b> must be used to fill the application form.",
+	student_register__registration_fee_title: "Registration Fee",
+	student_register__registration_fee_ict_only_label: "ICT only",
+	student_register__registration_fee_ict_only_amount: "Rs. 200",
+	student_register__registration_fee_other_streams_label: "Other options",
+	student_register__registration_fee_other_streams_amount: "Rs. 600",
+	student_register__registration_fee_bank_details_title: "Bank Account Details",
+	student_register__registration_fee_account_name: "Account Name",
+	student_register__registration_fee_account_no: "Account No",
+	student_register__registration_fee_bank_name: "Bank",
+	student_register__registration_fee_bank_branch: "Branch",
+	student_register__registration_fee_description_format: "Description Format",
+	student_register__understood_text:
+		"I have read and understood the above mentioned details before proceeding.",
 };
 
 /**
@@ -582,6 +617,24 @@ const UI_STRINGS_TA = {
 	instructions__item_12:
 		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2024 | Examination Committee மேற்கொள்ளும்.",
 	past_papers__title: "கடந்த கால வினாத்தாள்கள்",
+	student_register__title: "அறிவுறுத்தல்கள்",
+	student_register__instruction_1:
+		"ஆன்லைன் விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன் தேர்வுக் கட்டணத்தைச் செலுத்துவது கட்டாயமாகும்.",
+	student_register__instruction_2:
+		"விண்ணப்பப் படிவத்தை நிரப்ப <b>ஆங்கில பேரெழுத்துக்களை</b> பயன்படுத்த வேண்டும்.",
+	student_register__registration_fee_title: "பதிவு கட்டணம்",
+	student_register__registration_fee_ict_only_label: "ICT மட்டும்",
+	student_register__registration_fee_ict_only_amount: "ரூ. 200",
+	student_register__registration_fee_other_streams_label: "பிற தொகுதிகள்",
+	student_register__registration_fee_other_streams_amount: "ரூ. 600",
+	student_register__registration_fee_bank_details_title: "வங்கி விவரங்கள்",
+	student_register__registration_fee_account_name: "கணக்கு பெயர்",
+	student_register__registration_fee_account_no: "கணக்கு எண்",
+	student_register__registration_fee_bank_name: "வங்கி பெயர்",
+	student_register__registration_fee_bank_branch: "கிளை",
+	student_register__registration_fee_description_format: "Description Format",
+	student_register__understood_text:
+		"நான் மேலே குறிப்பிடப்பட்டுள்ள விவரங்களைப் படித்துப் புரிந்துகொண்டேன்.",
 };
 
 /**
