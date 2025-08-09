@@ -79,7 +79,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 	</ul>
 
 	<div
-		class="confirmation-banner transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+		class="confirmation-banner no-select transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
 	>
 		<span>
 			<input type="checkbox" id="agree-checkbox" class="mr-2" />
@@ -88,7 +88,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			</label>
 		</span>
 
-		<p class="text-red-600 my-2">
+		<p class="my-2">
 			{t("student_register__cant_proceed_text")}
 		</p>
 	</div>
@@ -138,14 +138,17 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				console.error("Checkbox with ID 'agree-checkbox' not found.");
 				return;
 			}
-			checkbox.checked = false;
-			disableRegistrationForm();
+			if (checkbox.checked) {
+				enableRegistrationForm();
+			} else {
+				disableRegistrationForm();
+			}
 
 			checkbox.addEventListener("change", () => {
-				if (!checkbox.checked) {
-					disableRegistrationForm();
-				} else {
+				if (checkbox.checked) {
 					enableRegistrationForm();
+				} else {
+					disableRegistrationForm();
 				}
 			});
 		});
@@ -160,9 +163,16 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 	}
 	.confirmation-banner:has(#agree-checkbox) {
 		@apply bg-red-50 border-red-500;
+		p {
+			@apply text-red-700;
+		}
 	}
 	.confirmation-banner:has(#agree-checkbox:checked) {
 		@apply bg-green-50 border-green-500;
+
+		p {
+			@apply text-green-700;
+		}
 	}
 	input,
 	label {
