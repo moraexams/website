@@ -1,0 +1,88 @@
+---
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<div>
+	<h2>
+		{t("student_register__instructions_title")}
+	</h2>
+
+	<ul class="list-none pl-0 max-w-[650px]">
+		<li style="padding: 15px; margin-bottom: 10px;">
+			{t("student_register__instruction_1")}
+		</li>
+
+		<li
+			style="padding: 15px; ; margin-bottom: 10px;"
+			set:html={t("student_register__instruction_2")}
+		/>
+
+		<li style="padding: 15px; margin-bottom: 10px;">
+			<h3 style="color: #490665; margin-top: 0;">
+				{t("student_register__registration_fee_title")}
+			</h3>
+			<ul class="grid grid-cols-[auto_1fr] gap-x-8 pl-2 fee-list">
+				<li class="contents">
+					<span>
+						{t("student_register__registration_fee_ict_only_label")}
+					</span>
+					<span class="font-bold"
+						>{t("student_register__registration_fee_ict_only_amount")}</span
+					>
+				</li>
+				<li class="contents">
+					<span>
+						{t("student_register__registration_fee_other_streams_label")}
+					</span>
+					<span class="font-bold"
+						>{
+							t("student_register__registration_fee_other_streams_amount")
+						}</span
+					>
+				</li>
+			</ul>
+		</li>
+
+		<li style="padding: 15px; margin-bottom: 10px;">
+			<h3 style="color: #490665; margin-top: 0;">
+				{t("student_register__registration_fee_bank_details_title")}
+			</h3>
+			<ul class="grid grid-cols-[auto_1fr] gap-x-8 gap-y-1.5 pl-0">
+				<li class="contents">
+					<label>{t("student_register__registration_fee_account_name")}</label>
+					<span>A ARRATHIKASARMA</span>
+				</li>
+				<li class="contents">
+					<label>{t("student_register__registration_fee_account_no")}</label>
+					<span>91616090</span>
+				</li>
+				<li class="contents">
+					<label>{t("student_register__registration_fee_bank_name")}</label>
+					<span>BOC</span>
+				</li>
+				<li class="contents">
+					<label>{t("student_register__registration_fee_bank_branch")}</label>
+					<span>Nallur</span>
+				</li>
+				<li class="contents">
+					<label class="col-span-2 md:col-span-1"
+						>{t("student_register__registration_fee_description_format")}</label
+					>
+					<span class="col-span-2 md:col-span-1">
+						[NIC] - [FULL NAME]
+						<span class="block"> (e.g., 200500000000 - John Doe)</span>
+					</span>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<style>
+	ul {
+		li {
+			@apply bg-[#efe6f5] border-l-4 border-0 border-[#6b21a8] border-solid;
+		}
+	}
+</style>

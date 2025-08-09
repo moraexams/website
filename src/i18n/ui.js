@@ -180,6 +180,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} past_papers__title
  *
  * @prop {string} student_register__title
+ * @prop {string} student_register__instructions_title
  * @prop {string} student_register__instruction_1
  * @prop {string} student_register__instruction_2
  * @prop {string} student_register__registration_fee_title
@@ -403,7 +404,8 @@ const UI_STRINGS_EN = {
 		"The Organizing Committee reserves the right to make all final decisions in case of any disputes or issues related to the exams.",
 	past_papers__title: "Past Papers",
 
-	student_register__title: "Instructions",
+	student_register__title: "Student Registration Form",
+	student_register__instructions_title: "Instructions",
 	student_register__instruction_1:
 		"It is mandatory to pay the examination fee before filling up the online application form.",
 	student_register__instruction_2:
@@ -617,7 +619,8 @@ const UI_STRINGS_TA = {
 	instructions__item_12:
 		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2024 | Examination Committee மேற்கொள்ளும்.",
 	past_papers__title: "கடந்த கால வினாத்தாள்கள்",
-	student_register__title: "அறிவுறுத்தல்கள்",
+	student_register__title: "மாணவர் பதிவு படிவம்",
+	student_register__instructions_title: "அறிவுறுத்தல்கள்",
 	student_register__instruction_1:
 		"ஆன்லைன் விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன் தேர்வுக் கட்டணத்தைச் செலுத்துவது கட்டாயமாகும்.",
 	student_register__instruction_2:
