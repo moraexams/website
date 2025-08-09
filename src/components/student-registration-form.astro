@@ -7,10 +7,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 <div>
 	<form
 		id="registration-form"
-		class="space-y-6 transition-opacity"
+		class="gap-y-2 transition-opacity grid grid-cols-2 gap-x-3"
 		enctype="multipart/form-data"
 	>
-		<div>
+		<div class="col-span-full">
 			<label for="fullname" class="block mb-1 font-medium">Full Name</label>
 			<input
 				id="fullname"
@@ -19,86 +19,85 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			/>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-			<div>
-				<label for="nic" class="block mb-1 font-medium">NIC</label>
-				<input
-					id="nic"
-					name="nic"
-					required
-					class="w-full border px-3 py-2 rounded"
-				/>
-			</div>
+		<div>
+			<label for="nic" class="block mb-1 font-medium">NIC</label>
+			<input
+				id="nic"
+				name="nic"
+				required
+				class="w-full border px-3 py-2 rounded"
+			/>
+		</div>
 
-			<div>
-				<label for="school" class="block mb-1 font-medium">School</label>
-				<input
-					id="school"
-					name="school"
-					class="w-full border px-3 py-2 rounded"
-				/>
-			</div>
+		<div>
+			<label for="school" class="block mb-1 font-medium">School</label>
+			<input
+				id="school"
+				name="school"
+				class="w-full border px-3 py-2 rounded"
+			/>
+		</div>
 
-			<div class="md:col-span-2">
-				<label for="address" class="block mb-1 font-medium"
-					>Permanent Address</label
-				>
-				<input
-					id="address"
-					name="address"
-					class="w-full border px-3 py-2 rounded"
-				/>
-			</div>
+		<div class="md:col-span-2">
+			<label for="address" class="block mb-1 font-medium"
+				>Permanent Address</label
+			>
+			<input
+				id="address"
+				name="address"
+				class="w-full border px-3 py-2 rounded"
+			/>
+		</div>
 
-			<div>
-				<label for="phone" class="block mb-1 font-medium">Phone Number</label>
-				<input
-					id="phone"
-					name="phone"
-					type="tel"
-					required
-					class="w-full border px-3 py-2 rounded"
-				/>
-			</div>
+		<div>
+			<label for="phone" class="block mb-1 font-medium">Phone Number</label>
+			<input
+				id="phone"
+				name="phone"
+				type="tel"
+				required
+				class="w-full border px-3 py-2 rounded"
+			/>
+		</div>
 
-			<div>
-				<label for="email" class="block mb-1 font-medium">E-mail</label>
-				<input
-					id="email"
-					name="email"
-					required
-					class="w-full border px-3 py-2 rounded"
-				/>
-			</div>
+		<div>
+			<label for="email" class="block mb-1 font-medium">E-mail</label>
+			<input
+				id="email"
+				name="email"
+				required
+				class="w-full border px-3 py-2 rounded"
+			/>
+		</div>
 
-			<div>
-				<label for="gender" class="block mb-1 font-medium">Gender</label>
-				<select
-					id="gender"
-					name="gender"
-					required
-					class="w-full border px-3 py-2 rounded"
-				>
-					<option value="">Select</option>
-					<option>Male</option>
-					<option>Female</option>
-				</select>
-			</div>
-			<div>
-				<label for="medium" class="block mb-1 font-medium">Medium</label>
-				<select
-					id="medium"
-					name="medium"
-					required
-					class="w-full border px-3 py-2 rounded"
-				>
-					<option value="">Select</option>
-					<option>English</option>
-					<option>Tamil</option>
-				</select>
-			</div>
+		<div>
+			<label for="gender" class="block mb-1 font-medium">Gender</label>
+			<select
+				id="gender"
+				name="gender"
+				required
+				class="w-full border px-3 py-2 rounded"
+			>
+				<option value="">Select</option>
+				<option>Male</option>
+				<option>Female</option>
+			</select>
+		</div>
+		<div>
+			<label for="medium" class="block mb-1 font-medium">Medium</label>
+			<select
+				id="medium"
+				name="medium"
+				required
+				class="w-full border px-3 py-2 rounded"
+			>
+				<option value="">Select</option>
+				<option>English</option>
+				<option>Tamil</option>
+			</select>
+		</div>
 
-			<!-- <div>
+		<!-- <div>
 						<label for="streamDetails" class="block mb-1 font-medium"
 							>Stream and Exam Centre Details</label
 						>
@@ -108,7 +107,6 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 							class="w-full border px-3 py-2 rounded"
 						/>
 					</div> -->
-		</div>
 
 		<div>
 			<label for="stream" class="block mb-1 font-medium">Stream</label>
@@ -219,7 +217,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			</select>
 		</div>
 
-		<div class="mb-6">
+		<div class="mb-6 col-span-full">
 			<label for="bankReceipt" class="block mb-1 font-medium">
 				Upload Bank Receipt
 			</label>
@@ -259,9 +257,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			</div>
 		</div>
 
-		<div class="md:col-span-2 justify-between flex items-center">
-			<Button id="previous" type="button">Previous</Button>
-
+		<div class="md:col-span-2 justify-end flex items-center">
 			<Button id="submit" type="button">Submit</Button>
 		</div>
 	</form>

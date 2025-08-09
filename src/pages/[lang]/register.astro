@@ -19,9 +19,11 @@ export const getStaticPaths = (() => {
 		<NavigationBar />
 	</div>
 	<section
-		class="min-h-screen px-[var(--body-margin-x)] bg-delft-blue-50/50 text-primary-900 pb-10"
+		class="min-h-screen px-[var(--body-margin-x)] pb-10 grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_1fr] gap-6"
 	>
-		<h1 class="text-4xl font-bold mb-8">{t("student_register__title")}</h1>
+		<h1 class="text-4xl col-span-full font-bold mb-0">
+			{t("student_register__title")}
+		</h1>
 
 		<StudentRegistrationInstructions />
 		<StudentRegistrationForm />
