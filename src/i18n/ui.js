@@ -196,6 +196,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__registration_fee_description_format
  * @prop {string} student_register__understood_text
  * @prop {string} student_register__cant_proceed_text
+ * @prop {string} student_register__form_unavailable
  */
 
 /**
@@ -426,6 +427,8 @@ const UI_STRINGS_EN = {
 		"I have read and understood the above mentioned details before proceeding.",
 	student_register__cant_proceed_text:
 		"You cannot proceed with the registration without confirming that you have read and understood the instructions.",
+	student_register__form_unavailable:
+		"The registration form is currently unavailable. Please check back later.",
 };
 
 /**
@@ -643,6 +646,8 @@ const UI_STRINGS_TA = {
 		"நான் மேலே குறிப்பிடப்பட்டுள்ள விவரங்களைப் படித்துப் புரிந்துகொண்டேன்.",
 	student_register__cant_proceed_text:
 		"நீங்கள் வழிமுறைகளைப் படித்துப் புரிந்து கொண்டீர்கள் என்பதை உறுதிப்படுத்தாமல் பதிவைத் தொடர முடியாது.",
+	student_register__form_unavailable:
+		"பதிவு படிவம் தற்போது கிடைக்கவில்லை. பின்னர் மீண்டும் சரிபார்க்கவும்.",
 };
 
 /**
