@@ -52,32 +52,15 @@ try {
 			IS_FORM_AVAILABLE ? (
 				<>
 					<StudentRegistrationInstructions />
-					<StudentRegistrationForm />
+					<StudentRegistrationForm
+						additionalDetails={studentRegistrationDetails}
+					/>
 				</>
 			) : (
 				<p class="col-span-full">{t("student_register__form_unavailable")}</p>
 			)
 		}
 	</main>
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const checkbox = document.getElementById(
-				"agreeCheckbox",
-			) as HTMLInputElement;
-			const nextButton = document.getElementById("nextButton");
-
-			nextButton.addEventListener("click", () => {
-				if (checkbox.checked) {
-					const lang = window.location.pathname.split("/")[1];
-					window.location.href = `/${lang}/registration-2`;
-				} else {
-					alert(
-						"Please confirm you've read the instructions before proceeding.",
-					);
-				}
-			});
-		});
-	</script>
 </Layout>
 
 <style>

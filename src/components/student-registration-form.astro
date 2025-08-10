@@ -1,6 +1,13 @@
 ---
 import Button from "./Button.astro";
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import type { StudentRegistrationDetails } from "../types";
+
+interface Props {
+	additionalDetails: StudentRegistrationDetails;
+}
+
+console.log(Astro.props.additionalDetails);
 const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
@@ -166,31 +173,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			>
 				<option value="">Select</option>
-				<option>Ampara</option>
-				<option>Anuradhapura</option>
-				<option>Badulla</option>
-				<option>Batticaloa</option>
-				<option>Colombo</option>
-				<option>Galle</option>
-				<option>Gampaha</option>
-				<option>Hambantota</option>
-				<option>Jaffna</option>
-				<option>Kalutara</option>
-				<option>Kandy</option>
-				<option>Kegalle</option>
-				<option>Kilinochchi</option>
-				<option>Kurunegala</option>
-				<option>Mannar</option>
-				<option>Matale</option>
-				<option>Matara</option>
-				<option>Monaragala</option>
-				<option>Mullaitivu</option>
-				<option>Nuwara Eliya</option>
-				<option>Polonnaruwa</option>
-				<option>Putalam</option>
-				<option>Ratnapura</option>
-				<option>Trincomalee</option>
-				<option>Vavuniya</option>
+				{
+					Astro.props.additionalDetails.districts.map((district) => (
+						<option value={district.id}>{district.district_name}</option>
+					))
+				}
 			</select>
 			<span class="error-message"></span>
 		</div>
@@ -206,31 +193,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			>
 				<option value="">Select</option>
-				<option value="Ampara">Ampara</option>
-				<option value="Anuradhapura">Anuradhapura</option>
-				<option value="Badulla">Badulla</option>
-				<option value="Batticaloa">Batticaloa</option>
-				<option value="Colombo">Colombo</option>
-				<option value="Galle">Galle</option>
-				<option value="Gampaha">Gampaha</option>
-				<option value="Hambantota">Hambantota</option>
-				<option value="Jaffna">Jaffna</option>
-				<option value="Kalutara">Kalutara</option>
-				<option value="Kandy">Kandy</option>
-				<option value="Kegalle">Kegalle</option>
-				<option value="Kilinochchi">Kilinochchi</option>
-				<option value="Kurunegala">Kurunegala</option>
-				<option value="Mannar">Mannar</option>
-				<option value="Matale">Matale</option>
-				<option value="Matara">Matara</option>
-				<option value="Monaragala">Monaragala</option>
-				<option value="Mullaitivu">Mullaitivu</option>
-				<option value="Nuwara Eliya">Nuwara Eliya</option>
-				<option value="Polonnaruwa">Polonnaruwa</option>
-				<option value="Putalam">Putalam</option>
-				<option value="Ratnapura">Ratnapura</option>
-				<option value="Trincomalee">Trincomalee</option>
-				<option value="Vavuniya">Vavuniya</option>
+				{
+					Astro.props.additionalDetails.districts.map((district) => (
+						<option value={district.id}>{district.district_name}</option>
+					))
+				}
 			</select>
 			<span class="error-message"></span>
 		</div>
@@ -302,8 +269,15 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			<Button id="submit" type="button">Submit</Button>
 		</div>
 	</form>
+	<script
+		set:html={`const additionalDetails = JSON.parse('${JSON.stringify(Astro.props.additionalDetails)}');`}
+	></script>
+
 	<script>
 		import { registerStudent } from "../services/studentRegistrationService";
+		import type { StudentRegistrationDetails } from "../types";
+
+		declare const additionalDetails: StudentRegistrationDetails;
 
 		function showError(field: string, message: string) {
 			if (!field) {
@@ -374,170 +348,48 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			}
 		}
 
-		const districtCenters = {
-			Ampara: [
-				"Select",
-				"KM/Vipulananda Central College, Karaitivu",
-				"KM/Zahira College, Kalmunai",
-				"KM/TK/Thambiluvil Mathya Maha Vidyalayam",
-				"Km/Km Carmel Fatima College",
-				"Muslim Madya Maha Vidiyalayam,Sammanthurai",
-				"KM/Al-Ashraq M.M.V, Nintavur",
-				"Ak/As-Siraj Maha Vidyalayam",
-				"Ak/Al-Irfan Ladies College, Pottuvil",
-				"KM/ST/Al-Ashraf Central College, Irakkama",
-				"KM/AK/AI-Hamra Maha Vidyalaya, Oluvil",
-				"KM/TK/Sri Rama Krishna College",
-				"AK/Addalaichenai M.M.V.",
-			],
+		const examCentreSelector =
+			document.querySelector<HTMLSelectElement>("select#examCenter");
+		if (!examCentreSelector) {
+			console.error("Exam centre selector not found.");
+		}
 
-			Anuradhapura: [
-				"Select",
-				"A/An-Noor Maha Vidyalaya, Ikkirigollawa",
-				"Kahatagasdhigiliya Muslim M.V.",
-			],
+		function setCorrectExamCentres(districtSittingId: number) {
+			examCentreSelector.disabled = true;
+			if (!additionalDetails) {
+				console.error("Exam centers data is not available.");
+				return;
+			}
 
-			Badulla: [
-				"Select",
-				"B/Bandarawela Tamil Central College",
-				"Saraswathi Central College",
-				"B/Welimada Muslim Maha Vidyalaya",
-			],
+			const availableExamCenters = additionalDetails.districts.find(
+				(district) => district.id === districtSittingId,
+			).exam_centres;
 
-			Batticaloa: [
-				"Select",
-				"BT/BC/Alighar Central College",
-				"BT/BT/Mahajana College",
-				"BT/BC/Meera Balika National School",
-				"BT/Shivananda National School",
-				"BT/Paddirupu Maha Vidyalaya",
-				"BT/KK/Chenkalady Central College",
-				"BT/Valaichenai Hindu College",
-			],
+			for (const option of examCentreSelector.querySelectorAll("option")) {
+				if (option.value !== "") {
+					option.remove();
+				}
+			}
 
-			Colombo: [
-				"Select",
-				"Hindu Ladies College, Colombo - 06",
-				"Vivekananda National College, Kotahena",
-			],
-
-			Galle: ["Select", "G/Malharus Sulhiya Central College"],
-
-			Gampaha: [
-				"Select",
-				"Al Azhar Central College, Thihariya (IT Only)",
-				"Al-Muhsin Science College, Malwana",
-			],
-
-			Jaffna: [
-				"Select",
-				"Jaffna Hindu College",
-				"Jaffna Hindu Ladies' College",
-				"Chavakachcheri Hindu college",
-				"J/Nelliady Central College",
-				"J/Methodist Girls High School",
-				"Ramanathan College",
-				"Kopay Christian College",
-			],
-
-			Kalutara: ["Select", "Science Project, Dharga town (DSP)"],
-
-			Kandy: ["Select", "K/Akurana Balika MMV", "K/Kathiresan Central College"],
-
-			Kegalle: [
-				"Select",
-				"Ceylon Ladies' Campus, Warakapola",
-				"KG/Mw/Zahira College, Mawanella",
-			],
-
-			Kilinochchi: ["Select", "Kilinochchi Madya Maha Vidyalayam"],
-
-			Kurunegala: [
-				"Select",
-				"Annoor National School",
-				"Ku/Giri/Madeena National School",
-				"Giri/Kekunagolla Central College (National School) | ASDA",
-			],
-
-			Mannar: [
-				"Select",
-				"St.Xavier's Boys' National College",
-				"Mn/Fatima M.M.V, Pesalai",
-			],
-
-			Matale: ["Select", "Pakkiyam National College"],
-
-			Matara: [
-				"Select",
-				"DFEC Science Project, Dickwella",
-				"MR/Arafa National School, Weligama",
-			],
-
-			Mullaitivu: [
-				"Select",
-				"Mulliyawalai Vidyananda College",
-				"Puthukkudiyiruppu Central College",
-				"Mullaitivu Maha Vidyalayam",
-				"Mu/Visvamadu Maha Vidyalayam",
-				"Mu/Mallavi Central College",
-				"Mu/Udayarkaddu Maha Vidyalayam",
-			],
-
-			"Nuwara Eliya": [
-				"Select",
-				"Highlands College, Hatton",
-				"Talawakelle Tamil Maha Vidyalayam",
-				"Kotagala Tamil Maha Vidyalayam",
-			],
-
-			Puttalam: [
-				"Select",
-				"President's Science College",
-				"Kadayamottai Muslim Central College",
-				"Mercy Education Campus",
-			],
-
-			Trincomalee: [
-				"Select",
-				"T/R.K.M Sri Koneswara Hindu College",
-				"T/Kinniya Al-Hira Muslim Maha Vid",
-				"T/MU/Mutur Central College",
-				"T/MU/Fathima Ladies' College",
-			],
-
-			Vavuniya: [
-				"Select",
-				"V/Rambaikkulam Girls Maha Vidyalayam",
-				"V/Cheddikulam Maha Vidyalayam",
-				"V/Saivapragasa Ladies' College",
-				"V/Vavuniya Tamil Madhya Maha Vidyalayam",
-			],
-
-			Hambantota: ["Select", "Zahira National school, Hambantota"],
-		};
+			for (const centre of availableExamCenters) {
+				const option = document.createElement("option");
+				option.value = centre.id.toString();
+				option.textContent = centre.name;
+				examCentreSelector.appendChild(option);
+			}
+			examCentreSelector.disabled = false;
+		}
 
 		document.addEventListener("DOMContentLoaded", () => {
 			const districtSelect = document.getElementById("examDistrict");
-			const centerSelect = document.getElementById("examCenter");
+			if (!districtSelect) {
+				console.error("Exam district select element not found.");
+				return;
+			}
 
 			districtSelect.addEventListener("change", () => {
 				const selectedDistrict = (districtSelect as HTMLSelectElement).value;
-				centerSelect.innerHTML = ""; // clear existing options
-
-				if (!selectedDistrict || !districtCenters[selectedDistrict]) {
-					(centerSelect as HTMLSelectElement).disabled = true;
-					centerSelect.innerHTML = `<option value="">Select</option>`;
-					return;
-				}
-
-				// Enable and populate exam centers
-				(centerSelect as HTMLSelectElement).disabled = false;
-				districtCenters[selectedDistrict].forEach((center) => {
-					const option = document.createElement("option");
-					option.value = center;
-					option.textContent = center;
-					centerSelect.appendChild(option);
-				});
+				setCorrectExamCentres(Number.parseInt(selectedDistrict));
 			});
 		});
 
