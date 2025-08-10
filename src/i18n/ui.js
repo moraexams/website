@@ -197,7 +197,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__understood_text
  * @prop {string} student_register__cant_proceed_text
  * @prop {string} student_register__form_unavailable
- * @prop {string} student_register__form_fullname
+ * @prop {string} student_register__form_name
  * @prop {string} student_register__form_nic_no
  * @prop {string} student_register__form_school
  * @prop {string} student_register__form_permanent_address
@@ -442,7 +442,7 @@ const UI_STRINGS_EN = {
 		"You cannot proceed with the registration without confirming that you have read and understood the instructions.",
 	student_register__form_unavailable:
 		"The registration form is currently unavailable. Please check back later.",
-	student_register__form_fullname: "Full Name",
+	student_register__form_name: "Full Name",
 	student_register__form_nic_no: "NIC No.",
 	student_register__form_school: "School",
 	student_register__form_permanent_address: "Permanent Address",
@@ -674,7 +674,7 @@ const UI_STRINGS_TA = {
 		"நீங்கள் வழிமுறைகளைப் படித்துப் புரிந்து கொண்டீர்கள் என்பதை உறுதிப்படுத்தாமல் பதிவைத் தொடர முடியாது.",
 	student_register__form_unavailable:
 		"பதிவு படிவம் தற்போது கிடைக்கவில்லை. பின்னர் மீண்டும் சரிபார்க்கவும்.",
-	student_register__form_fullname: "முழுப்பெயர்",
+	student_register__form_name: "முழுப்பெயர்",
 	student_register__form_nic_no: "NIC எண்",
 	student_register__form_school: "பாடசாலை",
 	student_register__form_permanent_address: "நிலையான முகவரி",
