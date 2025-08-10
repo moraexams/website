@@ -30,10 +30,6 @@ export const registerStudent = async (
 		if (details instanceof FormData) {
 			data = details;
 		} else {
-			details.name = details.name.trim().toUpperCase();
-			details.school = details.school.trim().toUpperCase();
-			details.address = details.address.trim().toUpperCase();
-
 			data = new FormData();
 			data.set("nic", details.nic);
 			data.set("name", details.name);
@@ -50,21 +46,30 @@ export const registerStudent = async (
 			data.set("payment_receipt", details.payment_receipt);
 		}
 
+		data.set("name", data.get("name")?.toString().trim().toUpperCase() || "");
+		data.set(
+			"school",
+			data.get("school")?.toString().trim().toUpperCase() || "",
+		);
+		data.set(
+			"address",
+			data.get("address")?.toString().trim().toUpperCase() || "",
+		);
+
 		const response = await fetch(API_URL.concat("/student-registration/add"), {
 			method: "POST",
 			body: data,
 		});
 
+		const body = await response.json();
 		if (!response.ok) {
-			return "Failed to register. Please try again.";
+			return body.message || "Failed to register. Please try again.";
 		}
 	} catch (error) {
 		console.error("Error Adding Student:", error);
-
 		if (error instanceof Error) {
 			return error.message;
 		}
-
 		return "An unexpected error occurred. Please try again.";
 	}
 };
