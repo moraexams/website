@@ -197,6 +197,19 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__understood_text
  * @prop {string} student_register__cant_proceed_text
  * @prop {string} student_register__form_unavailable
+ * @prop {string} student_register__form_fullname
+ * @prop {string} student_register__form_nic_no
+ * @prop {string} student_register__form_school
+ * @prop {string} student_register__form_permanent_address
+ * @prop {string} student_register__form_phone_no
+ * @prop {string} student_register__form_email
+ * @prop {string} student_register__form_gender
+ * @prop {string} student_register__form_medium
+ * @prop {string} student_register__form_stream
+ * @prop {string} student_register__form_district_ranking
+ * @prop {string} student_register__form_district_sitting
+ * @prop {string} student_register__form_exam_centre
+ * @prop {string} student_register__form_upload_bank_receipt
  */
 
 /**
@@ -429,6 +442,19 @@ const UI_STRINGS_EN = {
 		"You cannot proceed with the registration without confirming that you have read and understood the instructions.",
 	student_register__form_unavailable:
 		"The registration form is currently unavailable. Please check back later.",
+	student_register__form_fullname: "Full Name",
+	student_register__form_nic_no: "NIC No.",
+	student_register__form_school: "School",
+	student_register__form_permanent_address: "Permanent Address",
+	student_register__form_phone_no: "Phone No.",
+	student_register__form_email: "E-mail",
+	student_register__form_gender: "Gender",
+	student_register__form_medium: "Medium",
+	student_register__form_stream: "Stream",
+	student_register__form_district_ranking: "District for Ranking",
+	student_register__form_district_sitting: "District for Exam Sitting",
+	student_register__form_exam_centre: "Exam Centre",
+	student_register__form_upload_bank_receipt: "Upload Bank Receipt",
 };
 
 /**
@@ -648,6 +674,19 @@ const UI_STRINGS_TA = {
 		"நீங்கள் வழிமுறைகளைப் படித்துப் புரிந்து கொண்டீர்கள் என்பதை உறுதிப்படுத்தாமல் பதிவைத் தொடர முடியாது.",
 	student_register__form_unavailable:
 		"பதிவு படிவம் தற்போது கிடைக்கவில்லை. பின்னர் மீண்டும் சரிபார்க்கவும்.",
+	student_register__form_fullname: "முழுப்பெயர்",
+	student_register__form_nic_no: "NIC எண்",
+	student_register__form_school: "பாடசாலை",
+	student_register__form_permanent_address: "நிலையான முகவரி",
+	student_register__form_phone_no: "தொலைபேசி எண்",
+	student_register__form_email: "மின்னஞ்சல்",
+	student_register__form_gender: "பாலினம்",
+	student_register__form_medium: "மூலமொழி",
+	student_register__form_stream: "தொகுதி",
+	student_register__form_district_ranking: "மாவட்டம் (தரவரிசை)",
+	student_register__form_district_sitting: "மாவட்டம் (பரீட்சை)",
+	student_register__form_exam_centre: "பரீட்சை மையம்",
+	student_register__form_upload_bank_receipt: "வங்கி ரசீதைப் பதிவேற்றவும்",
 };
 
 /**
