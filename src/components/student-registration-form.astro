@@ -40,7 +40,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				name="nic"
 				type="text"
 				required
-				class="w-full border px-3 py-2 rounded"
+				class="w-full border px-3 py-2 rounded capitalize"
 			/>
 			<span class="error-message"></span>
 		</div>
@@ -154,10 +154,12 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			>
 				<option value="">Select</option>
-				<option>Physical Science (Maths, Physics, Chemistry)</option>
-				<option>Biological Science (Biology, Physics, Chemistry)</option>
-				<option>Other (Maths, Physics, ICT)</option>
-				<option>ICT Only</option>
+				<option value="2">Physical Science (Maths, Physics, Chemistry)</option>
+				<option value="4"
+					>Biological Science (Biology, Physics, Chemistry)</option
+				>
+				<option value="3">Other (Maths, Physics, ICT)</option>
+				<option value="1">ICT Only</option>
 			</select>
 			<span class="error-message"></span>
 		</div>
@@ -271,7 +273,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 	</form>
 	<script
 		set:html={`const additionalDetails = JSON.parse('${JSON.stringify(Astro.props.additionalDetails)}');`}
-	></script>
+	/>
 
 	<script>
 		import { registerStudent } from "../services/studentRegistrationService";
@@ -316,8 +318,31 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				"input[type='text'][required], input[type='email'][required], input[type='tel'][required], select[required], textarea[required]",
 			);
 			for (const input of inputs) {
-				if (!input.value.trim()) {
+				if (input.value.trim() === "") {
 					showError(input.name, "This field is required.");
+					isValid = false;
+				} else if (
+					input.name === "nic" &&
+					!/^\d{9}([vV]|\d{3})$/.test(input.value)
+				) {
+					showError(input.name, "Invalid NIC format.");
+					isValid = false;
+				} else if (
+					input.name === "email" &&
+					!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)
+				) {
+					showError(input.name, "Invalid email format.");
+					isValid = false;
+				} else if (input.name === "phone" && !/^\d{10}$/.test(input.value)) {
+					showError(input.name, "Invalid phone number.");
+				} else if (input.name === "fullname" && input.value.length < 3) {
+					showError(
+						input.name,
+						"Full name must be at least 3 characters long.",
+					);
+					isValid = false;
+				} else if (input.name === "address" && input.value.length < 5) {
+					showError(input.name, "Address must be at least 5 characters long.");
 					isValid = false;
 				} else {
 					clearError(input.name);
@@ -331,7 +356,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			for (const fileInput of fileInputs) {
 				console.log(fileInput.files.length);
 				if (!fileInput.files || fileInput.files.length === 0) {
-					showError(fileInput.name, "This field is required.");
+					showError(fileInput.name, "You have to upload the file.");
 					isValid = false;
 				} else {
 					clearError(fileInput.name);
@@ -426,61 +451,21 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				return;
 			}
 
-			const requiredFields = form?.querySelectorAll(
-				"input[required], select[required], textarea[required]",
-			);
-			let isValid = true;
-
-			requiredFields?.forEach((field) => {
-				const input = field as
-					| HTMLInputElement
-					| HTMLSelectElement
-					| HTMLTextAreaElement;
-
-				if (!input.value.trim()) {
-					input.classList.add(
-						"border",
-						"border-red-500",
-						"focus:ring-red-500",
-						"border-width-4",
-					);
-					isValid = false;
-				} else {
-					input.classList.remove("border-red-500", "focus:ring-red-500");
-				}
-			});
-
-			if (!isValid) {
-				alert("Please fill in all required fields before submitting.");
-				return;
-			}
-
 			const name = (document.getElementById("fullname") as HTMLInputElement)
 				.value;
-			const stream_option = Number(
-				(document.getElementById("stream") as HTMLSelectElement).selectedIndex,
-			);
-			const stream_id =
-				stream_option == 1
-					? 2
-					: stream_option == 2
-						? 4
-						: stream_option == 3
-							? 3
-							: stream_option == 4
-								? 1
-								: NaN;
+			const stream_id = (document.getElementById("stream") as HTMLSelectElement)
+				.value;
 			const medium = (document.getElementById("medium") as HTMLSelectElement)
 				.value;
 			const rank_district_id = (
 				document.getElementById("rankDistrict") as HTMLSelectElement
-			).selectedIndex; // adjust mapping as needed
+			).value;
 			const exam_district_id = (
 				document.getElementById("examDistrict") as HTMLSelectElement
-			).selectedIndex; // adjust mapping as needed
+			).value;
 			const exam_centre_id = (
 				document.getElementById("examCenter") as HTMLSelectElement
-			).selectedIndex; // adjust mapping as needed
+			).value;
 			const nic = (document.getElementById("nic") as HTMLInputElement).value;
 			const gender = (document.getElementById("gender") as HTMLSelectElement)
 				.value;
