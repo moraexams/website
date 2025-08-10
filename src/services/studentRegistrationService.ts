@@ -6,13 +6,13 @@ if (!API_URL) {
 	);
 }
 
-interface StudentRegistrationDetails {
+interface StudentRegistrationFormValues {
 	name: string;
-	stream_id: number;
+	stream_id: string;
 	medium: string;
-	rank_district_id: number;
-	exam_district_id: number;
-	exam_centre_id: number;
+	rank_district_id: string;
+	exam_district_id: string;
+	exam_centre_id: string;
 	nic: string;
 	gender: string;
 	email: string;
@@ -22,7 +22,9 @@ interface StudentRegistrationDetails {
 	transaction_file: File;
 }
 
-export const registerStudent = async (details: StudentRegistrationDetails) => {
+export const registerStudent = async (
+	details: StudentRegistrationFormValues,
+) => {
 	try {
 		details.name = details.name.trim().toUpperCase();
 		details.school = details.school.trim().toUpperCase();
@@ -37,18 +39,15 @@ export const registerStudent = async (details: StudentRegistrationDetails) => {
 		data.set("telephone_no", details.telephone_no);
 		data.set("gender", details.gender);
 		data.set("medium", details.medium);
-		data.set("stream_id", String(details.stream_id));
-		data.set("rank_district_id", String(details.rank_district_id));
-		data.set("exam_district_id", String(details.exam_district_id));
-		data.set("exam_centre_id", String(details.exam_centre_id));
+		data.set("stream_id", details.stream_id);
+		data.set("rank_district_id", details.rank_district_id);
+		data.set("exam_district_id", details.exam_district_id);
+		data.set("exam_centre_id", details.exam_centre_id);
 		data.set("transaction_file", details.transaction_file);
 
 		const response = await fetch(API_URL.concat("/student-registration/add"), {
 			method: "POST",
 			body: data,
-			// headers: {
-			// 	"Content-Type": "application/json",
-			// },
 		});
 
 		if (!response.ok) {
