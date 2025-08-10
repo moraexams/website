@@ -8,42 +8,47 @@ if (!API_URL) {
 
 interface StudentRegistrationFormValues {
 	name: string;
-	stream_id: string;
-	medium: string;
-	rank_district_id: string;
-	exam_district_id: string;
-	exam_centre_id: string;
+	stream: string;
+	medium: "Tamil" | "English";
+	district_ranking: string;
+	district_exam: string;
+	exam_centre: string;
 	nic: string;
-	gender: string;
+	gender: "Male" | "Female";
 	email: string;
-	telephone_no: string;
+	phone: string;
 	school: string;
 	address: string;
-	transaction_file: File;
+	payment_receipt: File;
 }
 
 export const registerStudent = async (
-	details: StudentRegistrationFormValues,
+	details: StudentRegistrationFormValues | FormData,
 ) => {
 	try {
-		details.name = details.name.trim().toUpperCase();
-		details.school = details.school.trim().toUpperCase();
-		details.address = details.address.trim().toUpperCase();
+		let data: FormData;
+		if (details instanceof FormData) {
+			data = details;
+		} else {
+			details.name = details.name.trim().toUpperCase();
+			details.school = details.school.trim().toUpperCase();
+			details.address = details.address.trim().toUpperCase();
 
-		const data = new FormData();
-		data.set("nic", details.nic);
-		data.set("name", details.name);
-		data.set("school", details.school);
-		data.set("address", details.address);
-		data.set("email", details.email);
-		data.set("telephone_no", details.telephone_no);
-		data.set("gender", details.gender);
-		data.set("medium", details.medium);
-		data.set("stream_id", details.stream_id);
-		data.set("rank_district_id", details.rank_district_id);
-		data.set("exam_district_id", details.exam_district_id);
-		data.set("exam_centre_id", details.exam_centre_id);
-		data.set("transaction_file", details.transaction_file);
+			data = new FormData();
+			data.set("nic", details.nic);
+			data.set("name", details.name);
+			data.set("school", details.school);
+			data.set("address", details.address);
+			data.set("email", details.email);
+			data.set("phone", details.phone);
+			data.set("gender", details.gender);
+			data.set("medium", details.medium);
+			data.set("stream", details.stream);
+			data.set("district_ranking", details.district_ranking);
+			data.set("district_exam", details.district_exam);
+			data.set("exam_centre", details.exam_centre);
+			data.set("payment_receipt", details.payment_receipt);
+		}
 
 		const response = await fetch(API_URL.concat("/student-registration/add"), {
 			method: "POST",

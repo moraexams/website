@@ -18,13 +18,13 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		enctype="multipart/form-data"
 	>
 		<div class="col-span-full">
-			<label for="fullname" class="block mb-1 font-medium"
-				>{t("student_register__form_fullname")}*</label
+			<label for="name" class="block mb-1 font-medium"
+				>{t("student_register__form_name")}*</label
 			>
 			<input
 				autofocus
-				id="fullname"
-				name="fullname"
+				id="name"
+				name="name"
 				required
 				type="text"
 				class="w-full border px-3 py-2 rounded uppercase"
@@ -110,8 +110,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			>
 				<option value="">Select</option>
-				<option value="MALE">MALE</option>
-				<option value="FEMALE">FEMALE</option>
+				<option value="Male">MALE</option>
+				<option value="Female">FEMALE</option>
 			</select>
 			<span class="error-message"></span>
 		</div>
@@ -126,22 +126,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				class="w-full border px-3 py-2 rounded"
 			>
 				<option value="">Select</option>
-				<option value="ENGLISH">ENGLISH</option>
-				<option value="TAMIL">TAMIL</option>
+				<option value="Tamil">TAMIL</option>
+				<option value="English">ENGLISH</option>
 			</select>
 			<span class="error-message"></span>
 		</div>
-
-		<!-- <div>
-						<label for="streamDetails" class="block mb-1 font-medium"
-							>Stream and Exam Centre Details</label
-						>
-						<input
-							id="streamDetails"
-							name="streamDetails"
-							class="w-full border px-3 py-2 rounded"
-						/>
-					</div> -->
 
 		<div>
 			<label for="stream" class="block mb-1 font-medium"
@@ -170,7 +159,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			>
 			<select
 				id="rankDistrict"
-				name="rankDistrict"
+				name="district_ranking"
 				required
 				class="w-full border px-3 py-2 rounded"
 			>
@@ -190,7 +179,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			>
 			<select
 				id="examDistrict"
-				name="examDistrict"
+				name="district_exam"
 				required
 				class="w-full border px-3 py-2 rounded"
 			>
@@ -210,7 +199,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			>
 			<select
 				id="examCenter"
-				name="examCenter"
+				name="exam_centre"
 				class="w-full border px-3 py-2 rounded"
 				required
 				disabled
@@ -261,7 +250,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				id="dropzone-file"
 				type="file"
 				class="hidden"
-				name="payment-receipt"
+				name="payment_receipt"
 			/>
 			<span class="error-message"></span>
 		</div>
@@ -335,7 +324,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 					isValid = false;
 				} else if (input.name === "phone" && !/^\d{10}$/.test(input.value)) {
 					showError(input.name, "Invalid phone number.");
-				} else if (input.name === "fullname" && input.value.length < 3) {
+				} else if (input.name === "name" && input.value.length < 3) {
 					showError(
 						input.name,
 						"Full name must be at least 3 characters long.",
@@ -450,61 +439,17 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			if (!validateRegistrationForm(form)) {
 				return;
 			}
-
-			const name = (document.getElementById("fullname") as HTMLInputElement)
-				.value;
-			const stream_id = (document.getElementById("stream") as HTMLSelectElement)
-				.value;
-			const medium = (document.getElementById("medium") as HTMLSelectElement)
-				.value;
-			const rank_district_id = (
-				document.getElementById("rankDistrict") as HTMLSelectElement
-			).value;
-			const exam_district_id = (
-				document.getElementById("examDistrict") as HTMLSelectElement
-			).value;
-			const exam_centre_id = (
-				document.getElementById("examCenter") as HTMLSelectElement
-			).value;
-			const nic = (document.getElementById("nic") as HTMLInputElement).value;
-			const gender = (document.getElementById("gender") as HTMLSelectElement)
-				.value;
-			const email = (document.getElementById("email") as HTMLInputElement)
-				.value;
-			const telephone_no = (
-				document.getElementById("phone") as HTMLInputElement
-			).value;
-			const school = (document.getElementById("school") as HTMLInputElement)
-				.value;
-			const address = (document.getElementById("address") as HTMLInputElement)
-				.value;
-
-			const dropzone = document.getElementById(
-				"dropzone-file",
-			) as HTMLInputElement;
-			const transaction_file = dropzone.files?.[0];
-
-			if (dropzone.files.length === 0) {
-				// errorMessage.textContent = "Please upload a transaction file.";
-				return;
+			const d = new FormData(form);
+			for (const [key, value] of d.entries()) {
+				if (value instanceof File) {
+					console.log(`${key}: ${value.name} (${value.size} bytes)`);
+				} else {
+					console.log(`${key}: ${value}`);
+				}
 			}
 
 			try {
-				const result = await registerStudent({
-					name,
-					stream_id,
-					medium,
-					rank_district_id,
-					exam_district_id,
-					exam_centre_id,
-					nic,
-					gender,
-					email,
-					telephone_no,
-					school,
-					address,
-					transaction_file,
-				});
+				const result = await registerStudent(d);
 
 				if (typeof result === "string" && result.startsWith("Failed")) {
 					alert(result);
@@ -553,7 +498,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 
 			// When user selects file(s) via file picker
 			fileInput.addEventListener("change", () => {
-				clearError("payment-receipt");
+				clearError("payment_receipt");
 
 				const files = fileInput.files;
 				if (files && files.length > 0) {
