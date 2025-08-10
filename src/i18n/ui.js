@@ -422,9 +422,9 @@ const UI_STRINGS_EN = {
 	student_register__title: "Student Registration Form",
 	student_register__instructions_title: "Instructions",
 	student_register__instruction_1:
-		"It is mandatory to pay the examination fee before filling up the online application form.",
+		"<b>Not following the instructions</b> or <b>not submitting the accurate information</b> will result in your application being rejected.",
 	student_register__instruction_2:
-		"English <b>BLOCK LETTERS</b> must be used to fill the application form.",
+		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.",
 	student_register__registration_fee_title: "Registration Fee",
 	student_register__registration_fee_ict_only_label: "ICT only",
 	student_register__registration_fee_ict_only_amount: "Rs. 200",
@@ -654,9 +654,9 @@ const UI_STRINGS_TA = {
 	student_register__title: "மாணவர் பதிவு படிவம்",
 	student_register__instructions_title: "அறிவுறுத்தல்கள்",
 	student_register__instruction_1:
-		"ஆன்லைன் விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன் தேர்வுக் கட்டணத்தைச் செலுத்துவது கட்டாயமாகும்.",
+		"<b>வழிமுறைகளைப் பின்பற்றாதது</b> அல்லது <b>துல்லியமான தகவல்களைச் சமர்ப்பிக்காதது</b> உங்கள் விண்ணப்பத்தை நிராகரிக்க வழிவகுக்கும்.",
 	student_register__instruction_2:
-		"விண்ணப்பப் படிவத்தை நிரப்ப <b>ஆங்கில பேரெழுத்துக்களை</b> பயன்படுத்த வேண்டும்.",
+		"ஆன்லைன் விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன் தேர்வுக் கட்டணத்தைச் செலுத்துவது <b>கட்டாயமாகும்</b>.",
 	student_register__registration_fee_title: "பதிவு கட்டணம்",
 	student_register__registration_fee_ict_only_label: "ICT மட்டும்",
 	student_register__registration_fee_ict_only_amount: "ரூ. 200",

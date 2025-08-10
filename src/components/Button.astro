@@ -5,7 +5,10 @@ interface Props extends HTMLAttributes<"button"> {}
 ---
 
 <button
-	class="btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer"
+	class:list={[
+		"btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer",
+		Astro.props.class,
+	]}
 	{...Astro.props}
 >
 	<slot />
