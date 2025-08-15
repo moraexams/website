@@ -11,34 +11,49 @@ const practice_papers_data = practice_papers;
 ---
 
 <section class="my-10">
-	<h2 class="text-center">{t("practice_papers_title")}</h2>
-	<p class="text-center text-xl my-8">
+	<h2>{t("practice_papers_title")}</h2>
+	<p class="text-xl my-8 max-w-prose">
 		{t("practice_papers_p")}
 	</p>
-	<div
-		id="flip_cards"
-		class="grid grid-cols-1 auto-rows-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-10xl gap-4 mt-10 mx-auto text-center justify-items-center"
-	>
-		{
-			practice_papers_data.map((entry) => {
+
+	{
+		Object.entries(practice_papers_data)
+			.sort((entryA, entryB) => {
+				return entryB[0].localeCompare(entryA[0]);
+			})
+			.map((entry) => {
+				if (entry[1].length === 0) return null;
 				return (
-					<Flip
-						subject01={
-							lang === "en" ? entry.subject_en_01 : entry.subject_ta_01
-						}
-						download_link_e_01={entry.download_link_e_01}
-						download_link_t_01={entry.download_link_t_01}
-						subject02={
-							lang === "en" ? entry.subject_en_02 : entry.subject_ta_02
-						}
-						download_link_e_02={entry.download_link_e_02}
-						download_link_t_02={entry.download_link_t_02}
-						scheme_title={lang === "en" ? entry.title_en : entry.title_ta}
-						scheme_link_en={entry.scheme_link_en}
-						scheme_link_ta={entry.scheme_link_ta}
-					/>
+					<div id={entry[0]} class="mb-10 scroll-mt-20">
+						<h3 class="text-2xl font-bold mb-2">{entry[0]}</h3>
+						<div
+							id="flip_cards"
+							class="grid grid-cols-1 auto-rows-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-10xl gap-4 mt-4 mx-auto text-center justify-items-center"
+						>
+							{entry[1].map((entry) => {
+								return (
+									<Flip
+										subject01={
+											lang === "en" ? entry.subject_en_01 : entry.subject_ta_01
+										}
+										download_link_e_01={entry.download_link_e_01}
+										download_link_t_01={entry.download_link_t_01}
+										subject02={
+											lang === "en" ? entry.subject_en_02 : entry.subject_ta_02
+										}
+										download_link_e_02={entry.download_link_e_02}
+										download_link_t_02={entry.download_link_t_02}
+										scheme_title={
+											lang === "en" ? entry.title_en : entry.title_ta
+										}
+										scheme_link_en={entry.scheme_link_en}
+										scheme_link_ta={entry.scheme_link_ta}
+									/>
+								);
+							})}
+						</div>
+					</div>
 				);
 			})
-		}
-	</div>
+	}
 </section>
