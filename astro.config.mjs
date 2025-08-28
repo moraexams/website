@@ -12,7 +12,7 @@ export default defineConfig({
 		"/": `/${defaultLang}/`,
 		"/modelpaper":
 			"https://drive.google.com/drive/folders/1pAzO3OQ7nwBLuJ_gU-4vY12x6eENrwPz",
-		"/feedback": "https://forms.gle/Ca6k2rH6FNCn6NTB8",
+		"/feedback": "https://forms.gle/Z98yqxFZdScQ56cU6",
 		"/results": `/${defaultLang}/results`,
 		"/indexnumber": `/${defaultLang}/indexnumber`,
 		"/checkstudent": `/${defaultLang}/checkstudent`,
