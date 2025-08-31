@@ -3,12 +3,12 @@
 		{
 			"subject_en_01": "Pure Mathematics - 1",
 			"subject_ta_01": "தூய கணிதம் - 1",
-			"description_01": "Practice papers for Mathematics",
+			"description_01": "Practice papers for Pure Mathematics",
 			"download_link_e_01": "https://drive.google.com/uc?export=download&id=1jEz2GymWJTLq6LRuvsIkRqzVEvyAgIOU",
 			"download_link_t_01": "https://drive.google.com/uc?export=download&id=1V8Yi2L2bOC1uz-CCMD3LhrWFk-giXdTw",
 			"subject_en_02": "Applied Mathematics - 1",
 			"subject_ta_02": "பிரயோக கணிதம் - 1",
-			"description_02": "Practice papers for Mathematics",
+			"description_02": "Practice papers for  Applied Mathematics",
 			"download_link_e_02": "https://drive.google.com/uc?export=download&id=1LsFd3nPHs4VyQ3jXQyOfnJJM_HGzb-2n",
 			"download_link_t_02": "https://drive.google.com/uc?export=download&id=1U4PEzhDID_UOSSBhdc07cki3qPyfc7B1",
 			"title_en": "Scheme",
@@ -53,7 +53,12 @@
 			"subject_ta_01": "தூய கணிதம் - 2",
 			"description_01": "Pratice papers for Pure Mathematics",
 			"download_link_e_01": "https://drive.google.com/uc?export=download&id=19oQNeiKPEeON0sEopbXhhdlr3LN4e4zh",
-			"download_link_t_01": "https://drive.google.com/uc?export=download&id=17zoGPeUOoR_aHziFNuEHacbrYRm_RL9C"
+			"download_link_t_01": "https://drive.google.com/uc?export=download&id=17zoGPeUOoR_aHziFNuEHacbrYRm_RL9C",
+			"subject_en_02": "Applied Mathematics - 2",
+			"subject_ta_02": "பிரயோக கணிதம் - 2",
+			"description_02": "Practice papers for Applied Mathematics",
+			"download_link_e_02": "https://drive.google.com/uc?export=download&id=101MU3GApKg4kigGuHUEJy_izk5Fz5ZU6",
+			"download_link_t_02": "https://drive.google.com/uc?export=download&id=1Ma0ydOk7tbQqp4KYI0lEu0H6AMcMqDB1"
 		}
 	],
 	"2024": [
