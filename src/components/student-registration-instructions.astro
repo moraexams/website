@@ -80,20 +80,21 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		</li>
 	</ul>
 
-	<div
-		class="confirmation-banner no-select transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+	<label
+		class="confirmation-banner no-select block transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+		for="agree-checkbox"
 	>
 		<span>
 			<input type="checkbox" id="agree-checkbox" class="mr-2" />
-			<label for="agree-checkbox">
+			<span>
 				{t("student_register__understood_text")}
-			</label>
+			</span>
 		</span>
 
 		<p class="my-2">
 			{t("student_register__cant_proceed_text")}
 		</p>
-	</div>
+	</label>
 
 	<script>
 		function disableRegistrationForm() {
@@ -163,13 +164,13 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			@apply bg-[#efe6f5] border-l-4 border-0 border-[#6b21a8] border-solid;
 		}
 	}
-	.confirmation-banner:has(#agree-checkbox) {
+	.confirmation-banner {
 		@apply bg-red-50 border-red-500;
 		p {
 			@apply text-red-600;
 		}
 	}
-	.confirmation-banner:has(#agree-checkbox:checked) {
+	.confirmation-banner:has(input:checked) {
 		@apply bg-green-50 border-green-500;
 
 		p {
