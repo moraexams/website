@@ -82,3 +82,33 @@ export function validateRegistrationForm(form: HTMLFormElement): boolean {
 
 	return isValid;
 }
+
+function unsavedChangesWarning(event: BeforeUnloadEvent) {
+	event.preventDefault();
+	event.returnValue = "";
+}
+
+export function addUnsavedChangesWarning() {
+	window.addEventListener("beforeunload", unsavedChangesWarning);
+}
+
+export function removeUnsavedChangesWarning() {
+	window.removeEventListener("beforeunload", unsavedChangesWarning);
+}
+
+export function showFormResponse(
+	type: "error" | "success" | "reset",
+	message: string,
+) {
+	const responseElement = document.querySelector(".form-response");
+	if (!responseElement) {
+		return;
+	}
+	if (type === "reset") {
+		responseElement.textContent = "";
+		return;
+	}
+	responseElement.textContent = message;
+	responseElement.classList.toggle("text-green-600", type === "success");
+	responseElement.classList.toggle("text-red-600", type === "error");
+}

@@ -273,6 +273,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			clearError,
 			validateRegistrationForm,
 			showError,
+			addUnsavedChangesWarning,
+			showFormResponse,
 		} from "../utils/form-validators";
 
 		declare const additionalDetails: StudentRegistrationDetails;
@@ -336,6 +338,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 
 		form.addEventListener("input", (event) => {
 			const target = event.target;
+			addUnsavedChangesWarning();
 
 			if (
 				!(target instanceof HTMLInputElement) &&
