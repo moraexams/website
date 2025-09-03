@@ -77,108 +77,127 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 					</span>
 				</li>
 			</ul>
+			<li style="padding: 15px; margin-bottom: 10px;">
+				<h3 style="color: #490665; margin-top: 0;">
+					{t("student_register__contact_details")}
+				</h3>
+				<ul class="grid grid-cols-[auto_1fr] gap-x-8 gap-y-1.5 pl-0">
+					<li class="contents">
+						<label>
+							{t("student_register__contact_name_01")}
+						</label>
+						<span class="tabular-nums"> +94 70 589 1710</span>
+					</li>
+					<li class="contents">
+						<label for="">
+							{t("student_register__contact_name_02")}
+						</label>
+						<span class="tabular-nums"> +94 77 892 7391</span>
+					</li>
+				</ul>
+			</li>
 		</li>
-	</ul>
 
-	<label
-		class="confirmation-banner no-select block transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
-		for="agree-checkbox"
-	>
-		<span>
-			<input type="checkbox" id="agree-checkbox" class="mr-2" />
+		<label
+			class="confirmation-banner no-select block transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+			for="agree-checkbox"
+		>
 			<span>
-				{t("student_register__understood_text")}
+				<input type="checkbox" id="agree-checkbox" class="mr-2" />
+				<span>
+					{t("student_register__understood_text")}
+				</span>
 			</span>
-		</span>
 
-		<p class="my-2">
-			{t("student_register__cant_proceed_text")}
-		</p>
-	</label>
+			<p class="my-2">
+				{t("student_register__cant_proceed_text")}
+			</p>
+		</label>
 
-	<script>
-		function disableRegistrationForm() {
-			const form = document.getElementById("registration-form");
-			if (!form) {
-				return;
-			}
-			form.classList.add("pointer-events-none", "opacity-70");
-			form.querySelectorAll("input, textarea, select").forEach((el) => {
-				if (
-					el instanceof HTMLInputElement ||
-					el instanceof HTMLTextAreaElement ||
-					el instanceof HTMLSelectElement
-				) {
-					el.disabled = true;
+		<script>
+			function disableRegistrationForm() {
+				const form = document.getElementById("registration-form");
+				if (!form) {
+					return;
 				}
-			});
-		}
-
-		function enableRegistrationForm() {
-			const form = document.getElementById("registration-form");
-			if (!form) {
-				return;
+				form.classList.add("pointer-events-none", "opacity-70");
+				form.querySelectorAll("input, textarea, select").forEach((el) => {
+					if (
+						el instanceof HTMLInputElement ||
+						el instanceof HTMLTextAreaElement ||
+						el instanceof HTMLSelectElement
+					) {
+						el.disabled = true;
+					}
+				});
 			}
 
-			form.classList.remove("pointer-events-none", "opacity-70");
-			form.querySelectorAll("input, textarea, select").forEach((el) => {
-				if (
-					el instanceof HTMLInputElement ||
-					el instanceof HTMLTextAreaElement ||
-					(el instanceof HTMLSelectElement && el.id !== "examCentre")
-				) {
-					el.disabled = false;
+			function enableRegistrationForm() {
+				const form = document.getElementById("registration-form");
+				if (!form) {
+					return;
 				}
-			});
-		}
 
-		document.addEventListener("DOMContentLoaded", () => {
-			const checkbox = document.getElementById(
-				"agree-checkbox",
-			) as HTMLInputElement;
-
-			if (!checkbox) {
-				console.error("Checkbox with ID 'agree-checkbox' not found.");
-				return;
-			}
-			if (checkbox.checked) {
-				enableRegistrationForm();
-			} else {
-				disableRegistrationForm();
+				form.classList.remove("pointer-events-none", "opacity-70");
+				form.querySelectorAll("input, textarea, select").forEach((el) => {
+					if (
+						el instanceof HTMLInputElement ||
+						el instanceof HTMLTextAreaElement ||
+						(el instanceof HTMLSelectElement && el.id !== "examCentre")
+					) {
+						el.disabled = false;
+					}
+				});
 			}
 
-			checkbox.addEventListener("change", () => {
+			document.addEventListener("DOMContentLoaded", () => {
+				const checkbox = document.getElementById(
+					"agree-checkbox",
+				) as HTMLInputElement;
+
+				if (!checkbox) {
+					console.error("Checkbox with ID 'agree-checkbox' not found.");
+					return;
+				}
 				if (checkbox.checked) {
 					enableRegistrationForm();
 				} else {
 					disableRegistrationForm();
 				}
+
+				checkbox.addEventListener("change", () => {
+					if (checkbox.checked) {
+						enableRegistrationForm();
+					} else {
+						disableRegistrationForm();
+					}
+				});
 			});
-		});
-	</script>
+		</script>
+	</ul>
+
+	<style>
+		ul {
+			li {
+				@apply bg-[#efe6f5] border-l-4 border-0 border-[#6b21a8] border-solid;
+			}
+		}
+		.confirmation-banner {
+			@apply bg-red-50 border-red-500;
+			p {
+				@apply text-red-600;
+			}
+		}
+		.confirmation-banner:has(input:checked) {
+			@apply bg-green-50 border-green-500;
+
+			p {
+				@apply text-green-700;
+			}
+		}
+		input,
+		label {
+			@apply cursor-pointer;
+		}
+	</style>
 </div>
-
-<style>
-	ul {
-		li {
-			@apply bg-[#efe6f5] border-l-4 border-0 border-[#6b21a8] border-solid;
-		}
-	}
-	.confirmation-banner {
-		@apply bg-red-50 border-red-500;
-		p {
-			@apply text-red-600;
-		}
-	}
-	.confirmation-banner:has(input:checked) {
-		@apply bg-green-50 border-green-500;
-
-		p {
-			@apply text-green-700;
-		}
-	}
-	input,
-	label {
-		@apply cursor-pointer;
-	}
-</style>
