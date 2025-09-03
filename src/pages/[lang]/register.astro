@@ -7,6 +7,7 @@ import { useTranslations, getLangFromUrl } from "../../i18n/utils";
 import StudentRegistrationForm from "../../components/student-registration-form.astro";
 import StudentRegistrationInstructions from "../../components/student-registration-instructions.astro";
 import type { StudentRegistrationDetails } from "../../types";
+import StudentRegistrationSuccess from "../../components/student-registration-success.astro";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 
@@ -55,6 +56,7 @@ try {
 					<StudentRegistrationForm
 						additionalDetails={studentRegistrationDetails}
 					/>
+					<StudentRegistrationSuccess />
 				</>
 			) : (
 				<p class="col-span-full">{t("student_register__form_unavailable")}</p>

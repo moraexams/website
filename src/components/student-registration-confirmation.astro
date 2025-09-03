@@ -72,6 +72,15 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		validateRegistrationForm,
 	} from "../utils/form-validators";
 
+	function showSuccessDialog() {
+		const successDialog = document.querySelector<HTMLDialogElement>(
+			"dialog#success-dialog",
+		);
+		if (successDialog) {
+			successDialog.showModal();
+		}
+	}
+
 	const dialog = document.querySelector<HTMLDialogElement>(
 		"dialog#confirmation-dialog",
 	);
@@ -94,6 +103,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		}
 		form.reset();
 		dialog.close();
+
+		showSuccessDialog();
 	});
 
 	dialog.querySelector("#close").addEventListener("click", () => {
