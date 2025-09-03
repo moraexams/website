@@ -73,3 +73,58 @@ export const registerStudent = async (
 		return "An unexpected error occurred. Please try again.";
 	}
 };
+
+export const validateStudentRegistrationDetails = async (
+	details: StudentRegistrationFormValues | FormData,
+) => {
+	try {
+		let data: FormData;
+		if (details instanceof FormData) {
+			data = details;
+		} else {
+			data = new FormData();
+			data.set("nic", details.nic);
+			data.set("name", details.name);
+			data.set("school", details.school);
+			data.set("address", details.address);
+			data.set("email", details.email);
+			data.set("phone", details.phone);
+			data.set("gender", details.gender);
+			data.set("medium", details.medium);
+			data.set("stream", details.stream);
+			data.set("district_ranking", details.district_ranking);
+			data.set("district_exam", details.district_exam);
+			data.set("exam_centre", details.exam_centre);
+			data.set("payment_receipt", details.payment_receipt);
+		}
+
+		data.set("name", data.get("name")?.toString().trim().toUpperCase() || "");
+		data.set(
+			"school",
+			data.get("school")?.toString().trim().toUpperCase() || "",
+		);
+		data.set(
+			"address",
+			data.get("address")?.toString().trim().toUpperCase() || "",
+		);
+
+		const response = await fetch(
+			API_URL.concat("/student-registration/validate"),
+			{
+				method: "POST",
+				body: data,
+			},
+		);
+
+		const body = await response.json();
+		if (!response.ok) {
+			return body.message || "Failed to register. Please try again.";
+		}
+	} catch (error) {
+		console.error("Error validating student:", error);
+		if (error instanceof Error) {
+			return error.message;
+		}
+		return "An unexpected error occurred. Please try again.";
+	}
+};

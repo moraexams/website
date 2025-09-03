@@ -71,7 +71,6 @@ export function validateRegistrationForm(form: HTMLFormElement): boolean {
 	);
 
 	for (const fileInput of fileInputs) {
-		console.log(fileInput.files.length);
 		if (!fileInput.files || fileInput.files.length === 0) {
 			showError(fileInput.name, "You have to upload the file.");
 			isValid = false;
