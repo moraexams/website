@@ -1,14 +1,26 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"button"> {}
+const VARIANTS = ["primary", "secondary", "outline"] as const;
+type Variant = (typeof VARIANTS)[number];
+
+const VARIANT_CLASSES: Record<Variant, string> = {
+	primary:
+		"primary text-lg text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg",
+	secondary: "",
+	outline:
+		"border-[2.5px] border-purple-800 bg-transparent text-purple-800 font-semibold",
+};
+
+interface Props extends HTMLAttributes<"button"> {
+	variant?: Variant;
+}
+
+const { variant = "primary" } = Astro.props as Props;
 ---
 
 <button
-	class:list={[
-		"btn text-xl text-center font-bold border-0 outline-ultra-violet-500 outline-2 outline rounded-lg cursor-pointer",
-		Astro.props.class,
-	]}
+	class:list={["btn", VARIANT_CLASSES[variant], Astro.props.class]}
 	{...Astro.props}
 >
 	<slot />
@@ -16,16 +28,22 @@ interface Props extends HTMLAttributes<"button"> {}
 
 <style>
 	.btn {
+		@apply cursor-pointer;
+		transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+		&:hover {
+			animation: rotate 0.7s ease-in-out both;
+		}
+	}
+	.btn.primary {
 		color: #fff;
 		background: linear-gradient(135deg, #852d91, #312a6c);
 		padding: 12px 20px;
-		transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 	}
-	.btn:hover {
+	.btn.primary:hover {
 		color: #cfcece;
 		border: none;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		animation: rotate 0.7s ease-in-out both;
 	}
 
 	/* .btn:hover:before,
