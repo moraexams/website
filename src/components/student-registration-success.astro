@@ -6,10 +6,9 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <dialog id="success-dialog">
-	<h2 class="mt-0 mb-2">Successfully registered!</h2>
+	<h2 class="mt-0 mb-2">{t("student_register__success_title")}</h2>
 	<p class="mt-0 mb-6 max-w-[48ch]">
-		You have successfully registered for Mora Exams 2025. Please keep an eye on
-		your email for further updates.
+		{t("student_register__success_description")}
 	</p>
 
 	<div class="flex">
