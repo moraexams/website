@@ -15,10 +15,18 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			set:html={t("student_register__instruction_1")}
 		/>
 
-		<li
-			style="padding: 15px; margin-bottom: 10px;"
-			set:html={t("student_register__instruction_2")}
-		/>
+		<li style="padding: 15px; margin-bottom: 10px;">
+			<ul
+				class="flex flex-col pl-2 gap-2"
+				set:html={t("student_register__instruction_2")
+					.split("<br>")
+					.map(
+						(i) =>
+							`<li class="contents"><span class="max-w-[65ch] text-pretty">${i}</span></li>`,
+					)
+					.join("")}
+			/>
+		</li>
 
 		<li style="padding: 15px; margin-bottom: 10px;">
 			<h3 style="color: #490665; margin-top: 0;">
