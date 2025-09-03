@@ -50,20 +50,53 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			<label>{t("student_register__form_exam_centre")}</label>
 			<span data-name="exam_centre"></span>
 		</div>
-		<Button
-			class="py-2 px-4 col-start-1 md:col-start-2 w-fit justify-self-end rounded-md border-0 !transform-none !bg-transparent"
-		>
-			Close
-		</Button>
+		<div class="col-start-1 md:col-start-2 flex justify-end gap-x-2">
+			<Button
+				id="close"
+				variant="outline"
+				class="py-2 px-4 w-fit rounded-md h-full text-md"
+			>
+				Close
+			</Button>
+			<Button id="confirm" class="py-2 px-4 w-fit rounded-md !text-base">
+				Confirm
+			</Button>
+		</div>
 	</div>
 </dialog>
 
 <script>
+	import { registerStudent } from "../services/studentRegistrationService";
+	import {
+		showFormResponse,
+		validateRegistrationForm,
+	} from "../utils/form-validators";
+
 	const dialog = document.querySelector<HTMLDialogElement>(
 		"dialog#confirmation-dialog",
 	);
 
-	dialog.querySelector("button").addEventListener("click", () => {
+	dialog.querySelector("#confirm").addEventListener("click", async () => {
+		const form = document.getElementById("registration-form");
+		if (!(form instanceof HTMLFormElement)) return;
+
+		showFormResponse("reset", "");
+		if (!validateRegistrationForm(form)) {
+			return;
+		}
+		const d = new FormData(form);
+
+		const result = await registerStudent(d);
+
+		if (typeof result === "string") {
+			showFormResponse("error", result || "Something went wrong.");
+			return;
+		}
+		form.reset();
+		dialog.close();
+	});
+
+	dialog.querySelector("#close").addEventListener("click", () => {
 		dialog.close();
 	});
 </script>
