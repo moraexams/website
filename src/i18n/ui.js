@@ -210,6 +210,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__form_district_sitting
  * @prop {string} student_register__form_exam_centre
  * @prop {string} student_register__form_upload_bank_receipt
+ * @prop {string} student_register__success_title
+ * @prop {string} student_register__success_description
  */
 
 /**
@@ -455,6 +457,9 @@ const UI_STRINGS_EN = {
 	student_register__form_district_sitting: "District for Exam Sitting",
 	student_register__form_exam_centre: "Exam Centre",
 	student_register__form_upload_bank_receipt: "Upload Bank Receipt",
+	student_register__success_title: "Registration Successful!",
+	student_register__success_description:
+		"You have successfully registered for Mora Exams 2025. Please keep an eye on your email for further updates.",
 };
 
 /**
@@ -687,6 +692,9 @@ const UI_STRINGS_TA = {
 	student_register__form_district_sitting: "மாவட்டம் (பரீட்சை)",
 	student_register__form_exam_centre: "பரீட்சை மையம்",
 	student_register__form_upload_bank_receipt: "வங்கி ரசீதைப் பதிவேற்றவும்",
+	student_register__success_title: "பதிவு வெற்றிகரமாக முடிந்தது!",
+	student_register__success_description:
+		"நீங்கள் வெற்றிகரமாக Mora Exams 2025இற்கு விண்ணப்பித்து விட்டீர்கள். மின்னஞ்சலூடாக புதிய தகவல்கள் பகிரப்படும் என்பதை கருத்திற் கொள்ளுங்கள்.",
 };
 
 /**
