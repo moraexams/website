@@ -293,6 +293,27 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			console.error("Exam centre selector not found.");
 		}
 
+		const genderSelect = document.querySelector("select#gender");
+		if (!genderSelect) {
+			console.error("Gender selector not found.");
+		}
+
+		function disableGenderSpecificCentres(gender: string) {
+			if (!additionalDetails) {
+				console.error("Exam centers data is not available.");
+				return;
+			}
+
+			const examCentreOptions = examCentreSelector.querySelectorAll("option");
+			examCentreOptions.forEach((option) => {
+				if (option.innerText.startsWith(`(${gender} Only)`)) {
+					option.disabled = true;
+				} else {
+					option.disabled = false;
+				}
+			});
+		}
+
 		function setCorrectExamCentres(districtSittingId: number) {
 			examCentreSelector.disabled = true;
 			if (!additionalDetails) {
@@ -316,6 +337,14 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				option.textContent = centre.name;
 				examCentreSelector.appendChild(option);
 			}
+
+			const selectedGender = (genderSelect as HTMLSelectElement).value;
+			if (selectedGender) {
+				disableGenderSpecificCentres(
+					selectedGender === "Male" ? "Female" : "Male",
+				);
+			}
+
 			examCentreSelector.disabled = false;
 		}
 
@@ -329,6 +358,14 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			districtSelect.addEventListener("change", () => {
 				const selectedDistrict = (districtSelect as HTMLSelectElement).value;
 				setCorrectExamCentres(Number.parseInt(selectedDistrict));
+			});
+
+			genderSelect.addEventListener("change", () => {
+				const selectedGender = (genderSelect as HTMLSelectElement).value;
+				if (!selectedGender) return;
+				disableGenderSpecificCentres(
+					selectedGender === "Male" ? "Female" : "Male",
+				);
 			});
 		});
 
