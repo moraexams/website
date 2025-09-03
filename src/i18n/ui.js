@@ -429,7 +429,7 @@ const UI_STRINGS_EN = {
 	student_register__instruction_1:
 		"<b>Not following the instructions</b> or <b>not submitting the accurate information</b> will result in your application being rejected.",
 	student_register__instruction_2:
-		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.",
+		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.<br> You must have a valid email address, to which the future updates will be sent to.<br> After submitting, you <b>cannot</b> edit this form.<br>Information you provide here will be shared with selected sponsors.",
 	student_register__registration_fee_title: "Registration Fee",
 	student_register__registration_fee_ict_only_label: "ICT only",
 	student_register__registration_fee_ict_only_amount: "Rs. 200",
@@ -464,8 +464,8 @@ const UI_STRINGS_EN = {
 	student_register__success_description:
 		"You have successfully registered for Mora Exams 2025. Please keep an eye on your email for further updates.",
 	student_register__contact_details: "For Enquiries",
-	student_register__contact_name_01: "Sivodayan",
-	student_register__contact_name_02: "Abishake Thevar",
+	student_register__contact_name_01: "S. Sivodayan",
+	student_register__contact_name_02: "S. Abishake Thevar",
 };
 
 /**
@@ -702,8 +702,8 @@ const UI_STRINGS_TA = {
 	student_register__success_description:
 		"நீங்கள் வெற்றிகரமாக Mora Exams 2025இற்கு விண்ணப்பித்து விட்டீர்கள். மின்னஞ்சலூடாக புதிய தகவல்கள் பகிரப்படும் என்பதை கருத்திற் கொள்ளுங்கள்.",
 	student_register__contact_details: "விசாரணைகளுக்கு",
-	student_register__contact_name_01: "சிவோதயன்",
-	student_register__contact_name_02: "அபிஷேக் தேவர்",
+	student_register__contact_name_01: "சு. சிவோதயன்",
+	student_register__contact_name_02: "ச. அ. அபிஷேக் தேவர்",
 };
 
 /**
