@@ -16,10 +16,24 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 let IS_FORM_AVAILABLE = false;
+let REGISTRATION_FORM_OPEN = false;
 
 const studentRegistrationDetails: StudentRegistrationDetails = {
 	districts: [],
 };
+
+switch (typeof import.meta.env.REGISTRATION_FORM_OPEN) {
+	case "string":
+		REGISTRATION_FORM_OPEN = import.meta.env.REGISTRATION_FORM_OPEN === "true";
+		break;
+	case "boolean":
+		REGISTRATION_FORM_OPEN = import.meta.env.REGISTRATION_FORM_OPEN;
+		break;
+	case "undefined":
+		throw new Error("REGISTRATION_FORM_OPEN is not defined");
+	default:
+		throw new Error("REGISTRATION_FORM_OPEN has an invalid type");
+}
 
 try {
 	console.log("process.env.PUBLIC_API_URL:", import.meta.env.PUBLIC_API_URL);
@@ -39,7 +53,7 @@ try {
 		import.meta.env.REGISTRATION_FORM_OPEN,
 	);
 
-	IS_FORM_AVAILABLE = import.meta.env.REGISTRATION_FORM_OPEN === "true";
+	IS_FORM_AVAILABLE = REGISTRATION_FORM_OPEN;
 	console.log(
 		"Student Registration Form Availability:",
 		IS_FORM_AVAILABLE ? "Open" : "Closed",
