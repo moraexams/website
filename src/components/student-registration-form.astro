@@ -298,6 +298,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			console.error("Gender selector not found.");
 		}
 
+		const streamSelect = document.querySelector("select#stream");
+		if (!streamSelect) {
+			console.error("Stream selector not found.");
+		}
+
 		function disableGenderSpecificCentres(gender: string) {
 			if (!additionalDetails) {
 				console.error("Exam centers data is not available.");
@@ -308,6 +313,24 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			examCentreOptions.forEach((option) => {
 				if (option.innerText.startsWith(`(${gender} Only)`)) {
 					option.disabled = true;
+				} else {
+					option.disabled = false;
+				}
+			});
+		}
+
+		function disableStreamSpecificCentres() {
+			if (!additionalDetails) {
+				console.error("Exam centers data is not available.");
+				return;
+			}
+
+			const examCentreOptions = examCentreSelector.querySelectorAll("option");
+			const stream = (streamSelect as HTMLSelectElement).value;
+
+			examCentreOptions.forEach((option) => {
+				if (option.innerText.endsWith("(IT Only)")) {
+					option.disabled = stream !== "1";
 				} else {
 					option.disabled = false;
 				}
@@ -345,6 +368,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				);
 			}
 
+			disableStreamSpecificCentres();
 			examCentreSelector.disabled = false;
 		}
 
@@ -366,6 +390,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				disableGenderSpecificCentres(
 					selectedGender === "Male" ? "Female" : "Male",
 				);
+			});
+
+			streamSelect.addEventListener("change", () => {
+				disableStreamSpecificCentres();
 			});
 		});
 
