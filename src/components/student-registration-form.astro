@@ -276,16 +276,11 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			addUnsavedChangesWarning,
 			showFormResponse,
 		} from "../utils/form-validators";
+		import { humanReadableFileSize } from "../utils/utils";
 
 		declare const additionalDetails: StudentRegistrationDetails;
 
 		const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-
-		function humanReadableFileSize(size: number): string {
-			if (size < 1024) return `${size} bytes`;
-			else if (size < 1048576) return `${(size / 1024).toFixed(2)} KB`;
-			else return `${(size / 1048576).toFixed(2)} MB`;
-		}
 
 		const examCentreSelector =
 			document.querySelector<HTMLSelectElement>("select#examCentre");
@@ -331,8 +326,6 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			examCentreOptions.forEach((option) => {
 				if (option.innerText.endsWith("(IT Only)")) {
 					option.disabled = stream !== "1";
-				} else {
-					option.disabled = false;
 				}
 			});
 		}
@@ -387,8 +380,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			genderSelect.addEventListener("change", () => {
 				const selectedGender = (genderSelect as HTMLSelectElement).value;
 				if (!selectedGender) return;
-				disableGenderSpecificCentres(
-					selectedGender === "Male" ? "Female" : "Male",
+				setCorrectExamCentres(
+					Number.parseInt((districtSelect as HTMLSelectElement).value),
 				);
 			});
 
