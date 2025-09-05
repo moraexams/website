@@ -215,6 +215,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__contact_details
  * @prop {string} student_register__contact_name_01
  * @prop {string} student_register__contact_name_02
+ * @prop {string} studnet_register__confirmation_title
+ * @prop {string} studnet_register__confirmation_description
  */
 
 /**
@@ -466,6 +468,9 @@ const UI_STRINGS_EN = {
 	student_register__contact_details: "For Enquiries",
 	student_register__contact_name_01: "S. Sivodayan",
 	student_register__contact_name_02: "S. Abishake Thevar",
+	studnet_register__confirmation_title: "Confirm Your Details",
+	studnet_register__confirmation_description:
+		"Please confirm that all the details you have entered are correct. You will not be able to edit them after submission.",
 };
 
 /**
@@ -704,6 +709,9 @@ const UI_STRINGS_TA = {
 	student_register__contact_details: "விசாரணைகளுக்கு",
 	student_register__contact_name_01: "சு. சிவோதயன்",
 	student_register__contact_name_02: "ச. அபிஷேக் தேவர்",
+	studnet_register__confirmation_title: "உங்கள் விவரங்களை உறுதிப்படுத்தவும்",
+	studnet_register__confirmation_description:
+		"நீங்கள் உள்ளிட்ட அனைத்து விவரங்களும் சரியாக உள்ளனவா என்பதை உறுதிப்படுத்தவும். சமர்ப்பித்த பிறகு உங்களால் அவற்றைத் திருத்த முடியாது.",
 };
 
 /**
