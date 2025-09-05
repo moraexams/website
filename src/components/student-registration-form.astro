@@ -298,7 +298,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			console.error("Stream selector not found.");
 		}
 
-		function disableGenderSpecificCentres(gender: string) {
+		function enableGenderSpecificCentres(gender: string) {
 			if (!additionalDetails) {
 				console.error("Exam centers data is not available.");
 				return;
@@ -307,8 +307,6 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			const examCentreOptions = examCentreSelector.querySelectorAll("option");
 			examCentreOptions.forEach((option) => {
 				if (option.innerText.startsWith(`(${gender} Only)`)) {
-					option.disabled = true;
-				} else {
 					option.disabled = false;
 				}
 			});
@@ -351,14 +349,15 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				const option = document.createElement("option");
 				option.value = centre.id.toString();
 				option.textContent = centre.name;
+				option.disabled =
+					centre.name.startsWith("(Female Only)") ||
+					centre.name.startsWith("(Male Only)");
 				examCentreSelector.appendChild(option);
 			}
 
 			const selectedGender = (genderSelect as HTMLSelectElement).value;
 			if (selectedGender) {
-				disableGenderSpecificCentres(
-					selectedGender === "Male" ? "Female" : "Male",
-				);
+				enableGenderSpecificCentres(selectedGender);
 			}
 
 			disableStreamSpecificCentres();
