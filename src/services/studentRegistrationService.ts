@@ -32,9 +32,11 @@ export const registerStudent = async (
 		} else {
 			data = new FormData();
 			data.set("nic", details.nic);
-			data.set("name", details.name);
-			data.set("school", details.school);
-			data.set("address", details.address);
+			data.set("name", details.name.trim().toUpperCase());
+			if (details.school) {
+				data.set("school", details.school);
+			}
+			data.set("address", details.address.trim().toUpperCase());
 			data.set("email", details.email);
 			data.set("phone", details.phone);
 			data.set("gender", details.gender);
@@ -45,16 +47,6 @@ export const registerStudent = async (
 			data.set("exam_centre", details.exam_centre);
 			data.set("payment_receipt", details.payment_receipt);
 		}
-
-		data.set("name", data.get("name")?.toString().trim().toUpperCase() || "");
-		data.set(
-			"school",
-			data.get("school")?.toString().trim().toUpperCase() || "",
-		);
-		data.set(
-			"address",
-			data.get("address")?.toString().trim().toUpperCase() || "",
-		);
 
 		const response = await fetch(API_URL.concat("/student-registration/add"), {
 			method: "POST",
