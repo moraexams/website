@@ -364,31 +364,6 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			examCentreSelector.disabled = false;
 		}
 
-		document.addEventListener("DOMContentLoaded", () => {
-			const districtSelect = document.getElementById("examDistrict");
-			if (!districtSelect) {
-				console.error("Exam district select element not found.");
-				return;
-			}
-
-			districtSelect.addEventListener("change", () => {
-				const selectedDistrict = (districtSelect as HTMLSelectElement).value;
-				setCorrectExamCentres(Number.parseInt(selectedDistrict));
-			});
-
-			genderSelect.addEventListener("change", () => {
-				const selectedGender = (genderSelect as HTMLSelectElement).value;
-				if (!selectedGender) return;
-				setCorrectExamCentres(
-					Number.parseInt((districtSelect as HTMLSelectElement).value),
-				);
-			});
-
-			streamSelect.addEventListener("change", () => {
-				disableStreamSpecificCentres();
-			});
-		});
-
 		const form = document.querySelector<HTMLFormElement>(
 			"form#registration-form",
 		);
@@ -539,6 +514,40 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 				addPaymentReceiptFiles(fileInput.files);
 			});
 		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			form.addEventListener("reset", () => {
+				const label = fileInput.parentElement;
+				if (label) {
+					const p = label.querySelector("p");
+					if (p)
+						p.innerHTML = `<span class="font-semibold">Click to upload</span> or drag and drop`;
+				}
+			});
+
+			const districtSelect = document.getElementById("examDistrict");
+			if (!districtSelect) {
+				console.error("Exam district select element not found.");
+				return;
+			}
+
+			districtSelect.addEventListener("change", () => {
+				const selectedDistrict = (districtSelect as HTMLSelectElement).value;
+				setCorrectExamCentres(Number.parseInt(selectedDistrict));
+			});
+
+			genderSelect.addEventListener("change", () => {
+				const selectedGender = (genderSelect as HTMLSelectElement).value;
+				if (!selectedGender) return;
+				setCorrectExamCentres(
+					Number.parseInt((districtSelect as HTMLSelectElement).value),
+				);
+			});
+
+			streamSelect.addEventListener("change", () => {
+				disableStreamSpecificCentres();
+			});
+		});
 	</script>
 </div>
 
