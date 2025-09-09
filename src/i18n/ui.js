@@ -430,7 +430,7 @@ const UI_STRINGS_EN = {
 	student_register__instruction_1:
 		"<b>Not following the instructions</b> or <b>not submitting the accurate information</b> will result in your application being rejected.",
 	student_register__instruction_2:
-		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.<br> You must have a valid email address, to which the future updates will be sent to.<br> After submitting, you <b>cannot</b> edit this form.",
+		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form. <b>Include your NIC in the bank payment description</b>. <br> You must have a valid email address, to which the future updates will be sent to.<br> After submitting, you <b>cannot</b> edit this form.<br>",
 	student_register__registration_fee_title: "Registration Fee",
 	student_register__registration_fee_ict_only_label: "ICT only",
 	student_register__registration_fee_ict_only_amount: "Rs. 200",
@@ -671,7 +671,7 @@ const UI_STRINGS_TA = {
 	student_register__instruction_1:
 		"<b>வழிமுறைகளைப் பின்பற்றாதது</b> அல்லது <b>துல்லியமான தகவல்களைச் சமர்ப்பிக்காதது</b> உங்கள் விண்ணப்பத்தை நிராகரிக்க வழிவகுக்கும்.",
 	student_register__instruction_2:
-		"நிகழ்நிலை விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன், பரீட்சைக் கட்டணத்தை செலுத்துவது <b>அத்தியாயவசியமானது</b>.<br>பரீட்சை தொடர்பான மேலதிக தகவல்கள் மின்னஞ்சல் ஊடாக அறிவிக்கப்பட இருப்பதால், உங்களிடம் செல்லுபடியாகும் மின்னஞ்சல் முகவரியொன்று இருக்க வேண்டும்.<br>இந்த நிகழ்நிலைப் படிவத்தை சமர்ப்பித்த பின், அதில் எவ்வித மாற்றங்களையும் உங்களால் செய்ய இயலாது.",
+		"நிகழ்நிலை விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன், பரீட்சைக் கட்டணத்தை செலுத்துவது <b>அத்தியாயவசியமானது</b>. <b>வங்கி கட்டண ரசீதில் உங்கள் தேசிய அடையாள அட்டையை சேர்க்கவும்.</b> <br>பரீட்சை தொடர்பான மேலதிக தகவல்கள் மின்னஞ்சல் ஊடாக அறிவிக்கப்பட இருப்பதால், உங்களிடம் செல்லுபடியாகும் மின்னஞ்சல் முகவரியொன்று இருக்க வேண்டும்.<br>இந்த நிகழ்நிலைப் படிவத்தை சமர்ப்பித்த பின், அதில் எவ்வித மாற்றங்களையும் உங்களால் செய்ய இயலாது.",
 	student_register__registration_fee_title: "பதிவு கட்டணம்",
 	student_register__registration_fee_ict_only_label: "ICT மட்டும்",
 	student_register__registration_fee_ict_only_amount: "ரூ. 200",
