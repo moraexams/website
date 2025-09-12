@@ -55,6 +55,7 @@ export function validateRegistrationForm(form: HTMLFormElement): boolean {
 			!/^(\d|\+94)\d{9}$/.test(input.value)
 		) {
 			showError(input.name, "Invalid phone number.");
+			isValid = false;
 		} else if (input.name === "name" && input.value.length < 3) {
 			showError(input.name, "Full name must be at least 3 characters long.");
 			isValid = false;
