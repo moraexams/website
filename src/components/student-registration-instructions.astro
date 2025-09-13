@@ -8,9 +8,9 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		{t("student_register__instructions_title")}
 	</h2>
 
-	<ul class="list-none pl-0">
+	<ul class="list-none pl-0 grid grid-cols-1 lg:grid-cols-2 gap-x-2">
 		<li
-			class="text-red-600 !bg-red-100 !border-red-700"
+			class="text-red-600 !bg-red-100 !border-red-700 col-span-full"
 			style="padding: 15px; ; margin-bottom: 10px;"
 			set:html={t("student_register__instruction_1")}
 		/>
@@ -111,7 +111,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		</li>
 
 		<label
-			class="confirmation-banner no-select block transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px]"
+			class="confirmation-banner no-select block transition-colors px-4 py-2 my-4 border-solid rounded-md border-[1px] col-span-full"
 			for="agree-checkbox"
 		>
 			<span>
