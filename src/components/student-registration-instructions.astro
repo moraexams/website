@@ -89,6 +89,26 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 					<span>Jaffna Stanley Road</span>
 				</li>
 			</ul>
+			<p class="flex gap-2">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="21"
+					height="21"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-info-icon lucide-info mt-[3px]"
+					><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
+					></path><path d="M12 8h.01"></path></svg
+				>
+				<span
+					class="max-w-prose text-pretty"
+					set:html={t("student_register__registration_fee_description")}
+				/>
+			</p>
 			<li style="padding: 15px; margin-bottom: 10px;">
 				<h3 style="color: #490665; margin-top: 0;">
 					{t("student_register__contact_details")}
