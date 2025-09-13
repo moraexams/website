@@ -32,23 +32,36 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			<h3 style="color: #490665; margin-top: 0;">
 				{t("student_register__registration_fee_title")}
 			</h3>
-			<ul class="grid grid-cols-[auto_1fr] gap-x-8 pl-2 fee-list">
+			<ul class="grid grid-cols-[1fr_auto] gap-x-8 pl-2 fee-list max-w-[80%]">
 				<li class="contents">
-					<span>
-						{t("student_register__registration_fee_ict_only_label")}
-					</span>
-					<span class="font-bold"
-						>{t("student_register__registration_fee_ict_only_amount")}</span
-					>
-				</li>
-				<li class="contents">
-					<span>
-						{t("student_register__registration_fee_other_streams_label")}
-					</span>
+					<span> Physical Science (Maths, Physics, Chemistry)</span>
 					<span class="font-bold"
 						>{
 							t("student_register__registration_fee_other_streams_amount")
 						}</span
+					>
+				</li>
+				<li class="contents">
+					<span> Biological Science (Biology, Physics, Chemistry)</span>
+					<span class="font-bold"
+						>{
+							t("student_register__registration_fee_other_streams_amount")
+						}</span
+					>
+				</li>
+				<li class="contents">
+					<span> Other (Maths, Physics, ICT)</span>
+					<span class="font-bold"
+						>{
+							t("student_register__registration_fee_other_streams_amount")
+						}</span
+					>
+				</li>
+
+				<li class="contents">
+					<span> ICT Only</span>
+					<span class="font-bold"
+						>{t("student_register__registration_fee_ict_only_amount")}</span
 					>
 				</li>
 			</ul>
