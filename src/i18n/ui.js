@@ -196,6 +196,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__understood_text
  * @prop {string} student_register__cant_proceed_text
  * @prop {string} student_register__form_unavailable
+ * @prop {string} student_register__form_closed
  * @prop {string} student_register__form_name
  * @prop {string} student_register__form_nic_no
  * @prop {string} student_register__form_school
@@ -471,6 +472,7 @@ const UI_STRINGS_EN = {
 	student_register__confirmation_title: "Confirm Your Details",
 	student_register__confirmation_description:
 		"Please confirm that all the details you have entered are correct. You will not be able to edit them after submission.",
+	student_register__form_closed: "The student registration form is closed.",
 };
 
 /**
@@ -713,6 +715,7 @@ const UI_STRINGS_TA = {
 	student_register__confirmation_title: "உங்கள் விவரங்களை உறுதிப்படுத்தவும்",
 	student_register__confirmation_description:
 		"நீங்கள் உள்ளிட்ட அனைத்து விவரங்களும் சரியாக உள்ளனவா என்பதை உறுதிப்படுத்தவும். சமர்ப்பித்த பிறகு உங்களால் அவற்றைத் திருத்த முடியாது.",
+	student_register__form_closed: "மாணவர் விண்ணப்ப படிவம் மூடப்பட்டுள்ளது.",
 };
 
 /**
