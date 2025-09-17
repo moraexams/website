@@ -339,7 +339,7 @@ const UI_STRINGS_EN = {
 	statistics__centers: "Centres",
 	statistics__candidates: "Candidates",
 
-	timetable__title: "Timetable 2024",
+	timetable__title: "Timetable 2025",
 	timetable__start: "START",
 	timetable__date25_sub1: "Combined Mathematics-I",
 	timetable__date25_sub2: "Biology-I",
@@ -492,7 +492,7 @@ const UI_STRINGS_TA = {
 		"உங்களது பரீட்சை நிலையத்தை கண்டறியுங்கள்",
 	find_your_examination_centres__description: `எங்களிடம் ${totalExamCentres} பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.`,
 	looking_for_past_papers__title: "கடந்த கால வினாத்தாள்களை தேடுகின்றீர்களா?",
-	timetable__title: "நேர அட்டவணை",
+	timetable__title: "நேர அட்டவணை 2025",
 	committee__title: "Mora Exams 2025 | செயற்குழு",
 	committee__president_name: "ஹர்ஷன் ற.",
 	committee__secretary_name: "மதுமிலன் கே.",
