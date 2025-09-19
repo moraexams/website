@@ -16,19 +16,21 @@ const t = useTranslations(lang);
 
 const nicNumber = Astro.url.searchParams.get("nic") || undefined;
 
-let selectedNic = undefined;
-function formatKey(key: string) {
-	if (key == "nic_number") {
-		return "NIC Number";
-	}
-	if (key.includes("_")) {
-		return key
-			.split("_")
-			.map((word) => formatKey(word))
-			.join(" ");
-	}
-	return key.charAt(0).toUpperCase().concat(key.slice(1));
-}
+let selectedNic:
+	| undefined
+	| {
+			index_no: string;
+			name: string;
+			stream: string;
+			medium: string;
+			rank_district: string;
+			exam_district: string;
+			exam_centre: string;
+	  }
+	| {
+			message_ta: string;
+			message_en: string;
+	  } = undefined;
 
 let isError = false;
 if (nicNumber) {
@@ -45,6 +47,7 @@ if (nicNumber) {
 			selectedNic = null;
 		} else {
 			selectedNic = data;
+			console.log(data);
 		}
 	} catch (error) {
 		console.error("Error fetching NIC data:", error);
@@ -52,6 +55,11 @@ if (nicNumber) {
 		isError = true;
 	}
 }
+
+const instructionItems = new Array(12).fill(null).map((_, i) => {
+	// @ts-expect-error
+	return t(`instructions__item_${(i + 1).toString().padStart(2, "0")}`);
+});
 ---
 
 <Layout pageTitle={t("find_your_index_no__title")}>
@@ -59,96 +67,109 @@ if (nicNumber) {
 		<NavigationBar />
 	</div>
 	<section
-		class="bg-white text-primary-900 flex flex-col justify-center"
-		style="min-height: 50vh;"
+		class="bg-white text-primary-900 grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-1 lg:grid-rows-[auto_auto] min-h-[50vh] gap-x-5 mb-5"
 	>
-		<div class="w-full xl:w-8/12 my-4 mx-auto">
-			<div class="flex flex-col items-center justify-center m-auto">
-				<div>
-					<h1 class="text-3xl xl:text-4xl text-center">
-						{t("find_your_index_no")}
-					</h1>
-					<p class="text-xl xl:text-2xl text-center text-gray-950 max-w-prose">
-						{t("find_your_index_no_p")}
-					</p>
-				</div>
-				<form
-					method="get"
-					action={`/${lang}/index-number`}
-					style="display: contents;"
-				>
-					<input
-						class="w-full max-w-2xl px-4 py-2 rounded-xl bg-gray-50 border border-primary-900/20 placeholder-rust-orange-50/25 text-md focus:outline-none focus:border-gray focus:bg-white focus:z-10 focus:shadow-sm mt-4"
-						type="text"
-						name="nic"
-						value={nicNumber}
-						placeholder={t("nic_no")}
-						inputmode="numeric"
-					/>
-					<button
-						class="my-6 w-1/2 py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
-					>
-						<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
-							>{t("find_button")}</span
-						>
-					</button>
-				</form>
-				{
-					typeof selectedNic == "undefined" ? null : selectedNic == null ? (
-						<div class="text-red-500 text-xl text-center mt-5 min-h-[160px]">
-							{isError
-								? t("index_number__not_found")
-								: t("index_number__error_fetching")}
-						</div>
-					) : (
-						<div class="grid grid-cols-1 items-center justify-center space-y-4">
-							<IndexNumberBadge
-								badge_text={t("index_number__full_name")}
-								value_text={selectedNic?.name}
-							/>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-								<IndexNumberBadge
-									badge_text={t("index_number__index_no")}
-									value_text={selectedNic?.index_no}
-								/>
-								<IndexNumberBadge
-									badge_text={t("index_number__stream")}
-									value_text={selectedNic?.stream}
-								/>
-								<IndexNumberBadge
-									badge_text={t("index_number__rank_district")}
-									value_text={selectedNic?.rank_district}
-								/>
-								<IndexNumberBadge
-									badge_text={t("index_number__exam_district")}
-									value_text={selectedNic?.exam_district}
-								/>
-							</div>
-							<IndexNumberBadge
-								badge_text={t("index_number__exam_centre")}
-								value_text={selectedNic?.exam_centre}
-							/>
-						</div>
-					)
-				}
+		<div class="col-span-full row-start-1">
+			<h2>{t("instructions__title")}</h2>
+			<ul>
+				{instructionItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</div>
+		<div class="col-start-1 row-start-2 flex flex-col">
+			<div>
+				<h1 class="text-3xl">
+					{t("find_your_index_no")}
+				</h1>
+				<p class="text-xl text-gray-950 max-w-prose">
+					{t("find_your_index_no_p")}
+				</p>
 			</div>
+			<form
+				method="get"
+				action={`/${lang}/index-number`}
+				class="flex items-center gap-2 max-w-2xl"
+			>
+				<input
+					class="w-full max-w-2xl px-4 md:px-5 py-2 md:py-3 rounded-xl bg-gray-50 border border-primary-900/20 placeholder-rust-orange-50/25 text-md focus:outline-none focus:border-gray focus:bg-white focus:z-10 focus:shadow-sm"
+					type="text"
+					name="nic"
+					value={nicNumber}
+					placeholder={t("nic_no")}
+					inputmode="numeric"
+				/>
+				<button
+					class="w-1/2 py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+				>
+					<i class="fa-solid fa-magnifying-glass size-4"></i><span class="ml-3"
+						>{t("find_button")}</span
+					>
+				</button>
+			</form>
+			{
+				typeof selectedNic == "undefined" ? null : selectedNic == null ? (
+					<div class="text-red-500 text-xl text-center mt-5 min-h-[160px]">
+						{isError
+							? t("index_number__not_found")
+							: t("index_number__error_fetching")}
+					</div>
+				) : "message_ta" in selectedNic ? (
+					<div class="text-red-500 text-xl text-center mt-5 min-h-[160px]">
+						{isError
+							? t("index_number__not_found")
+							: lang == "ta"
+								? selectedNic.message_ta
+								: selectedNic.message_en}
+					</div>
+				) : (
+					<div class="grid grid-cols-1 items-center justify-center space-y-4 w-full mt-5">
+						<IndexNumberBadge
+							badge_text={t("index_number__full_name")}
+							value_text={selectedNic.name}
+						/>
+						<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+							<IndexNumberBadge
+								badge_text={t("index_number__index_no")}
+								value_text={selectedNic.index_no}
+							/>
+							<IndexNumberBadge
+								badge_text={t("index_number__stream")}
+								value_text={selectedNic.stream}
+							/>
+							<IndexNumberBadge
+								badge_text={t("index_number__medium")}
+								value_text={selectedNic.medium}
+							/>
+							<IndexNumberBadge
+								badge_text={t("index_number__rank_district")}
+								value_text={selectedNic.rank_district}
+							/>
+							<IndexNumberBadge
+								badge_text={t("index_number__exam_district")}
+								value_text={selectedNic.exam_district}
+							/>
+						</div>
+						<IndexNumberBadge
+							badge_text={t("index_number__exam_centre")}
+							value_text={selectedNic.exam_centre}
+						/>
+					</div>
+				)
+			}
 		</div>
 		<div
-			class="flex flex-col w-full max-w-screen-xl items-center justify-center mx-auto mt-10"
+			class="col-start-1 lg:col-start-2 row-start-3 lg:row-start-2 flex flex-col w-full max-w-screen-xl items-center mx-auto mt-20"
 		>
 			<p class="m-0 text-xl text-center font-medium">
 				{t("index_number__our_sponsors")}
 			</p>
-			<div
-				class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 my-4 place-items-center gap-4"
-			>
+			<div class="flex flex-col my-4 gap-4">
 				<img
-					class="h-auto w-64 -mt-1 object-contain sm:rounded-b-lg"
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
 					src="/public/sponsors/sltc.jpg"
 					alt="SLTC"
 				/>
 				<img
-					class="h-auto w-64 sm:h-16 object-contain sm:rounded-b-lg"
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
 					src="/public/sponsors/northway-family-mart.png"
 					alt="Northway Family Mart"
 				/>
@@ -167,6 +188,19 @@ if (nicNumber) {
 	}
 	table {
 		width: 100%;
+	}
+	ul {
+		@apply grid list-none pl-0 md:grid-cols-2 gap-2 mb-0;
+		@apply bg-[#efe6f5] border-[#6b21a8] border-l-4 border-0 border-solid py-3 px-4;
+	}
+	li {
+		@apply max-w-prose text-lg pl-1 rounded-md flex h-full;
+
+		&::before {
+			@apply mr-2 block;
+			content: "-";
+			color: #6b21a8;
+		}
 	}
 </style>
 

@@ -223,6 +223,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index_number__rank_district
  * @prop {string} index_number__exam_district
  * @prop {string} index_number__stream
+ * @prop {string} index_number__medium
  * @prop {string} index_number__not_found
  * @prop {string} index_number__error_fetching
  * @prop {string} index_number__our_sponsors
@@ -396,10 +397,10 @@ const UI_STRINGS_EN = {
 	find_your_results: "Find Your Results",
 	find_your_results_p: "Enter your Index Number to find your results",
 
-	find_your_index_no: "Find Your Index Number",
-	find_your_index_no_p: "Enter your NIC Number to find your Index Number.",
-	nic_no: "N.I.C No",
-	index_no: "Index No",
+	find_your_index_no: "Find Your Index No.",
+	find_your_index_no_p: "Enter your NIC number to find your index no.",
+	nic_no: "N.I.C. No.",
+	index_no: "Index No.",
 	find_button: "Find",
 
 	hero_button: "Find Index Number",
@@ -486,6 +487,7 @@ const UI_STRINGS_EN = {
 	index_number__full_name: "Full Name",
 	index_number__index_no: "Index No",
 	index_number__exam_centre: "Exam Centre",
+	index_number__medium: "Medium",
 	index_number__rank_district: "District for Ranking",
 	index_number__exam_district: "District for Exam Sitting",
 	index_number__stream: "Stream",
@@ -721,7 +723,7 @@ const UI_STRINGS_TA = {
 	student_register__form_phone_no: "தொலைபேசி எண்",
 	student_register__form_email: "மின்னஞ்சல்",
 	student_register__form_gender: "பாலினம்",
-	student_register__form_medium: "மூலமொழி",
+	student_register__form_medium: "மொழி மூலம்",
 	student_register__form_stream: "தொகுதி",
 	student_register__form_district_ranking: "மாவட்டம் (தரவரிசை)",
 	student_register__form_district_sitting: "மாவட்டம் (பரீட்சை)",
@@ -743,6 +745,7 @@ const UI_STRINGS_TA = {
 	index_number__rank_district: "மாவட்டம் (தரவரிசை)",
 	index_number__exam_district: "மாவட்டம் (பரீட்சை)",
 	index_number__stream: "தொகுதி",
+	index_number__medium: "மொழி மூலம்",
 	index_number__not_found:
 		"கொடுக்கப்பட்ட தேசிய அடையாள அட்டை இலக்கத்துடன் தொடர்புடைய எந்த சுட்டிலக்கமும் எங்களால் கண்டுபிடிக்க முடியவில்லை.",
 	index_number__error_fetching:
