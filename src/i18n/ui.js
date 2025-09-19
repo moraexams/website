@@ -217,6 +217,16 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__contact_name_02
  * @prop {string} student_register__confirmation_title
  * @prop {string} student_register__confirmation_description
+ * @prop {string} index_number__full_name
+ * @prop {string} index_number__index_no
+ * @prop {string} index_number__exam_centre
+ * @prop {string} index_number__rank_district
+ * @prop {string} index_number__exam_district
+ * @prop {string} index_number__stream
+ * @prop {string} index_number__not_found
+ * @prop {string} index_number__error_fetching
+ * @prop {string} index_number__our_sponsors
+ *
  */
 
 /**
@@ -473,6 +483,17 @@ const UI_STRINGS_EN = {
 	student_register__confirmation_description:
 		"Please confirm that all the details you have entered are correct. You will not be able to edit them after submission.",
 	student_register__form_closed: "The student registration form is closed.",
+	index_number__full_name: "Full Name",
+	index_number__index_no: "Index No",
+	index_number__exam_centre: "Exam Centre",
+	index_number__rank_district: "District for Ranking",
+	index_number__exam_district: "District for Exam Sitting",
+	index_number__stream: "Stream",
+	index_number__not_found:
+		"We could not find any index number associated with the provided NIC number.",
+	index_number__error_fetching:
+		"An error occurred while fetching your index number. Please try again later.",
+	index_number__our_sponsors: "Our Official Sponsors",
 };
 
 /**
@@ -716,6 +737,17 @@ const UI_STRINGS_TA = {
 	student_register__confirmation_description:
 		"நீங்கள் உள்ளிட்ட அனைத்து விவரங்களும் சரியாக உள்ளனவா என்பதை உறுதிப்படுத்தவும். சமர்ப்பித்த பிறகு உங்களால் அவற்றைத் திருத்த முடியாது.",
 	student_register__form_closed: "மாணவர் விண்ணப்ப படிவம் மூடப்பட்டுள்ளது.",
+	index_number__full_name: "முழுப்பெயர்",
+	index_number__index_no: "சுட்டிலக்கம்",
+	index_number__exam_centre: "பரீட்சை மையம்",
+	index_number__rank_district: "மாவட்டம் (தரவரிசை)",
+	index_number__exam_district: "மாவட்டம் (பரீட்சை)",
+	index_number__stream: "தொகுதி",
+	index_number__not_found:
+		"கொடுக்கப்பட்ட தேசிய அடையாள அட்டை இலக்கத்துடன் தொடர்புடைய எந்த சுட்டிலக்கமும் எங்களால் கண்டுபிடிக்க முடியவில்லை.",
+	index_number__error_fetching:
+		"உங்கள் சுட்டிலக்கத்தைப் பெறும்போது ஒரு பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.",
+	index_number__our_sponsors: "உத்தியோகபூர்வ அனுசரணையாளர்கள்",
 };
 
 /**

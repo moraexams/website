@@ -5,6 +5,7 @@ import Footer from "../../sections/16-footer.astro";
 
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
+import IndexNumberBadge from "../../components/index_number_badge.astro";
 
 const { lang } = Astro.params;
 
@@ -29,16 +30,26 @@ function formatKey(key: string) {
 	return key.charAt(0).toUpperCase().concat(key.slice(1));
 }
 
+let isError = false;
 if (nicNumber) {
-	const response = await fetch(
-		`https://backend.moraexams.org/student/nic/${nicNumber}`,
-		// `http://localhost:8080/student/nic/${nicNumber}`,
-	);
-	const data = await response.json();
-	if (data.error) {
+	try {
+		const response = await fetch(
+			`${import.meta.env.PUBLIC_API_URL}/student/nic/${nicNumber}`,
+		);
+		const data = await response.json();
+
+		if (!response.ok) {
+			throw new Error(data.message || "Failed to fetch NIC data");
+		}
+		if (data.error) {
+			selectedNic = null;
+		} else {
+			selectedNic = data;
+		}
+	} catch (error) {
+		console.error("Error fetching NIC data:", error);
 		selectedNic = null;
-	} else {
-		selectedNic = data;
+		isError = true;
 	}
 }
 ---
@@ -48,69 +59,99 @@ if (nicNumber) {
 		<NavigationBar />
 	</div>
 	<section
-		class="min-h-screen bg-delft-blue-50/50 text-primary-900 flex justify-center"
+		class="bg-white text-primary-900 flex flex-col justify-center"
+		style="min-height: 50vh;"
 	>
-		<div
-			class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1"
-		>
-			<div class="lg:w1/2 xl:w-5/12 p-6 sm:p-12 flex-1">
-				<div class="mt-6 m-auto flex flex-col items-center justify-center">
+		<div class="w-full xl:w-8/12 my-4 mx-auto">
+			<div class="flex flex-col items-center justify-center m-auto">
+				<div>
 					<h1 class="text-3xl xl:text-4xl text-center">
 						{t("find_your_index_no")}
 					</h1>
-					<p class="text-xl xl:text-2xl text-center text-black max-w-prose">
+					<p class="text-xl xl:text-2xl text-center text-gray-950 max-w-prose">
 						{t("find_your_index_no_p")}
 					</p>
-					<form
-						method="get"
-						action={`/${lang}/index-number`}
-						style="display: contents;"
-					>
-						<input
-							class="w-full max-w-2xl px-8 py-4 rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4"
-							type="text"
-							name="nic"
-							value={nicNumber}
-							placeholder={t("nic_no")}
-							inputmode="numeric"
-						/>
-						<button
-							class="my-6 w-1/2 py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
-						>
-							<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
-								>{t("find_button")}</span
-							>
-						</button>
-					</form>
-					{
-						typeof selectedNic == "undefined" ? null : selectedNic == null ? (
-							<div
-								style="color: red; text-align: center;"
-								class="text-center mt-5"
-							>
-								Not found
-							</div>
-						) : (
-							<table class="">
-								{Object.entries(selectedNic).map(([key, value]) => {
-									return (
-										<tr>
-											<td>{formatKey(key)}</td>
-											<td>{value}</td>
-										</tr>
-									);
-								})}
-							</table>
-						)
-					}
 				</div>
-			</div>
-			<div class="lg:flex hidden max-w-[700px]">
-				<div
-					class="mr-14 min-w-[240px] w-full bg-contain bg-center bg-no-repeat max-h-screen"
-					style="background-image: url('/assets/Illustrations/bg23.svg');"
+				<form
+					method="get"
+					action={`/${lang}/index-number`}
+					style="display: contents;"
 				>
-				</div>
+					<input
+						class="w-full max-w-2xl px-4 py-2 rounded-xl bg-gray-50 border border-primary-900/20 placeholder-rust-orange-50/25 text-md focus:outline-none focus:border-gray focus:bg-white focus:z-10 focus:shadow-sm mt-4"
+						type="text"
+						name="nic"
+						value={nicNumber}
+						placeholder={t("nic_no")}
+						inputmode="numeric"
+					/>
+					<button
+						class="my-6 w-1/2 py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+					>
+						<i class="fa-solid fa-magnifying-glass"></i><span class="ml-3"
+							>{t("find_button")}</span
+						>
+					</button>
+				</form>
+				{
+					typeof selectedNic == "undefined" ? null : selectedNic == null ? (
+						<div class="text-red-500 text-xl text-center mt-5 min-h-[160px]">
+							{isError
+								? t("index_number__not_found")
+								: t("index_number__error_fetching")}
+						</div>
+					) : (
+						<div class="grid grid-cols-1 items-center justify-center space-y-4">
+							<IndexNumberBadge
+								badge_text={t("index_number__full_name")}
+								value_text={selectedNic?.name}
+							/>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<IndexNumberBadge
+									badge_text={t("index_number__index_no")}
+									value_text={selectedNic?.index_no}
+								/>
+								<IndexNumberBadge
+									badge_text={t("index_number__stream")}
+									value_text={selectedNic?.stream}
+								/>
+								<IndexNumberBadge
+									badge_text={t("index_number__rank_district")}
+									value_text={selectedNic?.rank_district}
+								/>
+								<IndexNumberBadge
+									badge_text={t("index_number__exam_district")}
+									value_text={selectedNic?.exam_district}
+								/>
+							</div>
+							<IndexNumberBadge
+								badge_text={t("index_number__exam_centre")}
+								value_text={selectedNic?.exam_centre}
+							/>
+						</div>
+					)
+				}
+			</div>
+		</div>
+		<div
+			class="flex flex-col w-full max-w-screen-xl items-center justify-center mx-auto mt-10"
+		>
+			<p class="m-0 text-xl text-center font-medium">
+				{t("index_number__our_sponsors")}
+			</p>
+			<div
+				class="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 my-4 place-items-center gap-4"
+			>
+				<img
+					class="h-auto w-64 -mt-1 object-contain sm:rounded-b-lg"
+					src="/public/sponsors/sltc.jpg"
+					alt="SLTC"
+				/>
+				<img
+					class="h-auto w-64 sm:h-16 object-contain sm:rounded-b-lg"
+					src="/public/sponsors/northway-family-mart.png"
+					alt="Northway Family Mart"
+				/>
 			</div>
 		</div>
 	</section>
@@ -126,5 +167,11 @@ if (nicNumber) {
 	}
 	table {
 		width: 100%;
+	}
+</style>
+
+<style is:global>
+	body > * {
+		@apply px-[var(--body-margin-x)];
 	}
 </style>
