@@ -352,7 +352,7 @@ const UI_STRINGS_EN = {
 
 	timetable__title: "Timetable 2025",
 	timetable__start: "START",
-	timetable__date25_sub1: "Combined Mathematics-I",
+	timetable__date25_sub1: "Combinfed Mathematics-I",
 	timetable__date25_sub2: "Biology-I",
 	timetable__date26_sub1: "Combined Mathematics-I",
 	timetable__date26_sub2: "Biology-II",
@@ -411,19 +411,19 @@ const UI_STRINGS_EN = {
 
 	instructions__title: "Exam Instructions for Students",
 	instructions__item_01:
-		"Students must arrive at the exam center at least 15 minutes before the exam begins. Entry to the exam hall will be allowed 10 minutes before the start of the exam.",
+		"Students must arrive at the exam centre at least 15 minutes before the exam begins. Entry to the exam hall will be allowed 10 minutes before the start of the exam.",
 	instructions__item_02:
-		"Students must attend the exam center they registered for on their admission form. Entry to any other exam center will not be permitted.",
+		"Students must attend the exam centre they registered for on their admission form. Entry to any other exam centre will not be permitted.",
 	instructions__item_03:
-		"You can find your assigned exam center in the email sent to you for index number confirmation. Please refer to this email to ensure you arrive at the correct center.",
+		"You can find your assigned exam centre in the email sent to you for index number confirmation. Please refer to this email to ensure you arrive at the correct centre.",
 	instructions__item_04:
 		"Students must use the same exam hall throughout all their exams unless otherwise instructed by the invigilators.",
 	instructions__item_05:
-		"Students must use the exam center with respect and responsibility, ensuring no damage is caused to the exam hall or its property.",
+		"Students must use the exam centre with respect and responsibility, ensuring no damage is caused to the exam hall or its property.",
 	instructions__item_06:
 		"All students must bring their National Identity Card (NIC) to the exam hall for verification.",
 	instructions__item_07:
-		"Casual dress is allowed in most exam centers. However, in some centers, school uniforms are mandatory. Check with your center for specific requirements.",
+		"Casual dress is allowed in most exam centres. However, in some centres, school uniforms are mandatory. Check with your centre for specific requirements.",
 	instructions__item_08:
 		"If a student registers for all exams but fails to attend one exam, they will not be permitted to attend the remaining exams.",
 	instructions__item_09:
@@ -688,7 +688,7 @@ const UI_STRINGS_TA = {
 	instructions__item_11:
 		"ஒழுக்கமற்ற செயற்பாடுகளில் ஈடுபடுவாராயின் உடனடியாகப் பரீட்சை மண்டபத்திலிருந்து வெளியேற்றப்படுவர்.",
 	instructions__item_12:
-		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2024 | Examination Committee மேற்கொள்ளும்.",
+		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2025 | Examination Committee மேற்கொள்ளும்.",
 	past_papers__title: "கடந்த கால வினாத்தாள்கள்",
 	student_register__title: "மாணவர் பதிவு படிவம்",
 	student_register__instructions_title: "அறிவுறுத்தல்கள்",

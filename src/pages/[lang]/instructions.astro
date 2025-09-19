@@ -67,12 +67,12 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 	}
 
 	header {
-		background-color: #4a0072;
+		@apply flex flex-col rounded-md;
+		background-color: #7106aa;
 
 		color: #4a0072;
 		padding: 10px 0;
 		text-align: center;
-		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
@@ -80,15 +80,16 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 	}
 
 	header img {
+		@apply min-w-[120px];
 		width: 50px;
 		height: 50px;
 		margin-right: 15px;
 	}
 
 	header h1 {
+		@apply text-lg;
 		color: #ffffff;
 		margin: 0;
-		font-size: 40px;
 	}
 
 	footer {
