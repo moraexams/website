@@ -227,6 +227,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index_number__not_found
  * @prop {string} index_number__error_fetching
  * @prop {string} index_number__our_sponsors
+ * @prop {string} index_number__colombo_centre_notice_title
+ * @prop {string} index_number__colombo_centre_notice_text
  *
  */
 
@@ -496,6 +498,10 @@ const UI_STRINGS_EN = {
 	index_number__error_fetching:
 		"An error occurred while fetching your index number. Please try again later.",
 	index_number__our_sponsors: "Our Official Sponsors",
+	index_number__colombo_centre_notice_title:
+		"*Important Notice Regarding Colombo Centre!",
+	index_number__colombo_centre_notice_text:
+		"Due to some unavoidable situations, Colombo Methodist College will not function as an exam centre on 20th September. Instead, applicants can write their exams in <b><br/>Bambalapitya Hindu College,<br/>77 Lorenz Rd,<br/>Colombo 00400</b>.",
 };
 
 /**
@@ -751,6 +757,10 @@ const UI_STRINGS_TA = {
 	index_number__error_fetching:
 		"உங்கள் சுட்டிலக்கத்தைப் பெறும்போது ஒரு பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.",
 	index_number__our_sponsors: "உத்தியோகபூர்வ அனுசரணையாளர்கள்",
+	index_number__colombo_centre_notice_title:
+		"*கொழும்பு பரீட்சை நிலையங்கள் தொடர்பிலான அறிவிப்பு!",
+	index_number__colombo_centre_notice_text:
+		"ஏற்கனவே அறிவிக்கப்பட்டிருந்த  பரீட்சை நிலையங்களில், Colombo Methodist College இற்குப் பதிலாக 20ஆம் திகதி மட்டும் <br/> <b>Bambalapitiya Hindu College,<br/>77 Lorenz Rd, Colombo 00400 </b> ஆனது பரீட்சை நிலையமாக செயற்படும்.",
 };
 
 /**

@@ -56,6 +56,15 @@ if (nicNumber) {
 	}
 }
 
+const is_colombo_center = function (
+	index_no: string | number | undefined | null,
+) {
+	if (!index_no) return false;
+	const str = String(index_no);
+	const center_id = parseInt(str.slice(0, 2), 10);
+	return center_id == 85;
+};
+
 const instructionItems = new Array(12).fill(null).map((_, i) => {
 	// @ts-expect-error
 	return t(`instructions__item_${(i + 1).toString().padStart(2, "0")}`);
@@ -67,15 +76,17 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 		<NavigationBar />
 	</div>
 	<section
-		class="bg-white text-primary-900 grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-1 lg:grid-rows-[auto_auto] min-h-[50vh] gap-x-5 mb-5"
+		class="bg-white text-primary-900 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 lg:grid-rows-[auto_auto] min-h-[50vh] gap-x-5 mb-5"
 	>
 		<div class="col-span-full row-start-1">
 			<h2>{t("instructions__title")}</h2>
-			<ul>
+			<ul class="instructions">
 				{instructionItems.map((item) => <li>{item}</li>)}
 			</ul>
 		</div>
-		<div class="col-start-1 row-start-2 flex flex-col">
+		<div
+			class="col-start-1 row-start-3 flex flex-col lg:min-w-[640px] w-full max-w-xl mx-auto mt-10 lg:mt-0"
+		>
 			<div>
 				<h1 class="text-3xl">
 					{t("find_your_index_no")}
@@ -98,7 +109,7 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 					inputmode="numeric"
 				/>
 				<button
-					class="w-1/2 py-2 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
+					class="min-w-[120px] lg:w-1/2 py-2 rounded-full text-primary-800 text-lg bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none"
 				>
 					<i class="fa-solid fa-magnifying-glass size-4"></i><span class="ml-3"
 						>{t("find_button")}</span
@@ -113,7 +124,7 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 							: t("index_number__error_fetching")}
 					</div>
 				) : "message_ta" in selectedNic ? (
-					<div class="text-red-500 text-xl text-center mt-5 min-h-[160px]">
+					<div class="text-red-500 text-xl text-center mt-5 min-h-[160px] max-w-prose text-pretty">
 						{isError
 							? t("index_number__not_found")
 							: lang == "ta"
@@ -121,7 +132,7 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 								: selectedNic.message_en}
 					</div>
 				) : (
-					<div class="grid grid-cols-1 items-center justify-center space-y-4 w-full mt-5">
+					<div class="grid grid-cols-1 items-center justify-center space-y-4 w-full mt-5 xl:max-w-[720px]">
 						<IndexNumberBadge
 							badge_text={t("index_number__full_name")}
 							value_text={selectedNic.name}
@@ -150,19 +161,42 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 						</div>
 						<IndexNumberBadge
 							badge_text={t("index_number__exam_centre")}
-							value_text={selectedNic.exam_centre}
+							value_text={
+								selectedNic &&
+								"index_no" in selectedNic &&
+								is_colombo_center(selectedNic.index_no)
+									? selectedNic.exam_centre.concat(
+											"<span class='text-red-500'>*</span>",
+										)
+									: selectedNic.exam_centre
+							}
 						/>
+						{selectedNic &&
+						"index_no" in selectedNic &&
+						is_colombo_center(selectedNic.index_no) ? (
+							<div class="block text-red-500 colombo-centre-notice-li w-fit border-l-4 border-red-500 max-w-[52ch] pl-4">
+								<h3
+									class="font-bold mb-0 w-fit"
+									set:html={t("index_number__colombo_centre_notice_title")}
+								/>
+
+								<p
+									class="max-w-[52ch] text-pretty"
+									set:html={t("index_number__colombo_centre_notice_text")}
+								/>
+							</div>
+						) : null}
 					</div>
 				)
 			}
 		</div>
 		<div
-			class="col-start-1 lg:col-start-2 row-start-3 lg:row-start-2 flex flex-col w-full max-w-screen-xl items-center mx-auto mt-20"
+			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-3 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-20"
 		>
-			<p class="m-0 text-xl text-center font-medium">
+			<p class="mb-4 mt-0 text-xl text-center font-medium">
 				{t("index_number__our_sponsors")}
 			</p>
-			<div class="flex flex-col my-4 gap-4">
+			<div class="flex flex-col my-4 gap-16">
 				<img
 					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
 					src="/sponsors/sltc.png"
@@ -189,18 +223,21 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 	table {
 		width: 100%;
 	}
-	ul {
+	ul.instructions {
 		@apply grid list-none pl-0 md:grid-cols-2 gap-2 mb-0;
 		@apply bg-[#efe6f5] border-[#6b21a8] border-l-4 border-0 border-solid py-3 px-4;
-	}
-	li {
-		@apply max-w-prose text-lg pl-1 rounded-md flex h-full;
+		li {
+			@apply max-w-prose text-lg pl-1 rounded-md flex h-full;
 
-		&::before {
-			@apply mr-2 block;
-			content: "-";
-			color: #6b21a8;
+			&::before {
+				@apply mr-2 block;
+				content: "-";
+				color: #6b21a8;
+			}
 		}
+	}
+	.colombo-centre-notice-li::before {
+		color: red;
 	}
 </style>
 
