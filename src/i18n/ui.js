@@ -501,7 +501,7 @@ const UI_STRINGS_EN = {
 	index_number__colombo_centre_notice_title:
 		"*Important Notice Regarding Colombo Centre!",
 	index_number__colombo_centre_notice_text:
-		"Due to some unavoidable situations, Colombo Methodist College will not function as an exam centre on 20th September. Instead, applicants can write their exams in <b><br/>Bambalapitya Hindu College,<br/>77 Lorenz Rd,<br/>Colombo 00400</b>.",
+		"Due to some unavoidable situations, Colombo Methodist College will not function as an exam centre <b>on 20th September.</b> Instead, applicants can write their exams in <b><br/>Bambalapitya Hindu College,<br/>77 Lorenz Rd,<br/>Colombo 00400</b>.",
 };
 
 /**
@@ -760,7 +760,7 @@ const UI_STRINGS_TA = {
 	index_number__colombo_centre_notice_title:
 		"*கொழும்பு பரீட்சை நிலையங்கள் தொடர்பிலான அறிவிப்பு!",
 	index_number__colombo_centre_notice_text:
-		"ஏற்கனவே அறிவிக்கப்பட்டிருந்த  பரீட்சை நிலையங்களில், Colombo Methodist College இற்குப் பதிலாக 20ஆம் திகதி மட்டும் <br/> <b>Bambalapitiya Hindu College,<br/>77 Lorenz Rd, Colombo 00400 </b> ஆனது பரீட்சை நிலையமாக செயற்படும்.",
+		"ஏற்கனவே அறிவிக்கப்பட்டிருந்த  பரீட்சை நிலையங்களில், Colombo Methodist College இற்குப் பதிலாக <b>20ஆம் திகதி மட்டும்<b <br/> <b>Bambalapitiya Hindu College,<br/>77 Lorenz Rd, Colombo 00400 </b> ஆனது பரீட்சை நிலையமாக செயற்படும்.",
 };
 
 /**
