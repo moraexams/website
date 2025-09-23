@@ -21,6 +21,7 @@ export default defineConfig({
 		"/practicepapers": `/${defaultLang}/practicepapers`,
 		"/instructions": `/${defaultLang}/instructions`,
 		"/exampapers": `/${defaultLang}/exampapers`,
+		"/past-papers": `/${defaultLang}/past-papers`,
 		"/manage": "https://moraetamils.com/manage",
 		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
 		"/s/whatsapp": "https://www.whatsapp.com/channel/0029VajWYZGFMqrakb87YL32",
