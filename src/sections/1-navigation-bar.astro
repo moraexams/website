@@ -3,7 +3,6 @@ import HeaderContactLink from "../components/HeaderContactLink.astro";
 import NavLink from "../components/NavLink.astro";
 import HeaderContactIcon from "../components/HeaderContactIcon.astro";
 import LanguageSelector from "../components/LanguageSelector.astro";
-
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
@@ -142,10 +141,6 @@ const { hideLogo } = Astro.props;
 </script>
 
 <style>
-	header,
-	nav {
-		@apply px-[var(--body-margin-x)];
-	}
 	ul {
 		transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
 		transition-delay: 0.1s;
