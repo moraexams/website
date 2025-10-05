@@ -31,14 +31,8 @@ export const getStaticPaths = (() => {
 ---
 
 <Layout pageTitle={t("index__title")}>
-	<div
-		class="first-fold grid grid-cols-1 px-0 min-h-[72vh] sm:min-h-[100vh] grid-rows-[auto_1fr] sm:grid-rows-[auto_auto_1fr] bg-cover"
-	>
-		<div style="margin-top: 20px;">
-			<NavigationBar hideLogo={true} />
-		</div>
-		<Hero />
-	</div>
+	<NavigationBar hideLogo={true} />
+	<Hero />
 	<!-- <Pathway /> -->
 	<WhatIsMoraExams />
 	<PathwayOfMoraExams />
@@ -57,10 +51,6 @@ export const getStaticPaths = (() => {
 </Layout>
 
 <style is:global>
-	header,
-	nav {
-		@apply px-[var(--body-margin-x)];
-	}
 	body {
 		@apply text-black;
 	}
@@ -73,9 +63,5 @@ export const getStaticPaths = (() => {
 	}
 	section {
 		@apply scroll-mt-20;
-	}
-	.first-fold {
-		background: url("/assets/backgrounds/bg3.jpg") center / cover no-repeat
-			fixed;
 	}
 </style>

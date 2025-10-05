@@ -11,9 +11,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <Layout pageTitle={t("index__title")}>
-	<div class="bg-purple-800">
-		<NavigationBar />
-	</div>
+	<NavigationBar />
 	<PracticePapers />
 	<MadeBy />
 </Layout>

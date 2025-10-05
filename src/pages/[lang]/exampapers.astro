@@ -2,7 +2,6 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
-import ExamPapers from "../../sections/18-exam-papers.astro";
 import MadeBy from "../../components/made-by.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
@@ -10,10 +9,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <Layout pageTitle={t("index__title")}>
-	<div class="bg-purple-800">
-		<NavigationBar />
-	</div>
-
+	<NavigationBar />
 	<section class="my-10">
 		<div class="grid-container">
 			<!-- Card 1 -->

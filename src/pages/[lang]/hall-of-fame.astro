@@ -17,9 +17,7 @@ export const getStaticPaths = (() => {
 ---
 
 <Layout pageTitle={t("hall_of_fame__title")}>
-	<div class="bg-purple-800">
-		<NavigationBar />
-	</div>
+	<NavigationBar />
 	<section
 		class="bg-white text-primary-900 flex flex-col min-h-[50vh] gap-x-5 mb-5"
 	>
@@ -28,22 +26,30 @@ export const getStaticPaths = (() => {
 		{
 			HallOfFameContent.map((item) => (
 				<div id={item.year}>
-					<h3 class="text-2xl mb-4">{item.year}</h3>
+					<div class="flex gap-2 mb-4 items-center text-2xl">
+						<a
+							href={`/${lang}/hall-of-fame#${item.year}`}
+							class="text-primary-900 no-underline hover:underline"
+						>
+							#
+						</a>
+						<h3 class="my-0">{item.year}</h3>
+					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
 						{item.organizing_committee.map((member) => (
-							<div class="p-3 rounded-xl bg-[#fff] border border-solid border-[#3b3b3b20] ">
-								<div class="text-center">
+							<div class="px-5 py-2 rounded-xl bg-[#fff] border border-solid border-[#3b3b3b30] ">
+								<div class="text-left">
 									<h4 class="text-xl mb-0 mt-2">
-										{member[`name_${lang}`].toUpperCase()}
+										{member[`name_${lang}`]?.toUpperCase() ||
+											member.name_en.toUpperCase()}
 									</h4>
 
 									<span class="mb-0 text-xl text-[#cd5c5c]">
 										{/* @ts-expect-error */}
 										{t(`committee__${member.position}_post`)}
 									</span>
-									<p class="mt-0">
-										<br />
+									<p class="mt-2">
 										BSc Eng. (Hons) (Reading),
 										<br />
 										{DEPARTMENTS[member.department_code][lang]},<br />
@@ -57,18 +63,14 @@ export const getStaticPaths = (() => {
 			))
 		}
 	</section>
-</Layout>
-
-<div class="p-2 sm:mx-[30px]">
 	<Footer />
-</div>
+</Layout>
 
 <style is:global>
 	body > * {
 		@apply px-[var(--body-margin-x)];
 	}
-	header,
-	nav {
-		@apply px-[var(--body-margin-x)];
+	* {
+		scroll-margin: 100px;
 	}
 </style>

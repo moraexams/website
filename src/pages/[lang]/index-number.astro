@@ -71,11 +71,9 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 ---
 
 <Layout pageTitle={t("find_your_index_no__title")}>
-	<div class="bg-purple-800">
-		<NavigationBar />
-	</div>
+	<NavigationBar />
 	<section
-		class="bg-white text-primary-900 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 lg:grid-rows-[auto_auto] min-h-[50vh] gap-x-5 mb-5"
+		class="bg-white text-primary-900 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 lg:grid-rows-[auto_auto] min-h-[50vh] gap-x-5 mb-10"
 	>
 		<div class="col-span-full row-start-1">
 			<h2>{t("instructions__title")}</h2>
@@ -209,10 +207,8 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 			</div>
 		</div>
 	</section>
-</Layout>
-<div class="p-2 sm:mx-[30px]">
 	<Footer />
-</div>
+</Layout>
 <style>
 	@media screen and (max-width: 400px) {
 		input {

@@ -1,12 +1,11 @@
 ---
-import Slideshow1 from "../components/slideshow1.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <section
-	class="lineUp section_hero pt-32 sm:pt-20 pb-4 px-[var(--body-margin-x)] text-white top-0 bottom-0 z-[2] items-left"
+	class="lineUp section_hero pt-32 sm:pt-20 pb-4 px-[var(--body-margin-x)] text-white top-0 bottom-0 items-left h-screen bg-image"
 >
 	<!-- <img class="h-24 sm:h-32" src="/logo.png" /> -->
 	<h1
@@ -201,37 +200,8 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			transform: rotate(0deg);
 		}
 	}
-	.lineUp {
-		animation: 3s anim-lineUp ease-out;
-	}
-	@keyframes anim-lineUp {
-		0% {
-			opacity: 0;
-			transform: translateY(80%);
-		}
-		20% {
-			opacity: 0;
-		}
-		50% {
-			opacity: 1;
-			transform: translateY(0%);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0%);
-		}
-	}
 	.btn > * {
 		@apply inline-block align-middle h-fit;
-	}
-
-	.section_hero {
-		margin: 0;
-		padding: 0 10%;
-		display: flex-box;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.picture_heading {
@@ -239,6 +209,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 		margin: 30px;
 		font-size: 3em;
 		text-align: center;
+	}
+	.bg-image {
+		background: url("/assets/backgrounds/bg3.jpg") center / cover no-repeat
+			fixed;
 	}
 </style>
 
