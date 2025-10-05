@@ -778,14 +778,14 @@ const UI_STRINGS_TA = {
 		"*கொழும்பு பரீட்சை நிலையங்கள் தொடர்பிலான அறிவிப்பு!",
 	index_number__colombo_centre_notice_text:
 		"ஏற்கனவே அறிவிக்கப்பட்டிருந்த  பரீட்சை நிலையங்களில், Colombo Methodist College இற்குப் பதிலாக <b>20ஆம் திகதி மட்டும்<b <br/> <b>Bambalapitiya Hindu College,<br/>77 Lorenz Rd, Colombo 00400 </b> ஆனது பரீட்சை நிலையமாக செயற்படும்.",
-	index__view_hall_of_fame: "View Hall of Fame",
-	hall_of_fame__title: "Hall of Fame",
+	index__view_leadership_timeline: "View All",
+	leadership_timeline__title: "Leadership Timeline",
 	committee__vice_secretary_post: "Vice Secretary",
 	committee__tech_coordinator_post: "Tech Coordinator",
 	committee__exams_coordinator_post: "Exams Coordinator",
 	committee__districts_coordinator_post: "Districts Coordinator",
 	committee__marketing_coordinator_post: "Marketing Coordinator",
-	hall_of_fame__description:
+	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 };
 
