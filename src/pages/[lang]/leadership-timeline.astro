@@ -16,7 +16,10 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 ---
 
-<Layout pageTitle={t("leadership_timeline__title")}>
+<Layout
+	pageTitle={t("leadership_timeline__title")}
+	ogImageSlug="leadership-timeline"
+>
 	<NavigationBar />
 	<section
 		class="bg-white text-primary-900 flex flex-col min-h-[50vh] gap-x-5 mb-5"

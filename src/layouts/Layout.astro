@@ -4,6 +4,7 @@ import "../global.css";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 interface Props {
 	pageTitle: string;
+	ogImageSlug?: string;
 }
 
 const pageTitle = Astro.props.pageTitle.endsWith("Mora Exams")
@@ -12,8 +13,10 @@ const pageTitle = Astro.props.pageTitle.endsWith("Mora Exams")
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const ogImageUrl = new URL(Astro.url);
-ogImageUrl.pathname = "/og-image.jpg";
+let ogImageUrl = "https://moraexams.org/mora-exam-opengraph.png";
+if (Astro.props.ogImageSlug) {
+	ogImageUrl = `https://moraexams.org/og/${Astro.props.ogImageSlug}.jpg`;
+}
 ---
 
 <!doctype html>
@@ -53,10 +56,7 @@ ogImageUrl.pathname = "/og-image.jpg";
 
 		<meta property="og:url" content={Astro.url.toString()} />
 		<!-- <meta property="og:image" content={ogImageUrl.toString()} /> -->
-		<meta
-			property="og:image"
-			content="https://moraexams.org/mora-exam-opengraph.png"
-		/>
+		<meta property="og:image" content={ogImageUrl} />
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GD74616M9F"
