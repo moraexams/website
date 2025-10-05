@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { langStaticRoutes } from "../../i18n/ui";
 import type { GetStaticPaths } from "astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
-import HallOfFameContent from "../../data/HALL_OF_FAME.json";
+import HallOfFameContent from "../../data/past-leaderships.json";
 import { DEPARTMENTS } from "../../utils/utils";
 import Footer from "../../sections/16-footer.astro";
 
@@ -16,36 +16,36 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 ---
 
-<Layout pageTitle={t("hall_of_fame__title")}>
+<Layout pageTitle={t("leadership_timeline__title")}>
 	<NavigationBar />
 	<section
 		class="bg-white text-primary-900 flex flex-col min-h-[50vh] gap-x-5 mb-5"
 	>
-		<h2>{t("hall_of_fame__title")}</h2>
+		<h1>{t("leadership_timeline__title")}</h1>
 
 		{
 			HallOfFameContent.map((item) => (
 				<div id={item.year}>
 					<div class="flex gap-2 mb-4 items-center text-2xl">
 						<a
-							href={`/${lang}/hall-of-fame#${item.year}`}
+							href={`/${lang}/leadership-timeline#${item.year}`}
 							class="text-primary-900 no-underline hover:underline"
 						>
 							#
 						</a>
-						<h3 class="my-0">{item.year}</h3>
+						<h2 class="my-0">{item.year}</h2>
 					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
 						{item.organizing_committee.map((member) => (
 							<div class="px-5 py-2 rounded-xl bg-[#fff] border border-solid border-[#3b3b3b30] ">
 								<div class="text-left">
-									<h4 class="text-xl mb-0 mt-2">
+									<h3 class="text-xl mb-0 mt-2">
 										{member[`name_${lang}`]?.toUpperCase() ||
 											member.name_en.toUpperCase()}
-									</h4>
+									</h3>
 
-									<span class="mb-0 text-xl text-[#cd5c5c]">
+									<span class="mb-0 text-lg text-[#cd5c5c]">
 										{/* @ts-expect-error */}
 										{t(`committee__${member.position}_post`)}
 									</span>
@@ -63,6 +63,14 @@ export const getStaticPaths = (() => {
 			))
 		}
 	</section>
+	<section class="note">
+		<div>
+			The above timeline is not complete yet. If your name is missing or
+			incorrect, please contact us at <a href="mailto:examsmora@gmail.com"
+				>examsmora@gmail.com</a
+			>.
+		</div>
+	</section>
 	<Footer />
 </Layout>
 
@@ -72,5 +80,13 @@ export const getStaticPaths = (() => {
 	}
 	* {
 		scroll-margin: 100px;
+	}
+	.note {
+		div {
+			@apply px-3 py-2 rounded-md border-[3px] border-solid border-purple-600 max-w-prose mx-auto bg-purple-100/30 text-lg mb-10;
+		}
+		a {
+			@apply text-purple-800 no-underline;
+		}
 	}
 </style>

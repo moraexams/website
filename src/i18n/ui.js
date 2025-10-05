@@ -234,8 +234,9 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index_number__our_sponsors
  * @prop {string} index_number__colombo_centre_notice_title
  * @prop {string} index_number__colombo_centre_notice_text
- * @prop {string} index__view_hall_of_fame
- * @prop {string} hall_of_fame__title
+ * @prop {string} index__view_leadership_timeline
+ * @prop {string} leadership_timeline__title
+ * @prop {string} leadership_timeline__description
  *
  */
 
@@ -509,13 +510,15 @@ const UI_STRINGS_EN = {
 		"*Important Notice Regarding Colombo Centre!",
 	index_number__colombo_centre_notice_text:
 		"Due to some unavoidable situations, Colombo Methodist College will not function as an exam centre <b>on 20th September.</b> Instead, applicants can write their exams in <b><br/>Bambalapitya Hindu College,<br/>77 Lorenz Rd,<br/>Colombo 00400</b>.",
-	index__view_hall_of_fame: "View Hall of Fame",
-	hall_of_fame__title: "Hall of Fame",
+	index__view_leadership_timeline: "View All",
+	leadership_timeline__title: "Leadership Timeline",
 	committee__vice_secretary_post: "Vice Secretary",
 	committee__tech_coordinator_post: "Tech Coordinator",
 	committee__exams_coordinator_post: "Exams Coordinator",
 	committee__districts_coordinator_post: "Districts Coordinator",
 	committee__marketing_coordinator_post: "Marketing Coordinator",
+	leadership_timeline__description:
+		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 };
 
 /**
@@ -782,6 +785,8 @@ const UI_STRINGS_TA = {
 	committee__exams_coordinator_post: "Exams Coordinator",
 	committee__districts_coordinator_post: "Districts Coordinator",
 	committee__marketing_coordinator_post: "Marketing Coordinator",
+	hall_of_fame__description:
+		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 };
 
 /**

@@ -1,0 +1,161 @@
+[
+	{
+		"year": "2025",
+		"organizing_committee": [
+			{
+				"name_en": "Harshan R.",
+				"name_ta": "ஹர்ஷன் ற.",
+				"department_code": "ee",
+				"position": "president"
+			},
+			{
+				"name_en": "Mathumilan K.",
+				"name_ta": "மதுமிலன் கே.",
+				"department_code": "me",
+				"position": "secretary"
+			},
+			{
+				"name_en": "Pirasanth V.",
+				"name_ta": "பிரசாந் வை.",
+				"department_code": "cse",
+				"position": "treasurer"
+			},
+			{
+				"name_en": "Babijana J.",
+				"name_ta": "பபிஜனா ஜெ.",
+				"department_code": "cse",
+				"position": "vice_president"
+			},
+			{
+				"name_en": "Mathushaliny M.",
+				"name_ta": "மதுசாளினி ம.",
+				"department_code": "ce",
+				"position": "vice_secretary"
+			},
+			{
+				"name_en": "Abiram C.",
+				"name_ta": "அபிராம் ச.",
+				"department_code": "ce",
+				"position": "exams_coordinator"
+			},
+			{
+				"name_en": "Kajatheepan P.",
+				"name_ta": "Kajatheepan P.",
+				"department_code": "cse",
+				"position": "marketing_coordinator"
+			},
+			{
+				"name_en": "Sahithyan K.",
+				"name_ta": "சாகித்யன் க.",
+				"department_code": "cse",
+				"position": "tech_coordinator"
+			},
+			{
+				"name_en": "Thavinuhan R.",
+				"name_ta": "தவினுகன் இ.",
+				"department_code": "ce",
+				"position": "districts_coordinator"
+			}
+		]
+	},
+	{
+		"year": "2024",
+		"organizing_committee": [
+			{
+				"name_en": "Parishith R.",
+				"department_code": "cse",
+				"position": "president"
+			},
+			{
+				"name_en": "Kajaluxan S.",
+				"department_code": "cse",
+				"position": "secretary"
+			},
+			{
+				"name_en": "Luxsan N.",
+				"department_code": "ce",
+				"position": "treasurer"
+			},
+			{
+				"name_en": "Rahavi S.",
+				"department_code": "ce",
+				"position": "vice_president"
+			},
+			{
+				"name_en": "Lathistika",
+				"department_code": "ce",
+				"position": "vice_secretary"
+			},
+			{
+				"name_en": "Thavaruban",
+				"department_code": "ce",
+				"position": "exams_coordinator"
+			},
+			{
+				"name_en": "Thiruvarankan M.",
+				"department_code": "ee",
+				"position": "marketing_coordinator"
+			},
+			{
+				"name_en": "Aroganan",
+				"department_code": "me",
+				"position": "tech_coordinator"
+			},
+			{
+				"name_en": "Sukithan",
+				"department_code": "cse",
+				"position": "districts_coordinator"
+			}
+		]
+	},
+	{
+		"year": "2023",
+		"organizing_committee": [
+			{
+				"name_en": "Sarujan T.",
+				"department_code": "ce",
+				"position": "president"
+			},
+			{
+				"name_en": "Harikishna N.",
+				"department_code": "cse",
+				"position": "secretary"
+			},
+			{
+				"name_en": "Mayoorathan K.",
+				"department_code": "mse",
+				"position": "treasurer"
+			},
+			{
+				"name_en": "Thabendra S.",
+				"department_code": "cse",
+				"position": "vice_president"
+			},
+			{
+				"name_en": "Pirunthuthy P.",
+				"department_code": "ce",
+				"position": "vice_secretary"
+			},
+			{
+				"name_en": "Piragash P.",
+				"department_code": "ee",
+				"position": "exams_coordinator"
+			},
+			{
+				"name_en": "Thuvaragan S.",
+				"department_code": "entc",
+				"position": "marketing_coordinator"
+			},
+			{
+				"name_en": "Patric N.",
+				"department_code": "cse",
+				"position": "tech_coordinator"
+			},
+			{
+				"name_en": "Umakanthan K.",
+				"department_code": "me",
+				"position": "districts_coordinator"
+			}
+		]
+	}
+]
