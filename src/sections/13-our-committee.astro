@@ -1,11 +1,11 @@
 ---
 import CommitteeMemberCard from "../components/CommitteeMemberCard.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
 import presidentImage from "../assets/committee/president.webp";
 import secretaryImage from "../assets/committee/secretary.webp";
 import treasurerImage from "../assets/committee/treasurer.webp";
 import vicePresidentImage from "../assets/committee/vice-president.webp";
+import Button from "../components/Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -27,5 +27,13 @@ const t = useTranslations(lang);
 			post="vice_president"
 			lang={lang}
 		/>
+	</div>
+
+	<div class="flex justify-center mb-10">
+		<a href={`/${lang}/hall-of-fame`}>
+			<Button>
+				{t("index__view_hall_of_fame")}
+			</Button>
+		</a>
 	</div>
 </section>

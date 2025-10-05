@@ -61,6 +61,11 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} committee__treasurer_post
  * @prop {string} committee__vice_president_name
  * @prop {string} committee__vice_president_post
+ * @prop {string} committee__vice_secretary_post
+ * @prop {string} committee__tech_coordinator_post
+ * @prop {string} committee__exams_coordinator_post
+ * @prop {string} committee__districts_coordinator_post
+ * @prop {string} committee__marketing_coordinator_post
  * @prop {string} committee__university
  * @prop {string} looking_for_past_papers__description
  * @prop {string} footer_title_1
@@ -229,6 +234,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index_number__our_sponsors
  * @prop {string} index_number__colombo_centre_notice_title
  * @prop {string} index_number__colombo_centre_notice_text
+ * @prop {string} index__view_hall_of_fame
+ * @prop {string} hall_of_fame__title
  *
  */
 
@@ -502,6 +509,13 @@ const UI_STRINGS_EN = {
 		"*Important Notice Regarding Colombo Centre!",
 	index_number__colombo_centre_notice_text:
 		"Due to some unavoidable situations, Colombo Methodist College will not function as an exam centre <b>on 20th September.</b> Instead, applicants can write their exams in <b><br/>Bambalapitya Hindu College,<br/>77 Lorenz Rd,<br/>Colombo 00400</b>.",
+	index__view_hall_of_fame: "View Hall of Fame",
+	hall_of_fame__title: "Hall of Fame",
+	committee__vice_secretary_post: "Vice Secretary",
+	committee__tech_coordinator_post: "Tech Coordinator",
+	committee__exams_coordinator_post: "Exams Coordinator",
+	committee__districts_coordinator_post: "Districts Coordinator",
+	committee__marketing_coordinator_post: "Marketing Coordinator",
 };
 
 /**
@@ -761,6 +775,13 @@ const UI_STRINGS_TA = {
 		"*கொழும்பு பரீட்சை நிலையங்கள் தொடர்பிலான அறிவிப்பு!",
 	index_number__colombo_centre_notice_text:
 		"ஏற்கனவே அறிவிக்கப்பட்டிருந்த  பரீட்சை நிலையங்களில், Colombo Methodist College இற்குப் பதிலாக <b>20ஆம் திகதி மட்டும்<b <br/> <b>Bambalapitiya Hindu College,<br/>77 Lorenz Rd, Colombo 00400 </b> ஆனது பரீட்சை நிலையமாக செயற்படும்.",
+	index__view_hall_of_fame: "View Hall of Fame",
+	hall_of_fame__title: "Hall of Fame",
+	committee__vice_secretary_post: "Vice Secretary",
+	committee__tech_coordinator_post: "Tech Coordinator",
+	committee__exams_coordinator_post: "Exams Coordinator",
+	committee__districts_coordinator_post: "Districts Coordinator",
+	committee__marketing_coordinator_post: "Marketing Coordinator",
 };
 
 /**

@@ -113,3 +113,43 @@ export function humanReadableFileSize(size: number): string {
 	else if (size < 1048576) return `${(size / 1024).toFixed(2)} KB`;
 	else return `${(size / 1048576).toFixed(2)} MB`;
 }
+
+export const DEPARTMENTS: {
+	[key: string]: {
+		en: string;
+		ta: string;
+	};
+} = {
+	cse: {
+		en: "Computer Science & Engineering",
+		ta: "கணினி விஞ்ஞானம் மற்றும் பொறியியல்",
+	},
+	ee: {
+		en: "Electrical Engineering",
+		ta: "மின் பொறியியல்",
+	},
+	me: {
+		en: "Mechanical Engineering",
+		ta: "யந்திரவியல் பொறியியல்",
+	},
+	ce: {
+		en: "Civil Engineering",
+		ta: "சிவில் பொறியியல்",
+	},
+	cpe: {
+		en: "Chemical & Process Engineering",
+		ta: "ரசாயன மற்றும் செயல்முறை பொறியியல்",
+	},
+	bme: {
+		en: "Biomedical Engineering",
+		ta: "பயோமெடிக்கல் பொறியியல்",
+	},
+	mse: {
+		en: "Materials Science & Engineering",
+		ta: "பொருட்கள் அறிவியல் மற்றும் பொறியியல்",
+	},
+	entc: {
+		en: "Electronics & Telecommunication Engineering",
+		ta: "எலக்ட்ரானிக்ஸ் மற்றும் தொலைத்தொடர்பு பொறியியல்",
+	},
+};

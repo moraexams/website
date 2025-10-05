@@ -6,7 +6,9 @@ interface Props {
 	pageTitle: string;
 }
 
-const { pageTitle } = Astro.props;
+const pageTitle = Astro.props.pageTitle.endsWith("Mora Exams")
+	? Astro.props.pageTitle
+	: `${Astro.props.pageTitle} | Mora Exams`;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 

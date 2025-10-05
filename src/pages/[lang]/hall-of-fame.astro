@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { langStaticRoutes } from "../../i18n/ui";
+import type { GetStaticPaths } from "astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+import HallOfFameContent from "../../data/HALL_OF_FAME.json";
+import { DEPARTMENTS } from "../../utils/utils";
+import Footer from "../../sections/16-footer.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const getStaticPaths = (() => {
+	return langStaticRoutes;
+}) satisfies GetStaticPaths;
+---
+
+<Layout pageTitle={t("hall_of_fame__title")}>
+	<div class="bg-purple-800">
+		<NavigationBar />
+	</div>
+	<section
+		class="bg-white text-primary-900 flex flex-col min-h-[50vh] gap-x-5 mb-5"
+	>
+		<h2>{t("hall_of_fame__title")}</h2>
+
+		{
+			HallOfFameContent.map((item) => (
+				<div id={item.year}>
+					<h3 class="text-2xl mb-4">{item.year}</h3>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
+						{item.organizing_committee.map((member) => (
+							<div class="p-3 rounded-xl bg-[#fff] border border-solid border-[#3b3b3b20] ">
+								<div class="text-center">
+									<h4 class="text-xl mb-0 mt-2">
+										{member[`name_${lang}`].toUpperCase()}
+									</h4>
+
+									<span class="mb-0 text-xl text-[#cd5c5c]">
+										{/* @ts-expect-error */}
+										{t(`committee__${member.position}_post`)}
+									</span>
+									<p class="mt-0">
+										<br />
+										BSc Eng. (Hons) (Reading),
+										<br />
+										{DEPARTMENTS[member.department_code][lang]},<br />
+										{t("committee__university")}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			))
+		}
+	</section>
+</Layout>
+
+<div class="p-2 sm:mx-[30px]">
+	<Footer />
+</div>
+
+<style is:global>
+	body > * {
+		@apply px-[var(--body-margin-x)];
+	}
+	header,
+	nav {
+		@apply px-[var(--body-margin-x)];
+	}
+</style>
