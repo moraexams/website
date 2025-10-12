@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import { formatSubjectName, formatMediumName } from "../../utils/utils";
 import { langStaticRoutes } from "../../i18n/ui";
 import Footer from "../../sections/16-footer.astro";
-import Navigation from "../../sections/1-navigation-bar.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { groupPastPaperItems } from "../../utils/utils";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
@@ -21,9 +21,7 @@ const grouped = groupPastPaperItems(past_papers);
 ---
 
 <Layout pageTitle="Past Papers" ogImageSlug="past-papers">
-	<div>
-		<Navigation />
-	</div>
+	<NavigationBar />
 	<main>
 		<h1 class="text-4xl mt-10 mb-12">{t("past_papers__title")}</h1>
 		{
@@ -102,12 +100,11 @@ const grouped = groupPastPaperItems(past_papers);
 </Layout>
 
 <style is:global>
-	header,
-	nav {
-		@apply !bg-purple-800;
-	}
 	main,
 	footer {
+		@apply px-[var(--body-margin-x)];
+	}
+	body > * {
 		@apply px-[var(--body-margin-x)];
 	}
 </style>
