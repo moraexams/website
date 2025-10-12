@@ -101,46 +101,6 @@
 	},
 	{
 		"year": 2025,
-		"subject": "biology",
-		"type": "scheme",
-		"medium": "tamil",
-		"version": null,
-		"id": "1e8MhRIi-_WtWAvVD333j1WKt6VvfCPDc",
-		"name": "2025_biology_scheme_tamil.pdf",
-		"link": "https://drive.google.com/file/d/1e8MhRIi-_WtWAvVD333j1WKt6VvfCPDc/view?usp=sharing"
-	},
-	{
-		"year": 2025,
-		"subject": "physics",
-		"type": "scheme",
-		"medium": "english",
-		"version": null,
-		"id": "1x7j_ExlaDZn547GvcHaGog7LefhSTs7O",
-		"name": "2025_physics_scheme_english.pdf",
-		"link": "https://drive.google.com/file/d/1x7j_ExlaDZn547GvcHaGog7LefhSTs7O/view?usp=sharing"
-	},
-	{
-		"year": 2025,
-		"subject": "biology",
-		"type": "scheme",
-		"medium": "english",
-		"version": null,
-		"id": "1o7MT0YVqW3QNrhEPNXH3H7S-NnTsvJfA",
-		"name": "2025_biology_scheme_english.pdf",
-		"link": "https://drive.google.com/file/d/1o7MT0YVqW3QNrhEPNXH3H7S-NnTsvJfA/view?usp=sharing"
-	},
-	{
-		"year": 2025,
-		"subject": "physics",
-		"type": "scheme",
-		"medium": "tamil",
-		"version": null,
-		"id": "1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD",
-		"name": "2025_physics_scheme_tamil.pdf",
-		"link": "https://drive.google.com/file/d/1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD/view?usp=sharing"
-	},
-	{
-		"year": 2025,
 		"subject": "combined-maths",
 		"type": "scheme",
 		"medium": "tamil",
