@@ -14,3 +14,14 @@ const { icon, href } = Astro.props;
 		href={href}><slot /></a
 	>
 </div>
+
+<style>
+	div {
+		@apply cursor-pointer;
+		color: hsl(0, 0%, 100%, 60%);
+		transition: color 0.1s ease-in-out;
+	}
+	div:hover {
+		color: hsl(0, 0%, 100%, 100%);
+	}
+</style>
