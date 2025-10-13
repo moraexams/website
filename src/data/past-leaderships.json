@@ -40,7 +40,7 @@
 			},
 			{
 				"name_en": "Kajatheepan P.",
-				"name_ta": "Kajatheepan P.",
+				"name_ta": "கஜதீபன் பே.",
 				"department_code": "cse",
 				"position": "marketing_coordinator"
 			},
@@ -63,46 +63,55 @@
 		"organizing_committee": [
 			{
 				"name_en": "Parishith R.",
+				"name_ta": "பரிஷித் ர.",
 				"department_code": "cse",
 				"position": "president"
 			},
 			{
 				"name_en": "Kajaluxan S.",
+				"name_ta": "கஜலக்ஷன் சி.",
 				"department_code": "cse",
 				"position": "secretary"
 			},
 			{
 				"name_en": "Luxsan N.",
+				"name_ta": "லக்ஷன் ந.",
 				"department_code": "ce",
 				"position": "treasurer"
 			},
 			{
 				"name_en": "Rahavi S.",
-				"department_code": "ce",
+				"name_ta": "ராகவி சி.",
+				"department_code": "cse",
 				"position": "vice_president"
 			},
 			{
-				"name_en": "Lathistika",
+				"name_en": "Lathistika P.",
+				"name_ta": "லதிஸ்ரிகா பி.",
 				"department_code": "ce",
 				"position": "vice_secretary"
 			},
 			{
-				"name_en": "Thavaruban",
+				"name_en": "Thavaruban R.",
+				"name_ta": "தவரூபன் ற.",
 				"department_code": "ce",
 				"position": "exams_coordinator"
 			},
 			{
 				"name_en": "Thiruvarankan M.",
+				"name_ta": "திருவரங்கன் ம.",
 				"department_code": "ee",
 				"position": "marketing_coordinator"
 			},
 			{
-				"name_en": "Aroganan",
+				"name_en": "Aroganan G.",
+				"name_ta": "அரோகனன் கு.",
 				"department_code": "me",
 				"position": "tech_coordinator"
 			},
 			{
-				"name_en": "Sukithan",
+				"name_en": "Sukithan T.",
+				"name_ta": "சுகிதன் தி.",
 				"department_code": "cse",
 				"position": "districts_coordinator"
 			}
@@ -113,48 +122,98 @@
 		"organizing_committee": [
 			{
 				"name_en": "Sarujan T.",
+				"name_ta": "சாருஜன் த.",
 				"department_code": "ce",
 				"position": "president"
 			},
 			{
 				"name_en": "Harikishna N.",
+				"name_ta": "ஹரிகிஷ்ணா ந.",
 				"department_code": "cse",
 				"position": "secretary"
 			},
 			{
 				"name_en": "Mayoorathan K.",
+				"name_ta": "மயூரதன் கோ.",
 				"department_code": "mse",
 				"position": "treasurer"
 			},
 			{
 				"name_en": "Thabendra S.",
+				"name_ta": "தபேந்திரா ச.",
 				"department_code": "cse",
 				"position": "vice_president"
 			},
 			{
 				"name_en": "Pirunthuthy P.",
+				"name_ta": "பிருந்துதி பு.",
 				"department_code": "ce",
 				"position": "vice_secretary"
 			},
 			{
 				"name_en": "Piragash P.",
+				"name_ta": "பிரகாஷ் ப.",
 				"department_code": "ee",
 				"position": "exams_coordinator"
 			},
 			{
 				"name_en": "Thuvaragan S.",
+				"name_ta": "துவாரகன் சூ.",
 				"department_code": "entc",
 				"position": "marketing_coordinator"
 			},
 			{
 				"name_en": "Patric N.",
+				"name_ta": "பற்றிக் நி.",
 				"department_code": "cse",
 				"position": "tech_coordinator"
 			},
 			{
 				"name_en": "Umakanthan K.",
+				"name_ta": "உமாகாந்தன் கு.",
 				"department_code": "me",
 				"position": "districts_coordinator"
+			}
+		]
+	},
+	{
+		"year": "2022",
+		"organizing_committee": [
+			{
+				"name_en": "Sangaran T.",
+				"name_ta": "சங்கரன் த.",
+				"department_code": "cse",
+				"position": "president"
+			},
+			{
+				"name_en": "Sarujan K.",
+				"name_ta": "சாருஜன் கு.",
+				"department_code": "ee",
+				"position": "secretary"
+			},
+			{
+				"name_en": "Sanujen P.",
+				"name_ta": "சானுஜென் பி.",
+				"department_code": "cse",
+				"position": "treasurer"
+			},
+			{
+				"name_en": "Lathurshanan J.",
+				"name_ta": "லதுர்ஷணன் ஜெ.",
+				"department_code": "ce",
+				"position": "vice_president"
+			},
+			{
+				"name_en": "Meenambika C.",
+				"name_ta": "மீனாம்பிகா ச.",
+				"department_code": "cse",
+				"position": "vice_secretary"
+			},
+			{
+				"name_en": "Garthigan K.",
+				"name_ta": "கார்த்திகன் கு.",
+				"department_code": "ee",
+				"position": "marketing_coordinator"
 			}
 		]
 	}
