@@ -134,7 +134,7 @@ export const DEPARTMENTS: {
 	},
 	ce: {
 		en: "Civil Engineering",
-		ta: "சிவில் பொறியியல்",
+		ta: "குடிசார் பொறியியல்",
 	},
 	cpe: {
 		en: "Chemical & Process Engineering",
@@ -142,14 +142,14 @@ export const DEPARTMENTS: {
 	},
 	bme: {
 		en: "Biomedical Engineering",
-		ta: "பயோமெடிக்கல் பொறியியல்",
+		ta: "உயிர்மருத்துவப் பொறியியல்",
 	},
 	mse: {
 		en: "Materials Science & Engineering",
-		ta: "பொருட்கள் அறிவியல் மற்றும் பொறியியல்",
+		ta: "திரவியல் விஞ்ஞானமும் பொறியியல்",
 	},
 	entc: {
 		en: "Electronics & Telecommunication Engineering",
-		ta: "எலக்ட்ரானிக்ஸ் மற்றும் தொலைத்தொடர்பு பொறியியல்",
+		ta: "இலத்திரனியல் மற்றும் தொலைத்தொடர்பு பொறியியல்",
 	},
 };
