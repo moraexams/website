@@ -18,7 +18,10 @@
 				"name_en": "Pirasanth V.",
 				"name_ta": "பிரசாந் வை.",
 				"department_code": "cse",
-				"position": "treasurer"
+				"position": "treasurer",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/pirasanth-vaigunthanathan/"
+				}
 			},
 			{
 				"name_en": "Babijana J.",
@@ -36,25 +39,38 @@
 				"name_en": "Abiram C.",
 				"name_ta": "அபிராம் ச.",
 				"department_code": "ce",
-				"position": "exams_coordinator"
+				"position": "exams_coordinator",
+				"contact": {
+					"linkedin": "http://linkedin.com/in/abiram-chandrakumar-260348327"
+				}
 			},
 			{
 				"name_en": "Kajatheepan P.",
 				"name_ta": "கஜதீபன் பே.",
 				"department_code": "cse",
-				"position": "marketing_coordinator"
+				"position": "marketing_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/kajatheepan-perinpanathan/"
+				}
 			},
 			{
 				"name_en": "Sahithyan K.",
 				"name_ta": "சாகித்யன் க.",
 				"department_code": "cse",
-				"position": "tech_coordinator"
+				"position": "tech_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sahisahithyan-kandathasan/",
+					"web": "https://sahithyan.dev"
+				}
 			},
 			{
 				"name_en": "Thavinuhan R.",
 				"name_ta": "தவினுகன் இ.",
 				"department_code": "ce",
-				"position": "districts_coordinator"
+				"position": "districts_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/ravikkumar-thavinuhan-57bb84277"
+				}
 			}
 		]
 	},
@@ -65,17 +81,23 @@
 				"name_en": "Parishith R.",
 				"name_ta": "பரிஷித் ர.",
 				"department_code": "cse",
-				"position": "president"
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/rp07official"
+				}
 			},
 			{
 				"name_en": "Kajaluxan S.",
-				"name_ta": "கஜலக்ஷன் சி.",
+				"name_ta": "கஜலக்சன் சி.",
 				"department_code": "cse",
-				"position": "secretary"
+				"position": "secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/kajaluxan-sivakumaran-783145117/"
+				}
 			},
 			{
 				"name_en": "Luxsan N.",
-				"name_ta": "லக்ஷன் ந.",
+				"name_ta": "லக்சன் ந.",
 				"department_code": "ce",
 				"position": "treasurer"
 			},
@@ -83,7 +105,10 @@
 				"name_en": "Rahavi S.",
 				"name_ta": "ராகவி சி.",
 				"department_code": "cse",
-				"position": "vice_president"
+				"position": "vice_president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/rahavi-sirithar-a2a507292/"
+				}
 			},
 			{
 				"name_en": "Lathistika P.",
@@ -93,27 +118,39 @@
 			},
 			{
 				"name_en": "Thavaruban R.",
-				"name_ta": "தவரூபன் ற.",
+				"name_ta": "தவறூபன் இ.",
 				"department_code": "ce",
-				"position": "exams_coordinator"
+				"position": "exams_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/thavaruban-ratnam-0922b530b"
+				}
 			},
 			{
 				"name_en": "Thiruvarankan M.",
 				"name_ta": "திருவரங்கன் ம.",
 				"department_code": "ee",
-				"position": "marketing_coordinator"
+				"position": "marketing_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/thiruvarankanm/"
+				}
 			},
 			{
 				"name_en": "Aroganan G.",
 				"name_ta": "ஆரோகணன் கு.",
 				"department_code": "me",
-				"position": "tech_coordinator"
+				"position": "tech_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/aroganan/"
+				}
 			},
 			{
 				"name_en": "Sukithan T.",
 				"name_ta": "சுகிதன் தி.",
 				"department_code": "cse",
-				"position": "districts_coordinator"
+				"position": "districts_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sukithan-thillainathan-4112a32a5/"
+				}
 			}
 		]
 	},
@@ -130,19 +167,28 @@
 				"name_en": "Harikishna N.",
 				"name_ta": "ஹரிகிஷ்ணா ந.",
 				"department_code": "cse",
-				"position": "secretary"
+				"position": "secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/harikishna27/"
+				}
 			},
 			{
 				"name_en": "Mayoorathan K.",
 				"name_ta": "மயூரதன் கோ.",
 				"department_code": "mse",
-				"position": "treasurer"
+				"position": "treasurer",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/mayoorathan-konalingam-60653720b/"
+				}
 			},
 			{
 				"name_en": "Thabendra S.",
 				"name_ta": "தபேந்திரா ச.",
 				"department_code": "cse",
-				"position": "vice_president"
+				"position": "vice_president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sathiendra-thabendra-0467682b2/"
+				}
 			},
 			{
 				"name_en": "Pirunthuthy P.",
@@ -154,25 +200,37 @@
 				"name_en": "Piragash P.",
 				"name_ta": "பிரகாஷ் ப.",
 				"department_code": "ee",
-				"position": "exams_coordinator"
+				"position": "exams_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/piragash-param/"
+				}
 			},
 			{
 				"name_en": "Thuvaragan S.",
 				"name_ta": "துவாரகன் சூ.",
 				"department_code": "entc",
-				"position": "marketing_coordinator"
+				"position": "marketing_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/thuvasooriya/"
+				}
 			},
 			{
 				"name_en": "Patric N.",
 				"name_ta": "பற்றிக் நி.",
 				"department_code": "cse",
-				"position": "tech_coordinator"
+				"position": "tech_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/patricnilackshan/"
+				}
 			},
 			{
 				"name_en": "Umakanthan K.",
 				"name_ta": "உமாகாந்தன் கு.",
 				"department_code": "me",
-				"position": "districts_coordinator"
+				"position": "districts_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/kumararatnam-umakanthan-91835721a/"
+				}
 			}
 		]
 	},
@@ -183,7 +241,10 @@
 				"name_en": "Sangaran T.",
 				"name_ta": "சங்கரன் த.",
 				"department_code": "cse",
-				"position": "president"
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sangaranthevarasa/"
+				}
 			},
 			{
 				"name_en": "Sarujan K.",
@@ -207,13 +268,129 @@
 				"name_en": "Meenambika C.",
 				"name_ta": "மீனாம்பிகா ச.",
 				"department_code": "cse",
-				"position": "vice_secretary"
+				"position": "vice_secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/meenambika-chandirakumar-7a0211235/"
+				}
+			},
+			{
+				"name_en": "Thanushanth K.",
+				"name_ta": "தனுஷாந் க.",
+				"department_code": "cse",
+				"position": "exams_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/kanagarajah-thanushanth/"
+				}
 			},
 			{
 				"name_en": "Garthigan K.",
 				"name_ta": "கார்த்திகன் கு.",
 				"department_code": "ee",
-				"position": "marketing_coordinator"
+				"position": "marketing_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/garthigan-kumarasamy-1450891a9/"
+				}
+			},
+			{
+				"name_en": "Henoshan A.",
+				"name_ta": "ஹெனோசன் ஆ.",
+				"department_code": "ee",
+				"position": "districts_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/henoshan-athimoolanathan-020129216"
+				}
+			}
+		]
+	},
+	{
+		"year": "2021",
+		"organizing_committee": [
+			{
+				"name_en": "Laksman P.",
+				"name_ta": "லக்ஸ்மன் பி.",
+				"department_code": "ee",
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/laksmanp"
+				}
+			},
+			{
+				"name_en": "Laguparan S.",
+				"name_ta": "லகுபரன் சி.",
+				"department_code": "me",
+				"position": "secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/laguparan-sivasothy/"
+				}
+			},
+			{
+				"name_en": "Mithun",
+				"name_ta": "மிதுன்",
+				"department_code": "me",
+				"position": "treasurer"
+			},
+			{
+				"name_en": "Sajeethan T.",
+				"name_ta": "சஜீதன் த.",
+				"department_code": "me",
+				"position": "vice_president"
+			},
+			{
+				"name_en": "Gopinath S.",
+				"name_ta": "கோபிநாத் ச.",
+				"department_code": "cse",
+				"position": "tech_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/gopinath-cse"
+				}
+			}
+		]
+	},
+	{
+		"year": "2020",
+		"organizing_committee": [
+			{
+				"name_en": "Vinusan U.",
+				"name_ta": "வினுசன் உ.",
+				"department_code": "ee",
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/vinusan129"
+				}
+			}
+		]
+	},
+	{
+		"year": "2019",
+		"organizing_committee": [
+			{
+				"name_en": "Rajinthan R.",
+				"name_ta": "ரஜிந்தன் தே.",
+				"department_code": "cse",
+				"position": "president"
+			},
+			{
+				"name_en": "Thulaanchan K.",
+				"name_ta": "துலாஞ்சன் க.",
+				"department_code": "mse",
+				"position": "secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/thulaanchan-kathiravel-954577170/"
+				}
+			}
+		]
+	},
+	{
+		"year": "2018",
+		"organizing_committee": [
+			{
+				"name_en": "Vivek Vinushanth C.",
+				"name_ta": "விவேக் வினுஷாந் கி.",
+				"department_code": "cse",
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/vivek-vinushanth-christopher"
+				}
 			}
 		]
 	}
