@@ -211,7 +211,8 @@
 				"department_code": "entc",
 				"position": "marketing_coordinator",
 				"contact": {
-					"linkedin": "https://www.linkedin.com/in/thuvasooriya/"
+					"linkedin": "https://www.linkedin.com/in/thuvasooriya/",
+					"web": "https://www.thuvasooriya.me/"
 				}
 			},
 			{
@@ -220,7 +221,8 @@
 				"department_code": "cse",
 				"position": "tech_coordinator",
 				"contact": {
-					"linkedin": "https://www.linkedin.com/in/patricnilackshan/"
+					"linkedin": "https://www.linkedin.com/in/patricnilackshan/",
+					"web": "https://patricnilackshan.github.io/"
 				}
 			},
 			{
@@ -256,7 +258,10 @@
 				"name_en": "Sanujen P.",
 				"name_ta": "சானுஜென் பி.",
 				"department_code": "cse",
-				"position": "treasurer"
+				"position": "treasurer",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sanujen-premkumar"
+				}
 			},
 			{
 				"name_en": "Lathurshanan J.",
