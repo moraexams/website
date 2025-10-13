@@ -130,7 +130,7 @@ export const DEPARTMENTS: {
 	},
 	me: {
 		en: "Mechanical Engineering",
-		ta: "யந்திரவியல் பொறியியல்",
+		ta: "இயந்திரவியல் பொறியியல்",
 	},
 	ce: {
 		en: "Civil Engineering",
@@ -138,7 +138,7 @@ export const DEPARTMENTS: {
 	},
 	cpe: {
 		en: "Chemical & Process Engineering",
-		ta: "ரசாயன மற்றும் செயல்முறை பொறியியல்",
+		ta: "இரசாயன மற்றும் செயல்முறை பொறியியல்",
 	},
 	bme: {
 		en: "Biomedical Engineering",
