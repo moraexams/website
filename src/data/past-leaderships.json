@@ -112,7 +112,7 @@
 			},
 			{
 				"name_en": "Lathistika P.",
-				"name_ta": "லதிஸ்ரிகா பி.",
+				"name_ta": "லதிஸ்ரிக்கா பி.",
 				"department_code": "ce",
 				"position": "vice_secretary"
 			},
@@ -161,7 +161,10 @@
 				"name_en": "Sarujan T.",
 				"name_ta": "சாருஜன் த.",
 				"department_code": "ce",
-				"position": "president"
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sarujan-thayalan-280538277/"
+				}
 			},
 			{
 				"name_en": "Harikishna N.",
@@ -194,7 +197,10 @@
 				"name_en": "Pirunthuthy P.",
 				"name_ta": "பிருந்துதி பு.",
 				"department_code": "ce",
-				"position": "vice_secretary"
+				"position": "vice_secretary",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/pirunthuthy-puvanendrarasa-29a262241/"
+				}
 			},
 			{
 				"name_en": "Piragash P.",
@@ -252,7 +258,10 @@
 				"name_en": "Sarujan K.",
 				"name_ta": "சாருஜன் கு.",
 				"department_code": "ee",
-				"position": "secretary"
+				"position": "secretary",
+				"contact": {
+					"linkedin": "linkedin.com/in/sarujan-kugathas"
+				}
 			},
 			{
 				"name_en": "Sanujen P.",
@@ -303,6 +312,15 @@
 				"position": "districts_coordinator",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/henoshan-athimoolanathan-020129216"
+				}
+			},
+			{
+				"name_en": "Lingeswaran S.",
+				"name_ta": "லிங்கேஸ்வரன் ச.",
+				"department_code": "ee",
+				"position": "districts_coordinator",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/sathiyalokeswaran-lingeswaran-3b403720a"
 				}
 			}
 		]
@@ -395,6 +413,20 @@
 				"position": "president",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/vivek-vinushanth-christopher"
+				}
+			}
+		]
+	},
+	{
+		"year": "2010",
+		"organizing_committee": [
+			{
+				"name_en": "Ilamaran S.",
+				"name_ta": "இளமாறன் சி.",
+				"department_code": "ce",
+				"position": "president",
+				"contact": {
+					"linkedin": "https://www.linkedin.com/in/ilamaran-sivalingam-22931075/"
 				}
 			}
 		]
