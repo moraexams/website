@@ -6,13 +6,15 @@
 				"name_en": "Harshan R.",
 				"name_ta": "ஹர்ஷன் ற.",
 				"department_code": "ee",
-				"position": "president"
+				"position": "president",
+				"status": "reading"
 			},
 			{
 				"name_en": "Mathumilan K.",
 				"name_ta": "மதுமிலன் கே.",
 				"department_code": "me",
-				"position": "secretary"
+				"position": "secretary",
+				"status": "reading"
 			},
 			{
 				"name_en": "Pirasanth V.",
@@ -21,24 +23,28 @@
 				"position": "treasurer",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/pirasanth-vaigunthanathan/"
-				}
+				},
+				"status": "reading"
 			},
 			{
 				"name_en": "Babijana J.",
 				"name_ta": "பபிஜனா ஜெ.",
 				"department_code": "cse",
+				"status": "reading",
 				"position": "vice_president"
 			},
 			{
 				"name_en": "Mathushaliny M.",
 				"name_ta": "மதுசாளினி ம.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "vice_secretary"
 			},
 			{
 				"name_en": "Abiram C.",
 				"name_ta": "அபிராம் ச.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "exams_coordinator",
 				"contact": {
 					"linkedin": "http://linkedin.com/in/abiram-chandrakumar-260348327"
@@ -49,6 +55,7 @@
 				"name_ta": "கஜதீபன் பே.",
 				"department_code": "cse",
 				"position": "marketing_coordinator",
+				"status": "reading",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/kajatheepan-perinpanathan/"
 				}
@@ -58,6 +65,7 @@
 				"name_ta": "சாகித்யன் க.",
 				"department_code": "cse",
 				"position": "tech_coordinator",
+				"status": "reading",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/sahisahithyan-kandathasan/",
 					"web": "https://sahithyan.dev"
@@ -67,6 +75,7 @@
 				"name_en": "Thavinuhan R.",
 				"name_ta": "தவினுகன் இ.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "districts_coordinator",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/ravikkumar-thavinuhan-57bb84277"
@@ -81,6 +90,7 @@
 				"name_en": "Parishith R.",
 				"name_ta": "பரிஷித் ர.",
 				"department_code": "cse",
+				"status": "reading",
 				"position": "president",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/rp07official"
@@ -90,6 +100,7 @@
 				"name_en": "Kajaluxan S.",
 				"name_ta": "கஜலக்சன் சி.",
 				"department_code": "cse",
+				"status": "reading",
 				"position": "secretary",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/kajaluxan-sivakumaran-783145117/"
@@ -99,11 +110,13 @@
 				"name_en": "Luxsan N.",
 				"name_ta": "லக்சன் ந.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "treasurer"
 			},
 			{
 				"name_en": "Rahavi S.",
 				"name_ta": "ராகவி சி.",
+				"status": "reading",
 				"department_code": "cse",
 				"position": "vice_president",
 				"contact": {
@@ -114,11 +127,13 @@
 				"name_en": "Lathistika P.",
 				"name_ta": "லதிஸ்ரிக்கா பி.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "vice_secretary"
 			},
 			{
 				"name_en": "Thavaruban R.",
 				"name_ta": "தவறூபன் இ.",
+				"status": "reading",
 				"department_code": "ce",
 				"position": "exams_coordinator",
 				"contact": {
@@ -128,6 +143,7 @@
 			{
 				"name_en": "Thiruvarankan M.",
 				"name_ta": "திருவரங்கன் ம.",
+				"status": "reading",
 				"department_code": "ee",
 				"position": "marketing_coordinator",
 				"contact": {
@@ -138,6 +154,7 @@
 				"name_en": "Aroganan G.",
 				"name_ta": "ஆரோகணன் கு.",
 				"department_code": "me",
+				"status": "reading",
 				"position": "tech_coordinator",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/aroganan/"
@@ -147,6 +164,7 @@
 				"name_en": "Sukithan T.",
 				"name_ta": "சுகிதன் தி.",
 				"department_code": "cse",
+				"status": "reading",
 				"position": "districts_coordinator",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/sukithan-thillainathan-4112a32a5/"
@@ -161,6 +179,7 @@
 				"name_en": "Sarujan T.",
 				"name_ta": "சாருஜன் த.",
 				"department_code": "ce",
+				"status": "reading",
 				"position": "president",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/sarujan-thayalan-280538277/"
@@ -169,6 +188,7 @@
 			{
 				"name_en": "Harikishna N.",
 				"name_ta": "ஹரிகிஷ்ணா ந.",
+				"status": "reading",
 				"department_code": "cse",
 				"position": "secretary",
 				"contact": {
@@ -179,6 +199,7 @@
 				"name_en": "Mayoorathan K.",
 				"name_ta": "மயூரதன் கோ.",
 				"department_code": "mse",
+				"status": "reading",
 				"position": "treasurer",
 				"contact": {
 					"linkedin": "https://www.linkedin.com/in/mayoorathan-konalingam-60653720b/"
@@ -187,6 +208,7 @@
 			{
 				"name_en": "Thabendra S.",
 				"name_ta": "தபேந்திரா ச.",
+				"status": "reading",
 				"department_code": "cse",
 				"position": "vice_president",
 				"contact": {
@@ -196,6 +218,7 @@
 			{
 				"name_en": "Pirunthuthy P.",
 				"name_ta": "பிருந்துதி பு.",
+				"status": "reading",
 				"department_code": "ce",
 				"position": "vice_secretary",
 				"contact": {
@@ -205,6 +228,7 @@
 			{
 				"name_en": "Piragash P.",
 				"name_ta": "பிரகாஷ் ப.",
+				"status": "reading",
 				"department_code": "ee",
 				"position": "exams_coordinator",
 				"contact": {
@@ -214,6 +238,7 @@
 			{
 				"name_en": "Thuvaragan S.",
 				"name_ta": "துவாரகன் சூ.",
+				"status": "reading",
 				"department_code": "entc",
 				"position": "marketing_coordinator",
 				"contact": {
@@ -224,6 +249,7 @@
 			{
 				"name_en": "Patric N.",
 				"name_ta": "பற்றிக் நி.",
+				"status": "reading",
 				"department_code": "cse",
 				"position": "tech_coordinator",
 				"contact": {
@@ -234,6 +260,7 @@
 			{
 				"name_en": "Umakanthan K.",
 				"name_ta": "உமாகாந்தன் கு.",
+				"status": "reading",
 				"department_code": "me",
 				"position": "districts_coordinator",
 				"contact": {
