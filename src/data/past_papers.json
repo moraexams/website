@@ -1,24 +1,5 @@
 [
-	{
-		"year": 2025,
-		"subject": "ict",
-		"type": "scheme",
-		"medium": "tamil",
-		"version": null,
-		"id": "1LrAh5n_kC3OBeJvAP0T4bJLxXQYy2DNQ",
-		"name": "2025_ict_scheme_tamil.pdf",
-		"link": "https://drive.google.com/file/d/1LrAh5n_kC3OBeJvAP0T4bJLxXQYy2DNQ/view?usp=sharing"
-	},
-	{
-		"year": 2025,
-		"subject": "ict",
-		"type": "scheme",
-		"medium": "english",
-		"version": null,
-		"id": "1RmAr4MWQXJbKUMZKS1GxO0j10YCBRsNV",
-		"name": "2025_ict_scheme_english.pdf",
-		"link": "https://drive.google.com/file/d/1RmAr4MWQXJbKUMZKS1GxO0j10YCBRsNV/view?usp=sharing"
-	},
+
 	{
 		"year": 2025,
 		"subject": "chemistry",
@@ -39,26 +20,7 @@
 		"name": "2025_chemistry_scheme_english.pdf",
 		"link": "https://drive.google.com/file/d/1YB5H4Eg2eDOMchALx9zFArb1ClyjsJBn/view?usp=sharing"
 	},
-	{
-		"year": 2025,
-		"subject": "physics",
-		"type": "scheme",
-		"medium": "english",
-		"version": null,
-		"id": "1x7j_ExlaDZn547GvcHaGog7LefhSTs7O",
-		"name": "2025_physics_scheme_english.pdf",
-		"link": "https://drive.google.com/file/d/1x7j_ExlaDZn547GvcHaGog7LefhSTs7O/view?usp=sharing"
-	},
-	{
-		"year": 2025,
-		"subject": "physics",
-		"type": "scheme",
-		"medium": "tamil",
-		"version": null,
-		"id": "1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD",
-		"name": "2025_physics_scheme_tamil.pdf",
-		"link": "https://drive.google.com/file/d/1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD/view?usp=sharing"
-	},
+
 	{
 		"year": 2025,
 		"subject": "physics",
