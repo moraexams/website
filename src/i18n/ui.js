@@ -161,6 +161,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} find_your_results_p
  * @prop {string} nic_no
  * @prop {string} index_no
+ * @prop {string} placeholder__index_no_or_nic
  * @prop {string} find_button
  * @prop {string} schemes_button
  * @prop {string} results__title
@@ -238,7 +239,9 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} leadership_timeline__title
  * @prop {string} leadership_timeline__description
  * @prop {string} results_title
- *
+ * @prop {string} word__zscore
+ * @prop {string} word__district_rank
+ * @prop {string} word__island_rank
  */
 
 /**
@@ -406,7 +409,7 @@ const UI_STRINGS_EN = {
 	name__tla: "Tamil Literary Association",
 
 	find_your_results: "Find Your Results",
-	find_your_results_p: "Enter your Index Number to find your results",
+	find_your_results_p: "Enter your Index No. or NIC No. to find your results.",
 
 	find_your_index_no: "Find Your Index No.",
 	find_your_index_no_p: "Enter your NIC number to find your index no.",
@@ -522,6 +525,10 @@ const UI_STRINGS_EN = {
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 
 	results_title: "Mora Exams 2025 - Results",
+	word__zscore: "Z Score",
+	word__island_rank: "Island Rank",
+	word__district_rank: "District Rank",
+	placeholder__index_no_or_nic: "Index No./N.I.C. No.",
 };
 
 /**
@@ -675,10 +682,9 @@ const UI_STRINGS_TA = {
 	name__tla: "தமிழ் இலக்கியக் கழகம்",
 	feedback_snekan_name: "சினேகன்",
 	looking_for_past_papers__button: "வினாத்தாள்கள்",
-	find_your_results: "பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
+	find_your_results: "பரீட்சை முடிவுகளை பார்வையிட",
 	find_your_results_p:
-		"உங்களுடைய சுட்டிலக்கத்தை உள்ளிட்டு பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
-
+		"உங்களுடைய சுட்டிலக்கத்தை அல்லது தேசிய அடையாள அட்டை இலக்கத்தை  உள்ளிட்டு பரீட்சை முடிவுகளைக் கண்டறியுங்கள்",
 	find_your_index_no: "பரீட்சை சுட்டிலக்கதை கண்டறியுங்கள்",
 	find_your_index_no_p:
 		"உங்கள் தேசிய அடையாள அட்டை இலக்கத்தை உள்ளிட்டு உங்கள் சுட்டெண்ணை கண்டறியலாம்",
@@ -743,14 +749,14 @@ const UI_STRINGS_TA = {
 	student_register__form_unavailable:
 		"பதிவு படிவம் தற்போது கிடைக்கவில்லை. பின்னர் மீண்டும் சரிபார்க்கவும்.",
 	student_register__form_name: "முழுப்பெயர்",
-	student_register__form_nic_no: "NIC எண்",
+	student_register__form_nic_no: "தே.அ.அ. இல",
 	student_register__form_school: "பாடசாலை",
 	student_register__form_permanent_address: "நிலையான முகவரி",
 	student_register__form_phone_no: "தொலைபேசி எண்",
 	student_register__form_email: "மின்னஞ்சல்",
 	student_register__form_gender: "பாலினம்",
 	student_register__form_medium: "மொழி மூலம்",
-	student_register__form_stream: "தொகுதி",
+	student_register__form_stream: "பிரிவு",
 	student_register__form_district_ranking: "மாவட்டம் (தரவரிசை)",
 	student_register__form_district_sitting: "மாவட்டம் (பரீட்சை)",
 	student_register__form_exam_centre: "பரீட்சை மையம்",
@@ -791,6 +797,10 @@ const UI_STRINGS_TA = {
 	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 	results_title: "Mora Exams 2025 - Results",
+	word__zscore: "Z மதிப்பெண்",
+	word__island_rank: "தேசிய நிலை",
+	word__district_rank: "மாவட்ட நிலை",
+	placeholder__index_no_or_nic: "சுட்டிலக்கம்/தே.அ.அ. இல.",
 };
 
 /**

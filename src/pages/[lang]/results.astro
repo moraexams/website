@@ -3,6 +3,7 @@ export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
+import Footer from "../../sections/16-footer.astro";
 
 const { lang } = Astro.params;
 
@@ -30,9 +31,9 @@ interface StudentResults {
 	subject2_result: string;
 	subject3: string;
 	subject3_result: string;
-	z_score: string;
-	district_rank: string;
-	island_rank: string;
+	z_score: string | null;
+	district_rank: string | null;
+	island_rank: string | null;
 }
 
 let studentResults: StudentResults | undefined = undefined;
@@ -61,11 +62,11 @@ if (indexNumber) {
 	>
 		{
 			typeof studentResults == "undefined" ? (
-				<div class="flex flex-col justify-center max-w-[90ch] min-w-[80ch] mx-auto">
+				<div class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto">
 					<h1 class="text-3xl xl:text-4xl my-2 text-left">
 						{t("find_your_results")}
 					</h1>
-					<p class="text-xl text-black mt-0 text-left">
+					<p class="text-lg text-black mt-0 text-left">
 						{t("find_your_results_p")}
 					</p>
 					<form
@@ -75,7 +76,7 @@ if (indexNumber) {
 						data-netlify-recaptcha="true"
 						data-netlify="true"
 					>
-						<div class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] gap-y-6 gap-x-2">
+						<div class="grid grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-y-6 gap-x-2">
 							<input
 								class="w-full px-4 xl:px-6 py-2 xl:py-3 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4 col-span-2"
 								type="text"
@@ -83,13 +84,13 @@ if (indexNumber) {
 								id="showresultin"
 								inputmode="numeric"
 								value={indexNumber}
-								placeholder={t("index_no")}
+								placeholder={t("placeholder__index_no_or_nic")}
 								required
 							/>
 
 							<button
 								id="showresultbtn"
-								class="min-w-[120px] lg:w-1/2 py-2 rounded-full text-primary-800 text-lg bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none col-start-2 ml-auto"
+								class="min-w-[120px] lg:w-1/2 py-2 rounded-full text-primary-800 text-lg bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none col-start-2"
 							>
 								<>
 									<i class="fa-solid fa-magnifying-glass size-4" />
@@ -101,9 +102,10 @@ if (indexNumber) {
 				</div>
 			) : studentResults === null ? (
 				<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
-					<h1 class="text-7xl text-red-500 mt-0 col-span-2">
-						Results Not found
-					</h1>
+					<h1 class="text-7xl text-red-500 mt-0 col-span-2 mb-0">Not found</h1>
+					<h2 class="mt-0 text-xl text-red-500 col-span-full">
+						For your query: <span class="font-medium">{indexNumber}</span>
+					</h2>
 
 					<p class="max-w-prose col-span-2 mt-0 text-red-800 font-semibold">
 						Note: Unacceptable behavior during exams and/or failing to submit
@@ -122,17 +124,10 @@ if (indexNumber) {
 					<a href="./results">
 						<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
 							<>
-								Physical
 								<i class="fa-solid fa-arrow-left" />
 								<span class="ml-3">Back</span>
 							</>
 						</button>
-					</a>
-					<a
-						href={`/${lang}/indexnumber`}
-						class="place-self-center h-fit inline"
-					>
-						Forgot index number?
 					</a>
 				</div>
 			) : (
@@ -141,58 +136,74 @@ if (indexNumber) {
 						{t("results_title")}
 					</h1>
 
-					<div class="grid grid-cols-[auto_auto] lg:grid-cols-[minmax(400px,40%)_auto_auto] gap-y-6 gap-x-16 lg:gap-x-20">
+					<div class="grid grid-cols-[auto_auto] md:grid-cols-[minmax(400px,40%)_auto_auto] gap-y-6 gap-x-16 lg:gap-x-20 mb-12 grid-rows-[repeat(5,auto)]">
 						<div class="item col-span-full">
-							<label>Full Name</label>
+							<label>{t("student_register__form_name")}</label>
 							<div>{studentResults.name}</div>
 						</div>
-						<div class="item lg:col-span-2">
-							<label>NIC No.</label>
+						<div class="item">
+							<label>{t("student_register__form_nic_no")}</label>
 							<div class="tabular-nums">{studentResults.nic}</div>
 						</div>
 						<div class="item">
-							<label>Index No.</label>
+							<label>{t("index_no")}</label>
 							<div class="tabular-nums">{studentResults.index_no}</div>
 						</div>
 						<div class="item">
-							<label>Ranking District</label>
+							<label>{t("student_register__form_district_ranking")}</label>
 							<div class="tabular-nums">{studentResults.ranking_district}</div>
 						</div>
-						<div class="item col-start-1 lg:col-start-2 col-span-2">
-							<label>Stream</label>
+						<div class="item">
+							<label>{t("student_register__form_stream")}</label>
 							<div class="tabular-nums">{studentResults.stream}</div>
 						</div>
-						<div class="flex flex-col gap-2 row-span-2 col-span-2 lg:col-span-1 justify-between max-w-[360px]">
-							<div class="item result">
-								<label>{studentResults.subject1}</label>
-								<div>{studentResults.subject1_result}</div>
-							</div>
-							<div class="result item">
-								<label>{studentResults.subject2}</label>
-								<div>{studentResults.subject2_result}</div>
-							</div>
+						<div class="flex flex-col gap-2 row-span-2 col-span-2 md:col-start-1 md:col-span-1 justify-between max-w-[370px]">
+							{studentResults.stream === "ICT Only" ? null : (
+								<>
+									<div class="item result">
+										<label>{studentResults.subject1}</label>
+										<div>{studentResults.subject1_result}</div>
+									</div>
+									<div class="result item">
+										<label>{studentResults.subject2}</label>
+										<div>{studentResults.subject2_result}</div>
+									</div>
+								</>
+							)}
 							<div class="result item">
 								<label>{studentResults.subject3}</label>
 								<div>{studentResults.subject3_result}</div>
 							</div>
 						</div>
 
-						<div class="item zscore col-span-2">
-							<label>Z-Score</label>
-							<div>{studentResults.z_score}</div>
+						<div class="item zscore md:col-start-2 md:row-start-3 col-span-2">
+							<label>{t("word__zscore")}</label>
+							<div>{studentResults.z_score || "-"}</div>
 						</div>
-						<div class="item rank lg:col-start-2">
-							<label>Island Rank</label>
+						<div class="item rank md:col-start-2">
+							<label>{t("word__island_rank")}</label>
 							<div>
-								{studentResults.island_rank.toString().padStart(2, "0")}
+								{studentResults.island_rank?.toString().padStart(2, "0") || "-"}
 							</div>
 						</div>
 						<div class="item rank">
-							<label>District Rank</label>
+							<label>{t("word__district_rank")}</label>
 							<div>
-								{studentResults.district_rank.toString().padStart(2, "0")}
+								{studentResults.district_rank?.toString().padStart(2, "0") ||
+									"-"}
 							</div>
 						</div>
+					</div>
+
+					<div class="flex justify-end">
+						<a href="./results">
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+								<>
+									<i class="fa-solid fa-arrow-left" />
+									<span class="ml-3">Back</span>
+								</>
+							</button>
+						</a>
 					</div>
 				</div>
 			)
@@ -201,7 +212,7 @@ if (indexNumber) {
 		<div
 			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-1 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-10"
 		>
-			<p class="mb-4 mt-0 text-xl text-center font-medium">
+			<p class="mb-4 mt-0 text-lg text-center font-medium">
 				{t("index_number__our_sponsors")}
 			</p>
 			<div class="flex flex-col my-4 gap-16">
@@ -218,6 +229,8 @@ if (indexNumber) {
 			</div>
 		</div>
 	</section>
+
+	<Footer />
 </Layout>
 
 <style is:global>
@@ -229,12 +242,15 @@ if (indexNumber) {
 	.contact-no {
 		@apply font-[500] w-fit;
 	}
+	body {
+		@apply min-h-[100vh] flex flex-col;
+	}
 	body > * {
 		@apply px-[var(--body-margin-x)];
 	}
 	.item {
 		label {
-			@apply font-medium mb-[1px] block lg:text-lg;
+			@apply font-medium mb-[1px] block lg:text-lg text-balance;
 		}
 		div {
 			@apply text-xl lg:text-2xl font-semibold;
@@ -246,7 +262,7 @@ if (indexNumber) {
 			@apply text-xl lg:text-2xl;
 		}
 		div {
-			@apply text-2xl lg:text-3xl font-extrabold;
+			@apply text-2xl lg:text-3xl font-extrabold font-mono;
 		}
 	}
 	.item.zscore {
