@@ -24,23 +24,25 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 			style="padding-bottom: 30px;"
 		>
 			<a
-				href="./index-number"
+				href="./results"
 				class="text-white no-underline hover:underline inline-block"
 			>
 				<button class="btn !w-full">
 					<span>
-						{t("hero_index_button")}
+						{t("hero_results_button")}
 					</span>
 					<i
 						class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2"
 					></i>
 				</button>
 			</a>
-			<!--
-			<a href="./results" class="no-underline">
-				<button class="btn">
+			<!-- <a
+				href="./index-number"
+				class="text-white no-underline hover:underline inline-block"
+			>
+				<button class="btn !w-full">
 					<span>
-						{t("hero_results_button")}
+						{t("hero_index_button")}
 					</span>
 					<i
 						class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2"

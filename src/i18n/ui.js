@@ -237,6 +237,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} index__view_leadership_timeline
  * @prop {string} leadership_timeline__title
  * @prop {string} leadership_timeline__description
+ * @prop {string} results_title
  *
  */
 
@@ -519,6 +520,8 @@ const UI_STRINGS_EN = {
 	committee__marketing_coordinator_post: "Marketing Coordinator",
 	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
+
+	results_title: "Mora Exams 2025 - Results",
 };
 
 /**
@@ -787,6 +790,7 @@ const UI_STRINGS_TA = {
 	committee__marketing_coordinator_post: "Marketing Coordinator",
 	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
+	results_title: "Mora Exams 2025 - Results",
 };
 
 /**

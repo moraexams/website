@@ -1,0 +1,262 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
+
+const { lang } = Astro.params;
+
+if (!isSupportedLanguage(lang)) {
+	return;
+}
+const t = useTranslations(lang);
+
+let indexNumber = undefined;
+
+if (Astro.request.method === "POST") {
+	const formData = await Astro.request.formData();
+	indexNumber = formData.get("i").toString() || undefined;
+}
+
+interface StudentResults {
+	index_no: string;
+	name: string;
+	nic: string;
+	stream: string;
+	ranking_district: string;
+	subject1: string;
+	subject1_result: string;
+	subject2: string;
+	subject2_result: string;
+	subject3: string;
+	subject3_result: string;
+	z_score: string;
+	district_rank: string;
+	island_rank: string;
+}
+
+let studentResults: StudentResults | undefined = undefined;
+
+if (indexNumber) {
+	try {
+		const response = await fetch(
+			`${import.meta.env.PUBLIC_API_URL}/result/${indexNumber}`,
+		);
+		const data = await response.json();
+		if (data.error) {
+			studentResults = null;
+		} else {
+			studentResults = data;
+		}
+	} catch (error) {
+		studentResults = null;
+	}
+}
+---
+
+<Layout pageTitle={t("results__title")}>
+	<NavigationBar />
+	<section
+		class="my-10 sm:rounded-lg grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-x-12 items-center h-fit flex-1"
+	>
+		{
+			typeof studentResults == "undefined" ? (
+				<div class="flex flex-col justify-center max-w-[90ch] min-w-[80ch] mx-auto">
+					<h1 class="text-3xl xl:text-4xl my-2 text-left">
+						{t("find_your_results")}
+					</h1>
+					<p class="text-xl text-black mt-0 text-left">
+						{t("find_your_results_p")}
+					</p>
+					<form
+						method="POST"
+						action={`/${lang}/results`}
+						style="display: contents;"
+						data-netlify-recaptcha="true"
+						data-netlify="true"
+					>
+						<div class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] gap-y-6 gap-x-2">
+							<input
+								class="w-full px-4 xl:px-6 py-2 xl:py-3 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4 col-span-2"
+								type="text"
+								name="i"
+								id="showresultin"
+								inputmode="numeric"
+								value={indexNumber}
+								placeholder={t("index_no")}
+								required
+							/>
+
+							<button
+								id="showresultbtn"
+								class="min-w-[120px] lg:w-1/2 py-2 rounded-full text-primary-800 text-lg bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none col-start-2 ml-auto"
+							>
+								<>
+									<i class="fa-solid fa-magnifying-glass size-4" />
+									<span class="ml-3">{t("find_button")}</span>
+								</>
+							</button>
+						</div>
+					</form>
+				</div>
+			) : studentResults === null ? (
+				<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
+					<h1 class="text-7xl text-red-500 mt-0 col-span-2">
+						Results Not found
+					</h1>
+
+					<p class="max-w-prose col-span-2 mt-0 text-red-800 font-semibold">
+						Note: Unacceptable behavior during exams and/or failing to submit
+						essential details correctly may prohibit grades for the candidate.
+					</p>
+					<div class="col-span-2 text-black mb-4">
+						<span class="max-w-prose">
+							For inquiries (only on appropriate hours)
+						</span>
+						<ul style="list-style: '- '" class="px-6">
+							<li class="contact-no">Kopithan (0740071883)</li>
+							<li class="contact-no">Kalaippiriyan (0740778758)</li>
+							<li class="contact-no">Koshika (0740104723)</li>
+						</ul>
+					</div>
+					<a href="./results">
+						<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+							<>
+								Physical
+								<i class="fa-solid fa-arrow-left" />
+								<span class="ml-3">Back</span>
+							</>
+						</button>
+					</a>
+					<a
+						href={`/${lang}/indexnumber`}
+						class="place-self-center h-fit inline"
+					>
+						Forgot index number?
+					</a>
+				</div>
+			) : (
+				<div class="w-full">
+					<h1 class="text-3xl md:text-4xl xl:text-4xl mt-2 mb-10 text-left">
+						{t("results_title")}
+					</h1>
+
+					<div class="grid grid-cols-[auto_auto] lg:grid-cols-[minmax(400px,40%)_auto_auto] gap-y-6 gap-x-16 lg:gap-x-20">
+						<div class="item col-span-full">
+							<label>Full Name</label>
+							<div>{studentResults.name}</div>
+						</div>
+						<div class="item lg:col-span-2">
+							<label>NIC No.</label>
+							<div class="tabular-nums">{studentResults.nic}</div>
+						</div>
+						<div class="item">
+							<label>Index No.</label>
+							<div class="tabular-nums">{studentResults.index_no}</div>
+						</div>
+						<div class="item">
+							<label>Ranking District</label>
+							<div class="tabular-nums">{studentResults.ranking_district}</div>
+						</div>
+						<div class="item col-start-1 lg:col-start-2 col-span-2">
+							<label>Stream</label>
+							<div class="tabular-nums">{studentResults.stream}</div>
+						</div>
+						<div class="flex flex-col gap-2 row-span-2 col-span-2 lg:col-span-1 justify-between max-w-[360px]">
+							<div class="item result">
+								<label>{studentResults.subject1}</label>
+								<div>{studentResults.subject1_result}</div>
+							</div>
+							<div class="result item">
+								<label>{studentResults.subject2}</label>
+								<div>{studentResults.subject2_result}</div>
+							</div>
+							<div class="result item">
+								<label>{studentResults.subject3}</label>
+								<div>{studentResults.subject3_result}</div>
+							</div>
+						</div>
+
+						<div class="item zscore col-span-2">
+							<label>Z-Score</label>
+							<div>{studentResults.z_score}</div>
+						</div>
+						<div class="item rank lg:col-start-2">
+							<label>Island Rank</label>
+							<div>
+								{studentResults.island_rank.toString().padStart(2, "0")}
+							</div>
+						</div>
+						<div class="item rank">
+							<label>District Rank</label>
+							<div>
+								{studentResults.district_rank.toString().padStart(2, "0")}
+							</div>
+						</div>
+					</div>
+				</div>
+			)
+		}
+
+		<div
+			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-1 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-10"
+		>
+			<p class="mb-4 mt-0 text-xl text-center font-medium">
+				{t("index_number__our_sponsors")}
+			</p>
+			<div class="flex flex-col my-4 gap-16">
+				<img
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					src="/sponsors/sltc.png"
+					alt="SLTC"
+				/>
+				<img
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					src="/sponsors/northway-family-mart.png"
+					alt="Northway Family Mart"
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style is:global>
+	@media screen and (max-width: 400px) {
+		input {
+			font-size: 16px;
+		}
+	}
+	.contact-no {
+		@apply font-[500] w-fit;
+	}
+	body > * {
+		@apply px-[var(--body-margin-x)];
+	}
+	.item {
+		label {
+			@apply font-medium mb-[1px] block lg:text-lg;
+		}
+		div {
+			@apply text-xl lg:text-2xl font-semibold;
+		}
+	}
+	.item.result {
+		@apply flex justify-between items-center;
+		label {
+			@apply text-xl lg:text-2xl;
+		}
+		div {
+			@apply text-2xl lg:text-3xl font-extrabold;
+		}
+	}
+	.item.zscore {
+		div {
+			@apply text-4xl lg:text-5xl;
+		}
+	}
+	.item.rank {
+		div {
+			@apply text-5xl lg:text-6xl;
+		}
+	}
+</style>
