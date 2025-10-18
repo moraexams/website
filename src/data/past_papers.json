@@ -41,6 +41,28 @@
 		"name": "2025_physics_paper_english.pdf",
 		"link": "https://drive.google.com/file/d/1L8hERJbNN4U_-u8IjGaS1ih4Xj9FiFfh/view?usp=sharing"
 	},
+    	{
+		"year": 2025,
+		"subject": "physics",
+		"type": "scheme",
+		"medium": "tamil",
+		"version": null,
+		"id": "1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD",
+		"name": "2025_physics_scheme_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1T7XD2XCKWual7zyOu6qnewW8XNZ5wFeD/view?usp=sharing"
+	},
+    	{
+		"year": 2025,
+		"subject": "physics",
+		"type": "scheme",
+		"medium": "english",
+		"version": null,
+		"id": "1x7j_ExlaDZn547GvcHaGog7LefhSTs7O",
+		"name": "2025_physics_scheme_english.pdf",
+		"link": "https://drive.google.com/file/d/1x7j_ExlaDZn547GvcHaGog7LefhSTs7O/view?usp=sharing"
+	},
+    
+    
 	{
 		"year": 2025,
 		"subject": "ict",
