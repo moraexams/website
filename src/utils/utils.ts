@@ -57,21 +57,17 @@ interface GroupedSubject {
 	};
 }
 
+interface GroupedPastPapersForLang {
+	ict: GroupedSubject;
+	biology: GroupedSubject;
+	chemistry: GroupedSubject;
+	"combined-maths": GroupedSubject;
+	physics: GroupedSubject;
+}
+
 interface GroupedPastPapers {
-	tamil: {
-		ict: GroupedSubject;
-		biology: GroupedSubject;
-		chemistry: GroupedSubject;
-		"combined-maths": GroupedSubject;
-		physics: GroupedSubject;
-	};
-	english: {
-		ict: GroupedSubject;
-		biology: GroupedSubject;
-		chemistry: GroupedSubject;
-		"combined-maths": GroupedSubject;
-		physics: GroupedSubject;
-	};
+	tamil: GroupedPastPapersForLang;
+	english: GroupedPastPapersForLang;
 }
 
 export function groupPastPaperItems(items: Array<PastPaperItem>) {
@@ -153,3 +149,8 @@ export const DEPARTMENTS: {
 		ta: "இலத்திரனியல் மற்றும் தொலைத்தொடர்பு பொறியியல்",
 	},
 };
+
+export function assertNever(x: never): never {
+	console.error("assertNever", x);
+	throw new Error("Unreachable point reached.");
+}

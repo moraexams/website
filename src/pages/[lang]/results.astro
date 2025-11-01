@@ -4,6 +4,8 @@ import Layout from "../../layouts/Layout.astro";
 import NavigationBar from "../../sections/1-navigation-bar.astro";
 import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 import Footer from "../../sections/16-footer.astro";
+import ResultsSheet from "../../components/results-sheet.astro";
+import type { StudentResults } from "../../types";
 
 const { lang } = Astro.params;
 
@@ -17,23 +19,6 @@ let indexNumber = undefined;
 if (Astro.request.method === "POST") {
 	const formData = await Astro.request.formData();
 	indexNumber = formData.get("i").toString() || undefined;
-}
-
-interface StudentResults {
-	index_no: string;
-	name: string;
-	nic: string;
-	stream: string;
-	ranking_district: string;
-	subject1: string;
-	subject1_result: string;
-	subject2: string;
-	subject2_result: string;
-	subject3: string;
-	subject3_result: string;
-	z_score: string | null;
-	district_rank: string | null;
-	island_rank: string | null;
 }
 
 let studentResults: StudentResults | undefined = undefined;
@@ -136,64 +121,7 @@ if (indexNumber) {
 						{t("results_title")}
 					</h1>
 
-					<div class="grid grid-cols-[auto_auto] md:grid-cols-[minmax(400px,40%)_auto_auto] gap-y-6 gap-x-16 lg:gap-x-20 mb-12 grid-rows-[repeat(5,auto)]">
-						<div class="item col-span-full">
-							<label>{t("student_register__form_name")}</label>
-							<div>{studentResults.name}</div>
-						</div>
-						<div class="item">
-							<label>{t("student_register__form_nic_no")}</label>
-							<div class="tabular-nums">{studentResults.nic}</div>
-						</div>
-						<div class="item">
-							<label>{t("index_no")}</label>
-							<div class="tabular-nums">{studentResults.index_no}</div>
-						</div>
-						<div class="item">
-							<label>{t("student_register__form_district_ranking")}</label>
-							<div class="tabular-nums">{studentResults.ranking_district}</div>
-						</div>
-						<div class="item">
-							<label>{t("student_register__form_stream")}</label>
-							<div class="tabular-nums">{studentResults.stream}</div>
-						</div>
-						<div class="flex flex-col gap-2 row-span-2 col-span-2 md:col-start-1 md:col-span-1 justify-between max-w-[370px]">
-							{studentResults.stream === "ICT Only" ? null : (
-								<>
-									<div class="item result">
-										<label>{studentResults.subject1}</label>
-										<div>{studentResults.subject1_result}</div>
-									</div>
-									<div class="result item">
-										<label>{studentResults.subject2}</label>
-										<div>{studentResults.subject2_result}</div>
-									</div>
-								</>
-							)}
-							<div class="result item">
-								<label>{studentResults.subject3}</label>
-								<div>{studentResults.subject3_result}</div>
-							</div>
-						</div>
-
-						<div class="item zscore md:col-start-2 md:row-start-3 col-span-2">
-							<label>{t("word__zscore")}</label>
-							<div>{studentResults.z_score || "-"}</div>
-						</div>
-						<div class="item rank md:col-start-2">
-							<label>{t("word__island_rank")}</label>
-							<div>
-								{studentResults.island_rank?.toString().padStart(2, "0") || "-"}
-							</div>
-						</div>
-						<div class="item rank">
-							<label>{t("word__district_rank")}</label>
-							<div>
-								{studentResults.district_rank?.toString().padStart(2, "0") ||
-									"-"}
-							</div>
-						</div>
-					</div>
+					<ResultsSheet results={studentResults} lang={lang} />
 
 					<div class="flex justify-end">
 						<a href="./results">
@@ -247,32 +175,5 @@ if (indexNumber) {
 	}
 	body > * {
 		@apply px-[var(--body-margin-x)];
-	}
-	.item {
-		label {
-			@apply font-medium mb-[1px] block lg:text-lg text-balance;
-		}
-		div {
-			@apply text-xl lg:text-2xl font-semibold;
-		}
-	}
-	.item.result {
-		@apply flex justify-between items-center;
-		label {
-			@apply text-xl lg:text-2xl;
-		}
-		div {
-			@apply text-2xl lg:text-3xl font-extrabold font-mono;
-		}
-	}
-	.item.zscore {
-		div {
-			@apply text-4xl lg:text-5xl;
-		}
-	}
-	.item.rank {
-		div {
-			@apply text-5xl lg:text-6xl;
-		}
 	}
 </style>

@@ -1,0 +1,107 @@
+---
+import type { Language } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { StudentResults } from "../types";
+
+interface Props {
+	lang: Language;
+	results: StudentResults;
+}
+
+const t = useTranslations(Astro.props.lang);
+const { results } = Astro.props;
+---
+
+<div
+	class="grid grid-cols-[auto_auto] md:grid-cols-[minmax(400px,40%)_auto_auto] gap-y-6 gap-x-16 lg:gap-x-20 mb-12 grid-rows-[repeat(5,auto)]"
+>
+	<div class="item col-span-full">
+		<label>{t("student_register__form_name")}</label>
+		<div>{results.name}</div>
+	</div>
+	<div class="item">
+		<label>{t("student_register__form_nic_no")}</label>
+		<div class="tabular-nums">{results.nic}</div>
+	</div>
+	<div class="item">
+		<label>{t("index_no")}</label>
+		<div class="tabular-nums">{results.index_no}</div>
+	</div>
+	<div class="item">
+		<label>{t("student_register__form_district_ranking")}</label>
+		<div class="tabular-nums">{results.ranking_district}</div>
+	</div>
+	<div class="item">
+		<label>{t("student_register__form_stream")}</label>
+		<div class="tabular-nums">{results.stream}</div>
+	</div>
+	<div
+		class="flex flex-col gap-2 row-span-2 col-span-2 md:col-start-1 md:col-span-1 justify-between max-w-[370px]"
+	>
+		{
+			results.stream === "ICT Only" ? null : (
+				<>
+					<div class="item result">
+						<label>{results.subject1}</label>
+						<div>{results.subject1_result}</div>
+					</div>
+					<div class="result item">
+						<label>{results.subject2}</label>
+						<div>{results.subject2_result}</div>
+					</div>
+				</>
+			)
+		}
+		<div class="result item">
+			<label>{results.subject3}</label>
+			<div>{results.subject3_result}</div>
+		</div>
+	</div>
+
+	<div class="item zscore md:col-start-2 md:row-start-3 col-span-2">
+		<label>{t("word__zscore")}</label>
+		<div>{results.z_score || "-"}</div>
+	</div>
+	<div class="item rank md:col-start-2">
+		<label>{t("word__island_rank")}</label>
+		<div>
+			{results.island_rank?.toString().padStart(2, "0") || "-"}
+		</div>
+	</div>
+	<div class="item rank">
+		<label>{t("word__district_rank")}</label>
+		<div>
+			{results.district_rank?.toString().padStart(2, "0") || "-"}
+		</div>
+	</div>
+</div>
+
+<style>
+	.item {
+		label {
+			@apply font-medium mb-[1px] block lg:text-lg text-balance;
+		}
+		div {
+			@apply text-xl lg:text-2xl font-semibold;
+		}
+	}
+	.item.result {
+		@apply flex justify-between items-center;
+		label {
+			@apply text-xl lg:text-2xl;
+		}
+		div {
+			@apply text-2xl lg:text-3xl font-extrabold font-mono;
+		}
+	}
+	.item.zscore {
+		div {
+			@apply text-4xl lg:text-5xl;
+		}
+	}
+	.item.rank {
+		div {
+			@apply text-5xl lg:text-6xl;
+		}
+	}
+</style>
