@@ -1,13 +1,9 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import type { HeroVersion } from "../types";
+import { STAGE } from "../config";
 import { assertNever } from "../utils/utils";
 
-interface Props {
-	actionBtn: HeroVersion;
-}
 const t = useTranslations(getLangFromUrl(Astro.url));
-const { actionBtn } = Astro.props;
 ---
 
 <section
@@ -29,7 +25,8 @@ const { actionBtn } = Astro.props;
 			style="padding-bottom: 30px;"
 		>
 			{
-				actionBtn === null ? null : actionBtn === "view_index_no" ? (
+				STAGE === null || STAGE === "final_exams" ? null : STAGE ===
+				  "view_index_no" ? (
 					<a
 						href="./index-number"
 						class="text-white no-underline hover:underline inline-block"
@@ -39,7 +36,7 @@ const { actionBtn } = Astro.props;
 							<i class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2" />
 						</button>
 					</a>
-				) : actionBtn === "register" ? (
+				) : STAGE === "register" ? (
 					<a
 						href="./register"
 						class="text-white no-underline hover:underline inline-block"
@@ -49,7 +46,7 @@ const { actionBtn } = Astro.props;
 							<i class="fa-solid fa-arrow-right translate-x-[10px] transition-transform pr-2" />
 						</button>
 					</a>
-				) : actionBtn === "view_results" ? (
+				) : STAGE === "view_results" ? (
 					<a
 						href="./results"
 						class="text-white no-underline hover:underline inline-block"
@@ -60,7 +57,7 @@ const { actionBtn } = Astro.props;
 						</button>
 					</a>
 				) : (
-					(assertNever(actionBtn), null)
+					(assertNever(STAGE), null)
 				)
 			}
 		</div>

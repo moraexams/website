@@ -37,4 +37,9 @@ export interface StudentResults {
 	island_rank: string | null;
 }
 
-export type HeroVersion = null | "register" | "view_index_no" | "view_results";
+export type WebsiteStage =
+	| null
+	| "register"
+	| "view_index_no"
+	| "view_results"
+	| "final_exams";

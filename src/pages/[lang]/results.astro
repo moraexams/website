@@ -6,6 +6,9 @@ import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
 import Footer from "../../sections/16-footer.astro";
 import ResultsSheet from "../../components/results-sheet.astro";
 import type { StudentResults } from "../../types";
+import { STAGE } from "../../config";
+import BestWishes from "../../components/best-wishes.astro";
+import Info from "../../components/info.astro";
 
 const { lang } = Astro.params;
 
@@ -46,7 +49,12 @@ if (indexNumber) {
 		class="my-10 sm:rounded-lg grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-x-12 items-center h-fit flex-1"
 	>
 		{
-			typeof studentResults == "undefined" ? (
+			STAGE === "final_exams" ? (
+				<div>
+					<Info text="Your results can no longer be viewed." />
+					<BestWishes />
+				</div>
+			) : typeof studentResults == "undefined" ? (
 				<div class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto">
 					<h1 class="text-3xl xl:text-4xl my-2 text-left">
 						{t("find_your_results")}
