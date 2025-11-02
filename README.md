@@ -25,7 +25,6 @@ Below-listed tools are required to run the project locally:
 | `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `bun run astro -- --help` | Get help using the Astro CLI                     |
 
-
 ### Project structure
 
 ```text
