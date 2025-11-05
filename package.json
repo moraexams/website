@@ -13,7 +13,10 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro,css,md}": "prettier --write"
+    "*.{js,json,jsx,ts,tsx,astro,css,md}": [
+      "bun scripts/check-filenames.ts",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@astrojs/netlify": "6.6.0",
