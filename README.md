@@ -4,13 +4,14 @@ This repository contains the source code for the [Mora Exams website](https://mo
 
 ## Development Guide
 
-After cloning the repository, make sure to create the `.env` file from the given `.env.example` file.
-
-### Prerequisites
-
 Below-listed tools are required to run the project locally:
 
 - Bun v1.3.1
+
+After forking and cloning the repository locally:
+
+- Create the `.env` file from the given `.env.example` file.
+- From the project directory, install dependencies using `bun install`
 
 ### Commands
 
