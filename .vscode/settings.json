@@ -9,6 +9,7 @@
 	"prettier.proseWrap": "always",
 	"prettier.useTabs": true,
 	"[astro]": {
-		"editor.defaultFormatter": "astro-build.astro-vscode"
+		"editor.defaultFormatter": "astro-build.astro-vscode",
 	},
+	"biome.enabled": false
 }

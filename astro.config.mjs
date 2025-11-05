@@ -3,11 +3,11 @@ import tailwind from "@astrojs/tailwind";
 import { defaultLang } from "./src/i18n/ui";
 import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 
 export default defineConfig({
 	integrations: [tailwind(), react(), svelte()],
-	output: "hybrid",
+	output: "static",
 	redirects: {
 		"/": `/${defaultLang}/`,
 		"/modelpaper":

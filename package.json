@@ -16,14 +16,15 @@
     "*.{js,jsx,ts,tsx,astro,css,md}": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/netlify": "3.1.1",
-    "@astrojs/react": "3.0.7",
-    "@astrojs/svelte": "^5.0.1",
-    "@astrojs/tailwind": "5.0.3",
+    "@astrojs/netlify": "6.6.0",
+    "@astrojs/react": "4.4.1",
+    "@astrojs/svelte": "^7.2.1",
+    "@astrojs/tailwind": "^6.0.2",
     "@libsql/client": "^0.4.0-pre.5",
+    "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "astro": "4.0.4",
+    "astro": "5.15.3",
     "astro-og-canvas": "^0.7.0",
     "axios": "^1.11.0",
     "csv-parse": "^5.5.2",
@@ -33,8 +34,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "run": "^1.4.0",
-    "svelte": "^4.2.8",
-    "tailwindcss": "^3.3.5"
+    "svelte": "^5.43.3",
+    "tailwindcss": "3",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "drizzle-kit": "^0.20.6",
