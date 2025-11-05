@@ -22,8 +22,6 @@ export default defineConfig({
 		"/instructions": `/${defaultLang}/instructions`,
 		"/exampapers": `/${defaultLang}/exampapers`,
 		"/past-papers": `/${defaultLang}/past-papers`,
-		"/manage": "https://moraetamils.com/manage",
-		"/moraexamadmissionform": "https://forms.gle/shTKWksUk7KSkjrV6",
 		"/s/whatsapp": "https://www.whatsapp.com/channel/0029VajWYZGFMqrakb87YL32",
 		"/s/linkedin": "https://www.linkedin.com/company/moraexams",
 		"/s/viber":
