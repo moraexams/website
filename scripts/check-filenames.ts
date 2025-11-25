@@ -4,7 +4,7 @@ if (process.argv.length < 3) process.exit(0);
 
 const files = process.argv.slice(2);
 const mismatchedFiles = [];
-const PATTERN_SEGMENT = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const PATTERN_SEGMENT = /^[\[\]a-z0-9]+(-[a-z0-9]+)*$/;
 
 for (const file of files) {
 	const relativePath = relative(join(__dirname, "../"), file);

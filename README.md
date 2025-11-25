@@ -44,7 +44,7 @@ After forking and cloning the repository locally:
 
 ### Deployment
 
-Whenever a commit is pushed or a PR is merged to the main branch, the website will be automatically published on [moraexams.org](https://moraexams.org) in a few minutes. The site is hosted on Netlify.
+Whenever a commit is pushed or a PR is merged to the main branch, the website will be automatically published on [moraexams.org](https://moraexams.org) in a few minutes. The site is hosted on Vercel.
 
 ## Help?
 

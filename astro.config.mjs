@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import { defaultLang } from "./src/i18n/ui";
 import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
-import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
 	integrations: [tailwind(), react(), svelte()],
@@ -30,7 +30,7 @@ export default defineConfig({
 		"/s/facebook": "https://www.facebook.com/moraexams",
 		"/s/youtube": "https://youtube.com/@moraexams",
 	},
-	adapter: netlify({
+	adapter: vercel({
 		edgeMiddleware: true,
 	}),
 });
