@@ -29,6 +29,7 @@ export default defineConfig({
 		"/s/telegram": "https://t.me/moraexams",
 		"/s/facebook": "https://www.facebook.com/moraexams",
 		"/s/youtube": "https://youtube.com/@moraexams",
+		"/docs": "https://moraexams.notion.site/Mora-Exams-Cookbook-23a6891a2a7981cfb67ff17681866a36"
 	},
 	adapter: vercel({
 		edgeMiddleware: true,
