@@ -9,31 +9,44 @@ import Button from "../components/Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+//add to hide the committee for a while
+const showCommittee = false;
 ---
 
-<section>
-	<h2 class="text-center">
-		{t("committee__title")}
-	</h2>
+{
+	showCommittee && (
+		<section>
+			<h2 class="text-center">{t("committee__title")}</h2>
 
-	<div
-		class="px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-5 gap-10 shadow-black w-full h-auto rounded-full p-4"
-	>
-		<CommitteeMemberCard img={presidentImage} post="president" lang={lang} />
-		<CommitteeMemberCard img={secretaryImage} post="secretary" lang={lang} />
-		<CommitteeMemberCard img={treasurerImage} post="treasurer" lang={lang} />
-		<CommitteeMemberCard
-			img={vicePresidentImage}
-			post="vice_president"
-			lang={lang}
-		/>
-	</div>
+			<div class="px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-5 gap-10 shadow-black w-full h-auto rounded-full p-4">
+				<CommitteeMemberCard
+					img={presidentImage}
+					post="president"
+					lang={lang}
+				/>
+				<CommitteeMemberCard
+					img={secretaryImage}
+					post="secretary"
+					lang={lang}
+				/>
+				<CommitteeMemberCard
+					img={treasurerImage}
+					post="treasurer"
+					lang={lang}
+				/>
+				<CommitteeMemberCard
+					img={vicePresidentImage}
+					post="vice_president"
+					lang={lang}
+				/>
+			</div>
 
-	<div class="flex justify-center mb-10">
-		<a href={`/${lang}/leadership-timeline`}>
-			<Button>
-				{t("index__view_leadership_timeline")}
-			</Button>
-		</a>
-	</div>
-</section>
+			<div class="flex justify-center mb-10">
+				<a href={`/${lang}/leadership-timeline`}>
+					<Button>{t("index__view_leadership_timeline")}</Button>
+				</a>
+			</div>
+		</section>
+	)
+}
