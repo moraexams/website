@@ -6,7 +6,15 @@ import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-	integrations: [tailwind(), react(), svelte()],
+	integrations: [
+		tailwind(),
+		react({
+			babel: {
+				plugins: ["babel-plugin-react-compiler"],
+			},
+		}),
+		svelte(),
+	],
 	output: "static",
 	redirects: {
 		"/": `/${defaultLang}/`,
@@ -30,7 +38,8 @@ export default defineConfig({
 		"/s/facebook": "https://www.facebook.com/moraexams",
 		"/s/youtube": "https://youtube.com/@moraexams",
 		"/s/instagram": "https://www.instagram.com/mora_exams",
-		"/docs": "https://moraexams.notion.site/Mora-Exams-Cookbook-23a6891a2a7981cfb67ff17681866a36"
+		"/docs":
+			"https://moraexams.notion.site/Mora-Exams-Cookbook-23a6891a2a7981cfb67ff17681866a36",
 	},
 	adapter: vercel({
 		edgeMiddleware: true,
