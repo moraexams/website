@@ -242,6 +242,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} word__zscore
  * @prop {string} word__district_rank
  * @prop {string} word__island_rank
+ * @prop {string} notfound_discription
  */
 
 /**
@@ -529,6 +530,9 @@ const UI_STRINGS_EN = {
 	word__island_rank: "Island Rank",
 	word__district_rank: "District Rank",
 	placeholder__index_no_or_nic: "Index No./N.I.C. No.",
+
+	notfound_discription:
+		"It looks like the paper you are looking for has been misplaced, or perhaps it's simply out of scope for your final A/L exams. Don't worry, our engineers are on it!",
 };
 
 /**
@@ -801,6 +805,9 @@ const UI_STRINGS_TA = {
 	word__island_rank: "தேசிய நிலை",
 	word__district_rank: "மாவட்ட நிலை",
 	placeholder__index_no_or_nic: "சுட்டிலக்கம்/தே.அ.அ. இல.",
+
+	notfound_discription:
+		"நீங்கள் தேடும் வினாத்தாள் தவறித் தொலைந்திருக்கலாம் அல்லது உங்கள் இறுதி உயர்தர (A/L) பரீட்சைக்குரிய பாடப்பரப்பிற்கு அப்பாற்பட்டதாக இருக்கலாம். கவலைப்படாதீர்கள், எங்களது பொறியியலாளர்கள் இதனைச் சரிசெய்து கொண்டிருக்கிறார்கள்!",
 };
 
 /**
