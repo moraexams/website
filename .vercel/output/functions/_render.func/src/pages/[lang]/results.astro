@@ -1,0 +1,185 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+import NavigationBar from "../../sections/1-navigation-bar.astro";
+import { isSupportedLanguage, useTranslations } from "../../i18n/utils";
+import Footer from "../../sections/16-footer.astro";
+import ResultsSheet from "../../components/results-sheet.astro";
+import type { StudentResults } from "../../types";
+import { STAGE } from "../../config";
+import BestWishes from "../../components/best-wishes.astro";
+import Info from "../../components/info.astro";
+
+const { lang } = Astro.params;
+
+if (!isSupportedLanguage(lang)) {
+	return;
+}
+const t = useTranslations(lang);
+
+let indexNumber = undefined;
+
+if (Astro.request.method === "POST") {
+	const formData = await Astro.request.formData();
+	indexNumber = formData.get("i").toString() || undefined;
+}
+
+let studentResults: StudentResults | undefined = undefined;
+
+if (indexNumber) {
+	try {
+		const response = await fetch(
+			`${import.meta.env.PUBLIC_API_URL}/result/${indexNumber}`,
+		);
+		const data = await response.json();
+		if (data.error) {
+			studentResults = null;
+		} else {
+			studentResults = data;
+		}
+	} catch (error) {
+		studentResults = null;
+	}
+}
+---
+
+<Layout pageTitle={t("results__title")} ogImageSlug="results">
+	<NavigationBar />
+	<section
+		class="my-10 sm:rounded-lg grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-x-12 items-center h-fit flex-1"
+	>
+		{
+			STAGE === "final_exams" ? (
+				<div>
+					<Info text="Your results can no longer be viewed." />
+					<BestWishes />
+				</div>
+			) : typeof studentResults == "undefined" ? (
+				<div class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto">
+					<h1 class="text-3xl xl:text-4xl my-2 text-left">
+						{t("find_your_results")}
+					</h1>
+					<p class="text-lg text-black mt-0 text-left">
+						{t("find_your_results_p")}
+					</p>
+					<form
+						method="POST"
+						action={`/${lang}/results`}
+						style="display: contents;"
+					>
+						<div class="grid grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-y-6 gap-x-2">
+							<input
+								class="w-full px-4 xl:px-6 py-2 xl:py-3 text-lg rounded-lg bg-delft-blue-50/25 border border-primary-900/20 placeholder-rust-orange-50 text-md focus:outline-none focus:border-gray focus:bg-white mt-4 col-span-2"
+								type="text"
+								name="i"
+								id="showresultin"
+								inputmode="numeric"
+								value={indexNumber}
+								placeholder={t("placeholder__index_no_or_nic")}
+								required
+							/>
+
+							<button
+								id="showresultbtn"
+								class="min-w-[120px] lg:w-1/2 py-2 rounded-full text-primary-800 text-lg bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none col-start-2"
+							>
+								<>
+									<i class="fa-solid fa-magnifying-glass size-4" />
+									<span class="ml-3">{t("find_button")}</span>
+								</>
+							</button>
+						</div>
+					</form>
+				</div>
+			) : studentResults === null ? (
+				<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
+					<h1 class="text-7xl text-red-500 mt-0 col-span-2 mb-0">Not found</h1>
+					<h2 class="mt-0 text-xl text-red-500 col-span-full">
+						For your query: <span class="font-medium">{indexNumber}</span>
+					</h2>
+
+					<p class="max-w-prose col-span-2 mt-0 text-red-800 font-semibold leading-snug">
+						Note: Unacceptable behavior during exams and/or failing to submit
+						essential details correctly may prohibit grades for the candidate.
+					</p>
+					<div class="col-span-2 text-black mb-4 text-lg">
+						<span class="max-w-prose">
+							For inquiries (only on appropriate hours):
+						</span>
+						<ul style="list-style: '— '" class="px-6 space-y-1">
+							<li class="contact-no">Sudaralakan (0729163651)</li>
+							<li class="contact-no">Thameesan (0778927391)</li>
+							<li class="contact-no">Thasarath (0783352675)</li>
+						</ul>
+					</div>
+					<a href="./results">
+						<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+							<>
+								<i class="fa-solid fa-arrow-left" />
+								<span class="ml-3">Back</span>
+							</>
+						</button>
+					</a>
+				</div>
+			) : (
+				<div class="w-full">
+					<h1 class="text-3xl md:text-4xl xl:text-4xl mt-2 mb-10 text-left">
+						{t("results_title")}
+					</h1>
+
+					<ResultsSheet results={studentResults} lang={lang} />
+
+					<div class="flex justify-end">
+						<a href="./results">
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+								<>
+									<i class="fa-solid fa-arrow-left" />
+									<span class="ml-3">Back</span>
+								</>
+							</button>
+						</a>
+					</div>
+				</div>
+			)
+		}
+
+		<div
+			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-1 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-10"
+		>
+			<p class="mb-4 mt-0 text-lg text-center font-medium">
+				{t("index_number__our_sponsors")}
+			</p>
+			<div class="flex flex-col my-4 gap-16">
+				<img
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					src="/sponsors/sltc.png"
+					alt="SLTC"
+				/>
+				<img
+					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					src="/sponsors/northway-family-mart.png"
+					alt="Northway Family Mart"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style is:global>
+	@media screen and (max-width: 400px) {
+		input {
+			font-size: 16px;
+		}
+	}
+	.contact-no {
+		@apply font-[500] w-fit;
+	}
+	body {
+		@apply min-h-[100vh] flex flex-col;
+	}
+	body > * {
+		@apply px-[var(--body-margin-x)];
+	}
+</style>

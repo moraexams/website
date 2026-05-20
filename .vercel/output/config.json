@@ -1,0 +1,196 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/checkstudent$",
+			"headers": {
+				"Location": "/en/checkstudent"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/docs$",
+			"headers": {
+				"Location": "https://moraexams.notion.site/Mora-Exams-Cookbook-23a6891a2a7981cfb67ff17681866a36"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/exampapers$",
+			"headers": {
+				"Location": "/en/exampapers"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/feedback$",
+			"headers": {
+				"Location": "https://forms.gle/cNYVbm327JebotWA6"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/index-number$",
+			"headers": {
+				"Location": "/en/index-number"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/indexnumber$",
+			"headers": {
+				"Location": "/en/index-number"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/instructions$",
+			"headers": {
+				"Location": "/en/instructions"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/modelpaper$",
+			"headers": {
+				"Location": "https://drive.google.com/drive/folders/1pAzO3OQ7nwBLuJ_gU-4vY12x6eENrwPz"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/past-papers$",
+			"headers": {
+				"Location": "/en/past-papers"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/practicepapers$",
+			"headers": {
+				"Location": "/en/practicepapers"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/register$",
+			"headers": {
+				"Location": "/en/register"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/results$",
+			"headers": {
+				"Location": "/en/results"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/facebook$",
+			"headers": {
+				"Location": "https://www.facebook.com/moraexams"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/instagram$",
+			"headers": {
+				"Location": "https://www.instagram.com/mora_exams"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/linkedin$",
+			"headers": {
+				"Location": "https://www.linkedin.com/company/moraexams"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/telegram$",
+			"headers": {
+				"Location": "https://t.me/moraexams"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/viber$",
+			"headers": {
+				"Location": "https://invite.viber.com/?g2=AQAR%2BCd%2BUxI2pk1rzlhZCSvq32KykhqAcN%2Fbri8vhfCWBNeaVB7BWo8lgafuBSng&lang=en"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/whatsapp$",
+			"headers": {
+				"Location": "https://www.whatsapp.com/channel/0029VajWYZGFMqrakb87YL32"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/s/youtube$",
+			"headers": {
+				"Location": "https://youtube.com/@moraexams"
+			},
+			"status": 301
+		},
+		{
+			"src": "^/$",
+			"headers": {
+				"Location": "/en/"
+			},
+			"status": 301
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/checkstudent/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/exampapers/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/index-number/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/instructions/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/practicepapers/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/results/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/([^/]+?)/schemes/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/.*$",
+			"dest": "/404.html",
+			"status": 404
+		}
+	]
+}
