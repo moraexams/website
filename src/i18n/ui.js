@@ -328,7 +328,7 @@ const UI_STRINGS_EN = {
 	pathway__card3_para:
 		"Tech stream added in 2016 due to student requests and Provincial Director of Education. Our management now delegated to  tech faculty, University of Jaffna for student welfare.",
 	pathway__card4_para:
-		"In the 15th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 25 districts, conducted the examinations in more than 75 examination centres, and accommodated more than 6,500 candidates.",
+		"In the 17th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 25 districts, conducted the examinations in more than 75 examination centres, and accommodated more than 6,500 candidates.",
 
 	feedback_heading: "Thoughts from the Champions",
 	achivers_ranking_1: "Ex-President",
