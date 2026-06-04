@@ -328,7 +328,7 @@ const UI_STRINGS_EN = {
 	pathway__card3_para:
 		"Tech stream added in 2016 due to student requests and Provincial Director of Education. Our management now delegated to  tech faculty, University of Jaffna for student welfare.",
 	pathway__card4_para:
-		"In the 15th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 25 districts, conducted the examinations in more than 75 examination centres, and accommodated more than 6,500 candidates.",
+		"In the 17th year of the Mora Exam, we are proud to serve the students. Last year, we expanded our service to 25 districts, conducted the examinations in more than 75 examination centres, and accommodated more than 6,500 candidates.",
 
 	feedback_heading: "Thoughts from the Champions",
 	achivers_ranking_1: "Ex-President",
@@ -368,7 +368,7 @@ const UI_STRINGS_EN = {
 	statistics__centers: "Centres",
 	statistics__candidates: "Candidates",
 
-	timetable__title: "Timetable 2025",
+	timetable__title: "Timetable 2026",
 	timetable__start: "START",
 	timetable__date25_sub1: "Combinfed Mathematics-I",
 	timetable__date25_sub2: "Biology-I",
@@ -556,7 +556,7 @@ const UI_STRINGS_TA = {
 		"உங்களது பரீட்சை நிலையத்தை கண்டறியுங்கள்",
 	find_your_examination_centres__description: `எங்களிடம் ${totalExamCentres} பரீட்சை மைய வலையமைப்புகள் கிட்டத்தட்ட முழு தீவையும் உள்ளடக்கி உள்ளன. தேர்வு மையங்களைப் பார்க்க உங்கள் மாவட்டத்தைத் தேர்வு செய்யவும்.`,
 	looking_for_past_papers__title: "கடந்த கால வினாத்தாள்களை தேடுகின்றீர்களா?",
-	timetable__title: "நேர அட்டவணை 2025",
+	timetable__title: "நேர அட்டவணை 2026",
 	committee__title: "Mora Exams 2026 | செயற்குழு",
 	committee__president_name: "யசான் ம.",
 	committee__secretary_name: "மாதுமை சு.",
