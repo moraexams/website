@@ -224,6 +224,8 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} student_register__contact_details
  * @prop {string} student_register__contact_name_01
  * @prop {string} student_register__contact_name_02
+ * @prop {string} student_register__contact_name_03
+ * @prop {string} student_register__contact_name_04
  * @prop {string} student_register__confirmation_title
  * @prop {string} student_register__confirmation_description
  * @prop {string} index_number__full_name
@@ -495,8 +497,10 @@ const UI_STRINGS_EN = {
 	student_register__success_description:
 		"You have successfully registered for Mora Exams 2025. Please keep an eye on your email for further updates.",
 	student_register__contact_details: "For Enquiries",
-	student_register__contact_name_01: "S. Sivodayan",
-	student_register__contact_name_02: "S. Abishake Thevar",
+	student_register__contact_name_01: "K. Thushanan",
+	student_register__contact_name_02: "M. Abishangar",
+	student_register__contact_name_03: "A. Melsha",
+	student_register__contact_name_04: "V. Thenuharsan",
 	student_register__confirmation_title: "Confirm Your Details",
 	student_register__confirmation_description:
 		"Please confirm that all the details you have entered are correct. You will not be able to edit them after submission.",
@@ -771,8 +775,10 @@ const UI_STRINGS_TA = {
 	student_register__success_description:
 		"நீங்கள் வெற்றிகரமாக Mora Exams 2025இற்கு விண்ணப்பித்து விட்டீர்கள். மின்னஞ்சலூடாக புதிய தகவல்கள் பகிரப்படும் என்பதை கருத்திற் கொள்ளுங்கள்.",
 	student_register__contact_details: "விசாரணைகளுக்கு",
-	student_register__contact_name_01: "சு. சிவோதயன்",
-	student_register__contact_name_02: "ச. அபிஷேக் தேவர்",
+	student_register__contact_name_01: "கே. துஷானன்",
+	student_register__contact_name_02: "மு. அபிசங்கர்",
+	student_register__contact_name_03: "அ. மெல்ஷா",
+	student_register__contact_name_04: "வ. தேனுஹர்சன் ",
 	student_register__confirmation_title: "உங்கள் விவரங்களை உறுதிப்படுத்தவும்",
 	student_register__confirmation_description:
 		"நீங்கள் உள்ளிட்ட அனைத்து விவரங்களும் சரியாக உள்ளனவா என்பதை உறுதிப்படுத்தவும். சமர்ப்பித்த பிறகு உங்களால் அவற்றைத் திருத்த முடியாது.",
