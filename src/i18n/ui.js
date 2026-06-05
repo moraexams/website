@@ -461,7 +461,7 @@ const UI_STRINGS_EN = {
 	student_register__instruction_1:
 		"<b>Not following the instructions</b> or <b>not submitting the accurate information</b> will result in your application being rejected.",
 	student_register__instruction_2:
-		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.</b>. <br>You must have a valid email address, to which the future updates will be sent to.<br>Please ensure that you are paying <b>individually</b> for each student. Group payments will not be accepted and will lead to the rejection of all associated applications.<br> After submitting, you <b>cannot</b> edit this form.<br>",
+		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.</b><br>You must have a valid email address, to which the future updates will be sent to.<br>Please ensure that you are paying <b>individually</b> for each student. Group payments will not be accepted and will lead to the rejection of all associated applications.<br> After submitting, you <b>cannot</b> edit this form.<br>",
 	student_register__registration_fee_title: "Registration Fee",
 	student_register__registration_fee_ict_only_label: "ICT only",
 	student_register__registration_fee_ict_only_amount: "Rs. 200",
