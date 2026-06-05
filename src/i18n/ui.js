@@ -495,7 +495,7 @@ const UI_STRINGS_EN = {
 	student_register__form_upload_bank_receipt: "Upload Bank Receipt",
 	student_register__success_title: "Registration Successful!",
 	student_register__success_description:
-		"You have successfully registered for Mora Exams 2025. Please keep an eye on your email for further updates.",
+		"You have successfully registered for Mora Exams 2026. Please keep an eye on your email for further updates.",
 	student_register__contact_details: "For Enquiries",
 	student_register__contact_name_01: "K. Thushanan",
 	student_register__contact_name_02: "M. Abishangar",
@@ -534,7 +534,7 @@ const UI_STRINGS_EN = {
 	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
 
-	results_title: "Mora Exams 2025 - Results",
+	results_title: "Mora Exams 2026 - Results",
 	word__zscore: "Z Score",
 	word__island_rank: "Island Rank",
 	word__district_rank: "District Rank",
@@ -590,7 +590,7 @@ const UI_STRINGS_TA = {
 	footer_title_4_s3: "மின் கற்றல் வீடியோக்கள்",
 	footer_title_4_s4: "மின் கற்றல் தளம்",
 	footer_title_4_s5: "சந்தேக படிவங்கள்",
-	exam_papers_title: "Mora Exams 2024 புள்ளித்திட்டங்கள்",
+	exam_papers_title: "Mora Exams 2026 புள்ளித்திட்டங்கள்",
 	exam_papers_p:
 		"தமிழ் மற்றும் ஆங்கில புள்ளித்திட்டங்களை கீழே கொடுக்கப்பட்டுள்ள இணைப்புகளில் இருந்து எளிதாக பதிவிறக்கம் செய்து காணலாம்.",
 
@@ -732,7 +732,7 @@ const UI_STRINGS_TA = {
 	instructions__item_11:
 		"ஒழுக்கமற்ற செயற்பாடுகளில் ஈடுபடுவாராயின் உடனடியாகப் பரீட்சை மண்டபத்திலிருந்து வெளியேற்றப்படுவர்.",
 	instructions__item_12:
-		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2025 | Examination Committee மேற்கொள்ளும்.",
+		"பரீட்சை நடைபெறும் போது ஏற்படும் பிரச்சினைகளுக்குரிய முடிவுகளை Mora Exams 2026 | Examination Committee மேற்கொள்ளும்.",
 	past_papers__title: "கடந்த கால வினாத்தாள்கள்",
 	student_register__title: "மாணவர் பதிவு படிவம்",
 	student_register__instructions_title: "அறிவுறுத்தல்கள்",
@@ -773,7 +773,7 @@ const UI_STRINGS_TA = {
 	student_register__form_upload_bank_receipt: "வங்கி ரசீதைப் பதிவேற்றவும்",
 	student_register__success_title: "பதிவு வெற்றிகரமாக முடிந்தது!",
 	student_register__success_description:
-		"நீங்கள் வெற்றிகரமாக Mora Exams 2025இற்கு விண்ணப்பித்து விட்டீர்கள். மின்னஞ்சலூடாக புதிய தகவல்கள் பகிரப்படும் என்பதை கருத்திற் கொள்ளுங்கள்.",
+		"நீங்கள் வெற்றிகரமாக Mora Exams 2026 இற்கு விண்ணப்பித்து விட்டீர்கள். மின்னஞ்சலூடாக புதிய தகவல்கள் பகிரப்படும் என்பதை கருத்திற் கொள்ளுங்கள்.",
 	student_register__contact_details: "விசாரணைகளுக்கு",
 	student_register__contact_name_01: "கே. துஷானன்",
 	student_register__contact_name_02: "மு. அபிசங்கர்",
@@ -811,7 +811,7 @@ const UI_STRINGS_TA = {
 	committee__finance_coordinator_post: "Finance Coordinator",
 	leadership_timeline__description:
 		"A record of Mora Exams’ leadership over the years, showcasing the dedicated individuals who have guided our committees and upheld our values through each term.",
-	results_title: "Mora Exams 2025 - Results",
+	results_title: "Mora Exams 2026 - Results",
 	word__zscore: "Z மதிப்பெண்",
 	word__island_rank: "தேசிய நிலை",
 	word__district_rank: "மாவட்ட நிலை",
