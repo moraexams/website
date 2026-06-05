@@ -461,7 +461,7 @@ const UI_STRINGS_EN = {
 	student_register__instruction_1:
 		"<b>Not following the instructions</b> or <b>not submitting the accurate information</b> will result in your application being rejected.",
 	student_register__instruction_2:
-		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.</b>. <br>You must have a valid email address, to which the future updates will be sent to.<br> After submitting, you <b>cannot</b> edit this form.<br>",
+		"It is <b>mandatory</b> to pay the examination fee before filling up the online application form.</b>. <br>You must have a valid email address, to which the future updates will be sent to.<br>Please ensure that you are paying <b>individually</b> for each student. Group payments will not be accepted and will lead to the rejection of all associated applications.<br> After submitting, you <b>cannot</b> edit this form.<br>",
 	student_register__registration_fee_title: "Registration Fee",
 	student_register__registration_fee_ict_only_label: "ICT only",
 	student_register__registration_fee_ict_only_amount: "Rs. 200",
@@ -739,7 +739,7 @@ const UI_STRINGS_TA = {
 	student_register__instruction_1:
 		"<b>வழிமுறைகளைப் பின்பற்றாதது</b> அல்லது <b>துல்லியமான தகவல்களைச் சமர்ப்பிக்காதது</b> உங்கள் விண்ணப்பத்தை நிராகரிக்க வழிவகுக்கும்.",
 	student_register__instruction_2:
-		"நிகழ்நிலை விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன், பரீட்சைக் கட்டணத்தை செலுத்துவது <b>அத்தியாயவசியமானது</b>.  <br>பரீட்சை தொடர்பான மேலதிக தகவல்கள் மின்னஞ்சல் ஊடாக அறிவிக்கப்பட இருப்பதால், உங்களிடம் செல்லுபடியாகும் மின்னஞ்சல் முகவரியொன்று இருக்க வேண்டும்.<br>இந்த நிகழ்நிலைப் படிவத்தை சமர்ப்பித்த பின், அதில் எவ்வித மாற்றங்களையும் உங்களால் செய்ய இயலாது.",
+		"நிகழ்நிலை விண்ணப்பப் படிவத்தை நிரப்புவதற்கு முன், பரீட்சைக் கட்டணத்தை செலுத்துவது <b>அத்தியாயவசியமானது</b>.  <br>பரீட்சை தொடர்பான மேலதிக தகவல்கள் மின்னஞ்சல் ஊடாக அறிவிக்கப்பட இருப்பதால், உங்களிடம் செல்லுபடியாகும் மின்னஞ்சல் முகவரியொன்று இருக்க வேண்டும்.<br>தயவுசெய்து ஒவ்வொரு மாணவருக்கும் <b>தனித்தனியாக</b> கட்டணம் செலுத்துவதை உறுதிப்படுத்தவும். குழு கட்டணங்கள் ஏற்கப்படாது மற்றும் அதனுடன் தொடர்புடைய அனைத்து விண்ணப்பங்களும் நிராகரிக்கப்படும்.<br>இந்த நிகழ்நிலைப் படிவத்தை சமர்ப்பித்த பின், அதில் எவ்வித மாற்றங்களையும் உங்களால் செய்ய இயலாது.",
 	student_register__registration_fee_title: "பதிவு கட்டணம்",
 	student_register__registration_fee_ict_only_label: "ICT மட்டும்",
 	student_register__registration_fee_ict_only_amount: "ரூ. 200",
