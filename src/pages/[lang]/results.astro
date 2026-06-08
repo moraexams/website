@@ -49,7 +49,7 @@ if (indexNumber) {
 		class="my-10 sm:rounded-lg grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-x-12 items-center h-fit flex-1"
 	>
 		{
-			STAGE === "final_exams" ? (
+			STAGE === "final_exams" || STAGE === "register" ? (
 				<div>
 					<Info text="Your results can no longer be viewed." />
 					<BestWishes />
