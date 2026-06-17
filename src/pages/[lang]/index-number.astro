@@ -16,9 +16,6 @@ if (!isSupportedLanguage(lang)) {
 }
 const t = useTranslations(lang);
 
-// Temporarily disabled
-return;
-
 const nicNumber = Astro.url.searchParams.get("nic") || undefined;
 
 let selectedNic:
@@ -208,19 +205,25 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 		<div
 			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-3 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-20"
 		>
-			<p class="mb-4 mt-0 text-xl text-center font-medium">
-				{t("index_number__our_sponsors")}
+			<p class="mb-0 mt-4 text-2xl font-semibold text-center">
+				{t("index_number__our_gold_sponsor")}
 			</p>
-			<div class="flex flex-col my-4 gap-16">
+			<div class="flex flex-col my-2 gap-4">
 				<img
-					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
-					src="/sponsors/esoft.png"
-					alt="Esoft"
-				/>
-				<img
-					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					class="h-auto w-84 sm:w-96 lg:w-[450px] object-contain sm:rounded-b-lg"
 					src="/sponsors/northway-family-mart.png"
 					alt="Northway Family Mart"
+				/>
+			</div>
+
+			<p class="mb-0 mt-6 text-xl text-center font-medium">
+				{t("index_number__our_silver_sponsor")}
+			</p>
+			<div class="flex flex-col my-0 gap-4">
+				<img
+					class="h-auto w-72 sm:w-80 lg:w-96 object-contain sm:rounded-b-lg"
+					src="/sponsors/esoft.png"
+					alt="Esoft"
 				/>
 			</div>
 		</div>
