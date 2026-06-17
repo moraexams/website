@@ -516,7 +516,9 @@ const UI_STRINGS_EN = {
 		"We could not find any index number associated with the provided NIC number.",
 	index_number__error_fetching:
 		"An error occurred while fetching your index number. Please try again later.",
-	index_number__our_sponsors: "Our Silver Sponsors",
+	index_number__our_gold_sponsors: "Our Gold Sponsors",
+	index_number__our_silver_sponsors: "Our Silver Sponsors",
+	index_number__our_sponsors: "Our Sponsors",
 	index_number__colombo_centre_notice_title:
 		"*Important Notice Regarding Colombo Centre!",
 	index_number__colombo_centre_notice_text:
@@ -794,7 +796,9 @@ const UI_STRINGS_TA = {
 		"கொடுக்கப்பட்ட தேசிய அடையாள அட்டை இலக்கத்துடன் தொடர்புடைய எந்த சுட்டிலக்கமும் எங்களால் கண்டுபிடிக்க முடியவில்லை.",
 	index_number__error_fetching:
 		"உங்கள் சுட்டிலக்கத்தைப் பெறும்போது ஒரு பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.",
-	index_number__our_sponsors: "எங்களுடைய Silver அனுசரணையாளர்கள்",
+	index_number__our_gold_sponsors: "எங்கள் பொன்னான அனுசரணையாளர்கள்",
+	index_number__our_silver_sponsors: "எங்கள் வெள்ளி அனுசரணையாளர்கள்",
+	index_number__our_sponsors: "எங்கள் அனுசரணையாளர்கள்",
 	index_number__colombo_centre_notice_title:
 		"*கொழும்பு பரீட்சை நிலையங்கள் தொடர்பிலான அறிவிப்பு!",
 	index_number__colombo_centre_notice_text:
