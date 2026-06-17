@@ -16,6 +16,9 @@ if (!isSupportedLanguage(lang)) {
 }
 const t = useTranslations(lang);
 
+// Temporarily disabled
+return;
+
 const nicNumber = Astro.url.searchParams.get("nic") || undefined;
 
 let selectedNic:
@@ -211,8 +214,8 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 			<div class="flex flex-col my-4 gap-16">
 				<img
 					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
-					src="/sponsors/sltc.png"
-					alt="SLTC"
+					src="/sponsors/esoft.png"
+					alt="Esoft"
 				/>
 				<img
 					class="h-auto w-80 lg:w-96 object-contain sm:rounded-b-lg"
