@@ -843,5 +843,5 @@ export const langStaticRoutes = [
 ];
 
 export const COMMON_CONFIG = Object.freeze({
-	CONTACT_PHONE_NUMBER: "+94 70 777 0189",
+	CONTACT_PHONE_NUMBER: "",
 });
