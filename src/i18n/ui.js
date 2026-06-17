@@ -518,7 +518,6 @@ const UI_STRINGS_EN = {
 		"An error occurred while fetching your index number. Please try again later.",
 	index_number__our_gold_sponsor: "Our Gold Sponsor",
 	index_number__our_silver_sponsor: "Our Silver Sponsor",
-	index_number__our_bronze_sponsors: "Our Bronze Sponsors",
 	index_number__colombo_centre_notice_title:
 		"*Important Notice Regarding Colombo Centre!",
 	index_number__colombo_centre_notice_text:
