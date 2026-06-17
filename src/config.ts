@@ -1,3 +1,3 @@
 import type { WebsiteStage } from "./types";
 
-export const STAGE: WebsiteStage = "view_index_no";
+export const STAGE: WebsiteStage = "final_exams";
