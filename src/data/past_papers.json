@@ -1,5 +1,25 @@
 [
 	{
+		"year": 2026,
+		"subject": "combined-maths",
+		"type": "scheme",
+		"medium": "tamil",
+		"version": null,
+		"id": "1g9ENNpQ2Tl-urevysOZL3Z-6gWYBd_vg",
+		"name": "2026_combined-maths_scheme_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1g9ENNpQ2Tl-urevysOZL3Z-6gWYBd_vg/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "combined-maths",
+		"type": "scheme",
+		"medium": "english",
+		"version": null,
+		"id": "1g9ENNpQ2Tl-urevysOZL3Z-6gWYBd_vg",
+		"name": "2026_combined-maths_scheme.pdf",
+		"link": "https://drive.google.com/file/d/1g9ENNpQ2Tl-urevysOZL3Z-6gWYBd_vg/view?usp=sharing"
+	},
+	{
 		"year": 2025,
 		"subject": "chemistry",
 		"type": "scheme",
