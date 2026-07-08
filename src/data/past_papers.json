@@ -20,6 +20,26 @@
 		"link": "https://drive.google.com/file/d/1z5AqHTADwSvXOne4CEJj23tf3PWcmf5s/view?usp=drive_link"
 	},
 	{
+		"year": 2026,
+		"subject": "physics",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1zqMiO5lR9ItErO4C63Iw6LRu_F-MpEs0",
+		"name": "2026_physics_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1zqMiO5lR9ItErO4C63Iw6LRu_F-MpEs0/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "physics",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1Rpmprvac0Qr0-shJtsEfbTEXqzF4ofMB",
+		"name": "2026_physics_paper_english.pdf",
+		"link": "https://drive.google.com/file/d/1Rpmprvac0Qr0-shJtsEfbTEXqzF4ofMB/view?usp=sharing"
+	},
+	{
 		"year": 2025,
 		"subject": "chemistry",
 		"type": "scheme",
