@@ -70,6 +70,86 @@
 		"link": "https://drive.google.com/file/d/1E2H7-gM0TWpf7qoH4nWeXdMSVrEoP-_0/view?usp=sharing"
 	},
 	{
+		"year": 2026,
+		"subject": "biology",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1UPNCJ98ao5eadvlpOUcvRUJSHPwTLEJ7",
+		"name": "2026_biology_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1UPNCJ98ao5eadvlpOUcvRUJSHPwTLEJ7/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "biology",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1_oWw1lyBNGHxsy8ohmRImtcu6LZ6r0Y4",
+		"name": "2026_biology_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1_oWw1lyBNGHxsy8ohmRImtcu6LZ6r0Y4/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "combined-maths",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1kPd6eA3I2UAVQ4At1S9g8if9-rtok35V",
+		"name": "2026_combined-maths_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1kPd6eA3I2UAVQ4At1S9g8if9-rtok35V/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "combined-maths",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1x1eIZLalGvg6VjtsfK-q9LEpX0n61BOB",
+		"name": "2026_combined-maths_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1x1eIZLalGvg6VjtsfK-q9LEpX0n61BOB/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "physics",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1_D9o_IQ4WO3rAlkBAzziAjgEmnuLkixJ",
+		"name": "2026_physics_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1_D9o_IQ4WO3rAlkBAzziAjgEmnuLkixJ/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "physics",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1_kUl9YcHHe7kQ5_KifKlWCIgAZbj_Lrl",
+		"name": "2026_physics_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1_kUl9YcHHe7kQ5_KifKlWCIgAZbj_Lrl/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "chemistry",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1KMk5vmunONkMtEgrayomw0RPhjyxCQD0",
+		"name": "2026_chemistry_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1KMk5vmunONkMtEgrayomw0RPhjyxCQD0/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "chemistry",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1bKPbCRoICyLOiLDo_NhXold9-3zpFE2h",
+		"name": "2026_chemistry_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1bKPbCRoICyLOiLDo_NhXold9-3zpFE2h/view?usp=sharing"
+	},
+	{
 		"year": 2025,
 		"subject": "chemistry",
 		"type": "scheme",
