@@ -160,6 +160,16 @@
 		"link": "https://drive.google.com/file/d/1bKPbCRoICyLOiLDo_NhXold9-3zpFE2h/view?usp=sharing"
 	},
 	{
+		"year": 2026,
+		"subject": "ict",
+		"type": "scheme",
+		"medium": "tamil",
+		"version": null,
+		"id": "1DIKzWSpOWwXRSWFyadm1kF4RqY6ULZDc",
+		"name": "2026_ict_scheme_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1DIKzWSpOWwXRSWFyadm1kF4RqY6ULZDc/view?usp=sharing"
+	},
+	{
 		"year": 2025,
 		"subject": "chemistry",
 		"type": "scheme",
@@ -220,7 +230,6 @@
 		"name": "2025_physics_scheme_english.pdf",
 		"link": "https://drive.google.com/file/d/1x7j_ExlaDZn547GvcHaGog7LefhSTs7O/view?usp=sharing"
 	},
-
 	{
 		"year": 2025,
 		"subject": "ict",
