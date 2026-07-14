@@ -90,8 +90,12 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 				</div>
 			) : null
 		}
+	</section>
+	<section
+		class="my-10 sm:rounded-lg grid grid-cols-1 lg:grid-cols-[1fr_auto] grid-rows-[auto_auto] gap-x-12 items-center h-fit flex-1"
+	>
 		<div
-			class="col-start-1 row-start-3 flex flex-col lg:min-w-[640px] w-full max-w-xl mx-auto mt-10 lg:mt-0"
+			class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto"
 		>
 			{
 				STAGE === "view_index_no" ? (
@@ -203,7 +207,7 @@ const instructionItems = new Array(12).fill(null).map((_, i) => {
 			}
 		</div>
 		<div
-			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-3 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-20"
+			class="col-start-1 lg:col-start-2 row-start-4 lg:row-start-1 flex flex-col w-full max-w-screen-xl justify-center items-center mx-auto mt-20"
 		>
 			<p class="mb-0 mt-4 text-2xl font-semibold text-center">
 				{t("index_number__our_gold_sponsor")}
