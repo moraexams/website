@@ -2,13 +2,24 @@
 	{
 		"year": 2026,
 		"subject": "ict",
+		"type": "scheme",
+		"medium": "english",
+		"version": null,
+		"id": "1AOPuhx39bGPO6V9ZQm8N-vQhmg0nGl9n",
+		"name": "2026_ict_scheme_english.pdf",
+		"link": "https://drive.google.com/file/d/1AOPuhx39bGPO6V9ZQm8N-vQhmg0nGl9n/view?usp=sharing"
+	},
+	{
+		"year": 2026,
+		"subject": "ict",
 		"type": "paper",
 		"medium": "tamil",
 		"version": null,
 		"id": "1Ydm2YYqzf4i1DMiG9L9F4JEFLV2pKAv9",
 		"name": "2026_ict_paper_tamil.pdf",
 		"link": "https://drive.google.com/file/d/1Ydm2YYqzf4i1DMiG9L9F4JEFLV2pKAv9/view?usp=sharing"
-	},{
+	},
+	{
 		"year": 2026,
 		"subject": "ict",
 		"type": "paper",
