@@ -1,6 +1,25 @@
 [
 	{
 		"year": 2026,
+		"subject": "ict",
+		"type": "paper",
+		"medium": "tamil",
+		"version": null,
+		"id": "1Ydm2YYqzf4i1DMiG9L9F4JEFLV2pKAv9",
+		"name": "2026_ict_paper_tamil.pdf",
+		"link": "https://drive.google.com/file/d/1Ydm2YYqzf4i1DMiG9L9F4JEFLV2pKAv9/view?usp=sharing"
+	},{
+		"year": 2026,
+		"subject": "ict",
+		"type": "paper",
+		"medium": "english",
+		"version": null,
+		"id": "1275oJMgBwYdl9KfYuLQcUO8ai6e3Qq4e",
+		"name": "2026_ict_paper_english.pdf",
+		"link": "https://drive.google.com/file/d/1275oJMgBwYdl9KfYuLQcUO8ai6e3Qq4e/view?usp=sharing"
+	},
+	{
+		"year": 2026,
 		"subject": "chemistry",
 		"type": "scheme",
 		"medium": "english",
