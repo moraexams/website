@@ -48,9 +48,14 @@ if (indexNumber) {
 	<section>
 		<div class="foot md:grid md:grid-cols-[2fr,1fr] gap-20 mb-10">
 			{
-				STAGE === "final_exams" || STAGE === "register" ? (
+				STAGE === "final_exams" ? (
 					<div>
 						<Info text="Your results can no longer be viewed." />
+						<BestWishes />
+					</div>
+				) : STAGE !== "view_results" ? (
+					<div>
+						<Info text="Your results are not available yet." />
 						<BestWishes />
 					</div>
 				) : typeof studentResults == "undefined" ? (
