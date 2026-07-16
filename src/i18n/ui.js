@@ -168,6 +168,7 @@ for (const d of EXAM_CENTRES.districts) {
  * @prop {string} find_button
  * @prop {string} schemes_button
  * @prop {string} results__title
+ * @prop {string} results__error_fetching
  * @prop {string} find_your_index_no__title
  * @prop {string} practice_papers_title
  * @prop {string} practice_papers_p
@@ -427,6 +428,8 @@ const UI_STRINGS_EN = {
 	hero_results_button: "Results",
 	schemes_button: "Schemes",
 	results__title: "Results | Mora Exams",
+	results__error_fetching:
+		"We couldn't reach the server to fetch your results. Please try again in a moment.",
 	find_your_index_no__title: "Find Your Index No. | Mora Exams",
 
 	instructions__title: "Exam Instructions for Students",
@@ -708,6 +711,8 @@ const UI_STRINGS_TA = {
 	hero_results_button: "Results",
 	schemes_button: "Schemes",
 	results__title: "Results | Mora Exams",
+	results__error_fetching:
+		"உங்கள் முடிவுகளைப் பெற முடியவில்லை. தயவுசெய்து சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்.",
 	find_your_index_no__title: "Find Your Index No. | Mora Exams",
 	instructions__title: "மாணவர்களுக்கான பரீட்சை அறிவுறுத்தல்கள்",
 	instructions__item_01:

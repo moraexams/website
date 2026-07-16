@@ -25,7 +25,7 @@ if (Astro.request.method === "POST") {
 }
 
 let studentResults: StudentResults | null | undefined = undefined;
-let apiError = false;
+let isFetchError = false;
 
 if (indexNumber) {
 	try {
@@ -35,12 +35,15 @@ if (indexNumber) {
 		if (response.status === 404) {
 			studentResults = null;
 		} else if (!response.ok) {
-			apiError = true;
+			studentResults = null;
+			isFetchError = true;
 		} else {
 			studentResults = await response.json();
 		}
 	} catch (error) {
-		apiError = true;
+		console.error("Error fetching results:", error);
+		studentResults = null;
+		isFetchError = true;
 	}
 }
 ---
@@ -59,25 +62,6 @@ if (indexNumber) {
 					<div>
 						<Info text="Your results are not available yet." />
 						<BestWishes />
-					</div>
-				) : apiError ? (
-					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
-						<h1 class="text-5xl text-red-500 mt-0 col-span-2 mb-0">
-							Something went wrong
-						</h1>
-						<h2 class="mt-0 text-xl text-red-500 col-span-full">
-							We couldn't reach the server to fetch results for{" "}
-							<span class="font-medium">{indexNumber}</span>. This is usually
-							temporary — please try again in a moment.
-						</h2>
-						<a href="./results">
-							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none mt-4">
-								<>
-									<i class="fa-solid fa-arrow-left" />
-									<span class="ml-3">Try again</span>
-								</>
-							</button>
-						</a>
 					</div>
 				) : typeof studentResults == "undefined" ? (
 					<div class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto">
@@ -116,6 +100,23 @@ if (indexNumber) {
 							</div>
 						</form>
 					</div>
+				) : studentResults === null && isFetchError ? (
+					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
+						<h1 class="text-5xl text-red-500 mt-0 col-span-2 mb-0">
+							Something went wrong
+						</h1>
+						<p class="max-w-prose col-span-2 mt-2 text-red-800 leading-snug">
+							{t("results__error_fetching")}
+						</p>
+						<a href={`/${lang}/results`}>
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+								<>
+									<i class="fa-solid fa-arrow-rotate-right" />
+									<span class="ml-3">Try Again</span>
+								</>
+							</button>
+						</a>
+					</div>
 				) : studentResults === null ? (
 					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
 						<h1 class="text-7xl text-red-500 mt-0 col-span-2 mb-0">
@@ -136,7 +137,6 @@ if (indexNumber) {
 							<ul style="list-style: '— '" class="px-6 space-y-1">
 								<li class="contact-no">K. Thushanan (0778059437)</li>
 								<li class="contact-no">A. Melsha (0706753617)</li>
-								<li class="contact-no">M. Jazan (0707770189)</li>
 							</ul>
 						</div>
 						<a href="./results">
