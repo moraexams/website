@@ -33,9 +33,6 @@ if (indexNumber) {
 			`${import.meta.env.PUBLIC_API_URL}/result/${indexNumber}`,
 		);
 		const data = await response.json();
-		if (!response.ok) {
-			throw new Error(data?.message || "Failed to fetch results");
-		}
 		if (data.error) {
 			studentResults = null;
 		} else {
