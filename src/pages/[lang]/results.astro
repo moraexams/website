@@ -25,6 +25,7 @@ if (Astro.request.method === "POST") {
 }
 
 let studentResults: StudentResults | undefined = undefined;
+let isFetchError = false;
 
 if (indexNumber) {
 	try {
@@ -32,13 +33,18 @@ if (indexNumber) {
 			`${import.meta.env.PUBLIC_API_URL}/result/${indexNumber}`,
 		);
 		const data = await response.json();
+		if (!response.ok) {
+			throw new Error(data?.message || "Failed to fetch results");
+		}
 		if (data.error) {
 			studentResults = null;
 		} else {
 			studentResults = data;
 		}
 	} catch (error) {
+		console.error("Error fetching results:", error);
 		studentResults = null;
+		isFetchError = true;
 	}
 }
 ---
@@ -94,6 +100,23 @@ if (indexNumber) {
 								</button>
 							</div>
 						</form>
+					</div>
+				) : studentResults === null && isFetchError ? (
+					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
+						<h1 class="text-5xl text-red-500 mt-0 col-span-2 mb-0">
+							Something went wrong
+						</h1>
+						<p class="max-w-prose col-span-2 mt-2 text-red-800 leading-snug">
+							{t("results__error_fetching")}
+						</p>
+						<a href={`/${lang}/results`}>
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none">
+								<>
+									<i class="fa-solid fa-arrow-rotate-right" />
+									<span class="ml-3">Try Again</span>
+								</>
+							</button>
+						</a>
 					</div>
 				) : studentResults === null ? (
 					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
