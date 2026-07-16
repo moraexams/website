@@ -24,21 +24,23 @@ if (Astro.request.method === "POST") {
 	indexNumber = formData.get("i").toString() || undefined;
 }
 
-let studentResults: StudentResults | undefined = undefined;
+let studentResults: StudentResults | null | undefined = undefined;
+let apiError = false;
 
 if (indexNumber) {
 	try {
 		const response = await fetch(
 			`${import.meta.env.PUBLIC_API_URL}/result/${indexNumber}`,
 		);
-		const data = await response.json();
-		if (data.error) {
+		if (response.status === 404) {
 			studentResults = null;
+		} else if (!response.ok) {
+			apiError = true;
 		} else {
-			studentResults = data;
+			studentResults = await response.json();
 		}
 	} catch (error) {
-		studentResults = null;
+		apiError = true;
 	}
 }
 ---
@@ -57,6 +59,25 @@ if (indexNumber) {
 					<div>
 						<Info text="Your results are not available yet." />
 						<BestWishes />
+					</div>
+				) : apiError ? (
+					<div class="h-fit grid grid-cols-[1fr_auto] gap-x-4 pt-4">
+						<h1 class="text-5xl text-red-500 mt-0 col-span-2 mb-0">
+							Something went wrong
+						</h1>
+						<h2 class="mt-0 text-xl text-red-500 col-span-full">
+							We couldn't reach the server to fetch results for{" "}
+							<span class="font-medium">{indexNumber}</span>. This is usually
+							temporary — please try again in a moment.
+						</h2>
+						<a href="./results">
+							<button class="w-full sm:w-fit py-2 px-4 rounded-full text-primary-800 text-xl bg-white hover:bg-delft-blue-50/50 border border-sm border-black/25 focus:outline-none focus:shadow focus:border-none mt-4">
+								<>
+									<i class="fa-solid fa-arrow-left" />
+									<span class="ml-3">Try again</span>
+								</>
+							</button>
+						</a>
 					</div>
 				) : typeof studentResults == "undefined" ? (
 					<div class="flex flex-col justify-center max-w-[min(90ch,90vw)] md:min-w-[80ch] mx-auto">
